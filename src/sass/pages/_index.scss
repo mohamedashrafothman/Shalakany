@@ -1,0 +1,208 @@
+.home {
+	// Banner Section ".home-banner" prefix
+	&-banner {
+		height: 100vh;
+		background-color: $primary;
+		color: $white;
+		position: relative;
+		overflow: hidden;
+
+		&>.container-fluid,
+		&>.container {
+
+			&,
+			&>.row {
+
+				&,
+				&>div[class^="col-"] {
+					height: 100%;
+				}
+			}
+		}
+
+		& .container-fluid,
+		& .container {
+
+			&,
+			&>.row {
+
+				&,
+				&>div[class^="col-"] {
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			width: calc(100% - (#{$grid-gutter-width} * 2));
+			height: calc(100vh - (#{$grid-gutter-width} * 2));
+			top: $grid-gutter-width;
+			left: $grid-gutter-width;
+			display: block;
+			z-index: $zindex-sections + 6;
+			border: $border-width*2 $border-style $border-color;
+		}
+
+		&__backgrounds {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			z-index: $zindex-sections;
+		}
+
+		&__side {
+			width: 100%;
+			height: 100%;
+			z-index: $zindex-sections + 5;
+			padding: $grid-gutter-width * 2;
+
+			&>.container {
+
+				&,
+				&>.row {
+
+					&,
+					&>div[class^="col-"] {
+						z-index: $zindex-sections + 7;
+					}
+				}
+			}
+		}
+
+		&__logo {
+			width: 80px;
+			height: auto;
+			z-index: $zindex-sections + 8;
+			margin-bottom: 3.9rem;
+
+			a {
+				display: block;
+
+				&,
+				&>img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+
+		&__title {
+			color: $white;
+			font-family: inherit;
+			text-transform: uppercase;
+			font-weight: 400;
+			font-size: $h4-font-size;
+			line-height: 3rem;
+			width: 60%;
+
+			strong {
+				font-size: $h1-font-size;
+				font-weight: 800;
+			}
+
+			@include media-breakpoint-down(md) {
+				width: 100%;
+			}
+		}
+
+		&__text {
+			font-size: 1rem;
+			font-weight: 200;
+			color: $white;
+			text-align: justify;
+			width: 75%;
+			margin-bottom: 3.9rem;
+
+			@include media-breakpoint-down(md) {
+				width: 100%;
+			}
+		}
+
+		&__button {
+			margin-bottom: 3.9rem;
+			margin-left: 8px;
+		}
+
+		&__slider {
+			&--arrows {
+
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+
+				.swiper-button-prev,
+				.swiper-button-next {
+					position: relative;
+					width: 60px;
+					height: 50px;
+					background-size: 25px;
+				}
+
+				.swiper-button-prev,
+				.swiper-container-rtl .swiper-button-next {
+					left: 0;
+					transition: $transition-base;
+					opacity: 0.5;
+
+					&:hover {
+						opacity: 1;
+					}
+				}
+
+				.swiper-button-next,
+				.swiper-container-rtl .swiper-button-prev {
+					right: 0;
+					transition: $transition-base;
+					opacity: 0.5;
+
+					&:hover {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		&__background {
+			img {
+				display: block;
+				height: 100vh;
+				width: 100%;
+				@include object-fit(cover, center);
+			}
+		}
+
+		@media screen and (max-height: 600px) {
+			height: 100%;
+
+			&__backgrounds,
+			&__background img {
+				height: 100%;
+			}
+
+			&:after {
+				height: calc(100% - (#{$grid-gutter-width} * 2));
+			}
+		}
+	}
+
+	// What we do Section ".home-whatWeDo" prefix
+	&-whatWeDo{
+		background-color: $body-bg;
+		padding: $grid-gutter-width*8 $grid-gutter-width*2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 100vh;
+
+		@media screen and (max-height: 600px) {
+			height: 100%;
+			padding-top: $grid-gutter-width*8;
+			padding-bottom: $grid-gutter-width*8;
+		}
+	}
+}

@@ -1,0 +1,217 @@
+//*********************************  Body Overlay  *********************************//
+.side-open {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100vw;
+	height: 100%;
+	z-index: $zindex-overlay-menu-backdrop;
+	display: none;
+	background-color: rgba($black, 0.8);
+	cursor: pointer;
+}
+
+.menu-open,
+.menu-close {
+	cursor: pointer;
+	background-color: $gray-500;
+	color: $primary;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: $grid-gutter-width*2;
+	height: $grid-gutter-width*2;
+
+	&,
+	&>i.material-icons {
+		transition: $transition-base;
+	}
+
+	i.material-icons {
+		font-size: 2rem;
+		font-weight: lighter;
+	}
+}
+
+.menu-open {
+	z-index: $zindex-overlay-open;
+	position: fixed;
+	top: $grid-gutter-width;
+	right: $grid-gutter-width;
+	border: $border-width*2 $border-style $border-color;
+
+	&:hover {
+		transform: rotate(-45deg);
+
+		&,
+		&>i.material-icons {
+			transition: $transition-base;
+		}
+
+		i.material-icons {
+			transform: rotate(45deg) scaleX(1.2) scaleY(1.05);
+		}
+	}
+}
+
+.menu-close {
+	z-index: $zindex-overlay-close;
+	position: absolute;
+	top: ($grid-gutter-width/2) + ($border-width*2); // Same as .overlay padding
+	right: ($grid-gutter-width/2) + ($border-width*2); // Same as .overlay padding
+}
+
+//*********************************  sideBar  *********************************//
+.overlay {
+	position: fixed;
+	top: $grid-gutter-width;
+	right: $grid-gutter-width;
+	z-index: $zindex-overlay-menu;
+	background-color: $primary;
+	min-height: calc(100vh - (#{$grid-gutter-width} * 2));
+	height: calc(100vh - (#{$grid-gutter-width} * 2));
+	width: calc(75vw - (#{$grid-gutter-width} * 2));
+	padding: $grid-gutter-width / 2;
+	box-shadow: $box-shadow;
+
+	&:not(.open) {
+		display: none;
+	}
+
+	&.open {
+		overflow-y: scroll;
+		display: block;
+
+		/* scroll bar width */
+		&::-webkit-scrollbar {
+			width: 0;
+		}
+	}
+
+	&__nav {
+		border: $border-width*2 $border-style $border-color;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		min-height: calc(100vh - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
+		height: calc(100vh - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
+	}
+
+	&__list {
+		width: 100%;
+		height: calc(60vh - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
+		max-height: calc(60vh - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 0 $grid-gutter-width*3;
+
+		@include media-breakpoint-down(md) {
+			height: calc(55vh - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
+			max-height: calc(55vh - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
+		}
+	}
+
+	&__list-item {
+		font-size: 1.5rem;
+		font-weight: 200;
+		color: $white;
+		text-transform: uppercase;
+		line-height: 36px;
+		list-style: none;
+		position: relative;
+		z-index: $zindex-overlay-close;
+
+		&:after {
+			content: "";
+			display: block;
+			height: 0.75em;
+			width: 0.75em;
+			background-color: $brown;
+			position: absolute;
+			top: 50%;
+			left: -0.75em;
+			transform: translateY(-50%) rotate(-45deg);
+			z-index: -1;
+			transition: $transition-base;
+			opacity: 0;
+		}
+
+		&:nth-of-type(1),
+		&:nth-of-type(2),
+		&:nth-of-type(3),
+		&:nth-of-type(4),
+		&:nth-of-type(5) {
+			font-weight: 800;
+			font-size: 2rem;
+
+			@include media-breakpoint-down(md) {
+				font-size: 1.75rem;
+			}
+		}
+
+		&:not(:last-of-type) {
+			margin-bottom: 40px;
+			@include media-breakpoint-down(md) {
+				margin-bottom: 30px;
+			}
+		}
+
+		&:nth-of-type(5n) {
+			margin-bottom: initial;
+		}
+
+		&:hover {
+			&:after {
+				left: -10px;
+				opacity: 1;
+			}
+		}
+
+		&,
+		&>a {
+			color: $white;
+		}
+
+		@include media-breakpoint-down(md) {
+			font-size: 1.3rem;
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		width: calc(100vw - ((#{$grid-gutter-width} * 2) + (#{$grid-gutter-width} / 2)));
+	}
+
+	@media screen and (max-height: 700px) {
+		height: calc(100% - ((#{$grid-gutter-width} * 2) + (#{$grid-gutter-width} / 2)));
+		overflow-y: scroll;
+		&__nav{
+			min-height: calc(550px - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
+			height: calc(550px - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
+		}
+		&__list {
+			height: calc(100% - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
+			max-height: calc(100% - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
+		}
+		&__list-item{
+			font-size: 1.2rem;
+			line-height: 2.25rem;
+
+			&:nth-of-type(1),
+			&:nth-of-type(2),
+			&:nth-of-type(3),
+			&:nth-of-type(4),
+			&:nth-of-type(5) {
+				font-size: 1.75rem;
+			}
+
+			&:not(:last-of-type) {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+}

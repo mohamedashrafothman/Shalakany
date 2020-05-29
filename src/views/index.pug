@@ -1,0 +1,58 @@
+extends ./layouts/_index_layout.pug
+include ./mixins/_service-card.pug
+
+block content
+	section.home-banner
+		.container-fluid
+			.row
+				.col-12.col-md-5
+					.home-banner__side
+						.container
+							.row
+								.col-12
+									.home-banner__logo
+										a(href="index.html")
+											img(src="./images/icons_logos/logo.svg", alt=`${locals.sitename[locals.lang]}`)
+								.col-12
+									.home-banner__slider
+										.swiper-container#home-banner-slider(data-swiper-effect="fade")
+											.swiper-wrapper
+												.swiper-slide
+													h1.home-banner__title(data-swiper-parallax="-300")
+														strong With over a century
+														br
+														|  of experience
+													p.home-banner__text(data-swiper-parallax="-200")
+														| Since its establishment in 1912, Shalakany has achieved a record of success and growth that today makes it one of the leading corporate law firms in Egypt and the Middle East.
+													a.home-banner__button.btn.btn-secondary.btn-lg(href="#") About the firm
+								.col-12
+									.home-banner__slider--arrows
+										.swiper-button-prev.swiper-button-white
+										.swiper-button-next.swiper-button-white
+				.col-12.col-md-7
+					.home-banner__backgrounds
+						.home-banner__background(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.1")
+							img(src="./images/images/faruk-kaymak-CNVvDjVDiVI-unsplash.jpg", alt="")
+	section.home-whatWeDo
+		.container-fluid
+			.row
+				.col-12
+					.brochure.brochure__bg--gray-400
+						.brochure__slider.brochure__slider--left
+							.swiper-container#home-whatWeDo-slider(data-swiper-effect="cube")
+								.swiper-wrapper
+									.swiper-slide
+										+service-card({ title: "arbitration & litigation", img: { src: "./images/images/Services/arbitration_litigation.jpg", alt:"arbitration & litigation" }}, 0)
+									.swiper-slide
+										+service-card({ title: "finance & projects", img: { src: "./images/images/Services/finance_projects.jpg", alt:"finance & projects" }}, 1)
+									.swiper-slide
+										+service-card({ title: "commercial", img: { src: "./images/images/Services/commercial.jpg", alt:"commercial" }}, 2)
+									.swiper-slide
+										+service-card({ title: "corporate & mergers & accusations", img: { src: "./images/images/Services/corporate_mergers_accusations.jpg", alt:"corporate & mergers & accusations" }}, 2)
+							.brochure__slider-buttons
+								.swiper-button-prev
+								.swiper-button-next
+						.brochure__content.text-left
+							h2.h1.brochure__title(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.02") what we do
+							p.brochure__text(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.02") Shalakany is committed to delivering top quality legal services to our clients. As a full-service corporate law firm, we provide bespoke specialized legal services across a variety of different practice areas and sectors.
+							a.brochure__know-more.align-self-end(href="#" data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.02") know More

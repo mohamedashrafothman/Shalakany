@@ -1,0 +1,16 @@
+head
+	meta(charset="utf-8")
+	meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+	meta(name=`${locals.sitename[locals.lang]}` content="")
+	meta(name=`${locals.sitename[locals.lang]}` content="")
+	meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+	title= `${locals.sitename[locals.lang]}`
+
+	link(rel='apple-touch-icon', sizes='76x76', href='./images/favicon/apple-touch-icon.png')
+	link(rel='icon', type='image/png', sizes='32x32', href='./images/favicon/favicon-32x32.png')
+	link(rel='icon', type='image/png', sizes='16x16', href='./images/favicon/favicon-16x16.png')
+	meta(name='msapplication-TileColor', content='#da532c')
+	meta(name='theme-color', content='#ffffff')
+
+	link(href=`./styles/style${(locals.lang === "ar") ? '-rtl' : ''}.min.css` rel="stylesheet" type="text/css")

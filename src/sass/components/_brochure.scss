@@ -1,0 +1,231 @@
+$brochure-padding-gap: 6px;
+$brochure-slider-buttons-width: 80px;
+$brochure-slider-buttons-height: 74px;
+
+.brochure {
+	position: relative;
+	min-width: 1px;
+	max-width: 100%;
+	width: 100%;
+	min-height: 1px;
+	word-wrap: break-word;
+	background-clip: border-box;
+	border-radius: 0;
+	position: relative;
+	transition: $transition-base;
+	background: inherit;
+	margin-right: auto;
+	margin-left: auto;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: -#{$brochure-padding-gap}; // this values effects padding, margins of other style.
+		left: -#{$brochure-padding-gap}; // this values effects padding, margins of other style.
+		bottom: -#{$brochure-padding-gap}; // this values effects padding, margins of other style.
+		right: -#{$brochure-padding-gap}; // this values effects padding, margins of other style.
+		display: block;
+		z-index: 7; // must be smaller than .brochure__content
+	}
+
+	&__text,
+	&__subtitle {
+		&:not(:last-child) {
+			margin-bottom: $spacer * 3;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		text-align: center;
+		padding: $grid-gutter-width*2.85 $grid-gutter-width*3.78;
+		&>* {
+			z-index: 10; // must be bigger than .brochure:after
+		}
+	}
+
+	&__text {
+		width: 85%;
+		font-size: $font-size-base;
+		font-weight: $font-weight-light;
+		color: $white;
+		width: 100%;
+
+		&:not(:last-of-type) {
+			margin-bottom: $spacer;
+		}
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+		}
+	}
+
+
+	&__title {
+		margin: 0 !important;
+		font-weight: $font-weight-bolder;
+		text-transform: uppercase;
+		color: $white;
+		width: 100%;
+
+		&+.brochure__text {
+			margin-top: 0;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: $spacer;
+		font-weight: $font-weight-normal;
+		text-transform: uppercase;
+		color: $white;
+	}
+
+	&__know-more {
+		margin-top: $spacer;
+		color: $white;
+		font-weight: $font-weight-bolder;
+		text-transform: uppercase;
+		font-size: $font-size-base;
+		transition: $transition-base;
+		position: relative;
+		display: block;
+		cursor: pointer;
+
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: $border-width;
+			background-color: $white;
+			display: block;
+			width: 35%;
+			transition: $transition-base;
+		}
+
+		&:hover {
+			color: $white;
+			&:after {
+				width: 100%;
+			}
+		}
+
+	}
+
+	&__slider {
+		position: absolute;
+		top: 50%;
+		max-width: calc(50vw - (#{$grid-gutter-width} * 3.78)); // 50% of view width - .brochure__content one side padding value.
+		width: calc(50vw - (#{$grid-gutter-width} * 3.78)); // 50% of view width - .brochure__content one side padding value.
+		transform: translateY(-50%);
+		z-index: 8;
+		height: 160%; // by eye
+
+		&--left {
+			left: -#{$brochure-padding-gap * 2}; // gapping between brochure and its border on two sides.
+
+			&~.brochure__content {
+				padding-left: calc(50% + (#{$grid-gutter-width} * 3.78));
+				margin-left: auto;
+			}
+		}
+
+		&--right {
+			right: -#{$brochure-padding-gap * 2}; // gapping between brochure and its border on two sides.
+
+			&~.brochure__content {
+				padding-right: calc(50% + (#{$grid-gutter-width } *3.78));
+				margin-right: auto;
+			}
+		}
+	}
+
+	&__slider-buttons{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		bottom: $brochure-slider-buttons-height;
+		right: -#{$brochure-slider-buttons-width};
+		z-index: 9;
+		height: $brochure-slider-buttons-height;
+		width: $brochure-slider-buttons-width * 2; // width of two buttons
+		background-color: $primary;
+		border: $border-width $border-style $primary;
+		.swiper-button-prev, .swiper-button-next{
+			position: initial !important;
+			background-color: $white;
+			transition: $transition-base;
+			width: $brochure-slider-buttons-width;
+			height: 100%;
+			background-size: 45px;
+			margin: 0;
+			// TODO: make sure slider icons looks exactly like the design.
+		}
+
+		.swiper-button-prev,
+		.swiper-container-rtl .swiper-button-next {
+			left: 0;
+			background-position-x: 20px;
+		}
+		.swiper-button-next,
+		.swiper-container-rtl .swiper-button-prev {
+			right: 0;
+			background-position-x: 10px;
+		}
+	}
+
+
+}
+
+//colors
+@each $color, $value in $colors {
+	.brochure__bg--#{$color} {
+		background-color: $value;
+
+		&::after {
+			@if $value == transparent {
+				content: none;
+			}
+			border-width: $border-width;
+			border-style: $border-style;
+			border-color: color-yiq($value, $primary, $primary);
+		}
+
+		.brochure__text {
+			@if $value == transparent {
+				color: color-yiq($value, $black, $black);
+			} @else {
+				color: color-yiq($value, $black, $yiq-text-light);
+			}
+		}
+
+		.brochure__title,
+		.brochure__subtitle {
+			@if $value == transparent {
+				color: color-yiq($value, $black, $black);
+			} @else {
+				color: color-yiq($value);
+			}
+		}
+
+		.brochure__know-more {
+			@if $value == transparent {
+				color: color-yiq($value, $black, $black);
+			} @else {
+				color: color-yiq($value);
+			}
+
+			&:after {
+				@if $value == transparent {
+					background-color: color-yiq($value, $black, $black);
+				} @else {
+					background-color: color-yiq($value);
+				}
+			}
+		}
+	}
+}
