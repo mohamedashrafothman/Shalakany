@@ -1,6 +1,6 @@
-### Morrdi
+### Shalakany
 
-Website: coming soon
+Online Website: coming soon
 
 
 ### Table of Contents
@@ -13,7 +13,7 @@ Website: coming soon
 
 ### Used technologies
 <a name="used-technology"></a>
-* `Bootstrap 4` (rtl & ltr)
+* `Bootstrap 4.5` (rtl & ltr)
 * `FontAwesome`
 * `SASS`
 * `PUG`
@@ -39,10 +39,10 @@ Website: coming soon
 
 ### Available scripts
 <a name="Available-scripts"></a>
-+ `npm start` - run npm build:dev command.
-+ `npm run build:dev` - run gulp for development mode, This enable some functionality belongs to development only, such as sourcemaps files.
-+ `npm run build:prod` - run gulp for production mode, This uglify scripts files and minify style files.
-+ `npm run clean` - clean build folder.
++ `npm start` 			- run npm build:dev command.
++ `npm run build:dev` 	- run gulp for development mode, This enable some functionality belongs to development only, such as sourcemaps files.
++ `npm run build:prod`  - run gulp for production mode, This uglify scripts files and minify style files.
++ `npm run clean` 		- clean build folder.
 
 **[⬆ back to top](#table-of-contents)**
 
