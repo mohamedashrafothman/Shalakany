@@ -156,6 +156,7 @@
 
 		&:not(:last-of-type) {
 			margin-bottom: 40px;
+
 			@include media-breakpoint-down(md) {
 				margin-bottom: 30px;
 			}
@@ -189,15 +190,18 @@
 	@media screen and (max-height: 700px) {
 		height: calc(100% - ((#{$grid-gutter-width} * 2) + (#{$grid-gutter-width} / 2)));
 		overflow-y: scroll;
-		&__nav{
+
+		&__nav {
 			min-height: calc(550px - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
 			height: calc(550px - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
 		}
+
 		&__list {
 			height: calc(100% - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
 			max-height: calc(100% - ((#{$grid-gutter-width} * 2) + #{$grid-gutter-width} + (#{$border-width}*2)));
 		}
-		&__list-item{
+
+		&__list-item {
 			font-size: 1.2rem;
 			line-height: 2.25rem;
 

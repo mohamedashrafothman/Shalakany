@@ -16,7 +16,8 @@
   color: $input-color;
   background-color: $input-bg;
   background-clip: padding-box;
-  border: $input-border-width solid $input-border-color;
+  border: 0;
+  border-bottom: $input-border-width solid $input-border-color;
 
   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
   @include border-radius($input-border-radius, 0);
@@ -43,7 +44,9 @@
   &::placeholder {
     color: $input-placeholder-color;
     // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
-    opacity: 1;
+	opacity: 1;
+	font-weight: $font-weight-normal;
+	font-size: $font-size-sm;
   }
 
   // Disabled and read-only inputs

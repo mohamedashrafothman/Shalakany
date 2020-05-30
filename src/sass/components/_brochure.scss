@@ -43,7 +43,7 @@ $brochure-slider-buttons-height: 74px;
 		text-align: center;
 		padding: $grid-gutter-width*2.85 $grid-gutter-width*3.78;
 		&>* {
-			z-index: 10; // must be bigger than .brochure:after
+			z-index: 20; // must be bigger than .brochure:after
 		}
 	}
 
@@ -150,20 +150,22 @@ $brochure-slider-buttons-height: 74px;
 		position: absolute;
 		bottom: $brochure-slider-buttons-height;
 		right: -#{$brochure-slider-buttons-width};
-		z-index: 9;
+		z-index: 15;
 		height: $brochure-slider-buttons-height;
 		width: $brochure-slider-buttons-width * 2; // width of two buttons
-		background-color: $primary;
+		background-color: $white;
 		border: $border-width $border-style $primary;
 		.swiper-button-prev, .swiper-button-next{
-			position: initial !important;
-			background-color: $white;
+			position: relative !important;
+			top: 0;
+			background-color: transparent;
 			transition: $transition-base;
 			width: $brochure-slider-buttons-width;
 			height: 100%;
 			background-size: 45px;
-			margin: 0;
-			// TODO: make sure slider icons looks exactly like the design.
+			margin: 0 !important;
+			overflow: hidden;
+			z-index: 17;
 		}
 
 		.swiper-button-prev,

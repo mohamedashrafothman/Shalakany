@@ -24,7 +24,8 @@ block content
 														|  of experience
 													p.home-banner__text(data-swiper-parallax="-200")
 														| Since its establishment in 1912, Shalakany has achieved a record of success and growth that today makes it one of the leading corporate law firms in Egypt and the Middle East.
-													a.home-banner__button.btn.btn-secondary.btn-lg(href="#") About the firm
+								.col-12
+									a.home-banner__button.btn.btn-secondary.btn-lg(href="#") About the firm
 								.col-12
 									.home-banner__slider--arrows
 										.swiper-button-prev.swiper-button-white
@@ -49,10 +50,10 @@ block content
 										+service-card({ title: "commercial", img: { src: "./images/images/Services/commercial.jpg", alt:"commercial" }}, 2)
 									.swiper-slide
 										+service-card({ title: "corporate & mergers & accusations", img: { src: "./images/images/Services/corporate_mergers_accusations.jpg", alt:"corporate & mergers & accusations" }}, 2)
-							.brochure__slider-buttons
+							.brochure__slider-buttons(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="0.03")
 								.swiper-button-prev
 								.swiper-button-next
 						.brochure__content.text-left
-							h2.h1.brochure__title(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.02") what we do
-							p.brochure__text(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.02") Shalakany is committed to delivering top quality legal services to our clients. As a full-service corporate law firm, we provide bespoke specialized legal services across a variety of different practice areas and sectors.
-							a.brochure__know-more.align-self-end(href="#" data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.02") know More
+							h2.h1.brochure__title(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") what we do
+							p.brochure__text(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") Shalakany is committed to delivering top quality legal services to our clients. As a full-service corporate law firm, we provide bespoke specialized legal services across a variety of different practice areas and sectors.
+							a.brochure__know-more.align-self-end(href="#" data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") know More

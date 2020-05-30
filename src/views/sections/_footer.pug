@@ -1,1 +1,42 @@
-footer
+footer.footer
+	section.footer__top
+		.container-fluid
+			.row
+				.col-12.col-md-6.offset-md-3.col-lg-4.offset-lg-4
+					.footer__top--content
+						.row
+							.col-12.mb-4
+								h6.footer__title Our Newsletter
+							.col-12.mb-5
+								form#footer-subscription-form(action="#", method="POST")
+									.input-group
+										input.form-control(type="text", placeholder="Email")
+										.input-group-append
+											.input-group-text
+												button(type="submit", for="footer-subscription-form") subscribe
+							.col-12
+								ul.footer__list
+									li.footer__list-item
+										img(src="./images/icons_logos/10200.png", alt="")
+									li.footer__list-item
+										img(src="./images/icons_logos/10201.png", alt="")
+
+	section.footer__bottom
+		.container-fluid
+			.row
+				.col-12
+					.footer__bottom--content
+						p
+							span © 2020 - Shalakany LAW FIRM . ALL RIGHTS RESERVED. DESIGNED & DEVELOPED BY
+							a(href="www.road9media.com") ROAD9 MEDIA
+						nav.footer__navbar
+							ul.footer__list
+								li.footer__list-item
+									a(href="www.facebook.com")
+										i.fab.fa-facebook-f
+								li.footer__list-item
+									a(href="www.twitter.com")
+										i.fab.fa-twitter
+								li.footer__list-item
+									a(href="www.linkedin.com")
+										i.fab.fa-linkedin-in

@@ -30,7 +30,6 @@ module.exports = (options = {entrance_direction: 'left',exit_direction: 'left',s
 
 			// checking if side nav is closed
 			if (!this.$menu.hasClass('open') && !this.$bg_overlay.hasClass('d-block')) {
-				// side nav items entrance animation
 
 				// fade in side nav background body overlay
 				this.$bg_overlay.addClass('d-block').animateCss(`fadeIn ${this._animation.speed}`);
