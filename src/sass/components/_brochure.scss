@@ -11,7 +11,6 @@ $brochure-slider-buttons-height: 74px;
 	word-wrap: break-word;
 	background-clip: border-box;
 	border-radius: 0;
-	position: relative;
 	transition: $transition-base;
 	background: inherit;
 	margin-right: auto;
@@ -30,7 +29,7 @@ $brochure-slider-buttons-height: 74px;
 	}
 
 	&__no-border {
-		&:after{
+		&:after {
 			content: none !important;
 		}
 	}
@@ -52,6 +51,18 @@ $brochure-slider-buttons-height: 74px;
 
 		&>* {
 			z-index: 20; // must be bigger than .brochure:after
+		}
+
+		@include media-breakpoint-down(lg) {
+			padding: $grid-gutter-width*1.425 $grid-gutter-width*1.895;
+		}
+
+		@include media-breakpoint-down(md) {
+			padding: $grid-gutter-width*0.95 $grid-gutter-width*1.26;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding: $grid-gutter-width*0.7125 $grid-gutter-width*0.945;
 		}
 	}
 
@@ -98,7 +109,7 @@ $brochure-slider-buttons-height: 74px;
 		font-size: $font-size-base;
 		transition: $transition-base;
 		position: relative;
-		display: block;
+		display: inline-block;
 		cursor: pointer;
 
 		&:after {
@@ -467,11 +478,13 @@ $value in $colors {
 
 		.brochure__button {
 
-			@if $value == transparent {
+			@if $value==transparent {
 				color: color-yiq($value, $primary, $primary);
 				border-color: color-yiq($value, $primary, $primary);
 				background-color: color-yiq($value, $secondary, $secondary);
-			} @else {
+			}
+
+			@else {
 				color: $value;
 				border-color: color-yiq($value, $primary, $primary);
 				background-color: color-yiq($value);
@@ -479,11 +492,13 @@ $value in $colors {
 
 
 			@include hover() {
-				@if $value == transparent {
+				@if $value==transparent {
 					color: color-yiq($value, $primary, $primary);
 					border-color: color-yiq($value, $primary, $primary);
 					background-color: color-yiq($value, $secondary, $secondary);
-				} @else {
+				}
+
+				@else {
 					color: color-yiq($value);
 					border-color: $value;
 					background-color: $value;
@@ -493,18 +508,23 @@ $value in $colors {
 			&:focus,
 			&.focus {
 				@if $enable-shadows {
-					@if $value == transparent {
+					@if $value==transparent {
 						@include box-shadow($btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($value, $primary, $primary), color-yiq($value, $primary, $primary), 15%), .5));
-					} @else {
+					}
+
+					@else {
 						@include box-shadow($btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($value), color-yiq($value, $primary, $primary), 15%), .5));
 					}
 				}
 
 				@else {
+
 					// Avoid using mixin so we can pass custom focus shadow properly
-					@if $value == transparent {
+					@if $value==transparent {
 						box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($value, $primary, $primary), color-yiq($value, $primary, $primary), 15%), .5);
-					} @else {
+					}
+
+					@else {
 						box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($value), color-yiq($value, $primary, $primary), 15%), .5);
 					}
 				}

@@ -7,7 +7,7 @@ block content
 			img(src="./images/patterns/pattern.jpg")
 		.container-fluid
 			.row
-				.col-12.col-md-5
+				.col-12.col-md-6.col-xl-5
 					.home-banner__side
 						.container
 							.row
@@ -27,42 +27,40 @@ block content
 													p.home-banner__text(data-swiper-parallax="-200")
 														| Since its establishment in 1912, Shalakany has achieved a record of success and growth that today makes it one of the leading corporate law firms in Egypt and the Middle East.
 								.col-12
-									a.home-banner__button.btn.btn-secondary.btn-sm(href="#") About the firm
+									a.home-banner__button.btn.btn-secondary(href="#") About the firm
 								.col-12
 									.home-banner__slider--arrows
 										.swiper-button-prev.swiper-button-white
 										.swiper-button-next.swiper-button-white
-				.col-12.col-md-7
+				.d-none.d-md-block.col-md-6.col-xl-7
 					.home-banner__background.home-banner__background--img(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.1")
 						img(src="./images/images/faruk-kaymak-CNVvDjVDiVI-unsplash.jpg", alt="")
 	section.home-whatWeDo
-		.container-fluid
-			.row
-				.col-12
-					.brochure.brochure__bg--gray-400
-						.row
-							.col-12.col-lg-5
-								.brochure__slider.brochure__slider--services.brochure__slider--left
-									.swiper-container#home-whatWeDo-slider(data-swiper-effect="cube")
-										.swiper-wrapper
-											.swiper-slide
-												+service-card({ title: "arbitration & litigation", img: { src: "./images/images/Services/arbitration_litigation.jpg", alt:"arbitration & litigation" }}, 0)
-											.swiper-slide
-												+service-card({ title: "finance & projects", img: { src: "./images/images/Services/finance_projects.jpg", alt:"finance & projects" }}, 1)
-											.swiper-slide
-												+service-card({ title: "commercial", img: { src: "./images/images/Services/commercial.jpg", alt:"commercial" }}, 2)
-											.swiper-slide
-												+service-card({ title: "corporate & mergers & accusations", img: { src: "./images/images/Services/corporate_mergers_accusations.jpg", alt:"corporate & mergers & accusations" }}, 2)
-									.brochure__slider-buttons.brochure__slider-buttons--white(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="0.03")
-										.swiper-button-prev
-										.swiper-button-next
-							.col-12.col-lg-7
-								.brochure__content.text-left.align-items-start
-									h2.brochure__title(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") what we do
-									p.brochure__text(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") Shalakany is committed to delivering top quality legal services to our clients. As a full-service corporate law firm, we provide bespoke specialized legal services across a variety of different practice areas and sectors.
-									a.brochure__link.align-self-end(href="#" data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") know More
-
-
+		//- .container-fluid
+		//- 	.row
+		//- 		.col-12
+		//- 			.brochure.brochure__bg--gray-400
+		//- 				.row
+		//- 					.col-12.col-lg-5
+		//- 						.brochure__slider.brochure__slider--services.brochure__slider--left
+		//- 							.swiper-container#home-whatWeDo-slider(data-swiper-effect="cube")
+		//- 								.swiper-wrapper
+		//- 									.swiper-slide
+		//- 										+service-card({ title: "arbitration & litigation", img: { src: "./images/images/Services/arbitration_litigation.jpg", alt:"arbitration & litigation" }}, 0)
+		//- 									.swiper-slide
+		//- 										+service-card({ title: "finance & projects", img: { src: "./images/images/Services/finance_projects.jpg", alt:"finance & projects" }}, 1)
+		//- 									.swiper-slide
+		//- 										+service-card({ title: "commercial", img: { src: "./images/images/Services/commercial.jpg", alt:"commercial" }}, 2)
+		//- 									.swiper-slide
+		//- 										+service-card({ title: "corporate & mergers & accusations", img: { src: "./images/images/Services/corporate_mergers_accusations.jpg", alt:"corporate & mergers & accusations" }}, 2)
+		//- 							.brochure__slider-buttons.brochure__slider-buttons--white(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="0.03")
+		//- 								.swiper-button-prev
+		//- 								.swiper-button-next
+		//- 					.col-12.col-lg-7
+		//- 						.brochure__content.text-left.align-items-start
+		//- 							h2.brochure__title(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") what we do
+		//- 							p.brochure__text(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") Shalakany is committed to delivering top quality legal services to our clients. As a full-service corporate law firm, we provide bespoke specialized legal services across a variety of different practice areas and sectors.
+		//- 							a.brochure__link.align-self-end(href="#" data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") know More
 	section.home-clients
 		.home-clients__background.home-clients__background--img
 			img(src="./images/patterns/pattern.jpg")
@@ -70,16 +68,16 @@ block content
 			.row
 				.col-12
 					.brochure
+						.brochure__image(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="0.01")
+							img(src="../images/Images/stairs.jpg")
 						.container-fluid
 							.row
-								.col-12.col-lg-6
-									.brochure__image(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="0.01")
-										img(src="../images/Images/stairs.jpg")
+								.col-12.col-md-8.col-xl-6
 									.brochure__content.text-left.align-items-start
 										h2.brochure__title(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") our clients
 										p.brochure__text(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
 										a.brochure__link(href="#" data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") all clients
-								.col-12.col-lg-6
+								.col-12.col-md-8.offset-md-4.col-xl-6.offset-xl-0
 									.brochure__slider.brochure__slider--clients
 										.swiper-container#home-clients-slider(data-swiper-effect="slide")
 											.swiper-wrapper
@@ -105,13 +103,16 @@ block content
 					.brochure.brochure__bg--brown.brochure__no-border
 						.row
 							.col-12
-								.brochure__content.flex-row.justify-content-between.align-items-center
-									h2.brochure__title latest news
-									a.brochure__link.m-0(href="#") all news
+								.brochure__content.d-block
+									.row
+										.col-12.col-md-6
+											h2.brochure__title.text-left latest news
+										.col-12.col-md-6.d-flex.align-items-center.justify-content-md-end
+											a.brochure__link.m-0.mt-md-0.mt-5(href="#") all news
 							.col-12
 								.brochure__content.pt-0
 									.row
-										.col-12.col-lg-6.mb-lg-0.mb-4
+										.col-12.col-md-6.mb-md-0.mb-4
 											.news.news__bg--transparent
 												.row
 													.col-12
@@ -125,7 +126,7 @@ block content
 																a(href="#") Lorem ipsum dolor sit amet.
 															p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore...
 															a.news__link(href="#") read more
-										.col-12.col-lg-6.mb-lg-0.mb-4
+										.col-12.col-md-6.mb-md-0.mb-4
 											.news.news__bg--transparent
 												.row
 													.col-12
@@ -142,11 +143,11 @@ block content
 										//- .col-12
 										//- 	.news.news__bg--transparent
 										//- 		.row
-										//- 			.col-5
+										//- 			.col-12.col-md-5
 										//- 				.news__image
 										//- 					a(href="#")
 										//- 						img(src="./images/Images/news/news_2.jpg", alt="Lorem ipsum dolor sit amet.")
-										//- 			.col-7
+										//- 			.col-12.col-md-7
 										//- 				.news__content
 										//- 					small.news__subtitle 20 may 2020
 										//- 					h5.news__title
@@ -162,7 +163,7 @@ block content
 					.brochure.brochure__bg--transparent
 						.row
 							.col-12.col-xl-8.col-lg-6
-								.brochure__content.text-left.align-items-start
+								.brochure__content
 									h2.brochure__title let's discuss more
 							.col-12.col-xl-4.col-lg-6
 								.brochure__buttons

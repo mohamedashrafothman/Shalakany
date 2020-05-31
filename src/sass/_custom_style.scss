@@ -7,8 +7,9 @@
 }
 html{
 	font-size: $font-size-base;
-	@include media-breakpoint-down(md) {
+	@include media-breakpoint-down(lg) {
 		font-size: $font-size-sm;
+		line-height: $line-height-sm;
 	}
 }
 body{

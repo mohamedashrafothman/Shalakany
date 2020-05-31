@@ -6,6 +6,7 @@ $news-padding-gap: 6px;
 	text-align: left;
 	transition: $transition-base;
 	background-color: transparent;
+	margin-top: $news-padding-gap * 2;
 
 	&:after {
 		content: "";
@@ -17,13 +18,6 @@ $news-padding-gap: 6px;
 		height: $border-width;
 		background-color: $white;
 		transition: $transition-base;
-	}
-
-	&:hover {
-		&:after {
-			height: $border-width * 5;
-			top: -#{($news-padding-gap * 2) + 5};
-		}
 	}
 
 	&__image {
@@ -46,7 +40,7 @@ $news-padding-gap: 6px;
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: center;
-		padding: $news-padding-gap*3 0;
+		padding: $news-padding-gap*4 0;
 	}
 
 	&__subtitle {
@@ -84,10 +78,14 @@ $news-padding-gap: 6px;
 		font-size: $font-size-base;
 		font-weight: $font-weight-light;
 		color: $white;
-		line-height: 30px;
+		line-height: $line-height-lg;
 
 		&:not(:last-child) {
 			margin-bottom: 1.25rem;
+		}
+
+		@include media-breakpoint-down(md) {
+			line-height: $line-height-base;
 		}
 	}
 
