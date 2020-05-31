@@ -240,7 +240,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           28px !default;
+$grid-gutter-width:           30px !default;
 $grid-row-columns:            6 !default;
 
 
@@ -272,7 +272,7 @@ $caret-width:                 .3em !default;
 $caret-vertical-align:        $caret-width * .85 !default;
 $caret-spacing:               $caret-width * .85 !default;
 
-$transition-base:             all 0.2s ease-in-out !default;
+$transition-base:             all 0.5s ease-in-out !default;
 $transition-fade:             opacity .15s ease-in-out !default;
 $transition-collapse:         transform 1s ease-in-out !default;
 
@@ -312,7 +312,7 @@ $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
 
 $h1-font-size:                $font-size-base * 3.75 !default;
-$h2-font-size:                $font-size-base * 3 !default;
+$h2-font-size:                $font-size-base * 3.75 !default;
 $h3-font-size:                $font-size-base * 2.75 !default;
 $h4-font-size:                $font-size-base * 2.5 !default;
 $h5-font-size:                $font-size-base * 2.25 !default;
@@ -436,19 +436,19 @@ $btn-font-size:               $input-btn-font-size !default;
 $btn-line-height:             $input-btn-line-height !default;
 $btn-white-space:             null !default; // Set to `nowrap` to prevent text wrapping
 
-$btn-padding-y-sm:            $input-btn-padding-y-sm !default;
-$btn-padding-x-sm:            $input-btn-padding-x-sm !default;
-$btn-font-size-sm:            $input-btn-font-size-sm !default;
+$btn-padding-y-sm:            $input-btn-padding-y-sm * 2 !default;
+$btn-padding-x-sm:            $input-btn-padding-x-sm * 3.5 !default;
+$btn-font-size-sm:            $input-btn-font-size-sm * 1.25 !default;
 $btn-line-height-sm:          $input-btn-line-height-sm !default;
 
-$btn-padding-y-lg:            $input-btn-padding-y-lg !default;
-$btn-padding-x-lg:            $input-btn-padding-x-lg !default;
-$btn-font-size-lg:            $input-btn-font-size-lg !default;
+$btn-padding-y-lg:            $input-btn-padding-y-lg * 2.5 !default;
+$btn-padding-x-lg:            $input-btn-padding-x-lg * 2.5 !default;
+$btn-font-size-lg:            $input-btn-font-size-lg * 1.25 !default;
 $btn-line-height-lg:          $input-btn-line-height-lg !default;
 
 $btn-border-width:            $input-btn-border-width !default;
 
-$btn-font-weight:             $font-weight-light !default;
+$btn-font-weight:             $font-weight-normal !default;
 $btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
 $btn-focus-width:             $input-btn-focus-width !default;
 $btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;

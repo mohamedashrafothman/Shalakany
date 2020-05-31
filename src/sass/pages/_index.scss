@@ -1,8 +1,9 @@
 .home {
+
 	// Banner Section ".home-banner" prefix
 	&-banner {
+		min-height: 100vh;
 		height: 100vh;
-		background-color: $primary;
 		color: $white;
 		position: relative;
 		overflow: hidden;
@@ -34,6 +35,48 @@
 			}
 		}
 
+		&__background {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $primary;
+
+			&--img {
+				img {
+					height: 100%;
+					width: 100%;
+					@include object-fit(cover, center);
+				}
+			}
+		}
+
+		&>.home-banner__background {
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(0deg, rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00), rgba($primary, 1.00));
+			}
+
+			&--img {
+				img {
+					opacity: 0.2;
+				}
+			}
+		}
+
 		&:after {
 			content: "";
 			position: absolute;
@@ -46,20 +89,13 @@
 			border: $border-width*2 $border-style $border-color;
 		}
 
-		&__backgrounds {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100vh;
-			z-index: $zindex-sections;
-		}
-
 		&__side {
+			position: relative;
 			width: 100%;
 			height: 100%;
-			z-index: $zindex-sections + 5;
 			padding: $grid-gutter-width * 2;
+
+			background: transparent;
 
 			&>.container {
 
@@ -167,22 +203,9 @@
 			}
 		}
 
-		&__background {
-			img {
-				display: block;
-				height: 100vh;
-				width: 100%;
-				@include object-fit(cover, center);
-			}
-		}
-
 		@media screen and (max-height: 600px) {
 			height: 100%;
-
-			&__backgrounds,
-			&__background img {
-				height: 100%;
-			}
+			min-height: 100%;
 
 			&:after {
 				height: calc(100% - (#{$grid-gutter-width} * 2));
@@ -191,7 +214,7 @@
 	}
 
 	// What we do Section ".home-whatWeDo" prefix
-	&-whatWeDo{
+	&-whatWeDo {
 		background-color: $body-bg;
 		padding: $grid-gutter-width*8 $grid-gutter-width*2;
 		display: flex;
@@ -199,10 +222,181 @@
 		justify-content: center;
 		min-height: 100vh;
 
+		.brochure {
+			&__slider {
+				&-buttons {
+					position: absolute;
+					bottom: $brochure-slider-buttons-height;
+					right: -#{$brochure-slider-buttons-width};
+					transform: initial !important;
+				}
+			}
+
+			&__text {
+				width: 80%;
+
+				@include media-breakpoint-down(md) {
+					width: 100%;
+				}
+			}
+		}
+
 		@media screen and (max-height: 600px) {
 			height: 100%;
 			padding-top: $grid-gutter-width*8;
 			padding-bottom: $grid-gutter-width*8;
+		}
+	}
+
+	&-clients {
+		background-color: $primary;
+		position: relative;
+
+		&__background {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+
+			&--img {
+				img {
+					height: 100%;
+					width: 100%;
+					opacity: 0.2;
+					@include object-fit(cover, center);
+				}
+			}
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(-90deg, rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00));
+			}
+		}
+
+		&__logo {
+			width: 100%;
+			height: 100%;
+
+			img {
+				opacity: 0.7;
+				width: 100%;
+				height: 100%;
+				@include object-fit(scale-down, center);
+			}
+		}
+
+		.brochure {
+			&__image {
+				right: 0;
+				bottom: calc(-300px / 2); // half of its height. 300 / 2
+				top: initial;
+				left: initial;
+				width: 500px;
+				height: 300px;
+			}
+
+			&__content,
+			&__slider {
+				padding-bottom: 241px;
+			}
+
+			&__slider {
+				padding-top: 5.75rem;
+				max-height: 100vh;
+
+				&-buttons {
+					top: 50%;
+					bottom: initial;
+					left: 50%;
+					right: initial;
+					transform: translateX(-50%) !important;
+
+					.swiper-button-prev,
+					.swiper-button-next {
+						opacity: 0.7;
+
+						&:hover {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&-latestNews{
+		padding: 12.9375rem $grid-gutter-width*2 0 $grid-gutter-width*2;
+		background-color: $body-bg;
+
+		.brochure{
+			&__content {
+				padding: $grid-gutter-width*2.4 $grid-gutter-width*2;
+			}
+		}
+	}
+
+	&-discussMore{
+		background-color: $white;
+		position: relative;
+		padding-top: 12rem;
+		padding-bottom: 12rem;
+
+		&__background {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+
+			&--img {
+				img {
+					height: 100%;
+					width: 100%;
+					opacity: 0.2;
+					@include object-fit(cover, center);
+				}
+			}
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				background: radial-gradient(circle, rgba($white, 0.85) 0%, rgba($white, 1) 100%);
+			}
+		}
+
+
+		.brochure {
+			&__content {
+				padding: $grid-gutter-width * 2;
+			}
+			&__buttons {
+				display: flex;
+				align-items: center;
+				height: 100%;
+				width: 100%;
+			}
 		}
 	}
 }

@@ -9,6 +9,7 @@
 	display: none;
 	background-color: rgba($black, 0.8);
 	cursor: pointer;
+	backdrop-filter: blur(6px); // blur effect
 }
 
 .menu-open,
@@ -166,7 +167,7 @@
 			margin-bottom: initial;
 		}
 
-		&:hover {
+		&--active, &:hover {
 			&:after {
 				left: -10px;
 				opacity: 1;

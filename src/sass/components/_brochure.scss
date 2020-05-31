@@ -17,6 +17,7 @@ $brochure-slider-buttons-height: 74px;
 	margin-right: auto;
 	margin-left: auto;
 
+
 	&:after {
 		content: '';
 		position: absolute;
@@ -26,6 +27,12 @@ $brochure-slider-buttons-height: 74px;
 		right: -#{$brochure-padding-gap}; // this values effects padding, margins of other style.
 		display: block;
 		z-index: 7; // must be smaller than .brochure__content
+	}
+
+	&__no-border {
+		&:after{
+			content: none !important;
+		}
 	}
 
 	&__text,
@@ -42,20 +49,21 @@ $brochure-slider-buttons-height: 74px;
 		align-items: flex-start;
 		text-align: center;
 		padding: $grid-gutter-width*2.85 $grid-gutter-width*3.78;
+
 		&>* {
 			z-index: 20; // must be bigger than .brochure:after
 		}
 	}
 
 	&__text {
-		width: 85%;
+		width: 100%;
 		font-size: $font-size-base;
 		font-weight: $font-weight-light;
 		color: $white;
-		width: 100%;
+		line-height: 30px;
 
 		&:not(:last-of-type) {
-			margin-bottom: $spacer;
+			@extend .h1;
 		}
 
 		@include media-breakpoint-down(md) {
@@ -69,7 +77,6 @@ $brochure-slider-buttons-height: 74px;
 		font-weight: $font-weight-bolder;
 		text-transform: uppercase;
 		color: $white;
-		width: 100%;
 
 		&+.brochure__text {
 			margin-top: 0;
@@ -78,12 +85,12 @@ $brochure-slider-buttons-height: 74px;
 
 	&__subtitle {
 		margin-bottom: $spacer;
-		font-weight: $font-weight-normal;
+		font-weight: $font-weight-bold;
 		text-transform: uppercase;
 		color: $white;
 	}
 
-	&__know-more {
+	&__link {
 		margin-top: $spacer;
 		color: $white;
 		font-weight: $font-weight-bolder;
@@ -108,21 +115,37 @@ $brochure-slider-buttons-height: 74px;
 
 		&:hover {
 			color: $white;
+
 			&:after {
 				width: 100%;
 			}
 		}
+	}
 
+
+	&__slider,
+	&__image {
+		z-index: 8;
 	}
 
 	&__slider {
-		position: absolute;
-		top: 50%;
-		max-width: calc(50vw - (#{$grid-gutter-width} * 3.78)); // 50% of view width - .brochure__content one side padding value.
-		width: calc(50vw - (#{$grid-gutter-width} * 3.78)); // 50% of view width - .brochure__content one side padding value.
-		transform: translateY(-50%);
-		z-index: 8;
-		height: 160%; // by eye
+		&--clients {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+		}
+
+		&--services {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			max-width: 100%;
+			width: 100%;
+			height: 160%; // by eye
+			// width: calc(50vw - (#{$grid-gutter-width} * 3.78));
+		}
 
 		&--left {
 			left: -#{$brochure-padding-gap * 2}; // gapping between brochure and its border on two sides.
@@ -143,19 +166,22 @@ $brochure-slider-buttons-height: 74px;
 		}
 	}
 
-	&__slider-buttons{
+	&__slider-buttons {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: absolute;
-		bottom: $brochure-slider-buttons-height;
-		right: -#{$brochure-slider-buttons-width};
-		z-index: 15;
+		bottom: 0;
+		right: 50%;
+		transform: translateX(50%) !important;
 		height: $brochure-slider-buttons-height;
 		width: $brochure-slider-buttons-width * 2; // width of two buttons
 		background-color: $white;
 		border: $border-width $border-style $primary;
-		.swiper-button-prev, .swiper-button-next{
+		z-index: 15;
+
+		.swiper-button-prev,
+		.swiper-button-next {
 			position: relative !important;
 			top: 0;
 			background-color: transparent;
@@ -168,64 +194,319 @@ $brochure-slider-buttons-height: 74px;
 			z-index: 17;
 		}
 
-		.swiper-button-prev,
-		.swiper-container-rtl .swiper-button-next {
-			left: 0;
-			background-position-x: 20px;
-		}
 		.swiper-button-next,
 		.swiper-container-rtl .swiper-button-prev {
 			right: 0;
 			background-position-x: 10px;
 		}
+
+		.swiper-button-prev,
+		.swiper-container-rtl .swiper-button-next {
+			left: 0;
+			background-position-x: 20px;
+		}
 	}
 
+	&__image {
+		position: absolute;
+		width: 500px;
+		height: 300px;
+		overflow: hidden;
+		top: 0;
+		left: 0;
 
+		&--top-left {
+			top: 0;
+			left: 0;
+			bottom: initial;
+			right: initial;
+		}
+
+		&--top-right {
+			top: 0;
+			bottom: initial;
+			right: 0;
+			left: initial;
+		}
+
+		&--top-center {
+			top: 0;
+			bottom: initial;
+			right: initial;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		&--bottom-left {
+			bottom: 0;
+			top: initial;
+			left: 0;
+			right: initial;
+		}
+
+		&--bottom-right {
+			bottom: 0;
+			top: initial;
+			right: 0;
+			left: initial;
+		}
+
+		&--bottom-center {
+			top: initial;
+			bottom: 0;
+			right: initial;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		&--center-center {
+			top: 50%;
+			bottom: initial;
+			left: 50%;
+			right: initial;
+			transform: translate(-50%);
+		}
+
+		img {
+			transition: $transition-collapse;
+			width: 100%;
+			height: 100%;
+			@include object-fit(cover, center);
+		}
+
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: calc(100% - (#{$brochure-padding-gap} * 2));
+			height: calc(100% - (#{$brochure-padding-gap} * 2));
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: transparent;
+			border: $border-width $border-style $border-color;
+			transition: $transition-base;
+		}
+
+		&:hover {
+			img {
+				transform: scale(1.04);
+			}
+
+			&::after {
+				border-width: $border-width * 5;
+			}
+		}
+	}
+
+	&__buttons {
+		&>* {
+			z-index: 20; // must be bigger than .brochure:after
+		}
+	}
+
+	&__button {
+		position: relative;
+		display: inline-block;
+		font-family: $btn-font-family;
+		font-weight: $btn-font-weight;
+		text-align: center;
+		text-decoration: if($link-decoration==none, null, none);
+		white-space: $btn-white-space;
+		vertical-align: middle;
+		user-select: none;
+		background-color: transparent;
+		text-transform: uppercase;
+		color: color-yiq($secondary, $primary, $white);
+		position: relative;
+		vertical-align: middle;
+		transform: $transition-base;
+		border-color: $primary;
+		@include box-shadow($btn-box-shadow);
+
+		@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+		@include transition($btn-transition);
+
+		@include hover() {
+			color: $primary;
+			text-decoration: none;
+		}
+
+		&--lg {
+			@include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+		}
+
+		&--sm {
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+		}
+
+		&:focus,
+		&.focus {
+			&:after {
+				top: -#{$brochure-padding-gap};
+				left: -#{$brochure-padding-gap};
+				bottom: -#{$brochure-padding-gap};
+				right: -#{$brochure-padding-gap};
+			}
+
+			@if $enable-shadows {
+				@include box-shadow($btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($secondary), $primary, 15%), .5));
+			}
+
+			@else {
+				// Avoid using mixin so we can pass custom focus shadow properly
+				box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($secondary), $primary, 15%), .5);
+			}
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: -#{$brochure-padding-gap / 2};
+			bottom: -#{$brochure-padding-gap / 2};
+			right: -#{$brochure-padding-gap / 2};
+			left: -#{$brochure-padding-gap / 2};
+			border: $border-width $border-style $primary;
+			transition: $transition-base;
+		}
+
+		@include hover() {
+			&:after {
+				top: -#{$brochure-padding-gap};
+				left: -#{$brochure-padding-gap};
+				bottom: -#{$brochure-padding-gap};
+				right: -#{$brochure-padding-gap};
+			}
+		}
+	}
 }
 
 //colors
-@each $color, $value in $colors {
+@each $color,
+$value in $colors {
+	.brochure__slider-buttons--#{$color} {
+		@if $value==transparent {
+			background-color: transparent;
+			border-color: transparent;
+		}
+
+		@else {
+			background-color: $value;
+			border-color: color-yiq($value, $primary, $white);
+		}
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			background-color: transparent;
+		}
+	}
+
 	.brochure__bg--#{$color} {
 		background-color: $value;
 
-		&::after {
-			@if $value == transparent {
+		&:after {
+			@if $value==transparent {
 				content: none;
 			}
+
 			border-width: $border-width;
 			border-style: $border-style;
 			border-color: color-yiq($value, $primary, $primary);
 		}
 
 		.brochure__text {
-			@if $value == transparent {
+			@if $value==transparent {
 				color: color-yiq($value, $black, $black);
-			} @else {
+			}
+
+			@else {
 				color: color-yiq($value, $black, $yiq-text-light);
 			}
 		}
 
 		.brochure__title,
 		.brochure__subtitle {
-			@if $value == transparent {
-				color: color-yiq($value, $black, $black);
-			} @else {
+			@if $value==transparent {
+				color: color-yiq($value, $primary, $primary);
+			}
+
+			@else {
 				color: color-yiq($value);
 			}
 		}
 
-		.brochure__know-more {
-			@if $value == transparent {
+		.brochure__link {
+			@if $value==transparent {
 				color: color-yiq($value, $black, $black);
-			} @else {
+			}
+
+			@else {
 				color: color-yiq($value);
 			}
 
 			&:after {
-				@if $value == transparent {
+				@if $value==transparent {
 					background-color: color-yiq($value, $black, $black);
-				} @else {
+				}
+
+				@else {
 					background-color: color-yiq($value);
+				}
+			}
+		}
+
+		.brochure__image {
+			&:after {
+				@if $value==transparent {
+					content: none;
+				}
+
+				border-color: color-yiq($value, $primary, $primary);
+			}
+		}
+
+		.brochure__button {
+
+			@if $value == transparent {
+				color: color-yiq($value, $primary, $primary);
+				border-color: color-yiq($value, $primary, $primary);
+				background-color: color-yiq($value, $secondary, $secondary);
+			} @else {
+				color: $value;
+				border-color: color-yiq($value, $primary, $primary);
+				background-color: color-yiq($value);
+			}
+
+
+			@include hover() {
+				@if $value == transparent {
+					color: color-yiq($value, $primary, $primary);
+					border-color: color-yiq($value, $primary, $primary);
+					background-color: color-yiq($value, $secondary, $secondary);
+				} @else {
+					color: color-yiq($value);
+					border-color: $value;
+					background-color: $value;
+				}
+			}
+
+			&:focus,
+			&.focus {
+				@if $enable-shadows {
+					@if $value == transparent {
+						@include box-shadow($btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($value, $primary, $primary), color-yiq($value, $primary, $primary), 15%), .5));
+					} @else {
+						@include box-shadow($btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($value), color-yiq($value, $primary, $primary), 15%), .5));
+					}
+				}
+
+				@else {
+					// Avoid using mixin so we can pass custom focus shadow properly
+					@if $value == transparent {
+						box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($value, $primary, $primary), color-yiq($value, $primary, $primary), 15%), .5);
+					} @else {
+						box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($value), color-yiq($value, $primary, $primary), 15%), .5);
+					}
 				}
 			}
 		}

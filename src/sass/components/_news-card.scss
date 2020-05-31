@@ -1,0 +1,210 @@
+$news-padding-gap: 6px;
+
+.news {
+	display: flex;
+	position: relative;
+	text-align: left;
+	transition: $transition-base;
+	background-color: transparent;
+
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: -#{$news-padding-gap * 2};
+		left: 0;
+		width: 100%;
+		height: $border-width;
+		background-color: $white;
+		transition: $transition-base;
+	}
+
+	&:hover {
+		&:after {
+			height: $border-width * 5;
+			top: -#{($news-padding-gap * 2) + 5};
+		}
+	}
+
+	&__image {
+
+		&,
+		&>a {
+			width: 100%;
+			height: 100%;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			@include object-fit(cover, center);
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		padding: $news-padding-gap*3 0;
+	}
+
+	&__subtitle {
+
+		&,
+		&>a {
+			color: $white;
+			font-weight: $font-weight-light;
+			text-transform: capitalize;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: $spacer * 0.35;
+		}
+	}
+
+	&__title {
+
+		&,
+		&>a {
+			color: $white;
+			font-weight: $font-weight-bolder;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: $spacer * 0.35;
+		}
+
+		&::first-letter {
+			text-transform: capitalize;
+		}
+	}
+
+	&__text {
+		font-size: $font-size-base;
+		font-weight: $font-weight-light;
+		color: $white;
+		line-height: 30px;
+
+		&:not(:last-child) {
+			margin-bottom: 1.25rem;
+		}
+	}
+
+	&__link {
+		color: $white;
+		font-weight: $font-weight-bolder;
+		text-transform: uppercase;
+		font-size: $font-size-base;
+		transition: $transition-base;
+		position: relative;
+		display: inline-block;
+		cursor: pointer;
+
+		&:not(:last-child) {
+			margin-bottom: $spacer * 0.35;
+		}
+
+		&:last-child {
+			margin-top: $spacer;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: $border-width;
+			background-color: $white;
+			display: block;
+			width: 35%;
+			transition: $transition-base;
+		}
+
+		&:hover {
+			color: $white;
+
+			&:after {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+
+//colors
+@each $color,
+$value in $colors {
+	.news__bg--#{$color} {
+		@if $value == transparent {
+			background-color: transparent;
+		} @else {
+			background-color: $value;
+		}
+
+		&:after {
+			@if $value == transparent {
+				background-color: color-yiq($value, $white, $white);
+			} @else {
+				background-color: $value;
+			}
+		}
+
+		.news__subtitle {
+
+			&,
+			&>a {
+				@if $value == transparent {
+					color: color-yiq($value, $white, $white);
+				} @else {
+					color: color-yiq($value, $black, $white);
+				}
+			}
+		}
+
+		.news__title {
+
+			&,
+			&>a {
+				@if $value == transparent {
+					color: color-yiq($value, $white, $white);
+				} @else {
+					color: color-yiq($value, $primary, $white);
+				}
+			}
+		}
+
+		.news__text {
+			@if $value == transparent {
+				color: color-yiq($value, $white, $white);
+			} @else {
+				color: color-yiq($value, $black, $white);
+			}
+		}
+
+		.news__link {
+			@if $value == transparent {
+				color: color-yiq($value, $white, $white);
+			} @else {
+				color: color-yiq($value, $primary, $white);
+			}
+
+			&:after {
+				@if $value == transparent {
+					background-color: color-yiq($value, $white, $white);
+				} @else {
+					background-color: color-yiq($value, $primary, $white);
+				}
+			}
+
+			&:hover {
+				@if $value == transparent {
+					color: color-yiq($value, $white, $white);
+				} @else {
+					color: color-yiq($value, $primary, $white);
+				}
+			}
+		}
+	}
+}

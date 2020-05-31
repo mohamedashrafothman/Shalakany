@@ -1,5 +1,6 @@
 .footer {
 	color: $white;
+	background-color: #101846;
 
 	p {
 		margin-bottom: 0;
@@ -14,7 +15,7 @@
 	&__top {
 		padding-top: $grid-gutter-width * 2;
 		padding-bottom: $grid-gutter-width * 2;
-		background-color: #101846;
+		background-color: transparent;
 	}
 
 	&__bottom {
@@ -35,7 +36,7 @@
 
 				&>span,
 				&>a {
-					color: rgba($white, 0.5);
+					color: rgba($white, 0.7);
 				}
 
 				a {
@@ -49,7 +50,7 @@
 						bottom: 0;
 						left: 0;
 						height: $border-width;
-						background-color: rgba($white, 0.5);
+						background-color: rgba($white, 0.7);
 						display: block;
 						width: 35%;
 						transition: $transition-base;
@@ -57,7 +58,8 @@
 
 					&:hover {
 						color: rgba($white, 1);
-						&:after{
+
+						&:after {
 							background-color: rgba($white, 1);
 							width: 100%;
 						}
@@ -82,19 +84,22 @@
 	}
 
 	&__list-item {
-		opacity: 0.5;
-		transition: $transition-base;
-
-		&:hover {
-			opacity: 1;
-		}
 
 		&,
 		&>a {
+			opacity: 0.7;
+			transition: $transition-base;
 			color: $white;
 			font-size: $font-size-lg;
 			font-weight: $font-weight-light;
 			text-transform: uppercase;
+		}
+
+		&:hover {
+			&, & > a {
+				opacity: 1;
+				color: $white;
+			}
 		}
 
 		&:not(:last-of-type) {
@@ -102,10 +107,10 @@
 		}
 	}
 
-	&__title{
+	&__title {
 		font-weight: $font-weight-bold;
 		text-align: center;
 		text-transform: uppercase;
-		color: rgba($white, 0.5);
+		color: rgba($white, 0.7);
 	}
 }
