@@ -221,20 +221,6 @@ $grid-breakpoints: (
 @include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
 
 
-// Grid containers
-//
-// Define the maximum width of `.container` for different screen sizes.
-
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
-) !default;
-
-@include _assert-ascending($container-max-widths, "$container-max-widths");
-
-
 // Grid columns
 //
 // Set the number of columns and specify the width of the gutters.
@@ -242,6 +228,20 @@ $container-max-widths: (
 $grid-columns:                12 !default;
 $grid-gutter-width:           30px !default;
 $grid-row-columns:            6 !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: calc(100vw - #{$grid-gutter-width / 2}),
+  md: calc(100vw - #{$grid-gutter-width}),
+  lg: calc(100vw - #{$grid-gutter-width * 2}),
+  xl: calc(100vw - #{$grid-gutter-width * 2})
+) !default;
+
+// @include _assert-ascending($container-max-widths, "$container-max-widths");
 
 
 // Components
@@ -709,8 +709,8 @@ $zindex-modal                : 1050 !default;
 $zindex-popover              : 1060 !default;
 $zindex-tooltip              : 1070 !default;
 $zindex-sections             : 1080 !default;
-$zindex-overlay-menu-backdrop: 1090 !default;
-$zindex-overlay-open         : 1100 !default;
+$zindex-overlay-open         : 1090 !default;
+$zindex-overlay-menu-backdrop: 1100 !default;
 $zindex-overlay-menu         : 1110 !default;
 $zindex-overlay-close        : 1120 !default;
 $zindex-preloader            : 1130 !default;

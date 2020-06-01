@@ -1,251 +1,402 @@
-.home {
+#home-banner {
+	min-height: 100vh;
+	height: 100vh;
+	color: $white;
+	position: relative;
+	overflow: hidden;
 
-	// Banner Section ".home-banner" prefix
-	&-banner {
-		min-height: 100vh;
-		height: 100vh;
-		color: $white;
-		position: relative;
-		overflow: hidden;
+	&>.container-fluid,
+	&>.container {
 
-		&>.container-fluid,
-		&>.container {
-
-			&,
-			&>.row {
-
-				&,
-				&>div[class^="col-"] {
-					height: 100%;
-				}
-			}
-		}
-
-		& .container-fluid,
-		& .container {
+		&,
+		&>.row {
 
 			&,
-			&>.row {
-
-				&,
-				&>div[class^="col-"] {
-					margin: 0;
-					padding: 0;
-				}
+			&>div[class^="col-"] {
+				height: 100%;
 			}
 		}
+	}
 
-		&__background {
+	& .container-fluid,
+	& .container {
+
+		&,
+		&>.row {
+
+			&,
+			&>div[class^="col-"] {
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+
+	.section__bg {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $primary;
+
+		&::after{
+			content: none;
+		}
+
+		&--img {
+			img {
+				height: 100%;
+				width: 100%;
+				opacity: 1;
+				@include object-fit(cover, left center);
+			}
+		}
+	}
+
+	&>.section__bg {
+
+		&::after {
+			content: "";
 			display: block;
 			position: absolute;
 			top: 0;
-			left: 0;
 			bottom: 0;
+			left: 0;
 			right: 0;
 			width: 100%;
 			height: 100%;
-			background-color: $primary;
+			background: linear-gradient(0deg, rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00), rgba($primary, 1.00));
+		}
 
-			&--img {
-				img {
-					height: 100%;
-					width: 100%;
-					@include object-fit(cover, left center);
+		&--img {
+			img {
+				opacity: 0.2;
+			}
+		}
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		width: calc(100% - (#{$grid-gutter-width} * 2));
+		height: calc(100% - (#{$grid-gutter-width} * 2));
+		top: $grid-gutter-width;
+		left: $grid-gutter-width;
+		display: block;
+		z-index: $zindex-sections + 6;
+		border: $border-width*2 $border-style $border-color;
+
+		@include media-breakpoint-down(lg) {
+			top: $grid-gutter-width / 2;
+			left: $grid-gutter-width / 2;
+			height: calc(100% - (#{$grid-gutter-width}));
+			width: calc(100% - (#{$grid-gutter-width}));
+		}
+	}
+
+	&__side {
+		display: flex;
+		align-items: flex-end;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding: $grid-gutter-width * 2;
+		background: transparent;
+
+		&>.container-fluid,
+		&>.container {
+			&,
+			&>.row {
+
+				&,
+				&>div[class^="col-"] {
+					padding: 0;
+					margin: 0;
+					z-index: $zindex-sections + 7;
 				}
 			}
 		}
 
-		&>.home-banner__background {
+		@include media-breakpoint-down(lg) {
+			padding: $grid-gutter-width;
+		}
 
-			&::after {
-				content: "";
-				display: block;
-				position: absolute;
-				top: 0;
-				bottom: 0;
+		@include media-breakpoint-down(md) {
+			margin-top: calc(65px + (#{$grid-gutter-width}));
+			align-items: center;
+		}
+
+		@include media-breakpoint-down(sm) {
+			margin-top: calc(55px + (#{$grid-gutter-width}));
+		}
+	}
+
+	&__title {
+		color: $white;
+		font-family: inherit;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: $h4-font-size;
+		line-height: $line-height-base / 1.75;
+		width: 85%;
+
+		strong {
+			font-size: $h1-font-size;
+			font-weight: $font-weight-bolder;
+		}
+
+		@include media-breakpoint-down(lg) {
+			width: 80%;
+			font-size: $h5-font-size;
+			strong { font-size: $h2-font-size; }
+		}
+
+		@include media-breakpoint-down(md) {
+			width: 90%;
+		}
+		@include media-breakpoint-down(sm) {
+			strong{
+				font-size: $h3-font-size;
+			}
+		}
+	}
+
+	&__text {
+		font-size: 1rem;
+		font-weight: 200;
+		color: $white;
+		text-align: justify;
+		width: 75%;
+		margin-bottom: $spacer * 3.9;
+
+		@include media-breakpoint-down(lg) {
+			width: 80%;
+		}
+
+		@include media-breakpoint-down(md) {
+			width: 90%;
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 90%;
+		}
+	}
+
+	&__button {
+		margin-bottom: 3.9rem;
+		margin-left: 8px;
+		@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+	}
+
+	&__slider {
+		&--arrows {
+
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+
+			.swiper-button-prev,
+			.swiper-button-next {
+				position: relative;
+				width: 60px;
+				height: 50px;
+				background-size: 35px;
+			}
+
+			.swiper-button-prev,
+			.swiper-container-rtl .swiper-button-next {
 				left: 0;
-				right: 0;
-				width: 100%;
-				height: 100%;
-				background: linear-gradient(0deg, rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00), rgba($primary, 1.00));
+				transition: $transition-base;
+				opacity: 0.5;
+
+				&:hover {
+					opacity: 1;
+				}
 			}
 
-			&--img {
-				img {
-					opacity: 0.2;
+			.swiper-button-next,
+			.swiper-container-rtl .swiper-button-prev {
+				right: 0;
+				transition: $transition-base;
+				opacity: 0.5;
+
+				&:hover {
+					opacity: 1;
 				}
 			}
 		}
+	}
+
+	@media screen and (max-height: 700px) {
+		height: 700px;
+		min-height: 700px;
 
 		&:after {
-			content: "";
-			position: absolute;
-			width: calc(100% - (#{$grid-gutter-width} * 2));
-			height: calc(100vh - (#{$grid-gutter-width} * 2));
-			top: $grid-gutter-width;
-			left: $grid-gutter-width;
-			display: block;
-			z-index: $zindex-sections + 6;
-			border: $border-width*2 $border-style $border-color;
-
-			@include media-breakpoint-down(lg) {
-				top: $grid-gutter-width / 2;
-				left: $grid-gutter-width / 2;
-				height: calc(100vh - (#{$grid-gutter-width}));
-				width: calc(100% - (#{$grid-gutter-width}));
-			}
+			height: calc(100% - (#{$grid-gutter-width} * 2));
 		}
 
-		&__side {
-			position: relative;
-			width: 100%;
-			height: 100%;
-			padding: $grid-gutter-width * 2;
-
-			background: transparent;
-
-			&>.container {
-				&,
-				&>.row {
-
-					&,
-					&>div[class^="col-"] {
-						z-index: $zindex-sections + 7;
-					}
-				}
-			}
-
-			@include media-breakpoint-down(lg) {
-				padding: $grid-gutter-width;
+		@include media-breakpoint-down(lg) {
+			&:after{
+				height: calc(100% - (#{$grid-gutter-width}));
 			}
 		}
+	}
+}
 
-		&__logo {
-			width: 80px;
-			height: auto;
-			z-index: $zindex-sections + 8;
-			margin-bottom: $spacer * 3;
-			transition: $transition-base;
-			opacity: 0.85;
+#home-what-we-do {
+	background-color: $body-bg;
+	padding: $grid-gutter-width*8 $grid-gutter-width*2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
 
-			a {
-				display: block;
+	@include media-breakpoint-down(md) {
+		padding-top: $grid-gutter-width * 20;
+		padding-left: $grid-gutter-width / 2;
+		padding-right: $grid-gutter-width / 2;
+	}
 
-				&,
-				&>img {
-					width: 100%;
-					height: 100%;
-				}
-			}
+	@include media-breakpoint-down(sm) {
+		padding-right: 0;
+		padding-left: 0;
+	}
 
-			&:hover{
-				opacity: 1;
-			}
-
-			@include media-breakpoint-down(lg) {
-				width: 70px;
-				margin-bottom: $spacer * 5;
-			}
-
+	.brochure {
+		&__content {
 			@include media-breakpoint-down(md) {
-				width: 65px;
-				margin-bottom: $spacer * 7.5;
+				padding-top: 100px;
+				padding-bottom: 40px;
 			}
 
 			@include media-breakpoint-down(sm) {
-				width: 55px;
+				padding-top: 150px;
+				padding-bottom: 60px;
 			}
 		}
+		&__slider {
 
-		&__title {
-			color: $white;
-			font-family: inherit;
-			text-transform: uppercase;
-			font-weight: 400;
-			font-size: $h4-font-size;
-			line-height: $line-height-base / 1.75;
-			width: 70%;
+			&-buttons {
+				position: absolute;
+				bottom: $brochure-slider-buttons-height;
+				right: -#{$brochure-slider-buttons-width};
+				transform: initial !important;
 
-			strong {
-				font-size: $h1-font-size;
-				font-weight: $font-weight-bolder;
-			}
+				@include media-breakpoint-down(md) {
+					bottom: $brochure-slider-buttons-height / 2;
+				}
 
-			@include media-breakpoint-down(lg) {
-				width: 80%;
-				font-size: $h5-font-size;
-				strong { font-size: $h2-font-size; }
-			}
-
-			@include media-breakpoint-down(md) {
-				width: 90%;
-			}
-			@include media-breakpoint-down(sm) {
-				width: 90%;
-				strong{
-					font-size: $h3-font-size;
+				@include media-breakpoint-down(sm) {
+					bottom: -#{$brochure-slider-buttons-height / 2};
+					right: $brochure-slider-buttons-width / 2;
 				}
 			}
 		}
 
 		&__text {
-			font-size: 1rem;
-			font-weight: 200;
-			color: $white;
-			text-align: justify;
-			width: 75%;
-			margin-bottom: $spacer * 3.9;
-
-			@include media-breakpoint-down(lg) {
-				width: 80%;
-			}
+			width: 80%;
 
 			@include media-breakpoint-down(md) {
-				width: 90%;
+				width: 100%;
+			}
+		}
+	}
+
+	@media screen and (max-height: 700px) {
+		height: 1000px;
+		padding-top: $grid-gutter-width * 28;
+		padding-bottom: $grid-gutter-width * 10;
+	}
+}
+
+#home-clients {
+	background-color: $primary;
+	position: relative;
+
+	.section__bg {
+		&::after {
+			background: linear-gradient(-90deg, rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00));
+		}
+	}
+
+	.logo {
+		width: 100%;
+		height: 100%;
+
+		img {
+			opacity: 0.7;
+			width: 100%;
+			height: 100%;
+			@include object-fit(scale-down, center);
+		}
+	}
+
+	.brochure {
+		&__image {
+			width: 500px;
+			height: 300px;
+			bottom: calc(-300px / 2); // half of its height. 300 / 2
+			right: 50%;
+			top: initial;
+			left: initial;
+
+			@include media-breakpoint-down(md){
+				left: $grid-gutter-width * 2;
+				right: initial;
 			}
 
 			@include media-breakpoint-down(sm) {
-				width: 90%;
+				left: -#{$grid-gutter-width};
+			}
+
+			@include media-breakpoint-down(xs) {
+				max-width: calc(100vw - #{$grid-gutter-width * 2});
 			}
 		}
 
-		&__button {
-			margin-bottom: 3.9rem;
-			margin-left: 8px;
-			@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+		&__content{
+			@include media-breakpoint-up(xl) {
+				padding-bottom: 15rem;
+			}
 		}
 
 		&__slider {
-			&--arrows {
+			padding-bottom: 15rem;
+			padding-top: 5.75rem;
+			max-height: 100vh;
 
-				display: flex;
-				align-items: center;
-				justify-content: flex-start;
+			@include media-breakpoint-down(lg) {
+				padding-top: 0;
+				padding-bottom: 20rem;
+			}
+
+			@include media-breakpoint-down(md){
+				padding-top: 8rem;
+				padding-bottom: 25rem;
+			}
+
+			&-buttons {
+				top: 50%;
+				bottom: initial;
+				left: 50%;
+				right: initial;
+				transform: translateX(-50%) !important;
+
+				@include media-breakpoint-down(md){
+					top: 40%;
+				}
+
+				@include media-breakpoint-down(sm) {
+					// top: 30%;
+				}
 
 				.swiper-button-prev,
 				.swiper-button-next {
-					position: relative;
-					width: 60px;
-					height: 50px;
-					background-size: 35px;
-				}
-
-				.swiper-button-prev,
-				.swiper-container-rtl .swiper-button-next {
-					left: 0;
-					transition: $transition-base;
-					opacity: 0.5;
-
-					&:hover {
-						opacity: 1;
-					}
-				}
-
-				.swiper-button-next,
-				.swiper-container-rtl .swiper-button-prev {
-					right: 0;
-					transition: $transition-base;
-					opacity: 0.5;
+					opacity: 0.7;
 
 					&:hover {
 						opacity: 1;
@@ -253,320 +404,42 @@
 				}
 			}
 		}
+	}
+}
 
-		@media screen and (max-height: 700px) {
-			height: 100%;
-			min-height: 100%;
+#home-latest-news{
+	padding: 12.9375rem $grid-gutter-width*2 0 $grid-gutter-width*2;
+	background-color: $body-bg;
 
-			&:after {
-				height: calc(100% - (#{$grid-gutter-width} * 2));
-			}
+	&>.container, &>.container-fluid{
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+
+	@include media-breakpoint-down(lg) {
+		padding-right: $grid-gutter-width / 2;
+		padding-left: $grid-gutter-width / 2;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	.brochure{
+		&__content {
+			padding: $grid-gutter-width*2.4 $grid-gutter-width*2;
 
 			@include media-breakpoint-down(lg) {
-				&:after{
-					height: calc(100% - (#{$grid-gutter-width}));
-				}
-			}
-		}
-	}
-
-	// What we do Section ".home-whatWeDo" prefix
-	&-whatWeDo {
-		background-color: $body-bg;
-		padding: $grid-gutter-width*8 $grid-gutter-width*2;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-height: 100vh;
-
-		@include media-breakpoint-down(md) {
-			padding-top: $grid-gutter-width * 20;
-			padding-left: $grid-gutter-width / 2;
-			padding-right: $grid-gutter-width / 2;
-		}
-
-		@include media-breakpoint-down(sm) {
-			padding-right: 0;
-			padding-left: 0;
-		}
-
-		.brochure {
-			&__content {
-				@include media-breakpoint-down(md) {
-					padding-top: 100px;
-					padding-bottom: 40px;
-				}
-
-				@include media-breakpoint-down(sm) {
-					padding-top: 150px;
-					padding-bottom: 60px;
-				}
-			}
-			&__slider {
-
-				&-buttons {
-					position: absolute;
-					bottom: $brochure-slider-buttons-height;
-					right: -#{$brochure-slider-buttons-width};
-					transform: initial !important;
-
-					@include media-breakpoint-down(md) {
-						bottom: $brochure-slider-buttons-height / 2;
-					}
-
-					@include media-breakpoint-down(sm) {
-						bottom: -#{$brochure-slider-buttons-height / 2};
-						right: $brochure-slider-buttons-width / 2;
-					}
-				}
+				padding-right: $grid-gutter-width;
+				padding-left: $grid-gutter-width;
 			}
 
-			&__text {
-				width: 80%;
-
-				@include media-breakpoint-down(md) {
-					width: 100%;
-				}
-			}
-		}
-
-		@media screen and (max-height: 600px) {
-			height: 100%;
-			padding-top: $grid-gutter-width*8;
-			padding-bottom: $grid-gutter-width*8;
-		}
-	}
-
-
-	// Clients Section ".home-clients" prefix
-	&-clients {
-		background-color: $primary;
-		position: relative;
-
-		&__background {
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
-
-			&--img {
-				img {
-					height: 100%;
-					width: 100%;
-					opacity: 0.2;
-					@include object-fit(cover, center);
-				}
-			}
-
-			&::after {
-				content: "";
-				display: block;
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				width: 100%;
-				height: 100%;
-				background: linear-gradient(-90deg, rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00));
-			}
-		}
-
-		&__logo {
-			width: 100%;
-			height: 100%;
-
-			img {
-				opacity: 0.7;
-				width: 100%;
-				height: 100%;
-				@include object-fit(scale-down, center);
-			}
-		}
-
-		.brochure {
-			&__image {
-				width: 500px;
-				height: 300px;
-				bottom: calc(-300px / 2); // half of its height. 300 / 2
-				right: 50%;
-				top: initial;
-				left: initial;
-
-				@include media-breakpoint-down(md){
-					left: $grid-gutter-width * 2;
-					right: initial;
-				}
-
-				@include media-breakpoint-down(sm) {
-					left: -#{$grid-gutter-width};
-				}
-
-				@include media-breakpoint-down(xs) {
-					max-width: calc(100vw - #{$grid-gutter-width * 2});
-				}
-			}
-
-			&__content{
-				@include media-breakpoint-up(xl) {
-					padding-bottom: 15rem;
-				}
-			}
-
-			&__slider {
-				padding-bottom: 15rem;
-				padding-top: 5.75rem;
-				max-height: 100vh;
-
-				@include media-breakpoint-down(lg) {
-					padding-top: 0;
-					padding-bottom: 20rem;
-				}
-
-				@include media-breakpoint-down(md){
-					padding-top: 8rem;
-					padding-bottom: 25rem;
-				}
-
-				&-buttons {
-					top: 50%;
-					bottom: initial;
-					left: 50%;
-					right: initial;
-					transform: translateX(-50%) !important;
-
-					@include media-breakpoint-down(md){
-						top: 40%;
-					}
-
-					@include media-breakpoint-down(sm) {
-						// top: 30%;
-					}
-
-					.swiper-button-prev,
-					.swiper-button-next {
-						opacity: 0.7;
-
-						&:hover {
-							opacity: 1;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	// Latest news Section ".home-latestNews" prefix
-	&-latestNews{
-		padding: 12.9375rem $grid-gutter-width*2 0 $grid-gutter-width*2;
-		background-color: $body-bg;
-
-		&>.container, &>.container-fluid{
-			padding-right: 0;
-			padding-left: 0;
-		}
-
-
-		@include media-breakpoint-down(lg) {
-			padding-right: $grid-gutter-width / 2;
-			padding-left: $grid-gutter-width / 2;
-		}
-
-		@include media-breakpoint-down(md) {
-			padding-right: 0;
-			padding-left: 0;
-		}
-
-		.brochure{
-			&__content {
-				padding: $grid-gutter-width*2.4 $grid-gutter-width*2;
-
-				@include media-breakpoint-down(lg) {
-					padding-right: $grid-gutter-width;
-					padding-left: $grid-gutter-width;
-				}
-
-				@include media-breakpoint-down(sm) {
-					padding-right: $grid-gutter-width / 2;
-					padding-left: $grid-gutter-width / 2;
-					padding-bottom: $grid-gutter-width;
-				}
-			}
-		}
-	}
-
-
-	// Discuss more Section ".home-discussMore" prefix
-	&-discussMore{
-		background-color: $white;
-		position: relative;
-		padding-top: 12rem; // 12rem
-		padding-bottom: 12rem; // 12rem
-
-		@include media-breakpoint-down(lg) {
-			padding-bottom: 8rem;
-			padding-top: 8rem;
-		}
-
-		&__background {
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
-
-			&--img {
-				img {
-					height: 100%;
-					width: 100%;
-					opacity: 0.2;
-					@include object-fit(cover, center);
-				}
-			}
-
-			&::after {
-				content: "";
-				display: block;
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				width: 100%;
-				height: 100%;
-				background: radial-gradient(circle, rgba($white, 0.85) 0%, rgba($white, 1) 100%);
-			}
-		}
-
-
-		.brochure {
-			&__content {
-				padding: $grid-gutter-width * 2;
-				text-align: left;
-				align-items: flex-start;
-
-				@include media-breakpoint-down(lg) {
-					text-align:center;
-					align-items: center;
-				}
-			}
-			&__buttons {
-				display: flex;
-				align-items: center;
-				height: 100%;
-				width: 100%;
-
-				@include media-breakpoint-down(lg) {
-					text-align: center;
-					justify-content: center;
-				}
+			@include media-breakpoint-down(sm) {
+				padding-right: $grid-gutter-width / 2;
+				padding-left: $grid-gutter-width / 2;
+				padding-bottom: $grid-gutter-width;
 			}
 		}
 	}

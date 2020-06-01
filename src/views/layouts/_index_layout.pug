@@ -1,10 +1,16 @@
+include ../mixins/_header.pug
+
 doctype html
 html(lang=`${locals.lang}` dir=`${(locals.lang === "en") ? "ltr" : "rtl"}`)
 	include ../partials/_head.pug
 	body
-		include ../sections/_preloader.pug
-		include ../sections/_header.pug
-		main(role="main")
+		#app
+			block variables
+				- var menu = {is_open: false, menu_list: [{ title: "Home", href: "index.html" }, { title: "about us", href: "about.html" }, { title: "services & clients", href: "#" }, { title: "our people", href: "#" }, { title: "contact us", href: "#" }, { title: "news & events", href: "#" }, { title: "conferences & webinars", href: "#" }, { title: "client portal", href: "#" }, { title: "careers & trainings", href: "#" }]};
+				- var services = [{ href: "#", title: "arbitration & litigation", img: { src: "./images/images/Services/service-1.jpg", alt:"arbitration & litigation" }}, { href: "#", title: "Values & Culture", img: { src: "./images/images/Services/service-2.jpg", alt:"arbitration & litigation" }}, { href: "#", title: "Affiliation & networks", img: { src: "./images/images/Services/service-3.jpg", alt:"arbitration & litigation" }}, { href: "#", title: "Awards", img: { src: "./images/images/Services/service-4.jpg", alt:"arbitration & litigation" }}];
+				- var about_us = [{ href: "#", title: "Our History", img: { src: "./images/images/about-us/about-us-1.jpg", alt:"Our History" }}, { href: "#", title: "Values & Culture", img: { src: "./images/images/about-us/about-us-2.jpg", alt:"Values & Culture" }}, { href: "#", title: "Affiliation & networks", img: { src: "./images/images/about-us/about-us-3.jpg", alt:"Affiliation & networks" }}, { href: "#", title: "Awards", img: { src: "./images/images/about-us/about-us-4.jpg", alt:"Awards" }}, { href: "#", title: "Our community", img: { src: "./images/images/about-us/about-us-5.jpg", alt:"Our community" }}, { href: "#", title: "Art gallery", img: { src: "./images/images/about-us/about-us-6.jpg", alt:"Art gallery" }}, { href: "#", title: "Offices", img: { src: "./images/images/about-us/about-us-7.jpg", alt:"Offices" }}];
+			include ../sections/_preloader.pug
+			+header(menu)
 			block content
-		include ../sections/_footer.pug
-		include ../partials/_foot.pug
+			include ../sections/_footer.pug
+			include ../partials/_foot.pug

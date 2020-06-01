@@ -12,7 +12,7 @@ var parollerInit = require('./partials/parollerInit');
 	$(window).on('load', () => {
 		animateCssInit();
 		$('.preloader').animateCss('fadeOut faster', function () {
-			$('.preloader').removeClass('d-flex').addClass('d-none');
+			$('.preloader').remove();
 			$('body').removeClass('preloader-shown');
 		})
 		new WOW({live:false}).init();

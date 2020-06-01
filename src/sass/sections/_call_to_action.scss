@@ -1,0 +1,37 @@
+.call-to-action {
+	background-color: $white;
+	position: relative;
+	padding-top: 12rem; // 12rem
+	padding-bottom: 12rem; // 12rem
+
+	@include media-breakpoint-down(lg) {
+		padding-bottom: 8rem;
+		padding-top: 8rem;
+	}
+
+	.brochure {
+		&__content {
+			padding: $grid-gutter-width * 2;
+			text-align: left;
+			align-items: flex-start;
+
+			@include media-breakpoint-down(lg) {
+				text-align: center;
+				align-items: center;
+			}
+		}
+
+		&__buttons {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			width: 100%;
+
+			@include media-breakpoint-down(lg) {
+				text-align: center;
+				justify-content: center;
+			}
+		}
+	}
+
+}

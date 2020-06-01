@@ -34,15 +34,19 @@
 */
 @import 'components/brochure';
 @import 'components/service-card';
+@import 'components/about-us-card';
 @import 'components/news-card';
 
 /*
 ** SECTIONS
 ** ==============================================
 */
+@import 'sections/sections';
 @import 'sections/preloader';
 @import 'sections/side_nav';
 @import 'sections/footer';
+@import 'sections/call_to_action';
+@import 'sections/services';
 
 /*
 ** PAGES

@@ -1,5 +1,5 @@
-mixin service-card(data={ img: { src:"", alt:"" }}, index=0)
-	a.service-card(href="#")
+mixin service-card(data={ href: "#", img: { src:"", alt:"" }}, index=0)
+	a.service-card(href=data.href)
 		.service-card__image
 			img(src=data.img.src, alt=data.img.alt)
 		if(data.title)

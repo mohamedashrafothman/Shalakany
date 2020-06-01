@@ -1,0 +1,17 @@
+extends ./layouts/_index_layout.pug
+include ./mixins/_about-us-card.pug
+
+block content
+	main(role="main")
+		header
+			p header here
+		section
+			article
+				p article > section here
+		section.services.section.section__bg--color-color
+			.container
+				.row
+					each about, i in about_us
+						.col-12.col-md-6.col-lg-4.col-xl-3.mb-md-5.mb-4
+							+about-us-card(about, i)
+		include ./sections/_call_to_action.pug
