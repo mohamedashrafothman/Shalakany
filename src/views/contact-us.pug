@@ -1,0 +1,31 @@
+extends ./layouts/_index_layout.pug
+include ./mixins/_about-us-card.pug
+
+append variables
+	- var page_title = "contact us";
+
+block content
+	main(role="main")
+		header.section.page-header
+			.section-bg.section-bg__img.section-bg__img--blue
+				img(src="./images/patterns/pattern.jpg")
+			.container-fluid
+				.row
+					.col-10.col-sm-8.col-lg-4
+						.page-header__img
+							img(src="./images/about-us/about-us-7.jpg")
+					.col-12.col-lg-7.offset-lg-1
+						.page-header__content
+							h2.page-header__title=page_title
+							nav.page-header__breadcrumb.align-self-end(aria-label="breadcrumb")
+								ol.breadcrumb
+									li.breadcrumb-item
+										a(href="index.html") Home
+									li.breadcrumb-item.active(aria-current="page")=page_title
+
+		section.section.section-bg__color--white
+			article.page-header__article
+				.container-fluid
+					.row
+						.col-12.col-lg-6.offset-lg-5
+							p Whether you’re looking for more information, or you’d like to let us know your feedback, you’ll find easy ways to contact us right here.

@@ -1075,18 +1075,20 @@ $figure-caption-color:              $gray-600 !default;
 
 // Breadcrumbs
 
-$breadcrumb-font-size:              null !default;
+$breadcrumb-font-size:              $font-size-base !default;
 
-$breadcrumb-padding-y:              .75rem !default;
-$breadcrumb-padding-x:              1rem !default;
+$breadcrumb-padding-y:              0 !default;
+$breadcrumb-padding-x:              0 !default;
 $breadcrumb-item-padding:           .5rem !default;
 
-$breadcrumb-margin-bottom:          1rem !default;
+$breadcrumb-margin-bottom:          0 !default;
 
-$breadcrumb-bg:                     $gray-200 !default;
-$breadcrumb-divider-color:          $gray-600 !default;
-$breadcrumb-active-color:           $gray-600 !default;
-$breadcrumb-divider:                quote("/") !default;
+$breadcrumb-bg:                     transparent !default;
+$breadcrumb-color:                  rgba($white, 0.5) !default;
+$breadcrumb-color-hover:            rgba($white, 1) !default;
+$breadcrumb-divider-color:          $breadcrumb-color !default;
+$breadcrumb-active-color:           rgba($white, 0.5) !default;
+$breadcrumb-divider:                quote("|") !default;
 
 $breadcrumb-border-radius:          $border-radius !default;
 

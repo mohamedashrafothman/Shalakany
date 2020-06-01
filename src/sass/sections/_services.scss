@@ -1,5 +1,5 @@
 .services {
-	padding: 5.625rem $grid-gutter-width * 2;
+	padding: 2.8125rem $grid-gutter-width*2 5.625rem $grid-gutter-width*2;
 
 	@include media-breakpoint-down(md) {
 		padding: 8.75rem $grid-gutter-width;

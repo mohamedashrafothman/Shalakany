@@ -32,7 +32,7 @@
 		}
 	}
 
-	.section__bg {
+	.section-bg {
 		display: block;
 		position: absolute;
 		top: 0;
@@ -47,7 +47,7 @@
 			content: none;
 		}
 
-		&--img {
+		&__img {
 			img {
 				height: 100%;
 				width: 100%;
@@ -57,7 +57,7 @@
 		}
 	}
 
-	&>.section__bg {
+	&>.section-bg {
 
 		&::after {
 			content: "";
@@ -72,7 +72,7 @@
 			background: linear-gradient(0deg, rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00), rgba($primary, 1.00));
 		}
 
-		&--img {
+		&__img {
 			img {
 				opacity: 0.2;
 			}
@@ -317,7 +317,7 @@
 	background-color: $primary;
 	position: relative;
 
-	.section__bg {
+	.section-bg {
 		&::after {
 			background: linear-gradient(-90deg, rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00));
 		}
