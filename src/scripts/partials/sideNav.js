@@ -14,7 +14,7 @@ module.exports = (options = {entrance_direction: 'left',exit_direction: 'left',s
 		},
 		_cache_dom: function () {
 			this.$body            = $('body');
-			this.$navbar          = $('.navbar');
+			this.$navbar          = $('.navbar__side-menu');
 			this.$navbar_underlay = $('.navbar__underlay');
 			this.$open_icon       = $('.navbar__open-button');
 			this.$close_icon      = this.$navbar.find('.navbar__close-button');

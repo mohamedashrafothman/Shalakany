@@ -1,14 +1,47 @@
 .navbar {
-	position: fixed;
-	top: $grid-gutter-width;
-	right: $grid-gutter-width;
-	z-index: $zindex-overlay-menu;
-	background-color: $primary;
-	min-height: calc(100vh - (#{$grid-gutter-width} * 2));
-	height: calc(100vh - (#{$grid-gutter-width} * 2));
-	width: calc(75vw - (#{$grid-gutter-width} * 2));
-	padding: $grid-gutter-width / 2;
-	box-shadow: $box-shadow;
+	&__side-menu {
+		position: fixed;
+		top: $grid-gutter-width;
+		right: $grid-gutter-width;
+		z-index: $zindex-overlay-menu;
+		background-color: $primary;
+		min-height: calc(100vh - (#{$grid-gutter-width} * 2));
+		height: calc(100vh - (#{$grid-gutter-width} * 2));
+		width: calc(75vw - (#{$grid-gutter-width} * 2));
+		padding: $grid-gutter-width / 2;
+		box-shadow: $box-shadow;
+
+		&:not(.is_open) {
+			display: none;
+		}
+
+		&.is_open {
+			overflow-y: scroll;
+			display: block;
+
+			/* scroll bar width */
+			&::-webkit-scrollbar {
+				width: 0;
+			}
+		}
+
+		@include media-breakpoint-down(lg) {
+			top: $grid-gutter-width / 2;
+			right: $grid-gutter-width / 2;
+			width: calc(80vw - #{$grid-gutter-width});
+			min-height: calc(100vh - #{$grid-gutter-width});
+			height: calc(100vh - #{$grid-gutter-width});
+			padding: $grid-gutter-width / 2;
+		}
+
+		@include media-breakpoint-down(md) {
+			right: 0;
+			top: 0;
+			width: calc(100%);
+			height: calc(100%);
+		}
+
+	}
 
 	&__logo {
 		width: 80px;
@@ -39,7 +72,8 @@
 
 		@include media-breakpoint-down(lg) {
 			width: 70px;
-			&--home{
+
+			&--home {
 				top: $grid-gutter-width;
 				left: $grid-gutter-width;
 			}
@@ -120,20 +154,6 @@
 		position: absolute;
 		top: ($grid-gutter-width/2) + ($border-width*2); // Same as .overlay padding
 		right: ($grid-gutter-width/2) + ($border-width*2); // Same as .overlay padding
-	}
-
-	&:not(.is_open) {
-		display: none;
-	}
-
-	&.is_open {
-		overflow-y: scroll;
-		display: block;
-
-		/* scroll bar width */
-		&::-webkit-scrollbar {
-			width: 0;
-		}
 	}
 
 	&__nav {
@@ -249,29 +269,16 @@
 		}
 	}
 
-	@include media-breakpoint-down(lg) {
-		top: $grid-gutter-width / 2;
-		right: $grid-gutter-width / 2;
-		width: calc(80vw - #{$grid-gutter-width});
-		min-height: calc(100vh - #{$grid-gutter-width});
-		height: calc(100vh - #{$grid-gutter-width});
-		padding: $grid-gutter-width / 2;
-	}
-
-	@include media-breakpoint-down(md) {
-		right: 0;
-		top: 0;
-		width: calc(100%);
-		height: calc(100%);
-	}
-
 	@media screen and (max-height: 700px) {
-		height: initial;
-		max-height: initial;
-		top: 0;
-		right: 0;
-		left: 0;
-		bottom: 0;
+
+		&__side-menu{
+			height: initial;
+			max-height: initial;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+		}
 
 		&__nav {
 			height: 700px;

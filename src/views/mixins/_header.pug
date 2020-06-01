@@ -1,16 +1,16 @@
 mixin header(data={})
-	header
+	header(class=`navbar`)
 		div(class=`navbar__logo ${(String(page_title).toLowerCase() == "home") ? "navbar__logo--home" : ""}`)
 			a(href="index.html")
 				img(src="./images/icons_logos/logo.svg", alt=`${locals.sitename[locals.lang]}`)
 		div(class=`navbar__underlay ${(data.is_open) ? "d-block" : ""}`)
 		div(class=`navbar__open-button`)
 			i(class=`material-icons`) menu
-		div(class=`navbar ${(data.is_open) ? "is_open" : ""}`)
+		div(class=`navbar__side-menu ${(data.is_open) ? "is_open" : ""}`)
 			div(class=`navbar__close-button`)
 				i(class=`material-icons`) clear
 			nav(class=`navbar__nav`)
 				ul(class=`navbar__list`)
 					each item, i in data.menu_list
-						li(class=`navbar__list-item ${(item.title == page_title) ? "navbar__list-item--active" : ""}`)
+						li(class=`navbar__list-item ${(String(item.title).toLowerCase() == String(page_title).toLowerCase()) ? "navbar__list-item--active" : ""}`)
 							a(href=item.href)=item.title
