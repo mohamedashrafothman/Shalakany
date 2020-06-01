@@ -1,74 +1,4 @@
-//*********************************  Body Overlay  *********************************//
-.side-open {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 100vw;
-	height: 100%;
-	z-index: $zindex-overlay-menu-backdrop;
-	display: none;
-	background-color: rgba($black, 0.8);
-	cursor: pointer;
-	backdrop-filter: blur(6px); // blur effect
-}
-
-.menu-open,
-.menu-close {
-	cursor: pointer;
-	background-color: $gray-500;
-	color: $primary;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: $grid-gutter-width*2;
-	height: $grid-gutter-width*2;
-
-	&,
-	&>i.material-icons {
-		transition: $transition-base;
-	}
-
-	i.material-icons {
-		font-size: 2rem;
-		font-weight: lighter;
-	}
-}
-
-.menu-open {
-	z-index: $zindex-overlay-open;
-	position: fixed;
-	top: $grid-gutter-width;
-	right: $grid-gutter-width;
-	border: $border-width*2 $border-style $border-color;
-
-	&:hover {
-		transform: rotate(-45deg);
-
-		&,
-		&>i.material-icons {
-			transition: $transition-base;
-		}
-
-		i.material-icons {
-			transform: rotate(45deg) scaleX(1.2) scaleY(1.05);
-		}
-	}
-
-	@include media-breakpoint-down(lg) {
-		top: $grid-gutter-width / 2;
-		right: $grid-gutter-width / 2;
-	}
-}
-
-.menu-close {
-	z-index: $zindex-overlay-close;
-	position: absolute;
-	top: ($grid-gutter-width/2) + ($border-width*2); // Same as .overlay padding
-	right: ($grid-gutter-width/2) + ($border-width*2); // Same as .overlay padding
-}
-
-//*********************************  sideBar  *********************************//
-.overlay {
+.menu {
 	position: fixed;
 	top: $grid-gutter-width;
 	right: $grid-gutter-width;
@@ -80,11 +10,79 @@
 	padding: $grid-gutter-width / 2;
 	box-shadow: $box-shadow;
 
-	&:not(.open) {
+	&__underlay {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 100vw;
+		height: 100%;
+		z-index: $zindex-overlay-menu-backdrop;
+		display: none;
+		background-color: rgba($black, 0.8);
+		cursor: pointer;
+		backdrop-filter: blur(6px); // blur effect
+	}
+
+	&__open-button,
+	&__close-button {
+		cursor: pointer;
+		background-color: $gray-500;
+		color: $primary;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: $grid-gutter-width*2;
+		height: $grid-gutter-width*2;
+
+		&,
+		&>i.material-icons {
+			transition: $transition-base;
+		}
+
+		i.material-icons {
+			font-size: 2rem;
+			font-weight: lighter;
+		}
+	}
+
+	&__open-button {
+		z-index: $zindex-overlay-open;
+		position: fixed;
+		top: $grid-gutter-width;
+		right: $grid-gutter-width;
+		border: $border-width*2 $border-style $border-color;
+
+		&:hover {
+			transform: rotate(-45deg);
+
+			&,
+			&>i.material-icons {
+				transition: $transition-base;
+			}
+
+			i.material-icons {
+				transform: rotate(45deg) scaleX(1.2) scaleY(1.05);
+			}
+		}
+
+		@include media-breakpoint-down(lg) {
+			top: $grid-gutter-width / 2;
+			right: $grid-gutter-width / 2;
+		}
+	}
+
+	&__close-button {
+		z-index: $zindex-overlay-close;
+		position: absolute;
+		top: ($grid-gutter-width/2) + ($border-width*2); // Same as .overlay padding
+		right: ($grid-gutter-width/2) + ($border-width*2); // Same as .overlay padding
+	}
+
+	&:not(.is_open) {
 		display: none;
 	}
 
-	&.open {
+	&.is_open {
 		overflow-y: scroll;
 		display: block;
 
@@ -187,6 +185,7 @@
 					margin-bottom: 30px;
 				}
 			}
+
 			&:nth-of-type(5n) {
 				margin-bottom: initial;
 			}
@@ -214,6 +213,7 @@
 		height: calc(100vh - #{$grid-gutter-width});
 		padding: $grid-gutter-width / 2;
 	}
+
 	@include media-breakpoint-down(md) {
 		right: 0;
 		top: 0;
