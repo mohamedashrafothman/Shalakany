@@ -279,13 +279,45 @@
 		justify-content: center;
 		min-height: 100vh;
 
+		@include media-breakpoint-down(md) {
+			padding-top: $grid-gutter-width * 20;
+			padding-left: $grid-gutter-width / 2;
+			padding-right: $grid-gutter-width / 2;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-right: 0;
+			padding-left: 0;
+		}
+
 		.brochure {
+			&__content {
+				@include media-breakpoint-down(md) {
+					padding-top: 100px;
+					padding-bottom: 40px;
+				}
+
+				@include media-breakpoint-down(sm) {
+					padding-top: 150px;
+					padding-bottom: 60px;
+				}
+			}
 			&__slider {
+
 				&-buttons {
 					position: absolute;
 					bottom: $brochure-slider-buttons-height;
 					right: -#{$brochure-slider-buttons-width};
 					transform: initial !important;
+
+					@include media-breakpoint-down(md) {
+						bottom: $brochure-slider-buttons-height / 2;
+					}
+
+					@include media-breakpoint-down(sm) {
+						bottom: -#{$brochure-slider-buttons-height / 2};
+						right: $brochure-slider-buttons-width / 2;
+					}
 				}
 			}
 
@@ -305,6 +337,8 @@
 		}
 	}
 
+
+	// Clients Section ".home-clients" prefix
 	&-clients {
 		background-color: $primary;
 		position: relative;
@@ -426,6 +460,7 @@
 		}
 	}
 
+	// Latest news Section ".home-latestNews" prefix
 	&-latestNews{
 		padding: 12.9375rem $grid-gutter-width*2 0 $grid-gutter-width*2;
 		background-color: $body-bg;
@@ -464,6 +499,8 @@
 		}
 	}
 
+
+	// Discuss more Section ".home-discussMore" prefix
 	&-discussMore{
 		background-color: $white;
 		position: relative;

@@ -28,6 +28,15 @@
 		bottom: 0;
 		z-index: 3;
 		padding: 2rem 2.75rem;
+
+		@include media-breakpoint-down(md) {
+			width: 80%;
+			bottom: $spacer * 1.5;
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 90%;
+		}
 	}
 	&:after{
 		content: "";

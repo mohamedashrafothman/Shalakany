@@ -18,9 +18,9 @@ module.exports = function () {
 				loop: true,
 				parallax: true,
 				grabCursor: true,
-				autoplay: {
-					delay: 6000
-				},
+				// autoplay: {
+				// 	delay: 6000
+				// },
 				keyboard: {
 					enabled: true,
 					onlyInViewport: true
@@ -51,9 +51,9 @@ module.exports = function () {
 				parallax: true,
 				slidesPerView: 4,
 				spaceBetween: 30,
-				autoplay: {
-					delay: 6000
-				},
+				// autoplay: {
+				// 	delay: 6000
+				// },
 				keyboard: {
 					enabled: true,
 					onlyInViewport: true

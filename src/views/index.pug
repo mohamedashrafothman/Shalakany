@@ -36,31 +36,31 @@ block content
 					.home-banner__background.home-banner__background--img(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.1")
 						img(src="./images/images/faruk-kaymak-CNVvDjVDiVI-unsplash.jpg", alt="")
 	section.home-whatWeDo
-		//- .container-fluid
-		//- 	.row
-		//- 		.col-12
-		//- 			.brochure.brochure__bg--gray-400
-		//- 				.row
-		//- 					.col-12.col-lg-5
-		//- 						.brochure__slider.brochure__slider--services.brochure__slider--left
-		//- 							.swiper-container#home-whatWeDo-slider(data-swiper-effect="cube")
-		//- 								.swiper-wrapper
-		//- 									.swiper-slide
-		//- 										+service-card({ title: "arbitration & litigation", img: { src: "./images/images/Services/arbitration_litigation.jpg", alt:"arbitration & litigation" }}, 0)
-		//- 									.swiper-slide
-		//- 										+service-card({ title: "finance & projects", img: { src: "./images/images/Services/finance_projects.jpg", alt:"finance & projects" }}, 1)
-		//- 									.swiper-slide
-		//- 										+service-card({ title: "commercial", img: { src: "./images/images/Services/commercial.jpg", alt:"commercial" }}, 2)
-		//- 									.swiper-slide
-		//- 										+service-card({ title: "corporate & mergers & accusations", img: { src: "./images/images/Services/corporate_mergers_accusations.jpg", alt:"corporate & mergers & accusations" }}, 2)
-		//- 							.brochure__slider-buttons.brochure__slider-buttons--white(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="0.03")
-		//- 								.swiper-button-prev
-		//- 								.swiper-button-next
-		//- 					.col-12.col-lg-7
-		//- 						.brochure__content.text-left.align-items-start
-		//- 							h2.brochure__title(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") what we do
-		//- 							p.brochure__text(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") Shalakany is committed to delivering top quality legal services to our clients. As a full-service corporate law firm, we provide bespoke specialized legal services across a variety of different practice areas and sectors.
-		//- 							a.brochure__link.align-self-end(href="#" data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") know More
+		.container-fluid
+			.row
+				.col-10.offset-2.col-md-10.offset-md-2.col-lg-12.offset-lg-0.px-0
+					.brochure.brochure__bg--gray-400
+						.row
+							.col-11.col-md-9.col-lg-5
+								.brochure__slider.brochure__slider--services.brochure__slider--left
+									.swiper-container#home-whatWeDo-slider(data-swiper-effect="cube")
+										.swiper-wrapper
+											.swiper-slide
+												+service-card({ title: "arbitration & litigation", img: { src: "./images/images/Services/arbitration_litigation.jpg", alt:"arbitration & litigation" }}, 0)
+											.swiper-slide
+												+service-card({ title: "finance & projects", img: { src: "./images/images/Services/finance_projects.jpg", alt:"finance & projects" }}, 1)
+											.swiper-slide
+												+service-card({ title: "commercial", img: { src: "./images/images/Services/commercial.jpg", alt:"commercial" }}, 2)
+											.swiper-slide
+												+service-card({ title: "corporate & mergers & accusations", img: { src: "./images/images/Services/corporate_mergers_accusations.jpg", alt:"corporate & mergers & accusations" }}, 2)
+									.brochure__slider-buttons.brochure__slider-buttons--white(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="0.03")
+										.swiper-button-prev
+										.swiper-button-next
+							.col-12.col-lg-7.offset-lg-0
+								.brochure__content.text-left.align-items-start
+									h2.brochure__title(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") what we do
+									p.brochure__text(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") Shalakany is committed to delivering top quality legal services to our clients. As a full-service corporate law firm, we provide bespoke specialized legal services across a variety of different practice areas and sectors.
+									a.brochure__link.align-self-end(href="#" data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") know More
 	section.home-clients
 		.home-clients__background.home-clients__background--img
 			img(src="./images/patterns/pattern.jpg")
