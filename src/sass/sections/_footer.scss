@@ -72,7 +72,11 @@
 	&__navbar {
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-end;
+		@include media-breakpoint-down(md) {
+			margin-top: 2rem;
+			justify-content: center;
+		}
 	}
 
 	&__list {

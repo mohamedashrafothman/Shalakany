@@ -1,40 +1,27 @@
 extends ./layouts/_index_layout.pug
 include ./mixins/_about-us-card.pug
+include ./mixins/_page-header.pug
 
 append variables
 	- var page_title = "About us";
+	- var header_data = {title: page_title, img: { src: "./images/books-shelf.jpg" }, breadcrumb: [{ title: "Home", href: "index.html" }, { title: page_title, href: "about.html" }]};
 
 block content
 	main(role="main")
-		header.section.page-header
-			.section-bg.section-bg__img.section-bg__img--blue
-				img(src="./images/patterns/pattern.jpg")
-			.container-fluid
-				.row
-					.col-10.col-sm-8.col-lg-4
-						.page-header__img
-							img(src="./images/books-shelf.jpg")
-					.col-12.col-lg-7.offset-lg-1
-						.page-header__content
-							h2.page-header__title=page_title
-							nav.page-header__breadcrumb.align-self-end(aria-label="breadcrumb")
-								ol.breadcrumb
-									li.breadcrumb-item
-										a(href="#") Home
-									li.breadcrumb-item.active(aria-current="page")=page_title
-
-		section.section.section-bg__color--white
-			article.page-header__article
-				.container-fluid
+		+page-header(header_data)
+		article.page-article
+			section.section.section-bg__color--white
+				.container
 					.row
 						.col-12.col-lg-6.offset-lg-5
-							p With over a century of experience since its establishment in 1912, Shalakany has achieved a record of success and growth that today makes it one of the leading corporate law firms in Egypt and the Middle East. The Firm provides first-rate quality legal services to a broad base of multinational, regional and premium local clients through its offices in Cairo and Alexandria.
-							p The Firm is consistently ranked as a top-tier firm across almost all practice areas and receives various awards by internationally recognized legal ranking and professional association organizations. The Firm is proud that many of our lawyers have been recognized as leading lawyers in their respective areas of practice year after year. Shalakany is the exclusive Egyptian member for Lex Mundi and Meritas.
+							.page-article__content
+								p With over a century of experience since its establishment in 1912, Shalakany has achieved a record of success and growth that today makes it one of the leading corporate law firms in Egypt and the Middle East. The Firm provides first-rate quality legal services to a broad base of multinational, regional and premium local clients through its offices in Cairo and Alexandria.
+								p The Firm is consistently ranked as a top-tier firm across almost all practice areas and receives various awards by internationally recognized legal ranking and professional association organizations. The Firm is proud that many of our lawyers have been recognized as leading lawyers in their respective areas of practice year after year. Shalakany is the exclusive Egyptian member for Lex Mundi and Meritas.
 
-		section.services.section.section__bg-color--white
-			.container
-				.row
-					each about, i in about_us
-						.col-12.col-md-6.col-lg-4.col-xl-3.mb-md-5.mb-4
-							+about-us-card(about, i)
+			section.services.section.section__bg-color--white
+				.container
+					.row
+						each about, i in about_us
+							.col-12.col-md-6.col-lg-4.col-xl-3.mb-md-5.mb-4
+								+about-us-card(about, i)
 		include ./sections/_call_to_action.pug

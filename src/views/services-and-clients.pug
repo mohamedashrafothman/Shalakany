@@ -1,0 +1,20 @@
+extends ./layouts/_index_layout.pug
+include ./mixins/_about-us-card.pug
+include ./mixins/_page-header.pug
+
+append variables
+	- var page_title = "services & clients";
+	- var header_data = {title: page_title, img: { src: "./images/books-shelf.jpg" }, breadcrumb: [{ title: "Home", href: "index.html" }, { title: page_title, href: "services-and-clients.html" }]};
+
+block content
+	main(role="main")
+		+page-header(header_data)
+
+		article.page-article
+			section.section.section-bg__color--white
+				.container-fluid
+					.row
+						.col-12.col-lg-6.offset-lg-5
+							.page-article__content
+								p Shalakany is committed to delivering top quality legal services to our clients. As a full-service corporate law firm, we provide bespoke specialized legal services across a variety of different practice areas and sectors.
+		include ./sections/_call_to_action.pug

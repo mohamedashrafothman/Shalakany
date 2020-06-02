@@ -1,0 +1,27 @@
+.page-article {
+	position: relative;
+	padding-top: $grid-gutter-width*2;
+	padding-bottom: $grid-gutter-width*2;
+
+	&__content{
+		p {
+			color: $black;
+			font-weight: $font-weight-light;
+		}
+	}
+
+	&__img {
+		z-index: 10; // to be under the main header logo
+		width: 100%;
+		height: 600px;
+		min-height: 600px;
+		max-height: 600px;
+		margin-bottom: $grid-gutter-width;
+		margin-top: calc(-200px - #{$grid-gutter-width * 2}); // (- img height / 3) + section padding-top
+		img {
+			width: 100%;
+			height: 100%;
+			@include object-fit(cover, center);
+		}
+	}
+}

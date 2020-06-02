@@ -1,6 +1,5 @@
 $page-header-height-ratio: 10; // decrement this to increase .page-header height.
 
-
 .page-header {
 	position: relative;
 	height: calc(100vh - (#{$grid-gutter-width} * #{$page-header-height-ratio}));
@@ -21,25 +20,15 @@ $page-header-height-ratio: 10; // decrement this to increase .page-header height
 		}
 	}
 
-	&__article {
-		padding-top: $grid-gutter-width*2;
-		padding-bottom: $grid-gutter-width*2;
-
-		p {
-			color: $black;
-			font-weight: $font-weight-light;
-			text-align: left;
-		}
-	}
-
 	&__img {
 		position: absolute;
 		top: 0;
 		left: 0;
+		z-index: 10;
 		width: 100%;
 		height: calc(100vh - (#{$grid-gutter-width} * 6));
+		min-height: calc(100vh - (#{$grid-gutter-width} * 6));
 		max-height: calc(100vh - (#{$grid-gutter-width} * 6));
-		z-index: 10;
 
 		img {
 			height: 100%;
@@ -101,11 +90,24 @@ $page-header-height-ratio: 10; // decrement this to increase .page-header height
 		color: $white;
 		font-weight: $font-weight-bolder;
 		text-transform: uppercase;
+		width: 60%;
+	}
 
-		width: 50%;
+	&__subtitle {
+		color: $white;
+		font-weight: $font-weight-light;
+		text-transform: capitalize;
+	}
 
+	&__title,
+	&__subtitle,
+	&__back {
+		&:last-child{
+			margin-bottom: auto;
+		}
 		&+.page-header__breadcrumb {
 			margin-top: auto;
 		}
 	}
+
 }

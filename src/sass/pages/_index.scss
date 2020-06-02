@@ -4,6 +4,7 @@
 	color: $white;
 	position: relative;
 	overflow: hidden;
+	background-color: $primary;
 
 	&>.container-fluid,
 	&>.container {
@@ -41,7 +42,6 @@
 		right: 0;
 		width: 100%;
 		height: 100%;
-		background-color: $primary;
 
 		&::after{
 			content: none;
@@ -69,7 +69,7 @@
 			right: 0;
 			width: 100%;
 			height: 100%;
-			background: linear-gradient(0deg, rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00), rgba($primary, 1.00));
+			background: linear-gradient(0deg, rgba($primary, 0.80), rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00), rgba($primary, 1.00));
 		}
 
 		&__img {
@@ -105,7 +105,6 @@
 		width: 100%;
 		height: 100%;
 		padding: $grid-gutter-width * 2;
-		background: transparent;
 
 		&>.container-fluid,
 		&>.container {
@@ -169,7 +168,6 @@
 		font-size: 1rem;
 		font-weight: 200;
 		color: $white;
-		text-align: justify;
 		width: 75%;
 		margin-bottom: $spacer * 3.9;
 
@@ -319,7 +317,18 @@
 
 	.section-bg {
 		&::after {
-			background: linear-gradient(-90deg, rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00));
+			background: linear-gradient(-90deg, rgba($primary, 0.8), rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00));
+		}
+
+		@include media-breakpoint-down(lg) {
+			&::after{
+				background: linear-gradient(-45deg, rgba($primary, 0.8), rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00));
+			}
+		}
+		@include media-breakpoint-down(sm) {
+			&::after{
+				background: linear-gradient(0deg, rgba($primary, 0.8), rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00));
+			}
 		}
 	}
 

@@ -1,0 +1,21 @@
+extends ./layouts/_index_layout.pug
+include ./mixins/_about-us-card.pug
+include ./mixins/_page-header.pug
+
+append variables
+	- var page_title = "conferences & webinars";
+	- var header_data = {back: {title: "conferences & webinars", href: "conferences-and-webinars-listing.html"}};
+
+block content
+	main(role="main")
+		+page-header(header_data)
+
+		article.page-article
+			section.section.section-bg__color--white
+				.container
+					.row
+						.col-12.col-md-10.offset-md-1
+							.page-article__content.text-center
+								.page-article__img
+									img(src="./images/news/news_6.jpg")
+								p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptates ducimus eligendi qui non animi nostrum beatae? Necessitatibus molestias nam sunt, ipsa esse accusamus, a error nisi eos alias sed!

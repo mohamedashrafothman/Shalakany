@@ -1,0 +1,14 @@
+extends ./layouts/_index_layout.pug
+include ./mixins/_about-us-card.pug
+include ./mixins/_page-header.pug
+
+append variables
+	- var page_title = "careers & trainings";
+	- var header_data = {title: page_title, img: { src: "./images/chairs.jpg" }, breadcrumb: [{ title: "Home", href: "index.html" }, { title: page_title, href: "careers-and-trainings.html" }]};
+
+block content
+	main(role="main")
+		+page-header(header_data)
+
+		article.page-article
+			section.section.section-bg__color--white

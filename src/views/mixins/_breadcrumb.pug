@@ -1,0 +1,17 @@
+mixin breadcrumb(data=[])
+	//- data = [{
+			title: String,
+			href: String
+		}]
+
+	nav.page-header__breadcrumb.align-self-end(aria-label="breadcrumb")
+		ol.breadcrumb
+			each page, index in data
+				if (index !== data.length-1)
+					li.breadcrumb-item
+						a(href=`${page.href}`)= `${page.title}`
+				else
+					li.breadcrumb-item.active(aria-current='page')
+						= `${String(page.title).split("").slice(0, 40).join('')}`
+						if (String(page.title).split("").length >= 40)
+							| ...
