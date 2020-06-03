@@ -1,0 +1,99 @@
+.firms-culture{
+	min-height: 85vh;
+	height: 85vh;
+	position: relative;
+	overflow: hidden;
+	background-color: $black;
+	padding-top: $grid-gutter-width * 3;
+	padding-bottom: $grid-gutter-width * 3;
+
+	@include media-breakpoint-down(sm) {
+		min-height: 100vh;
+		height: 100%;
+	}
+
+	&, hr, p {
+		color: $white;
+	}
+
+	&__title{
+		color: $white;
+		font-weight: $font-weight-normal;
+		font-size: 20px;
+		text-align: center;
+		width: 80%;
+		margin-right: auto;
+		margin-left: auto;
+		line-height: 1;
+
+		@include media-breakpoint-down(lg){ width: 75%; }
+		@include media-breakpoint-down(md){ width: 65%; font-size: $h5-font-size; }
+		@include media-breakpoint-down(sm){ width: 55%; }
+		@include media-breakpoint-down(xs){ width: 80%; }
+	}
+
+	&__content{
+		height: 100%;
+		display: flex;
+		align-items: center;
+
+		@include media-breakpoint-down(sm) {
+			margin-top: $grid-gutter-width * 3;
+		}
+	}
+
+	.section{
+		&-bg{
+			&::after {
+				background: rgba($black, 0.8);
+			}
+
+			&__img {
+				img {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-height: 700px) {
+		height: 700px;
+		min-height: 700px;
+	}
+}
+
+
+.culture {
+	margin-bottom: $spacer * 5;
+	&__title {
+		font-weight: $font-weight-bolder;
+		font-size: 1.8rem;
+		margin-bottom: $spacer;
+		color: $white;
+		text-align: left;
+		text-transform: uppercase;
+		width: 50%;
+
+		@include media-breakpoint-down(xl) { width: 60%; }
+		@include media-breakpoint-down(lg) { width: 75%; font-size: 2rem; }
+		@include media-breakpoint-down(md) { width: 100%; }
+		@include media-breakpoint-down(sm) { width: 85%; }
+		@include media-breakpoint-down(xs) { width: 60%; font-size: 2.5rem; }
+	}
+
+	&__text{
+		color: $white;
+		font-size: $font-size-base;
+		text-align: left;
+		font-weight: $font-weight-light;
+		line-height: $line-height-lg;
+		&::first-letter{
+			text-transform: capitalize;
+		}
+
+		@include media-breakpoint-down(md) {
+			font-size: $font-size-lg;
+		}
+	}
+
+}
