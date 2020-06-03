@@ -5,6 +5,10 @@ $page-header-height-ratio: 10; // decrement this to increase .page-header height
 	height: calc(100vh - (#{$grid-gutter-width} * #{$page-header-height-ratio}));
 	background-color: $primary;
 
+	@include media-breakpoint-down(sm) {
+		height: calc(100vh - (#{$grid-gutter-width} * #{$page-header-height-ratio}) / 2);
+	}
+
 	.section-bg {
 		&::after {
 			background: linear-gradient(180deg, rgba($primary, 0.80), rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00));
@@ -26,14 +30,20 @@ $page-header-height-ratio: 10; // decrement this to increase .page-header height
 		left: 0;
 		z-index: 10;
 		width: 100%;
-		height: calc(100vh - (#{$grid-gutter-width} * 6));
-		min-height: calc(100vh - (#{$grid-gutter-width} * 6));
-		max-height: calc(100vh - (#{$grid-gutter-width} * 6));
+		height: calc(100vh - (#{$grid-gutter-width} * 6)); // 100 view height - (next section padding top * ratio)
+		min-height: calc(100vh - (#{$grid-gutter-width} * 6)); // 100 view height - (next section padding top * ratio)
+		max-height: calc(100vh - (#{$grid-gutter-width} * 6)); // 100 view height - (next section padding top * ratio)
 
 		img {
 			height: 100%;
 			width: 100%;
 			@include object-fit(cover, center);
+		}
+
+		@include media-breakpoint-down(sm) {
+			height: calc(100vh - (#{$grid-gutter-width} * 15));
+			min-height: calc(100vh - (#{$grid-gutter-width} * 15));
+			max-height: calc(100vh - (#{$grid-gutter-width} * 15));
 		}
 	}
 
@@ -44,9 +54,22 @@ $page-header-height-ratio: 10; // decrement this to increase .page-header height
 		align-items: flex-start;
 		height: 100%;
 		padding-right: $grid-gutter-width*2;
+		padding-bottom: $grid-gutter-width * 1.5;
 		// for centering (page header height / 2) - (back button line height + back button margin bottom)
 		padding-top: calc(((100vh - #{$grid-gutter-width} * #{$page-header-height-ratio}) / 2) - #{$btn-line-height + $spacer});
-		padding-bottom: $grid-gutter-width * 1.5;
+
+		@include media-breakpoint-down(md) {
+			padding-left: $grid-gutter-width * 2;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-top: calc(((100vh - #{$grid-gutter-width} * #{$page-header-height-ratio}) / 1.5) - #{$btn-line-height + $spacer});
+		}
+
+		@include media-breakpoint-down(xs) {
+			padding-left: $grid-gutter-width;
+			padding-right: $grid-gutter-width;
+		}
 	}
 
 	&__back {
@@ -91,6 +114,17 @@ $page-header-height-ratio: 10; // decrement this to increase .page-header height
 		font-weight: $font-weight-bolder;
 		text-transform: uppercase;
 		width: 60%;
+		@include media-breakpoint-down(lg) {
+			width: 70%;
+		}
+
+		@include media-breakpoint-down(md) {
+			width: 80%;
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
 	}
 
 	&__subtitle {

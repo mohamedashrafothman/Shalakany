@@ -11,7 +11,7 @@
 
 	.brochure {
 		&__content {
-			padding: $grid-gutter-width * 2;
+			padding: $grid-gutter-width*2 0;
 			text-align: left;
 			align-items: flex-start;
 
@@ -31,6 +31,10 @@
 				text-align: center;
 				justify-content: center;
 			}
+		}
+
+		&__button {
+			width: 100%;
 		}
 	}
 

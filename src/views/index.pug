@@ -15,7 +15,7 @@ block content
 						#home-banner__side
 							.container
 								.row
-									.col-12
+									.col-12.col-sm-8.col-md-12
 										#home-banner__slider
 											.swiper-container#home-banner-slider(data-swiper-effect="fade")
 												.swiper-wrapper
@@ -30,8 +30,8 @@ block content
 										a#home-banner__button.btn.btn-secondary(href="#") About the firm
 									.col-12
 										#home-banner__slider--arrows
-											.swiper-button-prev.swiper-button-white
-											.swiper-button-next.swiper-button-white
+											.swiper-button-prev.swiper-button-white(for="home-banner-slider")
+											.swiper-button-next.swiper-button-white(for="home-banner-slider")
 					.d-none.d-md-block.col-md-6.col-xl-7
 						.section-bg.section-bg__img(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.1")
 							img(src="./images/faruk-kaymak-CNVvDjVDiVI-unsplash.jpg", alt="")
@@ -49,8 +49,8 @@ block content
 													.swiper-slide
 														+service-card(service, i)
 										.brochure__slider-buttons.brochure__slider-buttons--white(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="0.03")
-											.swiper-button-prev
-											.swiper-button-next
+											.swiper-button-prev(for="home-whatWeDo-slider")
+											.swiper-button-next(for="home-whatWeDo-slider")
 								.col-12.col-lg-7.offset-lg-0
 									.brochure__content.text-left.align-items-start
 										h2.brochure__title(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") what we do
@@ -89,8 +89,8 @@ block content
 														.logo
 															img(src="./images/clients/client_4.svg", alt="")
 											.brochure__slider-buttons.brochure__slider-buttons--transparent(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="0.03")
-												.swiper-button-prev.swiper-button-white
-												.swiper-button-next.swiper-button-white
+												.swiper-button-prev.swiper-button-white(for="home-clients-slider")
+												.swiper-button-next.swiper-button-white(for="home-clients-slider")
 		section.section#home-latest-news
 			.container-fluid
 				.row

@@ -34,13 +34,6 @@ $brochure-slider-buttons-height: 74px;
 		}
 	}
 
-	&__text,
-	&__subtitle {
-		&:not(:last-child) {
-			margin-bottom: $spacer * 3;
-		}
-	}
-
 	&__content {
 		display: flex;
 		flex-direction: column;
@@ -49,7 +42,7 @@ $brochure-slider-buttons-height: 74px;
 		text-align: center;
 		padding: $grid-gutter-width*2.85 $grid-gutter-width*3.78;
 
-		&>* {
+		&, &>* {
 			z-index: 20; // must be bigger than .brochure:after
 		}
 
@@ -71,20 +64,19 @@ $brochure-slider-buttons-height: 74px;
 		font-size: $font-size-base;
 		font-weight: $font-weight-light;
 		color: $white;
-		line-height: 30px;
-
-		&:not(:last-of-type) {
-			@extend .h1;
-		}
+		line-height: $line-height-lg;
 
 		@include media-breakpoint-down(md) {
 			width: 100%;
+			line-height: $line-height-base;
 		}
 	}
 
 
 	&__title {
-		margin: 0 !important;
+		margin-top: 0 !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
 		font-weight: $font-weight-bolder;
 		text-transform: uppercase;
 		color: $white;
@@ -212,7 +204,7 @@ $brochure-slider-buttons-height: 74px;
 		width: $brochure-slider-buttons-width * 2; // width of two buttons
 		background-color: $white;
 		border: $border-width $border-style $primary;
-		z-index: 15;
+		z-index: 25; // bigger than .slider__content
 
 		.swiper-button-prev,
 		.swiper-button-next {
@@ -225,7 +217,7 @@ $brochure-slider-buttons-height: 74px;
 			background-size: 45px;
 			margin: 0 !important;
 			overflow: hidden;
-			z-index: 17;
+			z-index: 27; // bigger than .slider__buttons
 		}
 
 		.swiper-button-next,
@@ -242,65 +234,9 @@ $brochure-slider-buttons-height: 74px;
 	}
 
 	&__image {
-		position: absolute;
-		width: 500px;
+		width: 100%;
 		min-height: 1px;
-		height: 300px;
 		overflow: hidden;
-		top: 0;
-		left: 0;
-
-		&--top-left {
-			top: 0;
-			left: 0;
-			bottom: initial;
-			right: initial;
-		}
-
-		&--top-right {
-			top: 0;
-			bottom: initial;
-			right: 0;
-			left: initial;
-		}
-
-		&--top-center {
-			top: 0;
-			bottom: initial;
-			right: initial;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
-		&--bottom-left {
-			bottom: 0;
-			top: initial;
-			left: 0;
-			right: initial;
-		}
-
-		&--bottom-right {
-			bottom: 0;
-			top: initial;
-			right: 0;
-			left: initial;
-		}
-
-		&--bottom-center {
-			top: initial;
-			bottom: 0;
-			right: initial;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
-		&--center-center {
-			top: 50%;
-			bottom: initial;
-			left: 50%;
-			right: initial;
-			transform: translate(-50%);
-		}
 
 		img {
 			transition: $transition-collapse;
@@ -375,6 +311,11 @@ $brochure-slider-buttons-height: 74px;
 			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
 		}
 
+		&--block {
+			width: 100%;
+			display: block;
+		}
+
 		&:focus,
 		&.focus {
 			&:after {
@@ -411,6 +352,17 @@ $brochure-slider-buttons-height: 74px;
 				left: -#{$brochure-padding-gap};
 				bottom: -#{$brochure-padding-gap};
 				right: -#{$brochure-padding-gap};
+			}
+		}
+
+
+		@include media-breakpoint-down(xl){
+			&--lg {
+				@include button-size($btn-padding-y-lg, $btn-padding-x-lg * 0.75, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+			}
+
+			&--sm {
+				@include button-size($btn-padding-y-sm, $btn-padding-x-sm * 0.75, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
 			}
 		}
 	}
@@ -493,7 +445,7 @@ $value in $colors {
 		.brochure__image {
 			&:after {
 				@if $value==transparent {
-					content: none;
+					content: none !important;
 				}
 
 				border-color: color-yiq($value, $primary, $primary);
