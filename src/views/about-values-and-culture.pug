@@ -1,6 +1,6 @@
 extends ./layouts/_index_layout.pug
 include ./mixins/_about-us-card.pug
-include ./mixins/_page-header.pug
+include ./mixins/_inner-header.pug
 
 append variables
 	- var page_title = "values & culture";
@@ -8,19 +8,18 @@ append variables
 
 block content
 	main(role="main")
-		+page-header(header_data)
-
-		article.page-article
-			section.section.section-bg__color--white
+		+inner-header(header_data)
+		article.inner-article
+			section.section.section__bg--white
 				.container-fluid
 					.row
 						.col-10.offset-1.col-md-6.offset-md-5
-							.page-article__content
+							.inner-article__content
 								p Through the experience, expertise and dedication of its lawyers and staff, the Firm provides bespoke top quality legal services for its clients. Each client receives the personal attention of a partner who, as the designated client manager, is responsible for ensuring that all work for the client is handled in a professional and timely manner by the specialized experts within the Firm.
 								p The success of the Firm’s clients is a measure of the Firm’s own success. To assist its clients, the Firm strives to understand their business objectives. The Firm’s ultimate aim is for clients to consider the Firm as their trusted counsel and an extension of their team.
-		section.firms-culture.section
-			.section-bg.section-bg__img
-				img(src="./images/firms-culture.jpg")
+		section.section.firms-culture
+			.section__bg--img-container.section__fade.section__fade--black-02
+				img.section__bg--img(src="./images/firms-culture.jpg")
 			.container.h-100
 				.row.h-100
 					.col-12.col-md-8.offset-md-2.col-lg-6.offset-lg-3.col-xl-4.offset-xl-4

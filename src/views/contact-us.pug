@@ -1,6 +1,6 @@
 extends ./layouts/_index_layout.pug
 include ./mixins/_about-us-card.pug
-include ./mixins/_page-header.pug
+include ./mixins/_inner-header.pug
 
 append variables
 	- var page_title = "contact us";
@@ -8,12 +8,11 @@ append variables
 
 block content
 	main(role="main")
-		+page-header(header_data)
-
-		article.page-article
-			section.section.section-bg__color--white
+		+inner-header(header_data)
+		article.inner-article
+			section.section.section__bg--white
 				.container-fluid
 					.row
 						.col-10.offset-1.col-md-6.offset-md-5
-							.page-article__content
+							.inner-article__content
 								p Whether you’re looking for more information, or you’d like to let us know your feedback, you’ll find easy ways to contact us right here.

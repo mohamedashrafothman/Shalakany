@@ -72,7 +72,8 @@ $colors: map-merge(
     "gray-800"   : $gray-800,
     "gray-900"   : $gray-900,
     "gray"       : $gray-600,
-    "gray-dark"  : $gray-800,
+	"gray-dark"  : $gray-800,
+	"black"      : $black,
     "transparent": transparent
   ),
   $colors
@@ -98,7 +99,32 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
-    "dark":       $dark
+	"dark":       $dark,
+	"blue"       : $blue,
+    "indigo"     : $indigo,
+    "purple"     : $purple,
+    "pink"       : $pink,
+    "red"        : $red,
+    "orange"     : $orange,
+    "yellow"     : $yellow,
+    "green"      : $green,
+    "teal"       : $teal,
+    "cyan"       : $cyan,
+    "brown"      : $brown,
+    "white"      : $white,
+    "gray-100"   : $gray-100,
+    "gray-200"   : $gray-200,
+    "gray-300"   : $gray-300,
+    "gray-400"   : $gray-400,
+    "gray-500"   : $gray-500,
+    "gray-600"   : $gray-600,
+    "gray-700"   : $gray-700,
+    "gray-800"   : $gray-800,
+    "gray-900"   : $gray-900,
+    "gray"       : $gray-600,
+	"gray-dark"  : $gray-800,
+	"black"      : $black,
+    "transparent": transparent
   ),
   $theme-colors
 );
@@ -122,6 +148,32 @@ $escaped-characters: (
   (")","%29"),
 ) !default;
 
+$gradient-angles: (
+	"0"  : 0deg,
+	"45" : 45deg,
+	"90" : 90deg,
+	"135": 135deg,
+	"180": 180deg,
+	"225": 225deg,
+	"270": 270deg,
+	"315": 315deg,
+	"360": 360deg
+) !default;
+
+
+$fade-opacity: (
+	"0": 0,
+	"01": 0.1,
+	"02": 0.2,
+	"03": 0.3,
+	"04": 0.4,
+	"05": 0.5,
+	"06": 0.6,
+	"07": 0.7,
+	"08": 0.8,
+	"09": 0.9,
+	"1": 1
+) !default;
 
 // Options
 //
@@ -311,12 +363,12 @@ $line-height-lg:              $line-height-base * 1.25 !default;
 $line-height-sm:              $line-height-base * 0.5 !default;
 
 
-$h1-font-size:                $font-size-base * 4 !default;
-$h2-font-size:                $font-size-base * 3.75 !default;
-$h3-font-size:                $font-size-base * 2.75 !default;
-$h4-font-size:                $font-size-base * 2.5 !default;
-$h5-font-size:                $font-size-base * 1.5 !default;
-$h6-font-size:                $font-size-base !default;
+$h1-font-size: $font-size-base * 4 !default;      // 64px
+$h2-font-size: $font-size-base * 3.75 !default;   // 60px
+$h3-font-size: $font-size-base * 2.75 !default;   // 44px
+$h4-font-size: $font-size-base * 2.5 !default;    // 40px
+$h5-font-size: $font-size-base * 1.875 !default;  // 30px
+$h6-font-size: $font-size-base !default;          // 16px
 
 $headings-margin-bottom:      $spacer / 2 !default;
 $headings-font-family:        $font-family-base !default;

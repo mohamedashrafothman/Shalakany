@@ -1,0 +1,75 @@
+$award-bookmark-shape-gutter: $grid-gutter-width * 0.25;
+$reward-padding: $grid-gutter-width * 0.8;
+$reward-bookmark-shape-width: #{($reward-padding * 2.75) - ($award-bookmark-shape-gutter * 2)};
+
+.award{
+	padding: $reward-padding;
+	border: $border-width $border-style $border-color;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&__bookmark{
+		&::after, &::before{
+			content: "";
+			display: block;
+			position: absolute;
+			right: $award-bookmark-shape-gutter;
+			width: $reward-bookmark-shape-width;
+
+		}
+
+		&::after{
+			top: -#{$award-bookmark-shape-gutter};
+			height: #{$grid-gutter-width * 2};
+			background-color: $black;
+		}
+		&::before{
+			top: #{($grid-gutter-width * 2) - $award-bookmark-shape-gutter};
+			border-width: calc(#{$reward-bookmark-shape-width / 2});
+			border-style: solid;
+			border-color: $white;
+			border-bottom-width: 0;
+			border-top-color: $black;
+		}
+	}
+
+
+	p, &__text {
+		margin-bottom: 0;
+		font-weight: $font-weight-light;
+	}
+
+	&__content{
+		padding-top: $grid-gutter-width;
+		padding-bottom: $grid-gutter-width;
+	}
+
+	&__title{
+		width: calc(100% - (#{$award-bookmark-shape-gutter * 2} + #{$reward-bookmark-shape-width}) + #{$reward-padding}); // 100% - (bookmark right * 2 + bookmark width) + reward padding-right
+		font-size: 1.75rem;
+		font-weight: $font-weight-light;
+		line-height: 1;
+	}
+}
+
+@each $color,
+$color-value in $theme-colors {
+	.award__color--#{$color} {
+		border-color: $color-value !important;
+		.award__title{
+			color: $color-value;
+		}
+	}
+	.award__bookmark--#{$color}{
+		&::after{
+			background-color: $color-value;
+		}
+		&::before{
+			border-top-color: $color-value;
+		}
+	}
+}

@@ -1,7 +1,7 @@
 extends ./layouts/_index_layout.pug
 include ./mixins/_service-card.pug
 include ./mixins/_about-us-card.pug
-include ./mixins/_page-header.pug
+include ./mixins/_inner-header.pug
 
 append variables
 	- var page_title = "our history";
@@ -9,16 +9,15 @@ append variables
 
 block content
 	main(role="main")
-		+page-header(header_data)
-
-		article.page-article
-			section.section.section-bg__color--white
+		+inner-header(header_data)
+		article.inner-article
+			section.section.section__bg--white
 				.container-fluid
 					.row
 						.col-10.offset-1.col-md-6.offset-md-5
-							.page-article__content
+							.inner-article__content
 								p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-			section.timeline.section.section-bg__color--white
+			section.timeline.section.section__bg--white
 				.container-fluid
 					.row
 						.col-3.col-md-3.col-xl-2.px-0

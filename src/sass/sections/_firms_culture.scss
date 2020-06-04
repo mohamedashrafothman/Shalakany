@@ -3,7 +3,6 @@
 	height: 85vh;
 	position: relative;
 	overflow: hidden;
-	background-color: $black;
 	padding-top: $grid-gutter-width * 3;
 	padding-bottom: $grid-gutter-width * 3;
 
@@ -42,19 +41,15 @@
 		}
 	}
 
-	.section{
-		&-bg{
-			&::after {
-				background: rgba($black, 0.8);
-			}
-
-			&__img {
-				img {
-					opacity: 1;
-				}
-			}
-		}
-	}
+	// .section{
+	// 	&__bg{
+	// 		&--img {
+	// 			img {
+	// 				opacity: 1;
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	@media screen and (max-height: 700px) {
 		height: 700px;

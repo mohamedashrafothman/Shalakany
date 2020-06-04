@@ -1,6 +1,6 @@
 extends ./layouts/_index_layout.pug
 include ./mixins/_about-us-card.pug
-include ./mixins/_page-header.pug
+include ./mixins/_inner-header.pug
 
 append variables
 	- var page_title = "About us";
@@ -8,17 +8,17 @@ append variables
 
 block content
 	main(role="main")
-		+page-header(header_data)
-		article.page-article
-			section.section.section-bg__color--white
+		+inner-header(header_data)
+		article.inner-article
+			section.section.section__bg--white
 				.container
 					.row
 						.col-10.offset-1.col-md-6.offset-md-5
-							.page-article__content
+							.inner-article__content
 								p With over a century of experience since its establishment in 1912, Shalakany has achieved a record of success and growth that today makes it one of the leading corporate law firms in Egypt and the Middle East. The Firm provides first-rate quality legal services to a broad base of multinational, regional and premium local clients through its offices in Cairo and Alexandria.
 								p The Firm is consistently ranked as a top-tier firm across almost all practice areas and receives various awards by internationally recognized legal ranking and professional association organizations. The Firm is proud that many of our lawyers have been recognized as leading lawyers in their respective areas of practice year after year. Shalakany is the exclusive Egyptian member for Lex Mundi and Meritas.
 
-			section.services.section.section__bg-color--white
+			section.services.section.section__bg--white
 				.container
 					.row
 						each about, i in about_us

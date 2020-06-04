@@ -4,7 +4,7 @@ mixin breadcrumb(data=[])
 			href: String
 		}]
 
-	nav.page-header__breadcrumb.align-self-end(aria-label="breadcrumb")
+	nav.inner-header__breadcrumb.align-self-end(aria-label="breadcrumb")
 		ol.breadcrumb
 			each page, index in data
 				if (index !== data.length-1)

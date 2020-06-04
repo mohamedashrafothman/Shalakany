@@ -1,3 +1,5 @@
+$app-navbar-border-width: $border-width * 2;
+
 .app-navbar {
 	&__side-menu {
 		position: fixed;
@@ -44,16 +46,16 @@
 
 	&__search{
 		position: absolute;
-		top: #{$grid-gutter-width + ( $grid-gutter-width + $grid-gutter-width ) - $border-width}; // open-button top value + open-button height
+		top: #{$grid-gutter-width + ( $grid-gutter-width + $grid-gutter-width ) - ($app-navbar-border-width)}; // open-button top value + open-button height
 		right: #{$grid-gutter-width + ($grid-gutter-width * 2)};
 		z-index: $zindex-overlay-open - 1;
 		background-color: $gray-500;
 		min-height: $grid-gutter-width*2;
 		height: $grid-gutter-width*2;
 		width: calc(25vw - (#{$grid-gutter-width} * 2));
-		border-top: #{$border-width*2} $border-style $border-color;
-		border-left: #{$border-width*2} $border-style $border-color;
-		border-bottom: #{$border-width*2} $border-style $border-color;
+		border-top: #{$app-navbar-border-width} $border-style $border-color;
+		border-left: #{$app-navbar-border-width} $border-style $border-color;
+		border-bottom: #{$app-navbar-border-width} $border-style $border-color;
 
 		&:not(.is_open) {
 			display: none;
@@ -64,13 +66,13 @@
 		}
 
 		@include media-breakpoint-down(md) {
-			top: #{$grid-gutter-width + ($grid-gutter-width + ($grid-gutter-width / 2)) - $border-width}; // open-button top value + open-button height
+			top: #{$grid-gutter-width + ($grid-gutter-width + ($grid-gutter-width / 2)) - ($app-navbar-border-width)}; // open-button top value + open-button height
 			right: #{($grid-gutter-width / 2) + ($grid-gutter-width * 2)};
-			width: calc(50vw - #{$border-width * 8} - (#{$grid-gutter-width / 2} + #{$grid-gutter-width * 2}));
+			width: calc(50vw - #{$app-navbar-border-width*4} - (#{$grid-gutter-width / 2} + #{$grid-gutter-width * 2}));
 		}
 
 		@include media-breakpoint-down(sm) {
-			width: calc(75vw - #{$border-width * 8} - (#{$grid-gutter-width / 2} + #{$grid-gutter-width * 2}));
+			width: calc(75vw - #{$app-navbar-border-width*4} - (#{$grid-gutter-width / 2} + #{$grid-gutter-width * 2}));
 		}
 	}
 	&__search-form{
@@ -152,6 +154,7 @@
 		height: 100%;
 		z-index: $zindex-overlay-menu-backdrop;
 		display: none;
+		transition: $transition-base;
 
 		&.menu-open, &.search-open {
 			display: block !important;
@@ -187,7 +190,7 @@
 		}
 
 		i.material-icons {
-			font-size: 2rem;
+			font-size: 1.5rem;
 			font-weight: lighter;
 		}
 	}
@@ -197,7 +200,7 @@
 		position: fixed;
 		top: $grid-gutter-width;
 		right: $grid-gutter-width;
-		border: #{$border-width*2} $border-style $border-color;
+		border: #{$app-navbar-border-width} $border-style $border-color;
 
 		&:hover {
 			transform: rotate(-45deg);
@@ -221,29 +224,31 @@
 	&__open-search {
 		z-index: #{$zindex-overlay-open - 1};
 		position: absolute;
-		top: #{$grid-gutter-width + ($grid-gutter-width + $grid-gutter-width ) - $border-width}; // open-button top value + open-button height
+		top: #{$grid-gutter-width + ($grid-gutter-width + $grid-gutter-width ) - ($app-navbar-border-width)}; // open-button top value + open-button height
 		right: $grid-gutter-width;
-		border: #{$border-width*2} $border-style $border-color;
+		border: #{$app-navbar-border-width} $border-style $border-color;
 
 		&.is_open{
 			border-left-color: $gray-500;
 		}
 
 		@include media-breakpoint-down(lg) {
-			top: calc(#{$grid-gutter-width} + ( #{$grid-gutter-width} + #{$grid-gutter-width / 2} ) - #{$border-width}); // open-button top value + open-button height;
-			right: $grid-gutter-width / 2;
+			top: #{$grid-gutter-width + ( $grid-gutter-width + ($grid-gutter-width / 2) ) - ($app-navbar-border-width)}; // open-button top value + open-button height;
+			right: #{$grid-gutter-width / 2};
 		}
 	}
 
 	&__close-menu {
+		background-color: $border-color;
 		z-index: $zindex-overlay-close;
 		position: absolute;
-		top: #{($grid-gutter-width/2) + ($border-width*2)}; // Same as .overlay padding
-		right: #{($grid-gutter-width/2) + ($border-width*2)}; // Same as .overlay padding
+		top: #{$grid-gutter-width/2}; // Same as .overlay padding
+		right: #{$grid-gutter-width/2}; // Same as .overlay padding
+		border: $border-color $border-style $app-navbar-border-width
 	}
 
 	&__nav {
-		border: #{$border-width*2} $border-style $border-color;
+		border: #{$app-navbar-border-width} $border-style $border-color;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -253,8 +258,8 @@
 
 	&__list {
 		width: 100%;
-		height: calc(55vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$border-width * 2})));
-		max-height: calc(55vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$border-width * 2})));
+		height: calc(55vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$app-navbar-border-width})));
+		max-height: calc(55vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$app-navbar-border-width})));
 		margin: 0;
 		display: flex;
 		flex-direction: column;
@@ -264,8 +269,8 @@
 		padding: 0 $grid-gutter-width*3;
 
 		@include media-breakpoint-down(md) {
-			height: calc(55vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$border-width*2})));
-			max-height: calc(55vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$border-width*2})));
+			height: calc(55vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$app-navbar-border-width})));
+			max-height: calc(55vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$app-navbar-border-width})));
 			padding: 0 #{$grid-gutter-width* 1.333};
 		}
 
@@ -304,7 +309,6 @@
 			display: block;
 			height: 0.75em;
 			width: 0.75em;
-			background-color: $brown;
 			position: absolute;
 			top: 50%;
 			left: -0.75em;
@@ -312,6 +316,12 @@
 			z-index: -1;
 			transition: $transition-base;
 			opacity: 0;
+
+			@if $primary == $brown{
+				background-color: $blue;
+			} @else {
+				background-color: $brown;
+			}
 		}
 
 		&:nth-of-type(1),

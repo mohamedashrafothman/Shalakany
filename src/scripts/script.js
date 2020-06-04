@@ -7,6 +7,7 @@ var AppNav         = require('./partials/AppNav');
 var swiperInit     = require('./partials/swiperInit');
 var animateCssInit = require('./partials/animateCssInit');
 var parollerInit   = require('./partials/parollerInit');
+var MixItUpInit    = require('./partials/MixItUpInit');
 
 (function ($) {
 	$(window).on('load', () => {
@@ -22,5 +23,6 @@ var parollerInit   = require('./partials/parollerInit');
 		new AppNav({speed: 'slower', animation: 'fade', entrance_direction: 'right', exit_direction: 'right'});
 		swiperInit();
 		parollerInit();
+		MixItUpInit();
 	});
 })(jQuery);

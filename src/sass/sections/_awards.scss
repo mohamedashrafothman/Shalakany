@@ -1,0 +1,46 @@
+.inner-header{
+	& + .awards {
+		padding-top: 11.625rem;
+		padding-bottom: 4.9375rem;
+	}
+}
+
+.awards {
+	min-height: 100vh;
+	height: 100%;
+
+	&__nav{
+		margin-bottom: map-get($spacers, 5);
+		.nav{
+			&-tabs{
+				border-bottom: 0;
+			}
+			&-item, &-link{
+				padding-right: 0;
+				padding-left: 0;
+				margin-bottom:0;
+				border: 0;
+				background-color: transparent;
+				font-weight: $font-weight-bolder;
+				font-size: $font-size-lg;
+				text-transform: uppercase;
+				color: $black;
+				outline: none !important;
+				box-shadow: none !important;
+				&.active{
+					color: $primary;
+					border-bottom: $border-width*2 $border-style $primary;
+				}
+			}
+			&-item{
+				&:not(:last-child) {
+					margin-right: map-get($spacers, 5);
+				}
+			}
+		}
+	}
+
+	@media screen and (max-height: 700px) {
+		min-height: 700px;
+	}
+}

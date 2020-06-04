@@ -17,13 +17,18 @@
 				&,
 				&>.active {
 					background-color: transparent;
-					color: $brown;
 					text-align: right;
 					font-size: $font-size-base;
 					font-weight: $font-weight-normal;
 					text-transform: capitalize;
 					line-height: 1;
 					transition: $transition-base;
+
+					@if $primary == $brown {
+						color: $blue;
+					} @else {
+						color: $brown;
+					}
 				}
 			}
 

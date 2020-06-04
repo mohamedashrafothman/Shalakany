@@ -156,10 +156,14 @@ var AppNav = (function() {
 
 		// check if search is not opened
 		if (!_this.is_search_open) {
+			// change search button icon
+			_this.$open_search_button.find(".material-icons").text("close");
 			// add class open to the open button
 			_this.$open_search_button.addClass('is_open');
 			// open navbar search
 			_this.$app_navbar_search.addClass('is_open').animateCss(_this._animation.entrance, function() {
+				// make search input focus
+				_this.$app_navbar_search.find("form input").focus();
 				// set search open state to true
 				_this.is_search_open = true;
 			});
@@ -175,6 +179,8 @@ var AppNav = (function() {
 
 		// check if search is open
 		if (_this.is_search_open) {
+			// change search button icon
+			_this.$open_search_button.find(".material-icons").text("search");
 			// remove open state class from open button
 			_this.$open_search_button.removeClass('is_open');
 			// exit search input

@@ -1,6 +1,6 @@
 .footer {
 	color: $white;
-	background-color: #101846;
+	background-color: #101846; // TODO: get this color from primary color
 
 	p {
 		margin-bottom: 0;
@@ -21,7 +21,7 @@
 	&__bottom {
 		padding-top: $grid-gutter-width * 0.75;
 		padding-bottom: $grid-gutter-width * 0.75;
-		background-color: #050A22;
+		background-color: #050A22; // TODO: get this color from primary color
 
 		&--content {
 			display: flex;
