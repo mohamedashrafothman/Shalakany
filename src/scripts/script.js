@@ -3,10 +3,10 @@ require('popper.js');
 require('bootstrap');
 require('./libs/jquery.paroller.min');
 var WOW            = require('wowjs').WOW;
-var sideNav        = require('./partials/sideNav');
+var AppNav         = require('./partials/AppNav');
 var swiperInit     = require('./partials/swiperInit');
 var animateCssInit = require('./partials/animateCssInit');
-var parollerInit = require('./partials/parollerInit');
+var parollerInit   = require('./partials/parollerInit');
 
 (function ($) {
 	$(window).on('load', () => {
@@ -19,7 +19,7 @@ var parollerInit = require('./partials/parollerInit');
 	});
 	$(document).ready(() => {
 		$('body').addClass('preloader-shown');
-		sideNav({speed: '', animation: 'fade', entrance_direction: 'right', exit_direction: 'right'});
+		new AppNav({speed: 'slower', animation: 'fade', entrance_direction: 'right', exit_direction: 'right'});
 		swiperInit();
 		parollerInit();
 	});

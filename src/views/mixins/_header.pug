@@ -3,14 +3,19 @@ mixin header(data={})
 		div(class=`app-navbar__logo ${(String(page_title).toLowerCase() == "home") ? "app-navbar__logo--home" : ""}`)
 			a(href="index.html")
 				img(src="./images/icons_logos/logo.svg", alt=`${locals.sitename[locals.lang]}`)
-		div(class=`app-navbar__underlay ${(data.is_open) ? "d-block" : ""}`)
-		div(class=`app-navbar__open-button`)
+		div(class=`app-navbar__underlay ${(data.is_menu_open) ? "menu-open" : ((data.is_search_open) ? "search-open" : "")}`)
+		div(class=`app-navbar__open-menu`)
 			i(class=`material-icons`) menu
-		div(class=`app-navbar__side-menu ${(data.is_open) ? "is_open" : ""}`)
-			div(class=`app-navbar__close-button`)
+		div(class=`app-navbar__open-search ${(data.is_search_open) ? "is_open" : ""}`)
+			i(class=`material-icons`) search
+		div(class=`app-navbar__side-menu ${(data.is_menu_open) ? "is_open" : ""}`)
+			div(class=`app-navbar__close-menu`)
 				i(class=`material-icons`) clear
 			nav(class=`app-navbar__nav`)
 				ol(class=`app-navbar__list` aria-label="app-navbar")
 					each item, i in data.menu_list
 						li(class=`app-navbar__list-item ${(String(item.title).toLowerCase() == String(page_title).toLowerCase()) ? "app-navbar__list-item--active" : ""}`, aria-current=(String(item.title).toLowerCase() == String(page_title).toLowerCase()) ? "page" : undefined)
 							a(href=item.href)=item.title
+		div(class=`app-navbar__search ${(data.is_search_open) ? "is_open" : ""}`)
+			form(class=`app-navbar__search-form`, action="#", method="POST")
+				input(type="text", class=`app-navbar__search-input`, placeholder="Search....", value="")
