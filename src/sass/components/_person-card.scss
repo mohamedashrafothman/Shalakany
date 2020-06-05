@@ -1,0 +1,144 @@
+$person-padding-gap: $grid-gutter-width / 2;
+$person-rectangle-height: $grid-gutter-width;
+$person-rectangle-width: $person-rectangle-height;
+
+
+.person {
+	position: relative;
+
+	&__with-rectangle {
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: $person-rectangle-width;
+			height: $person-rectangle-height;
+			top: calc(21.5rem + (#{$person-rectangle-height / 2} + #{$person-padding-gap / 2})); // image height + half of the grid gutter width
+			right: #{$grid-gutter-width};
+			background-color: $black;
+			z-index: 1;
+			transform: rotate(45deg);
+		}
+	}
+
+	&__size {
+		&--lg {
+			.person__image {
+				height: 26.5rem;
+				max-height: 26.5rem;
+				min-height: 26.5rem;
+			}
+
+			&.person__with-rectangle {
+				&::before {
+					top: calc(26.5rem - (#{$person-rectangle-height / 2} + #{$person-padding-gap / 2})); // image height + half of the grid gutter width
+				}
+			}
+		}
+
+		&--md {
+			.person__image {
+				height: 21.5rem;
+				max-height: 21.5rem;
+				min-height: 21.5rem;
+			}
+
+			&.person__with-rectangle {
+				&::before {
+					top: calc(21.5rem - (#{$person-rectangle-height / 2} + #{$person-padding-gap / 2})); // image height + half of the grid gutter width
+				}
+			}
+		}
+
+		&--sm {
+			.person__image {
+				height: 17.1875rem;
+				max-height: 17.1875rem;
+				min-height: 17.1875rem;
+			}
+
+			&.person__with-rectangle {
+				&::before {
+					top: calc(17.1875rem - (#{$person-rectangle-height / 2} + #{$person-padding-gap / 2})); // image height + half of the grid gutter width
+				}
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+		width: 100%;
+		height: 21.5rem;
+		max-height: 21.5rem;
+		min-height: 21.5rem;
+		overflow: hidden;
+		display: block;
+		margin-bottom: calc(#{$person-rectangle-height / 2} + #{$spacer});
+
+		a {
+			width: 100%;
+			height: 100%;
+			display: block;
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				width: calc(100% - (#{$person-padding-gap}));
+				height: calc(100% - (#{$person-padding-gap}));
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: transparent;
+				border: $border-width $border-style $white;
+				transition: $transition-base;
+			}
+		}
+
+		img {
+			transition: $transition-collapse;
+			width: 100%;
+			height: 100%;
+			@include object-fit(cover, top center);
+		}
+	}
+
+	&__name {
+		text-transform: uppercase;
+		font-weight: $font-weight-bolder;
+		margin-bottom: 0;
+
+		&,
+		a,
+		a:hover {
+			color: $primary;
+		}
+	}
+
+	&__tag-line {
+		color: $primary;
+		font-weight: $font-weight-light;
+		text-transform: capitalize;
+		font-size: 1.25rem;
+	}
+
+	&:hover {
+		.person__image {
+			img {
+				transform: scale(1.04);
+			}
+		}
+	}
+}
+
+
+//colors
+@each $color,
+$value in $theme-colors {
+
+	.person__with-rectangle--#{$color} {
+		&::before {
+			background-color: $value;
+		}
+	}
+
+}

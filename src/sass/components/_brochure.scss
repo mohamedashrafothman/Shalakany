@@ -370,7 +370,7 @@ $brochure-slider-buttons-height: 74px;
 
 //colors
 @each $color,
-$value in $colors {
+$value in $theme-colors {
 	.brochure__slider-buttons--#{$color} {
 		@if $value==transparent {
 			background-color: transparent;

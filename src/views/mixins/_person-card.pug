@@ -1,0 +1,15 @@
+mixin person(data={}, index=0)
+	//- data = {
+			rectangle: { color: "brown" },
+			size: "lg",
+			img: { src="" },
+			name: "",
+			tagLine: ""
+		}
+	div(class=`person ${(data.rectangle && data.rectangle.color) ? "person__with-rectangle person__with-rectangle--"+data.rectangle.color : ""} ${(data.size) ? "person__size--"+data.size : ""}`)
+		.person__image
+			a(href="our-people-single.html")
+				img(src=data.img.src, alt=data.name)
+		h6.person__name
+			a(href="our-people-single.html")=data.name
+		p.person__tag-line=data.tagLine

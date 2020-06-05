@@ -144,7 +144,7 @@ $news-padding-gap: 6px;
 
 //colors
 @each $color,
-$value in $colors {
+$value in $theme-colors {
 	.news__bg--#{$color} {
 		@if $value == transparent {
 			background-color: transparent;
