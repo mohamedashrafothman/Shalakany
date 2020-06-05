@@ -1,0 +1,239 @@
+$conference-webinar-padding-gap: 6px;
+
+.conference, .webinar{
+	display: flex;
+	position: relative;
+	text-align: left;
+	transition: $transition-base;
+	background-color: transparent;
+
+	&__border{
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: calc(100% - (#{$conference-webinar-padding-gap} * 2));
+			height: calc(100% - (#{$conference-webinar-padding-gap} * 2));
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: transparent;
+			border: $border-width $border-style transparent;
+			transition: $transition-base;
+			z-index: 1;
+		}
+	}
+
+	&__image {
+		&, & > a {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			@include object-fit(cover, center);
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		padding: #{$conference-webinar-padding-gap*4} #{$conference-webinar-padding-gap*4};
+		height: 100%;
+		&> * {
+			z-index: 10
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 0 !important;
+
+		&,
+		&>a {
+			color: $white;
+			font-weight: $font-weight-normal !important;
+			text-transform: capitalize !important;
+		}
+	}
+
+	&__title {
+
+		&,
+		&>a {
+			color: $white;
+			font-weight: $font-weight-bolder;
+			line-height: #{$line-height-base * 0.75};
+		}
+
+		&:not(:last-child) {
+			margin-bottom: #{$spacer * 0.35};
+		}
+
+		&::first-letter {
+			text-transform: capitalize;
+		}
+
+	}
+
+	&__text {
+		font-size: $font-size-sm;
+		font-weight: $font-weight-light;
+		color: $white;
+		line-height: $line-height-base;
+
+		&:not(:last-child) {
+			margin-bottom: 1.25rem;
+		}
+
+		@include media-breakpoint-down(md) {
+			line-height: $line-height-base;
+		}
+	}
+
+	&__link {
+		color: $white;
+		font-weight: $font-weight-bolder;
+		text-transform: uppercase;
+		font-size: $font-size-base;
+		transition: $transition-base;
+		position: relative;
+		display: inline-block;
+		cursor: pointer;
+
+		&:not(:last-child) {
+			margin-bottom: $spacer * 0.35;
+		}
+
+		&:last-child {
+			margin-top: auto;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: $border-width;
+			background-color: $white;
+			display: block;
+			width: 35%;
+			transition: $transition-base;
+		}
+
+		&:hover {
+			color: $white;
+
+			&:after {
+				width: 100%;
+			}
+		}
+	}
+
+	&__horizontal {
+		.conference__image, .webinar__image{
+			min-height: 15.625rem;
+		}
+
+		.conference__subtitle, .webinar__subtitle {
+			& + .conference__title, & + .webinar__title{ margin-top: 1rem; }
+		}
+	}
+
+	&__vertical{
+		.conference__image, .webinar__image{
+			max-height: 15.625rem;
+			min-height: 15.625rem;
+		}
+
+		.conference__title, .webinar__title {
+			& + .conference__link, & + .webinar__link {
+				margin-top: $spacer * 2 !important;
+			}
+		}
+	}
+}
+
+
+//colors
+@each $color,
+$value in $theme-colors {
+	.conference__bg--#{$color}, .webinar__bg--#{$color} {
+		@if $value == transparent {
+			background-color: transparent;
+		} @else {
+			background-color: $value;
+		}
+
+		.conference__subtitle, .webinar__subtitle {
+
+			&,
+			&>a {
+				@if $value == transparent {
+					color: color-yiq($value, $white, $white);
+				} @else {
+					color: color-yiq($value, $black, $white);
+				}
+			}
+		}
+
+		.conference__title, .webinar__title {
+
+			&,
+			&>a {
+				@if $value == transparent {
+					color: color-yiq($value, $white, $white);
+				} @else {
+					color: color-yiq($value, $primary, $white);
+				}
+			}
+		}
+
+		.conference__text, .webinar__text {
+			@if $value == transparent {
+				color: color-yiq($value, $white, $white);
+			} @else {
+				color: color-yiq($value, $black, $white);
+			}
+		}
+
+		.conference__link, .webinar__link {
+			@if $value == transparent {
+				color: color-yiq($value, $white, $white);
+			} @else {
+				color: color-yiq($value, $primary, $white);
+			}
+
+			&:after {
+				@if $value == transparent {
+					background-color: color-yiq($value, $white, $white);
+				} @else {
+					background-color: color-yiq($value, $primary, $white);
+				}
+			}
+
+			&:hover {
+				@if $value == transparent {
+					color: color-yiq($value, $white, $white);
+				} @else {
+					color: color-yiq($value, $primary, $white);
+				}
+			}
+		}
+
+		&.conference__border, &.webinar__border {
+			&::before {
+				@if $value == transparent {
+					content: none;
+				} @else {
+					border-color: color-yiq($value, $white, $white);
+				}
+			}
+		}
+	}
+}
+

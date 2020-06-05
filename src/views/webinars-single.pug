@@ -4,10 +4,10 @@ include ./mixins/_inner-header.pug
 
 append variables
 	- var page_title = "conferences & webinars";
-	- var header_data = {back: {title: "conferences & webinars", href: "conferences-and-webinars-listing.html"}};
+	- var header_data = {back: {title: "conferences & webinars", href: "webinars-listing.html"}};
 
 block content
-	main#conferences-and-webinars-single(role="main")
+	main#webinars-single(role="main")
 		+inner-header(header_data)
 		article.inner-article
 			section.section.section__bg--white
