@@ -5,18 +5,32 @@ include ./mixins/_inner-header.pug
 append variables
 	- var page_title = "DR. KHALED EL SHALAKANY";
 	- var page_subtitle = "Senior Managing Partner";
-	- var header_data = {title: page_title, subtitle: page_subtitle, back: { title: "our people", href: "our-people-listing.html" }, img: { src: "./images/team/partners/.jpg" }, breadcrumb: [{ title: "Home", href: "index.html" }, { title: "our people", href: "our-people-listing.html" }, { title: page_title, href: "our-people-single.html" }]};
+	- var header_data = {title: page_title, subtitle: page_subtitle, back: { title: "our people", href: "our-people-listing.html" }, breadcrumb: [{ title: "Home", href: "index.html" }, { title: "our people", href: "our-people-listing.html" }, { title: page_title, href: "our-people-single.html" }]};
+
+//- img: { src: "./images/team/partners/1.jpg" },
 
 block content
 	main#our-people-single(role="main")
 		+inner-header(header_data)
 		article.inner-article
-			section.section.section__bg--white
-				.container-fluid
-					.row
-						.col-12.col-lg-6.offset-lg-5
-							.inner-article__content
-								p B. Eng. (Cairo), PM Dip. (AUC), LL.B. (Toronto), LL.M. (Cambridge), Ph.D. (Barrington), FCIArb.
-								p The Managing Partner of Shalakany Law Office which was established in 1912 and with over 60 attorneys and fee earners between Cairo and Alexandria is one of the leading law firms in the Middle East. He heads the Litigation and Arbitration Department and Intellectual Property Group. Khaled El Shalakany obtained in 1978 his B.Eng. in electronics and communications engineering, with distinction, from the Faculty of Engineering, at Cairo University.
-								p After graduating he joined IBM Egypt as a computer systems engineer. One of the projects he worked on with IBM was the implementation of the first on-line computer banking system in Egypt. In 1981 he was awarded the IBM Systems Engineering Professional Excellence Award. Khaled El Shalakany obtained in 1982 a professional postgraduate diploma in management from the American University in Cairo. In the fall of 1982, he resigned from IBM, and traveled to Canada where he enrolled in the Faculty of Law at the University of Toronto.
-								p As a law student, he represented the Faculty in the Jessup International Law Competition. In 1984/1985 he was selected as the Faculty’s Chief Justice of the Moot Court. Khaled El Shalakany obtained his LL.B. in 1985 (as per University of Toronto – this is a post-graduate degree equivalent to the U.S. Juris Doctor), and joined the Law firm of Fasken & Calvin in Toronto as an articling lawyer.
+			.container-fluid
+				.row
+					.col-12.col-md-5.col-lg-5.col-xl-4.pl-0
+						section.section.section__bg--white
+							.row
+								.col-12.pl-0
+									.inner-article__content.px-0
+										.inner-article__img
+											img(src="./images/team/partners/1.jpg")
+										.inner-article__action-buttons
+											a.inner-article__button(href="#") download v card
+											a.inner-article__button(href="#") send email
+					.col-12.col-md-7.col-lg-6.col-xl-6.offset-xl-1
+						section.section.section__bg--white
+							.row
+								.col-12
+									.inner-article__content
+										p B. Eng. (Cairo), PM Dip. (AUC), LL.B. (Toronto), LL.M. (Cambridge), Ph.D. (Barrington), FCIArb.
+										p The Managing Partner of Shalakany Law Office which was established in 1912 and with over 60 attorneys and fee earners between Cairo and Alexandria is one of the leading law firms in the Middle East. He heads the Litigation and Arbitration Department and Intellectual Property Group. Khaled El Shalakany obtained in 1978 his B.Eng. in electronics and communications engineering, with distinction, from the Faculty of Engineering, at Cairo University.
+										p After graduating he joined IBM Egypt as a computer systems engineer. One of the projects he worked on with IBM was the implementation of the first on-line computer banking system in Egypt. In 1981 he was awarded the IBM Systems Engineering Professional Excellence Award. Khaled El Shalakany obtained in 1982 a professional postgraduate diploma in management from the American University in Cairo. In the fall of 1982, he resigned from IBM, and traveled to Canada where he enrolled in the Faculty of Law at the University of Toronto.
+										p As a law student, he represented the Faculty in the Jessup International Law Competition. In 1984/1985 he was selected as the Faculty’s Chief Justice of the Moot Court. Khaled El Shalakany obtained his LL.B. in 1985 (as per University of Toronto – this is a post-graduate degree equivalent to the U.S. Juris Doctor), and joined the Law firm of Fasken & Calvin in Toronto as an articling lawyer.

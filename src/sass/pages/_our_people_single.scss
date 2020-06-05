@@ -1,0 +1,39 @@
+#our-people-single {
+	.inner-header{
+		&__content{
+			@include media-breakpoint-down(md) {
+				padding-right: $grid-gutter-width;
+			}
+			@include media-breakpoint-down(sm) {
+				justify-content: flex-start;
+				padding-top: calc(((100vh - #{$grid-gutter-width} * #{$inner-header-height-ratio}) / 2) - #{$btn-line-height + $spacer});
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		&__title{
+			@include media-breakpoint-down(xl) {
+				width: 70%;
+			}
+			@include media-breakpoint-down(lg) {
+				width: 100%;
+			}
+		}
+
+		&__breadcrumb{
+			@include media-breakpoint-down(sm) {
+				margin-top: map-get($spacers, 5);
+			}
+		}
+	}
+	.inner-article{
+		&__img{
+			margin-top: calc(-200px - #{$grid-gutter-width * 5}); // (- img height / 3) + section padding-top * 2
+			margin-bottom: 0;
+			@include media-breakpoint-down(sm) {
+				margin-top: calc(-200px - #{$grid-gutter-width}); // (- img height / 3) + section padding-top * 2
+				margin-left: 0;
+			}
+		}
+	}
+}

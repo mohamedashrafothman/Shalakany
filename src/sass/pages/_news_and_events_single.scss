@@ -1,4 +1,13 @@
 #news-and-events-single{
+	.inner-article {
+		&__img{
+			@include media-breakpoint-down(md) {
+				height: calc(600px / 2);
+				min-height: calc(600px / 2);
+				max-height: calc(600px / 2);
+			}
+		}
+	}
 	.inner-header{
 		@include media-breakpoint-down(md) {
 			height: calc(100vh - (#{$grid-gutter-width} * #{$inner-header-height-ratio}));
