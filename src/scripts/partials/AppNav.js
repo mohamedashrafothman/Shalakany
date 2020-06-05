@@ -1,5 +1,6 @@
 'use strict';
-const {capitalize,toLower,isEqual} = require('lodash');
+
+const {capitalize, toLower, isEqual} = require('lodash');
 
 var AppNav = (function() {
 	'use strict';
@@ -14,6 +15,9 @@ var AppNav = (function() {
 			entrance: `${toLower(options.animation)}In${($('html').attr('dir') === 'ltr') ? capitalize(options.entrance_direction) : capitalize(options.exit_direction)} ${options.speed}`,
 			exit    : `${toLower(options.animation)}Out${($('html').attr('dir') === 'ltr') ? capitalize(options.exit_direction) : capitalize(options.entrance_direction)} ${options.speed}`,
 		}
+		// TODO: get menu, and search open state from html to make open by default functionality.
+		this.is_menu_open   = false;
+		this.is_search_open = false;
 		this._cache_dom();
 		this._set_open_state();
 		this._bind_events();
@@ -26,10 +30,8 @@ var AppNav = (function() {
 		this.$app_navbar_search    = this.$app_navbar.find('.app-navbar__search');
 		this.$app_navbar_underlay  = this.$app_navbar.find('.app-navbar__underlay');
 		this.$open_menu_button     = this.$app_navbar.find('.app-navbar__open-menu');
-		this.$open_search_button = this.$app_navbar.find('.app-navbar__open-search');
+		this.$open_search_button   = this.$app_navbar.find('.app-navbar__open-search');
 		this.$close_menu_button    = this.$app_navbar_side_menu.find('.app-navbar__close-menu');
-		this.is_menu_open          = false;
-		this.is_search_open        = false;
 	},
 	AppNav.prototype._set_open_state = function () {
 		var _this = this;  // refer to side_nav
@@ -152,7 +154,7 @@ var AppNav = (function() {
 		};
 	},
 	AppNav.prototype._open_app_navbar_search = function(e, cb) {
-		var _this = this; // refer to side_nav
+		var _this = this;  // refer to side_nav
 
 		// check if search is not opened
 		if (!_this.is_search_open) {
@@ -175,7 +177,7 @@ var AppNav = (function() {
 		return;
 	},
 	AppNav.prototype._close_app_navbar_search = function (e, cb) {
-		var _this = this; // refer to side_nav
+		var _this = this;  // refer to side_nav
 
 		// check if search is open
 		if (_this.is_search_open) {
@@ -186,6 +188,8 @@ var AppNav = (function() {
 			// exit search input
 			_this.$app_navbar_search.animateCss(_this._animation.exit, function () {
 				_this.$app_navbar_search.removeClass(`${_this._animation.exit} is_open`);
+				// reset search input value
+				_this.$app_navbar_search.find("form input").val("");
 				// set search open state to false
 				_this.is_search_open = false;
 			});
