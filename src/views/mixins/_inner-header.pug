@@ -6,11 +6,11 @@ mixin inner-header(data={title: "", subtitle: "", back: { title: "", href: "" },
 			img.section__bg--img(src="./images/patterns/pattern.jpg")
 		.container-fluid
 			.row
-				.col-10.col-sm-8.col-md-4
-					if (data.img && Boolean(data.img.src))
+				if (data.img && Boolean(data.img.src))
+					.col-10.col-sm-8.col-md-4
 						.inner-header__img
 							img(src=data.img.src)
-				.col-12.col-md-8.col-lg-7.offset-lg-1
+				div(class=`${(data.img && Boolean(data.img.src)) ? "col-12 col-md-8 col-lg-7 offset-lg-1" : "col-12 col-sm-10 offset-sm-2 col-md-8 offset-md-4 col-lg-7 offset-lg-5"}`)
 					.inner-header__content
 						if (data.back)
 							a.inner-header__back(href=data.back.href)=data.back.title

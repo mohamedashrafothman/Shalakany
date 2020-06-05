@@ -8,6 +8,7 @@ var swiperInit     = require('./partials/swiperInit');
 var animateCssInit = require('./partials/animateCssInit');
 var parollerInit   = require('./partials/parollerInit');
 var MixItUpInit    = require('./partials/MixItUpInit');
+var stickySocial   = require('./partials/stickySocial');
 
 (function ($) {
 	$(window).on('load', () => {
@@ -24,5 +25,7 @@ var MixItUpInit    = require('./partials/MixItUpInit');
 		swiperInit();
 		parollerInit();
 		MixItUpInit();
+		$('[data-toggle="tooltip"]').tooltip();
+		stickySocial();
 	});
 })(jQuery);

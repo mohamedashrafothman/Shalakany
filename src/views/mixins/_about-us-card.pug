@@ -3,4 +3,4 @@ mixin about-us-card(data={ href:"#", img: { src:"", alt:"" }}, index=0)
 		.about-us__image
 			img(src=data.img.src, alt=data.img.alt)
 		if(data.title)
-			h4.about-us__title(data-swiper-parallax="-300")=data.title
+			h5.about-us__title(data-swiper-parallax="-300")=data.title

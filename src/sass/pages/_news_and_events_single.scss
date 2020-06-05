@@ -1,0 +1,29 @@
+#news-and-events-single{
+	.inner-header{
+		@include media-breakpoint-down(md) {
+			height: calc(100vh - (#{$grid-gutter-width} * #{$inner-header-height-ratio}));
+		}
+
+		&__content{
+			@include media-breakpoint-down(md) {
+				justify-content: flex-start;
+				padding-top: calc(((100vh - #{$grid-gutter-width} * #{$inner-header-height-ratio}) / 2) - #{$btn-line-height + $spacer});
+				padding-left: 0;
+			}
+		}
+		&__title,
+		&__subtitle,
+		&__back {
+			&:last-child{
+				@include media-breakpoint-down(md) {
+					margin-bottom: 0;
+				}
+			}
+			&+.inner-header__breadcrumb {
+				@include media-breakpoint-down(md) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}

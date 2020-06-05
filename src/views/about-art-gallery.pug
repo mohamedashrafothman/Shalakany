@@ -7,7 +7,7 @@ append variables
 	- var header_data = {title: page_title, back: { title: "about us", href: "about.html" }, img: { src: "./images/about-us/about-us-6.jpg" }, breadcrumb: [{ title: "Home", href: "index.html" }, { title: "about us", href: "about.html" }, { title: page_title, href: "about-art-gallery.html" }]}
 
 block content
-	main(role="main")
+	main#about-art-gallery(role="main")
 		+inner-header(header_data)
 		article.inner-article
 			section.section.section__bg--white

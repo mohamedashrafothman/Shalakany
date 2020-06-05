@@ -3,25 +3,27 @@ include ./mixins/_about-us-card.pug
 include ./mixins/_inner-header.pug
 
 append variables
-	- var page_title = "About us";
-	- var header_data = {title: page_title, img: { src: "./images/books-shelf.jpg" }, breadcrumb: [{ title: "Home", href: "index.html" }, { title: page_title, href: "about.html" }]};
+	- var page_title = "news & events";
+	- var header_data = {title: page_title, img: { src: "./images/books.jpg" }, breadcrumb: [{ title: "Home", href: "index.html" }, { title: page_title, href: "news-and-events-listing.html" }]};
 
 block content
-	main#about(role="main")
+	main#newsletter-listing(role="main")
 		+inner-header(header_data)
 		article.inner-article
 			section.section.section__bg--white
 				.container
 					.row
 						.col-10.offset-1.col-md-6.offset-md-5
+							.inner-article__nav
+								ul.nav.nav-tabs#news-and-events-nav(role="tablist")
+									li.nav-item(role="presentation")
+										a.nav-link(href="news-and-events-listing.html") shalakany news
+									li.nav-item(role="presentation")
+										a.nav-link.active(href="newsletter-listing.html") newsletter
+			section.section.section__bg--white
+				.container
+					.row
+						.col-12
 							.inner-article__content
 								p With over a century of experience since its establishment in 1912, Shalakany has achieved a record of success and growth that today makes it one of the leading corporate law firms in Egypt and the Middle East. The Firm provides first-rate quality legal services to a broad base of multinational, regional and premium local clients through its offices in Cairo and Alexandria.
 								p The Firm is consistently ranked as a top-tier firm across almost all practice areas and receives various awards by internationally recognized legal ranking and professional association organizations. The Firm is proud that many of our lawyers have been recognized as leading lawyers in their respective areas of practice year after year. Shalakany is the exclusive Egyptian member for Lex Mundi and Meritas.
-
-			section.services.section.section__bg--white
-				.container
-					.row
-						each about, i in about_us
-							.col-12.col-md-6.col-lg-4.col-xl-3.mb-md-5.mb-4
-								+about-us-card(about, i)
-		include ./sections/_call_to_action.pug

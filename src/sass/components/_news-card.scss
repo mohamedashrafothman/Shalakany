@@ -6,7 +6,7 @@ $news-padding-gap: 6px;
 	text-align: left;
 	transition: $transition-base;
 	background-color: transparent;
-	margin-top: $news-padding-gap * 2;
+	margin-top: #{$news-padding-gap * 2};
 
 	&:after {
 		content: "";
@@ -40,10 +40,12 @@ $news-padding-gap: 6px;
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: center;
-		padding: $news-padding-gap*4 0;
+		padding: #{$news-padding-gap*4} 0;
+		height: 100%;
 	}
 
 	&__subtitle {
+		margin-bottom: 6px;
 
 		&,
 		&>a {
@@ -53,7 +55,7 @@ $news-padding-gap: 6px;
 		}
 
 		&:not(:last-child) {
-			margin-bottom: $spacer * 0.35;
+			margin-bottom: #{$spacer * 0.35};
 		}
 	}
 
@@ -66,7 +68,7 @@ $news-padding-gap: 6px;
 		}
 
 		&:not(:last-child) {
-			margin-bottom: $spacer * 0.35;
+			margin-bottom: #{$spacer * 0.35};
 		}
 
 		&::first-letter {
@@ -104,7 +106,7 @@ $news-padding-gap: 6px;
 		}
 
 		&:last-child {
-			margin-top: $spacer;
+			margin-top: auto;
 		}
 
 		&:after {
@@ -127,6 +129,15 @@ $news-padding-gap: 6px;
 			}
 		}
 	}
+
+	&__horizontal {
+		.news__image{
+			max-height: 15.625rem;
+		}
+		.news__text{
+			line-height: $line-height-base;
+		}
+	}
 }
 
 
@@ -145,7 +156,7 @@ $value in $colors {
 			@if $value == transparent {
 				background-color: color-yiq($value, $white, $white);
 			} @else {
-				background-color: $value;
+				background-color: color-yiq($value, $border-color, $primary);
 			}
 		}
 

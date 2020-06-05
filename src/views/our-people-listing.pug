@@ -7,7 +7,7 @@ append variables
 	- var header_data = {title: page_title, img: { src: "./images/books-shelf.jpg" }, breadcrumb: [{ title: "Home", href: "index.html" }, { title: page_title, href: "our-people-listing.html" }]};
 
 block content
-	main(role="main")
+	main#our-people-listing(role="main")
 		+inner-header(header_data)
 		article.inner-article
 			section.section.section__bg--white

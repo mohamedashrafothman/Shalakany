@@ -5,7 +5,7 @@ append variables
 	- var page_title = "Home";
 
 block content
-	main(role="main")
+	main#index(role="main")
 		section.section#home-banner
 			.section__bg--img-container.section__gradient-linear.section__gradient-linear--primary-0
 				img.section__bg--img(src="./images/patterns/pattern.jpg")
@@ -49,14 +49,14 @@ block content
 												each service, i in services
 													.swiper-slide
 														+service-card(service, i)
-										.brochure__slider-buttons.brochure__slider-buttons--white(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="0.03")
+										.brochure__slider-buttons.brochure__slider-buttons--white
 											.swiper-button-prev(for="home-whatWeDo-slider")
 											.swiper-button-next(for="home-whatWeDo-slider")
 								.col-12.col-lg-7.offset-lg-0
 									.brochure__content.text-left.align-items-start
-										h2.brochure__title(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") what we do
-										p.brochure__text(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") Shalakany is committed to delivering top quality legal services to our clients. As a full-service corporate law firm, we provide bespoke specialized legal services across a variety of different practice areas and sectors.
-										a.brochure__link.align-self-end(href="#" data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") know More
+										h2.brochure__title what we do
+										p.brochure__text Shalakany is committed to delivering top quality legal services to our clients. As a full-service corporate law firm, we provide bespoke specialized legal services across a variety of different practice areas and sectors.
+										a.brochure__link.align-self-end(href="#" ) know More
 		section.section#home-clients
 			.section__bg--img-container.section__gradient-linear.section__gradient-linear--primary-90-reverse
 				img.section__bg--img(src="./images/patterns/pattern.jpg")
@@ -64,15 +64,15 @@ block content
 				.row
 					.col-12
 						.brochure
-							.brochure__image(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="0.01")
+							.brochure__image
 								img(src="./images/stairs.jpg")
 							.container-fluid
 								.row
 									.col-12.col-md-8.col-xl-6
 										.brochure__content.text-left.align-items-start
-											h2.brochure__title(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") our clients
-											p.brochure__text(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-											a.brochure__link(href="#" data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="-0.03") all clients
+											h2.brochure__title our clients
+											p.brochure__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+											a.brochure__link(href="#") all clients
 									.col-12.col-md-8.offset-md-4.col-xl-6.offset-xl-0
 										.brochure__slider.brochure__slider--clients
 											.swiper-container#home-clients-slider(data-swiper-effect="slide")
@@ -89,7 +89,7 @@ block content
 													.swiper-slide
 														.logo
 															img(src="./images/clients/client_4.svg", alt="")
-											.brochure__slider-buttons.brochure__slider-buttons--transparent(data-paroller-direction="vertical" data-paroller-type="foreground" data-paroller-factor="0.03")
+											.brochure__slider-buttons.brochure__slider-buttons--transparent
 												.swiper-button-prev.swiper-button-white(for="home-clients-slider")
 												.swiper-button-next.swiper-button-white(for="home-clients-slider")
 		section.section.section__bg--white#home-latest-news
@@ -109,7 +109,7 @@ block content
 									.brochure__content.pt-0
 										.row
 											.col-12.col-md-6.mb-md-0.mb-4
-												.news.news__bg--transparent
+												.news.news__vertical.news__bg--transparent
 													.row
 														.col-12
 															.news__image
@@ -118,12 +118,12 @@ block content
 														.col-12
 															.news__content
 																small.news__subtitle 20 may 2020
-																h5.news__title
-																	a(href="#") Lorem ipsum dolor sit amet.
+																h6.news__title
+																	a(href="news-and-events-single.html") Lorem ipsum dolor sit amet.
 																p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore...
-																a.news__link(href="#") read more
+																a.news__link(href="news-and-events-single.html") read more
 											.col-12.col-md-6.mb-md-0.mb-4
-												.news.news__bg--transparent
+												.news.news__vertical.news__bg--transparent
 													.row
 														.col-12
 															.news__image
@@ -132,22 +132,8 @@ block content
 														.col-12
 															.news__content
 																small.news__subtitle 20 may 2020
-																h5.news__title
-																	a(href="#") Lorem ipsum dolor sit amet.
+																h6.news__title
+																	a(href="news-and-events-single.html") Lorem ipsum dolor sit amet.
 																p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore...
-																a.news__link(href="#") read more
-											//- .col-12
-											//- 	.news.news__bg--transparent
-											//- 		.row
-											//- 			.col-12.col-md-5
-											//- 				.news__image
-											//- 					a(href="#")
-											//- 						img(src="./images/news/news_2.jpg", alt="Lorem ipsum dolor sit amet.")
-											//- 			.col-12.col-md-7
-											//- 				.news__content
-											//- 					small.news__subtitle 20 may 2020
-											//- 					h5.news__title
-											//- 						a(href="#") Lorem ipsum dolor sit amet.
-											//- 					p.news__text Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quam suscipit eius odio fugiat saepe, iusto et vero voluptate tenetur quaerat! Repellendus eius temporibus optio enim obcaecati, minima exercitationem maiores quisquam impedit corrupti. Culpa, suscipit quas soluta repudiandae aliquid, sapiente ipsum dolores numquam consectetur ullam natus, totam error! Sunt, a cumque ratione dicta, ducimus nihil repellat fuga animi illum voluptate odio facilis in nesciunt mollitia? Doloremque vitae ea maiores laudantium qui expedita doloribus sit consequatur, eaque odio eveniet at non velit quia, omnis, dolorum totam distinctio! Obcaecati quam ad veniam assumenda nostrum dolorem omnis, ea accusantium voluptatum nobis eaque quae.
-											//- 					a.news__link(href="#") read more
+																a.news__link(href="news-and-events-single.html") read more
 		include ./sections/_call_to_action.pug

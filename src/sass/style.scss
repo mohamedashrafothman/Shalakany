@@ -13,6 +13,7 @@
 @import 'libs/material-icons/material_icons';
 @import 'libs/swiper/swiper';
 @import 'libs/animate-css/animate';
+@import 'libs/tippy/tippy';
 
 /*
 ** HELPERS
@@ -60,6 +61,7 @@
 */
 @import 'pages/index.scss';
 @import 'pages/about.scss';
+@import 'pages/news_and_events_single';
 
 /*
 ** OVERWRITING STYLE

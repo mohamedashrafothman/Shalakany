@@ -118,6 +118,10 @@ $app-navbar-border-width: $border-width * 2;
 			left: #{$grid-gutter-width * 2};
 		}
 
+		&--inner {
+			left: #{$grid-gutter-width * 2};
+		}
+
 		a {
 			display: block;
 
@@ -133,6 +137,10 @@ $app-navbar-border-width: $border-width * 2;
 
 			&--home {
 				top: $grid-gutter-width;
+				left: $grid-gutter-width;
+			}
+
+			&--inner {
 				left: $grid-gutter-width;
 			}
 		}
