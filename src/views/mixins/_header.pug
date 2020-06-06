@@ -2,7 +2,7 @@ mixin header(data={})
 	header(class=`app-navbar`)
 		div(class=`app-navbar__logo ${(String(page_title).toLowerCase() == "home") ? "app-navbar__logo--home" : "app-navbar__logo--inner"}`)
 			a(href="index.html")
-				img(src="./images/icons_logos/logo.svg", alt=`${locals.sitename[locals.lang]}`)
+				img(src="./images/icons-logos/Logo.svg", alt=`${locals.sitename[locals.lang]}`)
 		div(class=`app-navbar__underlay ${(data.is_menu_open) ? "menu-open" : ((data.is_search_open) ? "search-open" : "")}`)
 		div(class=`app-navbar__open-menu`)
 			i(class=`material-icons`) menu
