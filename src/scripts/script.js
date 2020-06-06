@@ -9,6 +9,7 @@ var animateCssInit = require('./partials/animateCssInit');
 var parollerInit   = require('./partials/parollerInit');
 var MixItUpInit    = require('./partials/MixItUpInit');
 var stickySocial   = require('./partials/stickySocial');
+var VideoOverlay   = require('./partials/videoOverlay');
 
 (function ($) {
 	$(window).on('load', () => {
@@ -27,5 +28,6 @@ var stickySocial   = require('./partials/stickySocial');
 		MixItUpInit();
 		$('[data-toggle="tooltip"]').tooltip();
 		stickySocial();
+		new VideoOverlay();
 	});
 })(jQuery);

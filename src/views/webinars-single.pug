@@ -10,11 +10,27 @@ block content
 	main#webinars-single(role="main")
 		+inner-header(header_data)
 		article.inner-article
-			section.section.section__bg--white
-				.container
-					.row
-						.col-12.col-md-10.offset-md-1
-							.inner-article__content.text-center
-								.inner-article__img
-									img(src="./images/news/news_6.jpg")
-								p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptates ducimus eligendi qui non animi nostrum beatae? Necessitatibus molestias nam sunt, ipsa esse accusamus, a error nisi eos alias sed!
+			.container
+				.row
+					.col-12.col-xl-10.offset-xl-1
+						section.section.section__bg--white
+							.row
+								.col-12
+									.inner-article__content.text-center.px-0.px-lg-4
+										.inner-article__video.inner-article__video--no-controls
+											.inner-article__video-overlay
+												svg(viewBox='0 0 200 200', alt='Play video')
+													polygon(points='70, 55 70, 145 145, 100', fill='#fff')
+											video(src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4", controls, poster="./images/conferences/4.jpg")
+
+										small.inner-article__date 20 May 2020
+										h5.inner-article__title Lorem ipsum dolor sit amet
+										.inner-article__document
+											p
+												| Lorem ipsum dolor sit amet,
+												a(href="#")
+													|  consetetur sadipscing elitr
+												|  , sed diam nonumy
+												strong
+													|  eirmod tempor inviduntut
+												|  labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
