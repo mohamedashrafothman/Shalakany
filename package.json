@@ -57,6 +57,7 @@
     "lodash": "^4.17.15",
     "material-icons-font": "^2.0.0",
     "mixitup": "^3.3.1",
+    "nicescroll": "^3.7.4",
     "popper.js": "^1.16.1",
     "swiper": "^5.4.1",
     "wowjs": "^1.1.3"

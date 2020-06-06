@@ -1,7 +1,9 @@
-window.$ = window.jQuery = require('jquery');
+window.$      = window.jQuery = require('jquery');
+window.Swiper = require('swiper');
 require('popper.js');
 require('bootstrap');
 require('./libs/jquery.paroller.min');
+require('nicescroll');
 var WOW            = require('wowjs').WOW;
 var AppNav         = require('./partials/AppNav');
 var swiperInit     = require('./partials/swiperInit');
@@ -10,6 +12,8 @@ var parollerInit   = require('./partials/parollerInit');
 var MixItUpInit    = require('./partials/MixItUpInit');
 var stickySocial   = require('./partials/stickySocial');
 var VideoOverlay   = require('./partials/videoOverlay');
+var smoothScroll   = require('./partials/smoothScroll');
+var niceScrollInit = require('./partials/niceScrollInit');
 
 (function ($) {
 	$(window).on('load', () => {
@@ -29,5 +33,7 @@ var VideoOverlay   = require('./partials/videoOverlay');
 		$('[data-toggle="tooltip"]').tooltip();
 		stickySocial();
 		new VideoOverlay();
+		smoothScroll();
+		niceScrollInit();
 	});
 })(jQuery);

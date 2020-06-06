@@ -3,7 +3,7 @@ include ../mixins/_header.pug
 doctype html
 html(lang=`${locals.lang}` dir=`${(locals.lang === "en") ? "ltr" : "rtl"}`)
 	include ../partials/_head.pug
-	body
+	body(data-nicescroll)
 		#app
 			block variables
 				- var menu = {is_menu_open: false, is_search_open: false, menu_list: [{ title: "Home", href: "index.html" }, { title: "about us", href: "about.html" }, { title: "services & clients", href: "services-and-clients.html" }, { title: "our people", href: "our-people-listing.html" }, { title: "contact us", href: "contact-us.html" }, { title: "news & events", href: "news-and-events-listing.html" }, { title: "conferences & webinars", href: "conferences-listing.html" }, { title: "client access", href: "client-access.html" }, { title: "careers & trainings", href: "careers-and-trainings.html" }]};

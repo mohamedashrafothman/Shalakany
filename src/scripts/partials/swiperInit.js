@@ -1,12 +1,9 @@
 'use strict';
 
-var Swiper = require('swiper');
 module.exports = function () {
 	var $single_slide_swiper = $('div[id^="home-banner-slider"], div[id^="home-whatWeDo-slider"], div[id^="timeline-slider"]:not([id*="-prev"]):not([id*="-next"])');
 	var $clients_swiper = $("#clients-slider");
 	var effect_array = ["slide", "fade", "cube", "flip", "coverflow"];
-
-	// FIXME: fix multiple slider in the same page with bootstrap tabs issue.
 
 	if ($single_slide_swiper.length) {
 		$single_slide_swiper.each(function (index, ele) {
@@ -19,6 +16,8 @@ module.exports = function () {
 				parallax: true,
 				grabCursor: true,
 				effect: effect,
+				observer: true,
+				observeParents: true,
 				keyboard: { enabled: true, onlyInViewport: true },
 				fadeEffect: { crossFade: true },
 				cubeEffect: { shadow: false },
