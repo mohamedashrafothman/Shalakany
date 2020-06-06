@@ -38,6 +38,8 @@ var videoOverlay = (function () {
 				if (_this.$video_container.hasClass("inner-article__video--no-controls")) {
 					// show video controllers.
 					_this.$video_container.removeClass("inner-article__video--no-controls");
+					// play video after remove overlay.
+					_this.$video.get(0).play();
 					// if there is callback, fire it!
 					if (cb && typeof cb === "function") return cb();
 				}
