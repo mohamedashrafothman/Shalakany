@@ -3,7 +3,7 @@
 var Swiper = require('swiper');
 module.exports = function () {
 	var $single_slide_swiper = $('div[id^="home-banner-slider"], div[id^="home-whatWeDo-slider"], div[id^="timeline-slider"]:not([id*="-prev"]):not([id*="-next"])');
-	var $clients_swiper = $("#home-clients-slider");
+	var $clients_swiper = $("#clients-slider");
 	var effect_array = ["slide", "fade", "cube", "flip", "coverflow"];
 
 	// FIXME: fix multiple slider in the same page with bootstrap tabs issue.
@@ -28,7 +28,7 @@ module.exports = function () {
 				}
 			};
 
-			var swiper = new Swiper(`#${$(ele).attr("id")}`, swiper_config);
+			new Swiper(`#${$(ele).attr("id")}`, swiper_config);
 		});
 	}
 
@@ -42,7 +42,7 @@ module.exports = function () {
 				loop: true,
 				parallax: true,
 				slidesPerView: 4,
-				spaceBetween: 30,
+				slidesPerColumn: ($(ele).attr("data-swiper-slidesPerColumn") && Boolean($(ele).attr("data-swiper-slidesPerColumn"))) ? Number($(ele).attr("data-swiper-slidesPerColumn"))  : 1,
 				effect: effect,
 				keyboard: { enabled: true, onlyInViewport: true },
 				fadeEffect: { crossFade: true },

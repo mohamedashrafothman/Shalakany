@@ -57,7 +57,7 @@ block content
 										h2.brochure__title what we do
 										p.brochure__text Shalakany is committed to delivering top quality legal services to our clients. As a full-service corporate law firm, we provide bespoke specialized legal services across a variety of different practice areas and sectors.
 										a.brochure__link.align-self-end(href="#" ) know More
-		section.section#home-clients
+		section.section.clients
 			.section__bg--img-container.section__gradient-linear.section__gradient-linear--primary-90-reverse
 				img.section__bg--img(src="./images/patterns/pattern.jpg")
 			.container-fluid
@@ -68,14 +68,14 @@ block content
 								img(src="./images/stairs.jpg")
 							.container-fluid
 								.row
-									.col-12.col-md-8.col-xl-6
+									.col-12.col-md-10.col-xl-5
 										.brochure__content.text-left.align-items-start
 											h2.brochure__title our clients
 											p.brochure__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
 											a.brochure__link(href="#") all clients
-									.col-12.col-md-8.offset-md-4.col-xl-6.offset-xl-0
+									.col-12.col-md-10.offset-md-2.col-xl-6.offset-xl-1
 										.brochure__slider.brochure__slider--clients
-											.swiper-container#home-clients-slider(data-swiper-effect="slide")
+											.swiper-container#clients-slider(data-swiper-effect="slide", data-swiper-slidesPerColumn="1")
 												.swiper-wrapper
 													.swiper-slide
 														.logo
@@ -89,9 +89,45 @@ block content
 													.swiper-slide
 														.logo
 															img(src="./images/clients/client_4.svg", alt="")
+													.swiper-slide
+														.logo
+															img(src="./images/clients/client_1.svg", alt="")
+													.swiper-slide
+														.logo
+															img(src="./images/clients/client_2.svg", alt="")
+													.swiper-slide
+														.logo
+															img(src="./images/clients/client_3.svg", alt="")
+													.swiper-slide
+														.logo
+															img(src="./images/clients/client_4.svg", alt="")
+													.swiper-slide
+														.logo
+															img(src="./images/clients/client_1.svg", alt="")
+													.swiper-slide
+														.logo
+															img(src="./images/clients/client_2.svg", alt="")
+													.swiper-slide
+														.logo
+															img(src="./images/clients/client_3.svg", alt="")
+													.swiper-slide
+														.logo
+															img(src="./images/clients/client_4.svg", alt="")
+													.swiper-slide
+														.logo
+															img(src="./images/clients/client_1.svg", alt="")
+													.swiper-slide
+														.logo
+															img(src="./images/clients/client_2.svg", alt="")
+													.swiper-slide
+														.logo
+															img(src="./images/clients/client_3.svg", alt="")
+													.swiper-slide
+														.logo
+															img(src="./images/clients/client_4.svg", alt="")
 											.brochure__slider-buttons.brochure__slider-buttons--transparent
-												.swiper-button-prev.swiper-button-white(for="home-clients-slider")
-												.swiper-button-next.swiper-button-white(for="home-clients-slider")
+												.swiper-button-prev.swiper-button-white(for="clients-slider")
+												.swiper-button-next.swiper-button-white(for="clients-slider")
 		section.section.section__bg--white#home-latest-news
 			.container-fluid
 				.row

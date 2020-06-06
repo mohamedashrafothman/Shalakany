@@ -50,6 +50,7 @@
 @import 'sections/preloader';
 @import 'sections/app_navbar';
 @import 'sections/footer';
+@import 'sections/clients';
 @import 'sections/call_to_action';
 @import 'sections/services';
 @import 'sections/inner_header';
@@ -57,6 +58,7 @@
 @import 'sections/timeline';
 @import 'sections/firms_culture';
 @import 'sections/awards';
+@import 'sections/online_services';
 
 /*
 ** PAGES
@@ -66,6 +68,7 @@
 @import 'pages/about.scss';
 @import 'pages/news_and_events_single';
 @import 'pages/our_people_single';
+@import 'pages/client_access';
 
 /*
 ** OVERWRITING STYLE

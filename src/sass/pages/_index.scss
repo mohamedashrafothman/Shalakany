@@ -1,71 +1,80 @@
-#home-banner {
-	min-height: 100vh;
-	height: 100vh;
-	color: $white;
-	position: relative;
-	overflow: hidden;
+#index {
+	.clients {
+		padding: 0;
 
-	&>.container-fluid,
-	&>.container {
+		@include media-breakpoint-down(md) {
+			padding: #{$grid-gutter-width * 2} 0;
+		}
 
-		&,
-		&>.row {
+		.brochure {
+			&__image {
+				position: absolute;
+				overflow: hidden;
+				width: 500px;
+				height: 300px;
+				bottom: calc(-300px / 2); // half of its height. 300 / 2
+				right: 50%;
+				top: initial;
+				left: initial;
 
-			&,
-			&>div[class^="col-"] {
-				height: 100%;
+				@include media-breakpoint-down(md) {
+					left: $grid-gutter-width * 2;
+					right: initial;
+				}
+
+				@include media-breakpoint-down(sm) {
+					left: -#{$grid-gutter-width};
+				}
+
+				@include media-breakpoint-down(xs) {
+					max-width: calc(100vw - #{$grid-gutter-width * 2});
+				}
+			}
+
+			&__content {
+				@include media-breakpoint-up(xl) {
+					padding-bottom: 15rem;
+				}
+
+				@include media-breakpoint-down(lg) {
+					padding-top: 7.5rem;
+				}
+			}
+
+			&__slider {
+				padding-bottom: 15rem;
+				padding-top: 5.75rem;
+
+				@include media-breakpoint-down(lg) {
+					padding-top: 0;
+					padding-bottom: 20rem;
+				}
+
+				@include media-breakpoint-down(md) {
+					padding-top: 0;
+					padding-bottom: 20rem;
+				}
+
+				&-buttons {
+					bottom: 10rem;
+					top: initial;
+					right: 50%;
+					transform: translate(50%, -50%) !important;
+
+					@include media-breakpoint-down(md) {
+						bottom: 11rem;
+					}
+				}
 			}
 		}
 	}
 
-	& .container-fluid,
-	& .container {
-
-		&,
-		&>.row {
-
-			&,
-			&>div[class^="col-"] {
-				margin: 0;
-				padding: 0;
-			}
-		}
-	}
-
-	&>.section__gradient {
-		&-linear--primary{
-			&::after {
-				background: linear-gradient(0deg, rgba($primary, 0.80), rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00), rgba($primary, 1.00));
-			}
-		}
-	}
-
-	&:after {
-		content: "";
-		position: absolute;
-		width: calc(100% - (#{$grid-gutter-width} * 2));
-		height: calc(100% - (#{$grid-gutter-width} * 2));
-		top: $grid-gutter-width;
-		left: $grid-gutter-width;
-		display: block;
-		z-index: $zindex-sections + 6;
-		border: $border-width*2 $border-style $border-color;
-
-		@include media-breakpoint-down(lg) {
-			top: $grid-gutter-width / 2;
-			left: $grid-gutter-width / 2;
-			height: calc(100% - (#{$grid-gutter-width}));
-			width: calc(100% - (#{$grid-gutter-width}));
-		}
-	}
-
-	&__side {
-		display: flex;
-		align-items: flex-end;
+	#home-banner {
+		min-height: 100vh;
+		height: 100vh;
+		color: $white;
 		position: relative;
-		width: 100%;
-		height: 100%;
-		padding: $grid-gutter-width * 2;
+		overflow: hidden;
 
 		&>.container-fluid,
 		&>.container {
@@ -75,328 +84,189 @@
 
 				&,
 				&>div[class^="col-"] {
-					padding: 0;
+					height: 100%;
+				}
+			}
+		}
+
+		& .container-fluid,
+		& .container {
+
+			&,
+			&>.row {
+
+				&,
+				&>div[class^="col-"] {
 					margin: 0;
-					z-index: $zindex-sections + 7;
+					padding: 0;
 				}
 			}
 		}
 
-		@include media-breakpoint-down(lg) {
-			padding: $grid-gutter-width;
-		}
-
-		@include media-breakpoint-down(md) {
-			margin-top: calc(65px + (#{$grid-gutter-width}));
-			align-items: center;
-		}
-
-		@include media-breakpoint-down(sm) {
-			margin-top: calc(55px + (#{$grid-gutter-width}));
-		}
-	}
-
-	&__img {
-		height: 100%;
-		width: 100%;
-		.section__bg--img{
-			opacity: 1;
-		}
-	}
-
-	&__title {
-		color: $white;
-		font-family: inherit;
-		text-transform: uppercase;
-		font-weight: 400;
-		font-size: $h4-font-size;
-		line-height: $line-height-base / 1.75;
-		width: 85%;
-
-		strong {
-			font-size: $h1-font-size;
-			font-weight: $font-weight-bolder;
-		}
-
-		@include media-breakpoint-down(lg) {
-			width: 80%;
-			font-size: $h5-font-size;
-
-			strong {
-				font-size: $h2-font-size;
-			}
-		}
-
-		@include media-breakpoint-down(md) {
-			width: 90%;
-		}
-
-		@include media-breakpoint-down(xs) {
-			strong {
-				font-size: $h3-font-size;
-			}
-		}
-	}
-
-	&__text {
-		font-size: 1rem;
-		font-weight: 200;
-		color: $white;
-		width: 75%;
-		margin-bottom: $spacer * 3.9;
-
-		@include media-breakpoint-down(lg) {
-			width: 80%;
-		}
-
-		@include media-breakpoint-down(md) {
-			width: 90%;
-		}
-
-		@include media-breakpoint-down(sm) {
-			width: 90%;
-		}
-	}
-
-	&__button {
-		margin-bottom: 3.9rem;
-		margin-left: 8px;
-		@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
-	}
-
-	&__slider {
-		&--arrows {
-
-			display: flex;
-			align-items: center;
-			justify-content: flex-start;
-
-			.swiper-button-prev,
-			.swiper-button-next {
-				position: relative;
-				width: 60px;
-				height: 50px;
-				background-size: 35px;
-			}
-
-			.swiper-button-prev,
-			.swiper-container-rtl .swiper-button-next {
-				left: 0;
-				transition: $transition-base;
-				opacity: 0.5;
-
-				&:hover {
-					opacity: 1;
-				}
-			}
-
-			.swiper-button-next,
-			.swiper-container-rtl .swiper-button-prev {
-				right: 0;
-				transition: $transition-base;
-				opacity: 0.5;
-
-				&:hover {
-					opacity: 1;
+		&>.section__gradient {
+			&-linear--primary {
+				&::after {
+					background: linear-gradient(0deg, rgba($primary, 0.80), rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00), rgba($primary, 1.00));
 				}
 			}
 		}
-	}
-
-	@media screen and (max-height: 700px) {
-		height: 700px;
-		min-height: 700px;
 
 		&:after {
+			content: "";
+			position: absolute;
+			width: calc(100% - (#{$grid-gutter-width} * 2));
 			height: calc(100% - (#{$grid-gutter-width} * 2));
-		}
+			top: $grid-gutter-width;
+			left: $grid-gutter-width;
+			display: block;
+			z-index: $zindex-sections + 6;
+			border: $border-width*2 $border-style $border-color;
 
-		@include media-breakpoint-down(lg) {
-			&:after {
+			@include media-breakpoint-down(lg) {
+				top: $grid-gutter-width / 2;
+				left: $grid-gutter-width / 2;
 				height: calc(100% - (#{$grid-gutter-width}));
+				width: calc(100% - (#{$grid-gutter-width}));
 			}
 		}
-	}
-}
 
-#home-what-we-do {
-	padding: $grid-gutter-width*8 $grid-gutter-width*2;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
+		&__side {
+			display: flex;
+			align-items: flex-end;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			padding: $grid-gutter-width * 2;
 
-	@include media-breakpoint-down(md) {
-		padding-top: $grid-gutter-width * 20;
-		padding-left: $grid-gutter-width / 2;
-		padding-right: $grid-gutter-width / 2;
-	}
+			&>.container-fluid,
+			&>.container {
 
-	@include media-breakpoint-down(sm) {
-		padding-right: 0;
-		padding-left: 0;
-	}
+				&,
+				&>.row {
 
-	.brochure {
+					&,
+					&>div[class^="col-"] {
+						padding: 0;
+						margin: 0;
+						z-index: $zindex-sections + 7;
+					}
+				}
+			}
 
-		&__content {
+			@include media-breakpoint-down(lg) {
+				padding: $grid-gutter-width;
+			}
+
 			@include media-breakpoint-down(md) {
-				padding-top: 100px;
-				padding-bottom: 40px;
+				margin-top: calc(65px + (#{$grid-gutter-width}));
+				align-items: center;
 			}
 
 			@include media-breakpoint-down(sm) {
-				padding-top: 150px;
-				padding-bottom: 60px;
+				margin-top: calc(55px + (#{$grid-gutter-width}));
 			}
 		}
 
-		&__slider {
+		&__img {
+			height: 100%;
+			width: 100%;
 
-			&-buttons {
-				position: absolute;
-				bottom: $brochure-slider-buttons-height;
-				right: -#{$brochure-slider-buttons-width};
-				transform: initial !important;
+			.section__bg--img {
+				opacity: 1;
+			}
+		}
 
-				@include media-breakpoint-down(md) {
-					bottom: $brochure-slider-buttons-height / 2;
+		&__title {
+			color: $white;
+			font-family: inherit;
+			text-transform: uppercase;
+			font-weight: 400;
+			font-size: $h4-font-size;
+			line-height: $line-height-base / 1.75;
+			width: 85%;
+
+			strong {
+				font-size: $h1-font-size;
+				font-weight: $font-weight-bolder;
+			}
+
+			@include media-breakpoint-down(lg) {
+				width: 80%;
+				font-size: $h5-font-size;
+
+				strong {
+					font-size: $h2-font-size;
 				}
+			}
 
-				@include media-breakpoint-down(sm) {
-					bottom: -#{$brochure-slider-buttons-height / 2};
-					right: $brochure-slider-buttons-width / 2;
+			@include media-breakpoint-down(md) {
+				width: 90%;
+			}
+
+			@include media-breakpoint-down(xs) {
+				strong {
+					font-size: $h3-font-size;
 				}
 			}
 		}
 
 		&__text {
-			width: 80%;
-
-			@include media-breakpoint-down(md) {
-				width: 100%;
-			}
-		}
-
-		&__text,
-		&__subtitle,
-		&__title{
-			& + .brochure__link{
-				margin-top: $spacer * 3;
-			}
-		}
-	}
-
-	@media screen and (max-height: 700px) {
-		height: 1000px;
-		padding-top: $grid-gutter-width * 28;
-		padding-bottom: $grid-gutter-width * 10;
-	}
-}
-
-#home-clients {
-	position: relative;
-	.section__gradient-linear--primary-90-reverse {
-		@include media-breakpoint-down(lg) {
-			&::after {
-				background: linear-gradient(-45deg, rgba($primary, 0.8), rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00));
-			}
-		}
-
-		@include media-breakpoint-down(sm) {
-			&::after {
-				background: linear-gradient(0deg, rgba($primary, 0.8), rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00));
-			}
-		}
-	}
-
-	.logo {
-		width: 100%;
-		height: 100%;
-
-		img {
-			opacity: 0.7;
-			width: 100%;
-			height: 100%;
-			@include object-fit(scale-down, center);
-		}
-	}
-
-	.brochure {
-		&__image {
-			position: absolute;
-			overflow: hidden;
-			width: 500px;
-			height: 300px;
-			bottom: calc(-300px / 2); // half of its height. 300 / 2
-			right: 50%;
-			top: initial;
-			left: initial;
-
-			@include media-breakpoint-down(md) {
-				left: $grid-gutter-width * 2;
-				right: initial;
-			}
-
-			@include media-breakpoint-down(sm) {
-				left: -#{$grid-gutter-width};
-			}
-
-			@include media-breakpoint-down(xs) {
-				max-width: calc(100vw - #{$grid-gutter-width * 2});
-			}
-		}
-
-		&__content {
-			@include media-breakpoint-up(xl) {
-				padding-bottom: 15rem;
-				padding-right: $grid-gutter-width;
-				padding-left: $grid-gutter-width;
-			}
+			font-size: 1rem;
+			font-weight: 200;
+			color: $white;
+			width: 75%;
+			margin-bottom: $spacer * 3.9;
 
 			@include media-breakpoint-down(lg) {
-				padding-top: 7.5rem;
+				width: 80%;
+			}
+
+			@include media-breakpoint-down(md) {
+				width: 90%;
 			}
 
 			@include media-breakpoint-down(sm) {
-				padding-right: 0;
-				padding-left: 0;
+				width: 90%;
 			}
+		}
+
+		&__button {
+			margin-bottom: 3.9rem;
+			margin-left: 8px;
+			@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
 		}
 
 		&__slider {
-			padding-bottom: 15rem;
-			padding-top: 5.75rem;
-			max-height: 100vh;
+			&--arrows {
 
-			@include media-breakpoint-down(lg) {
-				padding-top: 0;
-				padding-bottom: 20rem;
-			}
-
-			@include media-breakpoint-down(md) {
-				padding-top: 4rem;
-				padding-bottom: 25rem;
-			}
-
-			&-buttons {
-				top: 50%;
-				bottom: initial;
-				left: 50%;
-				right: initial;
-				transform: translateX(-50%) !important;
-
-				@include media-breakpoint-down(md) {
-					top: 40%;
-				}
-
-				@include media-breakpoint-down(sm) {
-					// top: 30%;
-				}
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
 
 				.swiper-button-prev,
 				.swiper-button-next {
-					opacity: 0.7;
+					position: relative;
+					width: 60px;
+					height: 50px;
+					background-size: 35px;
+				}
+
+				.swiper-button-prev,
+				.swiper-container-rtl .swiper-button-next {
+					left: 0;
+					transition: $transition-base;
+					opacity: 0.5;
+
+					&:hover {
+						opacity: 1;
+					}
+				}
+
+				.swiper-button-next,
+				.swiper-container-rtl .swiper-button-prev {
+					right: 0;
+					transition: $transition-base;
+					opacity: 0.5;
 
 					&:hover {
 						opacity: 1;
@@ -404,43 +274,139 @@
 				}
 			}
 		}
-	}
-}
 
-#home-latest-news {
-	padding: 12.9375rem $grid-gutter-width*2 0 $grid-gutter-width*2;
+		@media screen and (max-height: 700px) {
+			height: 700px;
+			min-height: 700px;
 
-	&>.container,
-	&>.container-fluid {
-		padding-right: 0;
-		padding-left: 0;
-	}
-
-
-	@include media-breakpoint-down(lg) {
-		padding-right: $grid-gutter-width / 2;
-		padding-left: $grid-gutter-width / 2;
-	}
-
-	@include media-breakpoint-down(md) {
-		padding-right: 0;
-		padding-left: 0;
-	}
-
-	.brochure {
-		&__content {
-			padding: $grid-gutter-width*2.4 $grid-gutter-width*2;
-
-			@include media-breakpoint-down(lg) {
-				padding-right: $grid-gutter-width;
-				padding-left: $grid-gutter-width;
+			&:after {
+				height: calc(100% - (#{$grid-gutter-width} * 2));
 			}
 
-			@include media-breakpoint-down(sm) {
-				padding-right: $grid-gutter-width / 2;
-				padding-left: $grid-gutter-width / 2;
-				padding-bottom: $grid-gutter-width;
+			@include media-breakpoint-down(lg) {
+				&:after {
+					height: calc(100% - (#{$grid-gutter-width}));
+				}
 			}
 		}
 	}
+
+	#home-what-we-do {
+		padding: $grid-gutter-width*8 $grid-gutter-width*2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 100vh;
+
+		@include media-breakpoint-down(md) {
+			padding-top: $grid-gutter-width * 20;
+			padding-left: $grid-gutter-width / 2;
+			padding-right: $grid-gutter-width / 2;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-right: 0;
+			padding-left: 0;
+		}
+
+		.brochure {
+
+			&__content {
+				@include media-breakpoint-down(md) {
+					padding-top: 100px;
+					padding-bottom: 40px;
+				}
+
+				@include media-breakpoint-down(sm) {
+					padding-top: 150px;
+					padding-bottom: 60px;
+				}
+			}
+
+			&__slider {
+
+				.swiper-container {
+					height: 100%;
+				}
+
+				&-buttons {
+					position: absolute;
+					bottom: $brochure-slider-buttons-height;
+					right: -#{$brochure-slider-buttons-width};
+					transform: initial !important;
+
+					@include media-breakpoint-down(md) {
+						bottom: $brochure-slider-buttons-height / 2;
+					}
+
+					@include media-breakpoint-down(sm) {
+						bottom: -#{$brochure-slider-buttons-height / 2};
+						right: $brochure-slider-buttons-width / 2;
+					}
+				}
+			}
+
+			&__text {
+				width: 80%;
+
+				@include media-breakpoint-down(md) {
+					width: 100%;
+				}
+			}
+
+			&__text,
+			&__subtitle,
+			&__title {
+				&+.brochure__link {
+					margin-top: $spacer * 3;
+				}
+			}
+		}
+
+		@media screen and (max-height: 700px) {
+			height: 1000px;
+			padding-top: $grid-gutter-width * 28;
+			padding-bottom: $grid-gutter-width * 10;
+		}
+	}
+
+
+	#home-latest-news {
+		padding: 12.9375rem $grid-gutter-width*2 0 $grid-gutter-width*2;
+
+		&>.container,
+		&>.container-fluid {
+			padding-right: 0;
+			padding-left: 0;
+		}
+
+
+		@include media-breakpoint-down(lg) {
+			padding-right: $grid-gutter-width / 2;
+			padding-left: $grid-gutter-width / 2;
+		}
+
+		@include media-breakpoint-down(md) {
+			padding-right: 0;
+			padding-left: 0;
+		}
+
+		.brochure {
+			&__content {
+				padding: $grid-gutter-width*2.4 $grid-gutter-width*2;
+
+				@include media-breakpoint-down(lg) {
+					padding-right: $grid-gutter-width;
+					padding-left: $grid-gutter-width;
+				}
+
+				@include media-breakpoint-down(sm) {
+					padding-right: $grid-gutter-width / 2;
+					padding-left: $grid-gutter-width / 2;
+					padding-bottom: $grid-gutter-width;
+				}
+			}
+		}
+	}
+
 }
