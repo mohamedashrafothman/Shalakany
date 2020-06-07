@@ -1,4 +1,4 @@
-$brochure-padding-gap: 6px;
+$brochure-padding-gap: $grid-gutter-width / 4;
 $brochure-slider-buttons-width: 80px;
 $brochure-slider-buttons-height: 74px;
 
@@ -15,6 +15,7 @@ $brochure-slider-buttons-height: 74px;
 	background: inherit;
 	margin-right: auto;
 	margin-left: auto;
+	z-index: 25;
 
 
 	&:after {
@@ -40,9 +41,11 @@ $brochure-slider-buttons-height: 74px;
 		justify-content: flex-start;
 		align-items: flex-start;
 		text-align: center;
-		padding: $grid-gutter-width*2.85 $grid-gutter-width*3.78;
+		padding: #{$grid-gutter-width * 2};
+		// padding: $grid-gutter-width*2.85 $grid-gutter-width*3.78;
 
-		&, &>* {
+		&,
+		&>* {
 			z-index: 20; // must be bigger than .brochure:after
 		}
 
@@ -167,6 +170,7 @@ $brochure-slider-buttons-height: 74px;
 			@include media-breakpoint-down(sm) {
 				left: -#{2 * 100% / $grid-columns};
 			}
+
 			@include media-breakpoint-down(xs) {
 				left: calc(-#{2 * 100% / $grid-columns} + #{$grid-gutter-width / 4});
 			}
@@ -238,8 +242,10 @@ $brochure-slider-buttons-height: 74px;
 
 	&__image {
 		width: 100%;
-		min-height: 1px;
+		min-height: fit-content;
+		height: fit-content;
 		overflow: hidden;
+		z-index: 4;
 
 		img {
 			transition: $transition-collapse;
@@ -248,27 +254,40 @@ $brochure-slider-buttons-height: 74px;
 			@include object-fit(cover, center);
 		}
 
-		&:after {
-			content: "";
-			display: block;
-			position: absolute;
-			width: calc(100% - (#{$brochure-padding-gap} * 2));
-			height: calc(100% - (#{$brochure-padding-gap} * 2));
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			background-color: transparent;
-			border: $border-width $border-style $border-color;
-			transition: $transition-base;
+		&--top {
+			margin-bottom: calc(-#{$brochure-padding-gap});
+			margin-right: auto;
+			margin-left: auto;
+		}
+		&--left {
+			margin-right: calc(-#{$brochure-padding-gap} - (#{$grid-gutter-width} * 2));
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+		&--bottom {
+			margin-top: calc(-#{$brochure-padding-gap});
+			margin-right: auto;
+			margin-left: auto;
+		}
+		&--right {
+			margin-left: calc(-#{$brochure-padding-gap} - (#{$grid-gutter-width} * 2));
+			margin-top: auto;
+			margin-bottom: auto;
 		}
 
-		&:hover {
-			img {
-				transform: scale(1.04);
-			}
-
-			&::after {
-				border-width: $border-width * 5;
+		&--border {
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				width: calc(100% - (#{$brochure-padding-gap} * 2));
+				height: calc(100% - (#{$brochure-padding-gap} * 2));
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: transparent;
+				border: $border-width $border-style $border-color;
+				transition: $transition-base;
 			}
 		}
 	}
@@ -359,7 +378,7 @@ $brochure-slider-buttons-height: 74px;
 		}
 
 
-		@include media-breakpoint-down(xl){
+		@include media-breakpoint-down(xl) {
 			&--lg {
 				@include button-size($btn-padding-y-lg, $btn-padding-x-lg * 0.75, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
 			}
@@ -455,7 +474,7 @@ $value in $theme-colors {
 			}
 		}
 
-		.brochure__image {
+		.brochure__image--border {
 			&:after {
 				@if $value==transparent {
 					content: none !important;
