@@ -8,13 +8,15 @@
 }
 html{
 	font-size: $font-size-base;
-	@include media-breakpoint-down(lg) {
+	@include media-breakpoint-down(md) {
 		font-size: $font-size-sm;
 		line-height: $line-height-sm;
 	}
 }
 body{
-	// overflow-x: hidden;
+	&, #app {
+		overflow-x: hidden;
+	}
 	&.preloader-shown {
 		overflow: hidden;
 	}
@@ -34,4 +36,45 @@ body{
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+
+
+// updating nav-fill tabs
+.nav-tabs {
+	&.nav-fill {
+		.nav-item{
+			@include media-breakpoint-up(md) {
+				flex: initial;
+				text-align: initial;
+			}
+
+			@include media-breakpoint-down(sm) {
+				width: 100%;
+
+				&:not(:first-child) {
+					margin-top: 1.5rem;
+				}
+
+				&:not(:last-child) {
+					margin-right: 0;
+				}
+			 }
+		}
+	}
+
+	&:not(.nav-fill) {
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+			overflow-x: scroll;
+			flex-wrap: nowrap;
+
+			.nav-item{
+				&:not(:last-child) {
+					margin-right: 3rem;
+				}
+				flex: 1 0 auto;
+			}
+		}
+	}
+
 }

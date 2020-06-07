@@ -27,7 +27,11 @@
 		left: 0;
 		bottom: 0;
 		z-index: 3;
-		padding: 2rem 2.75rem;
+		padding: $grid-gutter-width #{$grid-gutter-width * 1.5};
+
+		@include media-breakpoint-down(lg) {
+			width: 90%;
+		}
 
 		@include media-breakpoint-down(md) {
 			width: 80%;
@@ -36,6 +40,12 @@
 
 		@include media-breakpoint-down(sm) {
 			width: 90%;
+		}
+
+		@include media-breakpoint-down(xs) {
+			width: 100%;
+			padding-left: #{$grid-gutter-width / 2};
+			padding-right: #{$grid-gutter-width / 2};
 		}
 	}
 	&:after{

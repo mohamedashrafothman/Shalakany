@@ -10,6 +10,11 @@
 	&__bottom {
 		padding-right: $grid-gutter-width * 2;
 		padding-left: $grid-gutter-width * 2;
+
+		@include media-breakpoint-down(md) {
+			padding-left: #{$grid-gutter-width / 2};
+			padding-right: #{$grid-gutter-width / 2};
+		}
 	}
 
 	&__top {

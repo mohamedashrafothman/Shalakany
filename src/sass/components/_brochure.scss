@@ -167,6 +167,9 @@ $brochure-slider-buttons-height: 74px;
 			@include media-breakpoint-down(sm) {
 				left: -#{2 * 100% / $grid-columns};
 			}
+			@include media-breakpoint-down(xs) {
+				left: calc(-#{2 * 100% / $grid-columns} + #{$grid-gutter-width / 4});
+			}
 
 			&~.brochure__content {
 				padding-left: calc(50% + (#{$grid-gutter-width} * 3.78));
@@ -363,6 +366,16 @@ $brochure-slider-buttons-height: 74px;
 
 			&--sm {
 				@include button-size($btn-padding-y-sm, $btn-padding-x-sm * 0.75, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			&--lg {
+				@include button-size($btn-padding-y-lg, 0, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+			}
+
+			&--sm {
+				@include button-size($btn-padding-y-sm, 0, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
 			}
 		}
 	}

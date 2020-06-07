@@ -14,10 +14,10 @@ block content
 			section.section.section__bg--white
 				.container-fluid
 					.row
-						.col-12.col-md-6.offset-md-5
+						.col-12.col-sm-10.offset-sm-1.col-md-6.offset-md-5
 							.inner-article__content
 								p Our lawyers are leaders in their fields and are considered experts in their respective areas of specialization. Through a blend of experience and expertise, our lawyers provide top quality legal services to our clients.
-		section.partners.section.section__bg--white.px-5
+		section.partners.section.section__bg--white.px-0.px-lg-5
 			.container
 				.row
 					.col-12.py-5
@@ -27,7 +27,7 @@ block content
 							each partner, i in persons.filter(function(item) {return item.type === "partner"})
 								.col-12.col-md-6.col-lg-4.col-xl-3.mb-5
 									+person(partner, i)
-		section.senior-associate.section.section__bg--white.px-5
+		section.senior-associate.section.section__bg--white.px-0.px-lg-5
 			.container
 				.row
 					.col-12.py-5
@@ -37,7 +37,7 @@ block content
 							each senior_associate, i in persons.filter(function(item) {return item.type === "senior associate"})
 								.col-12.col-md-6.col-lg-4.col-xl-3.mb-5
 									+person(senior_associate, i)
-		section.senior-associate.section.section__bg--white.px-5
+		section.senior-associate.section.section__bg--white.px-0.px-lg-5
 			.container
 				.row
 					.col-12.py-5

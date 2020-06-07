@@ -49,6 +49,7 @@
 		h2, h3, h4, h5, h6{
 			margin-bottom: map-get($spacers, 3);
 			color: $primary;
+			line-height: #{$line-height-base * 0.75};
 		}
 
 	}
@@ -78,6 +79,10 @@
 
 	&__title{
 		color: $primary;
+
+		@include media-breakpoint-down(sm) {
+			line-height: $line-height-base * 0.75;
+		}
 	}
 
 	&__img {

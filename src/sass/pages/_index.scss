@@ -27,7 +27,7 @@
 				}
 
 				@include media-breakpoint-down(xs) {
-					max-width: calc(100vw - #{$grid-gutter-width * 2});
+					max-width: calc(100vw - #{100% / $grid-columns});
 				}
 			}
 
@@ -204,6 +204,7 @@
 			}
 
 			@include media-breakpoint-down(xs) {
+				width: 100%;
 				strong {
 					font-size: $h3-font-size;
 				}
@@ -365,8 +366,15 @@
 
 		@media screen and (max-height: 700px) {
 			height: 1000px;
-			padding-top: $grid-gutter-width * 28;
-			padding-bottom: $grid-gutter-width * 10;
+
+			@include media-breakpoint-up(lg) {
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+			@include media-breakpoint-down(md) {
+				padding-top: $grid-gutter-width * 28;
+				padding-bottom: $grid-gutter-width * 10;
+			}
 		}
 	}
 

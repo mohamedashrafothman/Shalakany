@@ -2,6 +2,6 @@
 
 module.exports = function () {
 	$("[data-nicescroll]").niceScroll({
-		scrollspeed: 150, // scrolling speed
+		scrollspeed: 200, // scrolling speed
 	});
 }

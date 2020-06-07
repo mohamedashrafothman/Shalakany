@@ -53,6 +53,10 @@
 					transform: translateY(-50%);
 					z-index: 10;
 					transition: $transition-base;
+
+					@include media-breakpoint-down(sm) {
+						width: 0.75rem;
+					}
 				}
 
 				&.active {
@@ -77,6 +81,10 @@
 						z-index: 11;
 						transition: $transition-base;
 					}
+				}
+
+				@include media-breakpoint-down(sm) {
+					padding: 0 1.5rem 0 0.5rem !important
 				}
 			}
 
@@ -143,6 +151,11 @@
 				@include media-breakpoint-down(md) {
 					padding-left: 0;
 				}
+
+				@include media-breakpoint-down(sm) {
+					padding-left: #{$grid-gutter-width / 2};
+					padding-right: #{$grid-gutter-width / 2};
+				}
 			}
 
 			&__text {
@@ -156,6 +169,10 @@
 				margin-bottom: $spacer !important;
 				@include media-breakpoint-down(md) {
 					padding-left: $grid-gutter-width;
+				}
+
+				@include media-breakpoint-down(sm) {
+					padding-left: 0;
 				}
 			}
 

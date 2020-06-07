@@ -18,9 +18,16 @@ module.exports = function () {
 				effect: effect,
 				observer: true,
 				observeParents: true,
-				keyboard: { enabled: true, onlyInViewport: true },
-				fadeEffect: { crossFade: true },
-				cubeEffect: { shadow: false },
+				keyboard: {
+					enabled: true,
+					onlyInViewport: true
+				},
+				fadeEffect: {
+					crossFade: true
+				},
+				cubeEffect: {
+					shadow: false
+				},
 				navigation: {
 					prevEl: `div.swiper-button-prev[for^="${$(ele).attr('id')}"]`,
 					nextEl: `div.swiper-button-next[for^="${$(ele).attr('id')}"]`
@@ -41,14 +48,49 @@ module.exports = function () {
 				loop: true,
 				parallax: true,
 				slidesPerView: 4,
-				slidesPerColumn: ($(ele).attr("data-swiper-slidesPerColumn") && Boolean($(ele).attr("data-swiper-slidesPerColumn"))) ? Number($(ele).attr("data-swiper-slidesPerColumn"))  : 1,
 				effect: effect,
-				keyboard: { enabled: true, onlyInViewport: true },
-				fadeEffect: { crossFade: true },
-				cubeEffect: { shadow: false },
+				keyboard: {
+					enabled: true,
+					onlyInViewport: true
+				},
+				fadeEffect: {
+					crossFade: true
+				},
+				cubeEffect: {
+					shadow: false
+				},
 				navigation: {
 					prevEl: `div.swiper-button-prev[for^="${$(ele).attr('id')}"]`,
 					nextEl: `div.swiper-button-next[for^="${$(ele).attr('id')}"]`
+				},
+				slidesPerColumn: ($(ele).attr("data-swiper-slidesPerColumn") && Boolean($(ele).attr("data-swiper-slidesPerColumn"))) ? Number($(ele).attr("data-swiper-slidesPerColumn")) : 1,
+				// Responsive breakpoints
+				breakpoints: {
+					// when window width is >= 0px ------ xs
+					0: {
+						slidesPerView: 1,
+						slidesPerColumn: ($(ele).attr("data-swiper-slidesPerColumn") && Boolean($(ele).attr("data-swiper-slidesPerColumn"))) ? Number($(ele).attr("data-swiper-slidesPerColumn")) : 1,
+					},
+					// when window width is >= 576px ------ small
+					576: {
+						slidesPerView: 2,
+						slidesPerColumn: ($(ele).attr("data-swiper-slidesPerColumn") && Boolean($(ele).attr("data-swiper-slidesPerColumn"))) ? Number($(ele).attr("data-swiper-slidesPerColumn")) : 1,
+					},
+					// when window width is >= 768px  ------ medium
+					768: {
+						slidesPerView: 3,
+						slidesPerColumn: ($(ele).attr("data-swiper-slidesPerColumn") && Boolean($(ele).attr("data-swiper-slidesPerColumn"))) ? Number($(ele).attr("data-swiper-slidesPerColumn")) : 1,
+					},
+					// when window width is >= 992px  ------ large
+					992: {
+						slidesPerView: 4,
+						slidesPerColumn: ($(ele).attr("data-swiper-slidesPerColumn") && Boolean($(ele).attr("data-swiper-slidesPerColumn"))) ? Number($(ele).attr("data-swiper-slidesPerColumn")) : 1,
+					},
+					// when window width is >= 1200px  ------ extra large
+					1200: {
+						slidesPerView: 4,
+						slidesPerColumn: ($(ele).attr("data-swiper-slidesPerColumn") && Boolean($(ele).attr("data-swiper-slidesPerColumn"))) ? Number($(ele).attr("data-swiper-slidesPerColumn")) : 1,
+					}
 				}
 			};
 

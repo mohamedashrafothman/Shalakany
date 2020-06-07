@@ -14,7 +14,7 @@ $person-rectangle-width: $person-rectangle-height;
 			width: $person-rectangle-width;
 			height: $person-rectangle-height;
 			top: calc(21.5rem + (#{$person-rectangle-height / 2} + #{$person-padding-gap / 2})); // image height + half of the grid gutter width
-			right: #{$grid-gutter-width};
+			right: #{$grid-gutter-width * 0.75};
 			background-color: $black;
 			z-index: 1;
 			transform: rotate(45deg);
@@ -34,6 +34,20 @@ $person-rectangle-width: $person-rectangle-height;
 					top: calc(26.5rem - (#{$person-rectangle-height / 2} + #{$person-padding-gap / 2})); // image height + half of the grid gutter width
 				}
 			}
+
+			@include media-breakpoint-down(sm) {
+				.person__image{
+					height: 30rem;
+					max-height: 30rem;
+					min-height: 30rem;
+				}
+
+				&.person__with-rectangle {
+					&::before {
+						top: calc(30rem - (#{$person-rectangle-height / 2} + #{$person-padding-gap / 2})); // image height + half of the grid gutter width
+					}
+				}
+			}
 		}
 
 		&--md {
@@ -48,6 +62,20 @@ $person-rectangle-width: $person-rectangle-height;
 					top: calc(21.5rem - (#{$person-rectangle-height / 2} + #{$person-padding-gap / 2})); // image height + half of the grid gutter width
 				}
 			}
+
+			@include media-breakpoint-down(sm) {
+				.person__image{
+					height: 26.5rem;
+					max-height: 26.5rem;
+					min-height: 26.5rem;
+				}
+
+				&.person__with-rectangle {
+					&::before {
+						top: calc(26.5rem - (#{$person-rectangle-height / 2} + #{$person-padding-gap / 2})); // image height + half of the grid gutter width
+					}
+				}
+			}
 		}
 
 		&--sm {
@@ -60,6 +88,20 @@ $person-rectangle-width: $person-rectangle-height;
 			&.person__with-rectangle {
 				&::before {
 					top: calc(17.1875rem - (#{$person-rectangle-height / 2} + #{$person-padding-gap / 2})); // image height + half of the grid gutter width
+				}
+			}
+
+			@include media-breakpoint-down(sm) {
+				.person__image{
+					height: 21.5rem;
+					max-height: 21.5rem;
+					min-height: 21.5rem;
+				}
+
+				&.person__with-rectangle {
+					&::before {
+						top: calc(21.5rem - (#{$person-rectangle-height / 2} + #{$person-padding-gap / 2})); // image height + half of the grid gutter width
+					}
 				}
 			}
 		}

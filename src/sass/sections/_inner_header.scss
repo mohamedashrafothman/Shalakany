@@ -64,6 +64,11 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 			padding-left: $grid-gutter-width;
 			padding-right: $grid-gutter-width;
 		}
+
+		@include media-breakpoint-down(xs) {
+			padding-left: #{$grid-gutter-width / 2};
+			padding-right: #{$grid-gutter-width / 2};
+		}
 	}
 
 	&__back {
@@ -118,6 +123,7 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 
 		@include media-breakpoint-down(sm) {
 			width: 100%;
+			font-size: 3rem;
 		}
 	}
 
@@ -125,6 +131,7 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 		color: $white;
 		font-weight: $font-weight-light;
 		text-transform: capitalize;
+		font-weight: 2rem;
 	}
 
 	&__title,
