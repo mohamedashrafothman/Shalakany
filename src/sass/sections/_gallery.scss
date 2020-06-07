@@ -1,0 +1,140 @@
+$gallery-slider-buttons-height: 80px;
+$gallery-slider-buttons-width: 74px;
+
+
+.gallery {
+	padding: #{$grid-gutter-width*4} 0;
+
+	@include media-breakpoint-down(md) {
+		padding: #{$grid-gutter-width*2} 0;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding: #{$grid-gutter-width / 2} 0;
+	}
+
+	&__slider {
+		position: relative;
+		margin-bottom: $gallery-slider-buttons-height;
+		// uncomment this to remove fixed height from active paint slider
+		// .swiper{
+		// 	&-wrapper{
+		// 		align-items: center;
+		// 	}
+		// 	&-slide {
+		// 		&-next, &-prev{
+		// 			opacity: 0;
+		// 			transition: none;
+		// 		}
+		// 		&-active{
+		// 			.paint__frame{
+		// 				height: fit-content !important;
+		// 				max-height: fit-content !important;
+		// 			}
+		// 			.paint__image{
+		// 				@include object-fit(contain, center);
+		// 			}
+		// 		}
+		// 	}
+		// }
+	}
+
+	&__thumbs {
+		margin-top: $grid-gutter-width * 2;
+		position: relative;
+
+		&::after, &::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			height: 100%;
+			width: 250px;
+
+			@include media-breakpoint-down(md) {
+				width: 200px;
+			}
+
+			@include media-breakpoint-down(sm) {
+				width: 170px;
+			}
+
+			@include media-breakpoint-down(xs) {
+				width: 150px;
+			}
+		}
+
+		&::after {
+			right: 0;
+			z-index: 1;
+			background-image: linear-gradient(-90deg, $body-bg, transparent);
+		}
+
+		&::before {
+			left: 0;
+			z-index: 2;
+			background-image: linear-gradient(90deg, $body-bg, transparent);
+		}
+
+		.swiper {
+			&-slide {
+				width: fit-content !important;
+
+				opacity: 0.75;
+
+				&-next, &-prev {
+					opacity: 0.90;
+				}
+
+				&-active {
+					opacity: 1;
+					.paint__frame {
+						&::after {
+							border-color: $primary;
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+	&__slider-buttons {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		bottom: -#{$gallery-slider-buttons-height};
+		right: 50%;
+		transform: translateX(50%) !important;
+		height: $gallery-slider-buttons-height;
+		width: $gallery-slider-buttons-width * 2; // width of two buttons
+		background-color: $white;
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: relative !important;
+			top: 0;
+			background-color: transparent;
+			transition: $transition-base;
+			width: $gallery-slider-buttons-width;
+			height: 100%;
+			background-size: 45px;
+			margin: 0 !important;
+			overflow: hidden;
+		}
+
+		.swiper-button-next,
+		.swiper-container-rtl .swiper-button-prev {
+			right: 0;
+			background-position-x: 10px;
+		}
+
+		.swiper-button-prev,
+		.swiper-container-rtl .swiper-button-next {
+			left: 0;
+			background-position-x: 20px;
+		}
+	}
+}

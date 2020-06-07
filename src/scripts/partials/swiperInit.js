@@ -3,13 +3,13 @@
 module.exports = function () {
 	var $single_slide_swiper = $('div[id^="home-banner-slider"], div[id^="home-whatWeDo-slider"], div[id^="timeline-slider"]:not([id*="-prev"]):not([id*="-next"])');
 	var $clients_swiper = $("#clients-slider");
+	var $gallery_swiper = $("#gallery-slider");
 	var effect_array = ["slide", "fade", "cube", "flip", "coverflow"];
 
 	if ($single_slide_swiper.length) {
 		$single_slide_swiper.each(function (index, ele) {
 			var effect = ($(ele).attr("data-swiper-effect") && effect_array.includes($(ele).attr("data-swiper-effect"))) ? $(ele).attr("data-swiper-effect") : "slide";
 			var swiper_config = {
-				init: true,
 				direction: 'horizontal',
 				speed: 1000,
 				loop: true,
@@ -42,7 +42,6 @@ module.exports = function () {
 		$clients_swiper.each(function (index, ele) {
 			var effect = ($(ele).attr("data-swiper-effect") && effect_array.includes($(ele).attr("data-swiper-effect"))) ? $(ele).attr("data-swiper-effect") : "slide";
 			var swiper_config = {
-				init: true,
 				direction: 'horizontal',
 				speed: 1000,
 				loop: true,
@@ -95,6 +94,51 @@ module.exports = function () {
 			};
 
 			new Swiper(`#${$(ele).attr("id")}`, swiper_config);
+		});
+	}
+
+	if ($gallery_swiper.length) {
+		$gallery_swiper.each(function (index, ele) {
+			var slider_effect = ($(ele).attr("data-swiper-effect") && effect_array.includes($(ele).attr("data-swiper-effect"))) ? $(ele).attr("data-swiper-effect") : "slide";
+			var gallery_slider_config = {
+				direction: 'horizontal',
+				speed: 1000,
+				loop: true,
+				parallax: true,
+				spaceBetween: 10,
+				loopedSlides: 4,
+				effect: slider_effect,
+				keyboard: {
+					enabled: true,
+					onlyInViewport: true
+				},
+				fadeEffect: {
+					crossFade: true
+				},
+				cubeEffect: {
+					shadow: false
+				},
+				navigation: {
+					prevEl: `div.swiper-button-prev[for^="${$(ele).attr('id')}"]`,
+					nextEl: `div.swiper-button-next[for^="${$(ele).attr('id')}"]`
+				},
+			};
+			var gallery_slider = new Swiper(`#${$(ele).attr("id")}`, gallery_slider_config);
+
+
+			var $thumb = $(ele).closest('section').find("#gallery-thumbs");
+			var gallery_thumbs_config = {
+				loop: true,
+				spaceBetween: 10,
+				centeredSlides: true,
+				slidesPerView: 'auto',
+				slideToClickedSlide: true,
+				loopedSlides: 4
+			};
+			var gallery_thumbs = new Swiper(`#${$thumb.attr("id")}`, gallery_thumbs_config);
+
+			gallery_slider.controller.control = gallery_thumbs;
+    		gallery_thumbs.controller.control = gallery_slider;
 		});
 	}
 };

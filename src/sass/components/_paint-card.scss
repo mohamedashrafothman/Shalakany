@@ -1,0 +1,202 @@
+$paint-padding-gap: $grid-gutter-width;
+
+
+.paint {
+	margin-bottom: 0;
+
+	max-width: 100%;
+    overflow-x: hidden;
+    margin: 0 auto;
+
+	&__size {
+		&--lg {
+			.paint__frame{
+				height: 600px;
+				max-height: 600px;
+				padding: #{$paint-padding-gap / 4};
+				@include media-breakpoint-down(sm) {
+					height: 250px;
+				}
+			}
+			&-free{
+				.paint__frame{
+					padding: #{$paint-padding-gap / 4};
+					height: 600px;
+					width: fit-content;
+					margin: 0 auto;
+					@include media-breakpoint-down(sm) {
+						height: 250px;
+					}
+					&:after{
+						width: initial;
+					}
+				}
+				.paint__image{
+					width: initial;
+				}
+			}
+		}
+
+		&--md {
+			.paint__frame{
+				height: 400px;
+				max-height: 400px;
+				padding: #{$paint-padding-gap / 5};
+			}
+			&-free{
+				.paint__frame{
+					padding: #{$paint-padding-gap / 5};
+					height: 400px;
+					width: fit-content;
+					margin: 0 auto;
+					&:after{
+						width: initial;
+					}
+				}
+				.paint__image{
+					width: initial;
+				}
+			}
+		}
+
+		&--sm {
+			.paint__frame{
+				height: 150px;
+				max-height: 150px;
+				padding: #{$paint-padding-gap / 6};
+			}
+			&-free{
+				.paint__frame{
+					padding: #{$paint-padding-gap / 6};
+					height: 150px;
+					width: fit-content;
+					margin: 0 auto;
+					&:after{
+						width: initial;
+					}
+				}
+				.paint__image{
+					width: initial;
+				}
+			}
+		}
+	}
+
+	&__frame {
+		position: relative;
+		width: 100%;
+		padding: #{$paint-padding-gap / 5};
+		text-align: center;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+			background-color: transparent;
+			border: $border-width $border-style transparent;
+			transition: $transition-base;
+		}
+
+		&+.paint__description {
+			margin-top: calc(#{$paint-padding-gap / 4} + #{map-get($spacers, 5)});
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+		@include object-fit(cover, center);
+		background-color: $body-color;
+	}
+
+	&__title {
+		color: $body-color;
+		background-color: $body-bg;
+		border: $border-width $border-style $body-color;
+		padding: 0.75rem 1.75rem;
+		margin-bottom: 0;
+		position: relative;
+		text-transform: uppercase;
+
+		&::after,
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%) rotate(45deg);
+			width: 8px;
+			height: 8px;
+			background-color: $body-color;
+		}
+
+		&::after {
+			right: 10px;
+		}
+
+		&::before {
+			left: 10px;
+		}
+	}
+
+	&__artist {
+		color: $body-bg;
+		font-weight: $font-weight-light;
+		text-transform: uppercase;
+		background-color: $body-color;
+		padding: 0.375rem 1.875rem;
+		display: inline-block;
+	}
+
+	&__text {
+		margin-top: calc(#{map-get($spacers, 4)});
+		color: $body-color;
+		font-weight: $font-weight-light;
+
+		&::first-letter {
+			text-transform: capitalize;
+		}
+	}
+}
+
+@each $color,
+$value in $theme-colors {
+	.paint__color--#{$color} {
+
+		.paint__frame {
+
+			&:after {
+				border-color: $value;
+			}
+		}
+
+		.paint__image {
+			background-color: $value;
+		}
+
+		.paint__title {
+			color: color-yiq($value, $body-color, $white);
+			background-color: $value;
+			border-color: $value;
+
+			&::after,
+			&::before {
+				background-color: color-yiq($value, $brown, $brown);
+			}
+		}
+
+		.paint__artist {
+			color: color-yiq($value, $white, $white);
+			background-color: color-yiq($value, $brown, $brown);
+		}
+
+		.paint__text {
+			color: color-yiq($value, $body-color, $body-color);
+		}
+	}
+}
