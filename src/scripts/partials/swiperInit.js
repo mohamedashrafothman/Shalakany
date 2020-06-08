@@ -15,6 +15,9 @@ module.exports = function () {
 				direction: 'horizontal',
 				speed: 1000,
 				loop: true,
+				autoplay: {
+					delay: 5000,
+				},
 				parallax: true,
 				grabCursor: true,
 				effect: effect,
@@ -47,6 +50,9 @@ module.exports = function () {
 				direction: 'horizontal',
 				speed: 1000,
 				loop: true,
+				autoplay: {
+					delay: 5000,
+				},
 				parallax: true,
 				slidesPerView: 4,
 				effect: effect,
@@ -106,6 +112,9 @@ module.exports = function () {
 				direction: 'horizontal',
 				speed: 1000,
 				loop: true,
+				autoplay: {
+					delay: 5000,
+				},
 				parallax: true,
 				spaceBetween: 10,
 				loopedSlides: 4,
@@ -134,6 +143,9 @@ module.exports = function () {
 				spaceBetween: 10,
 				centeredSlides: true,
 				slidesPerView: 'auto',
+				autoplay: {
+					delay: 5000,
+				},
 				slideToClickedSlide: true,
 				loopedSlides: 4
 			};
@@ -151,6 +163,9 @@ module.exports = function () {
 				direction: 'horizontal',
 				speed: 1000,
 				loop: true,
+				autoplay: {
+					delay: 5000,
+				},
 				grabCursor: true,
 				effect: effect,
 				centeredSlides: true,

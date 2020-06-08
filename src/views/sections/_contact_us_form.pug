@@ -1,0 +1,26 @@
+section.section.contact-us
+	.section__bg--img-container.section__gradient-radial.section__gradient-radial--white-reverse
+		img.section__bg--img(src="./images/patterns/pattern.jpg")
+	.container
+		.row
+			.col-12
+				h5.section__title.section__title--primary.text-center let's discuss more
+			.col-12.col-sm-10.offset-sm-1.col-lg-8.offset-lg-2.col-xl-6.offset-xl-3
+				.contact-us__form
+					form(action="#", method="POST")
+						.form-row
+							.col-12.col-md-6
+								.form-group
+									input.form-control(type="text", placeholder="name", tabindex="1")
+								.form-group
+									input.form-control(type="text", placeholder="email", tabindex="3")
+								.form-group
+									input.form-control(type="text", placeholder="phone", tabindex="4")
+							.col-12.col-md-6
+								.form-group
+									input.form-control(type="text", placeholder="subject", tabindex="2")
+								.form-group
+									textarea.form-control(placeholder="message", rows="3", tabindex="5")
+							.col-12.d-flex.justify-content-center
+								.contact-us__submit
+									input(type="submit", value="send message", tabindex="6")

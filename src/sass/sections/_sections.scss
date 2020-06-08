@@ -17,7 +17,7 @@
 		&--img {
 			height: 100%;
 			width: 100%;
-			opacity: 0.4;
+			opacity: 0.3;
 			@include object-fit(cover, center);
 		}
 	}
@@ -40,7 +40,7 @@
 	&__gradient {
 
 		&-linear,
-		&-redial {
+		&-radial {
 			&::after {
 				content: "";
 				display: block;
@@ -131,6 +131,14 @@ $color-value in $theme-colors {
 
 		&::after {
 			background: radial-gradient(circle, rgba($color-value, 0.8), rgba($color-value, 0.85), rgba($color-value, 0.90), rgba($color-value, 0.95), rgba($color-value, 1.00), rgba($color-value, 1.00));
+		}
+	}
+
+	.section__gradient-radial--#{$color}-reverse {
+		background-color: $color-value;
+
+		&::after {
+			background: radial-gradient(circle, rgba($color-value, 1.00), rgba($color-value, 1.00), rgba($color-value, 0.95), rgba($color-value, 0.90), rgba($color-value, 0.85), rgba($color-value, 0.80));
 		}
 	}
 

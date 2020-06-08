@@ -1,0 +1,85 @@
+.contact-us {
+	padding: 8rem map-get($spacers, 5);
+
+	@include media-breakpoint-down(lg) {
+		padding: 12rem 0;
+	}
+
+	.section__title {
+		margin-bottom: map-get($spacers, 5);
+	}
+
+	&__form {
+		margin-top: map-get($spacers, 5);
+		margin-bottom: map-get($spacers, 5);
+		.form-group {
+			&:not(:last-child) {
+				margin-bottom: 1.5rem;
+			}
+		}
+		.form-control {
+			border-bottom-color: rgba($black, 0.333333) !important;
+			transition: $transition-collapse;
+			padding: 0.75rem 0;
+			color: $body-color;
+			font-weight: $font-weight-normal;
+			color: rgba($black, 1);
+
+			&,
+			&::placeholder {
+				font-size: $font-size-base;
+			}
+
+			&::placeholder {
+				font-weight: $font-weight-light;
+				text-transform: capitalize;
+				color: rgba($black, 0.333333);
+			}
+
+			&:focus, &:active {
+				border-bottom-color: $black !important;
+			}
+		}
+
+		textarea.form-control {
+			padding-bottom: 0.9rem;
+		}
+	}
+
+	&__submit {
+		position: relative;
+		margin-top: map-get($spacers, 5);
+
+		input[type="submit"] {
+			background-color: transparent;
+			color: $primary;
+			font-weight: $font-weight-bolder;
+			font-size: 1.25rem;
+			text-transform: uppercase;
+			text-align: center;
+			padding-left: $grid-gutter-width;
+			padding-right: $grid-gutter-width;
+			border: 0;
+			box-shadow: none;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			height: 0.75em;
+			width: 0.75em;
+			top: 50%;
+			left: calc((#{$grid-gutter-width} / 2) - (0.75em / 2)); // ((grid gutter width / 2) - (square width / 2))
+			transform: translateY(-50%) rotate(-45deg);
+			background-color: $brown;
+			transition: $transition-base;
+		}
+
+		&:hover {
+			&::before {
+				left: 0;
+			}
+		}
+	}
+}

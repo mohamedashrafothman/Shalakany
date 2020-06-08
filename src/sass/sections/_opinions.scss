@@ -29,9 +29,17 @@ $opinions-slider-buttons-width: 74px;
 	&__slider {
 		margin-bottom: $grid-gutter-width * 3;
 		.testimonial {
-			width: calc(50vw - #{$grid-gutter-width * 2});
+			width: calc(40vw - #{$grid-gutter-width * 2});
+
+			@include media-breakpoint-down(lg) {
+				width: calc(60vw - #{$grid-gutter-width});
+			}
 
 			@include media-breakpoint-down(md) {
+				width: calc(80vw - #{$grid-gutter-width});
+			}
+
+			@include media-breakpoint-down(sm) {
 				width: calc(100vw - #{$grid-gutter-width});
 			}
 		}
