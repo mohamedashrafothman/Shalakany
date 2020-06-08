@@ -1,5 +1,5 @@
 mixin service-card(data={ href: "#", img: { src:"", alt:"" }}, index=0)
-	a.service-card(href=data.href)
+	a.service-card.service-card__hover-effect(href=data.href)
 		.service-card__image
 			img(src=data.img.src, alt=data.img.alt)
 		if(data.title)

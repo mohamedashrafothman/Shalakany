@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = function () {
-	$("[data-nicescroll]").niceScroll({
-		scrollspeed: 75, // scrolling speed
+	$("body[data-nicescroll]").niceScroll({
+		scrollspeed: 75,
 		cursorborderradius: 0
 	});
 }

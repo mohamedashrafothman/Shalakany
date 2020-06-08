@@ -14,6 +14,7 @@ var stickySocial   = require('./partials/stickySocial');
 var VideoOverlay   = require('./partials/videoOverlay');
 var smoothScroll   = require('./partials/smoothScroll');
 var niceScrollInit = require('./partials/niceScrollInit');
+var navChangeEvent = require('./partials/navChangeEvent');
 
 (function ($) {
 	$(window).on('load', () => {
@@ -35,5 +36,6 @@ var niceScrollInit = require('./partials/niceScrollInit');
 		new VideoOverlay();
 		smoothScroll();
 		niceScrollInit();
+		navChangeEvent();
 	});
 })(jQuery);

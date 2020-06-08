@@ -22,32 +22,26 @@
 		font-weight: $font-weight-bolder;
 		line-height: 2.375rem;
 		text-transform: uppercase;
-		width: 70%;
 		position: absolute;
 		left: 0;
 		bottom: 0;
 		z-index: 3;
 		padding: $grid-gutter-width #{$grid-gutter-width * 1.5};
 
-		@include media-breakpoint-down(lg) {
-			width: 90%;
-		}
-
 		@include media-breakpoint-down(md) {
-			width: 80%;
 			bottom: $spacer * 1.5;
 		}
 
-		@include media-breakpoint-down(sm) {
-			width: 90%;
-		}
-
 		@include media-breakpoint-down(xs) {
-			width: 100%;
 			padding-left: #{$grid-gutter-width / 2};
 			padding-right: #{$grid-gutter-width / 2};
 		}
 	}
+
+	h6.service-card__title {
+		font-size: 1.875rem;
+	}
+
 	&:after{
 		content: "";
 		display: block;
@@ -60,10 +54,12 @@
 		background: linear-gradient(0deg, rgba($black, 0.95) 20%, transparent);
 	}
 
-	&:hover{
-		.service-card__image{
-			img{
-				transform: scale(1.1);
+	&__hover-effect {
+		&:hover{
+			.service-card__image{
+				img{
+					transform: scale(1.1);
+				}
 			}
 		}
 	}

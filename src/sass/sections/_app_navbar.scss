@@ -169,9 +169,9 @@ $app-navbar-border-width: $border-width * 2;
 		}
 
 		&.menu-open{
-			backdrop-filter: blur(6px); // blur effect
 			cursor: pointer;
-			background-color: rgba($black, 0.8);
+			backdrop-filter: blur(3px);
+			background-color: rgba($black, 0.85);
 		}
 
 		&.search-open {

@@ -1,6 +1,7 @@
 extends ./layouts/_index_layout.pug
 include ./mixins/_about-us-card.pug
 include ./mixins/_inner-header.pug
+include ./mixins/_service-card.pug
 
 append variables
 	- var page_title = "services & clients";
@@ -16,6 +17,177 @@ block content
 						.col-12.col-sm-10.offset-sm-1.col-md-6.offset-md-5
 							.inner-article__content
 								p Our lawyers are leaders in their fields and are considered experts in their respective areas of specialization. Through a blend of experience and expertise, our lawyers provide top quality legal services to our clients.
+			section.section.section__bg--white.services-detailed
+				.container
+					.row
+						.col-12.col-sm-6.col-md-5.d-block.d-lg-none.mb-5.px-4.px-md-0
+							select.inner-article__nav-dropdown.custom-select.custom-select-lg
+								option(value=`service-corporate`) corporate and mergers & acquisitions
+								option(value=`service-finance-projects`) finance & projects
+								option(value=`service-arbitration-litigation`) arbitration & litigation
+								option(value=`service-commercial`) commercial
+						.col-12.col-lg-4.col-xl-4.d-none.d-lg-block
+							.inner-article__nav
+								ul.nav.flex-column.nav-pills#service-tab(role="tablist" aria-orientation="vertical")
+									li.nav-item(role="presentation")
+										a.nav-link.active#service-corporate-tab(data-toggle="pill" href="#service-corporate" role="tab" aria-controls="service-corporate" aria-selected="true") corporate and mergers & acquisitions
+									li.nav-item(role="presentation")
+										a.nav-link#service-finance-projects-tab(data-toggle="pill" href="#service-finance-projects" role="tab" aria-controls="service-finance-projects" aria-selected="false") finance & projects
+									li.nav-item(role="presentation")
+										a.nav-link#service-arbitration-litigation-tab(data-toggle="pill" href="#service-arbitration-litigation" role="tab" aria-controls="service-arbitration-litigation" aria-selected="false") arbitration & litigation
+									li.nav-item(role="presentation")
+										a.nav-link#service-commercial-tab(data-toggle="pill" href="#service-commercial" role="tab" aria-controls="service-commercial" aria-selected="false") commercial
+						.col-12.col-lg-7.offset-lg-1.col-xl-7.offset-xl-1.px-4.px-md-0
+							.inner-article__tabs
+								.tab-content#service-content
+									.tab-pane.animated.fadeInUp.show.active#service-corporate(role="tabpanel" aria-labelledby="service-corporate-tab")
+										.inner-article__content
+											.service-card.inner-article__img
+												.service-card__image
+													img(src="./images/services/1.jpg", alt="")
+												h6.service-card__title corporate and mergers & acquisitions
+											.row
+												.col-12.col-md-11
+													.inner-article__document
+														p
+															| Lorem ipsum dolor sit amet,
+															a(href="#")
+																|  consetetur sadipscing elitr
+															|  , sed diam nonumy
+															strong
+																|  eirmod tempor inviduntut
+															|  labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														ul
+															li Lorem ipsum dolor sit amet.
+															li Lorem ipsum dolor sit amet.
+															li Lorem ipsum dolor sit amet.
+															li Lorem ipsum dolor sit amet.
+															li
+																| Lorem ipsum dolor sit amet.
+																ul
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyaconsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														h6 At vero eos et accusam et justo
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														h6 Stet clita kasd gubergren, no sea takimata sanctus est
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyaconsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+
+									.tab-pane.animated.fadeInUp#service-finance-projects(role="tabpanel" aria-labelledby="service-finance-projects-tab")
+										.inner-article__content
+											.service-card.inner-article__img
+												.service-card__image
+													img(src="./images/services/2.jpg", alt="")
+												h6.service-card__title  finance & projects
+											.row
+												.col-12.col-md-11
+													.inner-article__document
+														p
+															| Lorem ipsum dolor sit amet,
+															a(href="#")
+																|  consetetur sadipscing elitr
+															|  , sed diam nonumy
+															strong
+																|  eirmod tempor inviduntut
+															|  labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														ul
+															li Lorem ipsum dolor sit amet.
+															li Lorem ipsum dolor sit amet.
+															li Lorem ipsum dolor sit amet.
+															li Lorem ipsum dolor sit amet.
+															li
+																| Lorem ipsum dolor sit amet.
+																ul
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyaconsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														h6 At vero eos et accusam et justo
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														h6 Stet clita kasd gubergren, no sea takimata sanctus est
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyaconsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+
+									.tab-pane.animated.fadeInUp#service-arbitration-litigation(role="tabpanel" aria-labelledby="service-arbitration-litigation-tab")
+										.inner-article__content
+											.service-card.inner-article__img
+												.service-card__image
+													img(src="./images/services/3.jpg", alt="")
+												h6.service-card__title  arbitration & litigation
+											.row
+												.col-12.col-md-11
+													.inner-article__document
+														p
+															| Lorem ipsum dolor sit amet,
+															a(href="#")
+																|  consetetur sadipscing elitr
+															|  , sed diam nonumy
+															strong
+																|  eirmod tempor inviduntut
+															|  labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														ul
+															li Lorem ipsum dolor sit amet.
+															li Lorem ipsum dolor sit amet.
+															li Lorem ipsum dolor sit amet.
+															li Lorem ipsum dolor sit amet.
+															li
+																| Lorem ipsum dolor sit amet.
+																ul
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyaconsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														h6 At vero eos et accusam et justo
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														h6 Stet clita kasd gubergren, no sea takimata sanctus est
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyaconsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+
+									.tab-pane.animated.fadeInUp#service-commercial(role="tabpanel" aria-labelledby="service-commercial-tab")
+										.inner-article__content
+											.service-card.inner-article__img
+												.service-card__image
+													img(src="./images/services/4.jpg", alt="")
+												h6.service-card__title  commercial
+											.row
+												.col-12.col-md-11
+													.inner-article__document
+														p
+															| Lorem ipsum dolor sit amet,
+															a(href="#")
+																|  consetetur sadipscing elitr
+															|  , sed diam nonumy
+															strong
+																|  eirmod tempor inviduntut
+															|  labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														ul
+															li Lorem ipsum dolor sit amet.
+															li Lorem ipsum dolor sit amet.
+															li Lorem ipsum dolor sit amet.
+															li Lorem ipsum dolor sit amet.
+															li
+																| Lorem ipsum dolor sit amet.
+																ul
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+																	li Lorem ipsum dolor sit amet.
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyaconsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														h6 At vero eos et accusam et justo
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														h6 Stet clita kasd gubergren, no sea takimata sanctus est
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+														p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyaconsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+
 		section.section.clients
 			.section__bg--img-container.section__gradient-linear.section__gradient-linear--primary-90-reverse
 				img.section__bg--img(src="./images/patterns/pattern.jpg")
