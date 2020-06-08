@@ -1,0 +1,31 @@
+.office-maps {
+	padding: 2.8125rem #{$grid-gutter-width*2} 5.625rem #{$grid-gutter-width*2};
+
+	@include media-breakpoint-up(lg) {
+		padding-top: calc(75px + (#{$grid-gutter-width} * 2));
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: $grid-gutter-width;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding: 3.75rem 0;
+	}
+
+	.tab-pane {
+		@include media-breakpoint-up(lg) {
+			margin-top: -75px;
+		}
+	}
+
+	.location{
+		&__map{
+			margin-top: -75px;
+
+			@include media-breakpoint-down(sm) {
+				margin-left: #{$grid-gutter-width};
+			}
+		}
+	}
+}

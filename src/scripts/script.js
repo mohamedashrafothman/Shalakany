@@ -15,6 +15,8 @@ var VideoOverlay   = require('./partials/videoOverlay');
 var smoothScroll   = require('./partials/smoothScroll');
 var niceScrollInit = require('./partials/niceScrollInit');
 var navChangeEvent = require('./partials/navChangeEvent');
+var clipboardInit  = require('./partials/clipboardInit');
+var googleMapDisapleScroll = require('./partials/googleMapDisableScroll');
 
 (function ($) {
 	$(window).on('load', () => {
@@ -37,5 +39,7 @@ var navChangeEvent = require('./partials/navChangeEvent');
 		smoothScroll();
 		niceScrollInit();
 		navChangeEvent();
+		clipboardInit();
+		googleMapDisapleScroll();
 	});
 })(jQuery);

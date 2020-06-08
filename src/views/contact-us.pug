@@ -1,5 +1,4 @@
 extends ./layouts/_index_layout.pug
-include ./mixins/_about-us-card.pug
 include ./mixins/_inner-header.pug
 
 append variables
@@ -16,3 +15,101 @@ block content
 						.col-12.col-sm-10.offset-sm-1.col-md-6.offset-md-5
 							.inner-article__content
 								p Whether you’re looking for more information, or you’d like to let us know your feedback, you’ll find easy ways to contact us right here.
+			section.section.section__bg--white.office-maps
+				.container
+					.row
+						.col-12
+							h5.section__title.section__title--primary our offices
+						.col-12
+							.row
+								.col-12.col-sm-6.col-md-5.d-block.d-lg-none.mb-5.px-4.px-md-0
+									select.inner-article__nav-dropdown.custom-select.custom-select-lg
+										option(value='map-cairo') cairo
+										option(value='map-alexandria') alexandria
+										option(value='map-read-sea') read sea
+								.col-12.col-lg-4.col-xl-4.d-none.d-lg-block
+									.inner-article__nav
+										ul.nav.flex-column.nav-pills#map-tab(role="tablist" aria-orientation="vertical")
+											li.nav-item(role="presentation")
+												a.nav-link.active#map-cairo-tab(data-toggle="pill" href="#map-cairo" role="tab" aria-controls="map-cairo" aria-selected="true") cairo
+											li.nav-item(role="presentation")
+												a.nav-link#map-alexandria-tab(data-toggle="pill" href="#map-alexandria" role="tab" aria-controls="map-alexandria" aria-selected="false") alexandria
+											li.nav-item(role="presentation")
+												a.nav-link#map-read-sea-tab(data-toggle="pill" href="#map-read-sea" role="tab" aria-controls="map-read-sea" aria-selected="false")  readsea
+								.col-12.col-lg-7.offset-lg-1.col-xl-7.offset-xl-1.px-4.px-md-0
+									.inner-article__tabs
+										.tab-content#map-content
+											.tab-pane.animated.fadeInUp.show.active#map-cairo(role="tabpanel" aria-labelledby="map-cairo-tab")
+												.location
+													.row
+														.col-12.col-sm-8.col-md-7.col-lg-12
+															.location__info-card
+																.row
+																	.col-12.col-lg-10.col-xl-7
+																		.location__address
+																			ul
+																				li
+																					strong address
+																					p 12 El Marashly St., Zamalek, Cairo 11211, Egypt
+																				li
+																					strong phone
+																					p (202) 27288888 - (202) 27399399
+																				li
+																					strong fax
+																					p (202) 27370661
+																	.col-5.d-none.d-xl-flex.align-items-center
+																		.location__copy-button.d-none.d-xl-block
+																			button.copy-to-clipboard(data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.") copy location
+														.col-12.col-sm-10.offset-sm-1.col-md-10.offset-md-1.col-lg-11.offset-lg-1
+															.location__map
+																iframe(src="https://snazzymaps.com/embed/242470", width="100%", height="500px", frameborder="no", scrolling="no")
+
+											.tab-pane.animated.fadeInUp#map-alexandria(role="tabpanel" aria-labelledby="map-alexandria-tab")
+												.location
+													.row
+														.col-12.col-sm-8.col-md-7.col-lg-12
+															.location__info-card
+																.row
+																	.col-12.col-lg-10.col-xl-7
+																		.location__address
+																			ul
+																				li
+																					strong address
+																					p 12 El Marashly St., Zamalek, Cairo 11211, Egypt
+																				li
+																					strong phone
+																					p (202) 27288888 - (202) 27399399
+																				li
+																					strong fax
+																					p (202) 27370661
+																	.col-5.d-none.d-xl-flex.align-items-center
+																		.location__copy-button.d-none.d-xl-block
+																			button.copy-to-clipboard(data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.") copy location
+														.col-12.col-sm-10.offset-sm-1.col-md-10.offset-md-1.col-lg-11.offset-lg-1
+															.location__map
+																iframe(src="https://snazzymaps.com/embed/242470", width="100%", height="500px", frameborder="no", scrolling="no")
+
+											.tab-pane.animated.fadeInUp#map-read-sea(role="tabpanel" aria-labelledby="map-read-sea-tab")
+												.location
+													.row
+														.col-12.col-sm-8.col-md-7.col-lg-12
+															.location__info-card
+																.row
+																	.col-12.col-lg-10.col-xl-7
+																		.location__address
+																			ul
+																				li
+																					strong address
+																					p 12 El Marashly St., Zamalek, Cairo 11211, Egypt
+																				li
+																					strong phone
+																					p (202) 27288888 - (202) 27399399
+																				li
+																					strong fax
+																					p (202) 27370661
+																	.col-5.d-none.d-xl-flex.align-items-center
+																		.location__copy-button.d-none.d-xl-block
+																			button.copy-to-clipboard(data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.") copy location
+														.col-12.col-sm-10.offset-sm-1.col-md-10.offset-md-1.col-lg-11.offset-lg-1
+															.location__map
+																iframe(src="https://snazzymaps.com/embed/242470", width="100%", height="500px", frameborder="no", scrolling="no")
