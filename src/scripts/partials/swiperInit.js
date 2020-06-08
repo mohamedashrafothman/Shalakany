@@ -4,6 +4,8 @@ module.exports = function () {
 	var $single_slide_swiper = $('div[id^="home-banner-slider"], div[id^="home-whatWeDo-slider"], div[id^="timeline-slider"]:not([id*="-prev"]):not([id*="-next"])');
 	var $clients_swiper = $("#clients-slider");
 	var $gallery_swiper = $("#gallery-slider");
+	var $opinions_swiper = $("#opinions-slider");
+	var $firms_culture_swiper = $("#firms-culture-slider");
 	var effect_array = ["slide", "fade", "cube", "flip", "coverflow"];
 
 	if ($single_slide_swiper.length) {
@@ -139,6 +141,95 @@ module.exports = function () {
 
 			gallery_slider.controller.control = gallery_thumbs;
     		gallery_thumbs.controller.control = gallery_slider;
+		});
+	}
+
+	if ($opinions_swiper.length) {
+		$opinions_swiper.each(function (index, ele) {
+			var effect = ($(ele).attr("data-swiper-effect") && effect_array.includes($(ele).attr("data-swiper-effect"))) ? $(ele).attr("data-swiper-effect") : "slide";
+			var swiper_config = {
+				direction: 'horizontal',
+				speed: 1000,
+				loop: true,
+				grabCursor: true,
+				effect: effect,
+				centeredSlides: true,
+				keyboard: {
+					enabled: true,
+					onlyInViewport: true
+				},
+				fadeEffect: {
+					crossFade: true
+				},
+				cubeEffect: {
+					shadow: false
+				},
+				navigation: {
+					prevEl: `div.swiper-button-prev[for^="${$(ele).attr('id')}"]`,
+					nextEl: `div.swiper-button-next[for^="${$(ele).attr('id')}"]`
+				},
+				spaceBetween: 30,
+				slidesPerView: 'auto',
+				// Responsive breakpoints
+				breakpoints: {
+					// when window width is >= 0px ------ xs
+					0: {
+						slidesPerView: 1,
+					},
+					// when window width is >= 768px  ------ medium
+					768: {
+						slidesPerView: 'auto',
+					}
+				}
+			};
+
+			new Swiper(`#${$(ele).attr("id")}`, swiper_config);
+		});
+	}
+
+	if ($firms_culture_swiper.length) {
+		$firms_culture_swiper.each(function (index, ele) {
+			var effect = ($(ele).attr("data-swiper-effect") && effect_array.includes($(ele).attr("data-swiper-effect"))) ? $(ele).attr("data-swiper-effect") : "slide";
+			var swiper_config = {
+				direction: 'horizontal',
+				speed: 1000,
+				loop: true,
+				grabCursor: true,
+				effect: effect,
+				keyboard: {
+					enabled: true,
+					onlyInViewport: true
+				},
+				fadeEffect: {
+					crossFade: true
+				},
+				cubeEffect: {
+					shadow: false
+				},
+				navigation: {
+					prevEl: `div.swiper-button-prev[for^="${$(ele).attr('id')}"]`,
+					nextEl: `div.swiper-button-next[for^="${$(ele).attr('id')}"]`
+				},
+				spaceBetween: 30,
+				slidesPerView: 3,
+				// Responsive breakpoints
+				breakpoints: {
+					// when window width is >= 0px ------ xs
+					0: {
+						slidesPerView: 1,
+					},
+					// when window width is >= 768px  ------ medium
+					768: {
+						slidesPerView: 2,
+					},
+					// when window width is >= 992px  ------ large
+					992: {
+						slidesPerView: 3,
+					}
+				}
+			};
+
+			new Swiper(`#${$(ele).attr("id")}`, swiper_config);
 		});
 	}
 };

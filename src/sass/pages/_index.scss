@@ -315,6 +315,8 @@
 			margin-right: auto;
 
 			&__content {
+				padding: $grid-gutter-width*2.85 $grid-gutter-width*3.78;
+
 				@include media-breakpoint-down(lg) {
 					padding: $grid-gutter-width*1.425 $grid-gutter-width*1.895;
 				}

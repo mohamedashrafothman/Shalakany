@@ -1,17 +1,25 @@
+$firms-culture-slider-buttons-height: 80px;
+$firms-culture-slider-buttons-width: 74px;
+
 .firms-culture{
 	min-height: 90vh;
 	position: relative;
 	overflow: hidden;
-	padding-top: $grid-gutter-width * 2;
-	padding-bottom: $grid-gutter-width * 2;
+	padding-top: $grid-gutter-width * 5;
+	padding-bottom: $grid-gutter-width * 5;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
 
+	@include media-breakpoint-down(md) {
+		padding: #{$grid-gutter-width * 3} 0;
+	}
+
 	@include media-breakpoint-down(sm) {
 		min-height: 100vh;
 		height: 100%;
+		padding: #{$grid-gutter-width * 2} 0;
 	}
 
 	&, hr, p {
@@ -37,19 +45,52 @@
 		line-height: 1;
 		@include media-breakpoint-down(lg){ width: 75%; }
 		@include media-breakpoint-down(md){ width: 65%; font-size: $h5-font-size; }
-		@include media-breakpoint-down(sm){ width: 55%; font-size: 1.5rem; margin-bottom: 0; }
+		@include media-breakpoint-down(sm){ width: 55%; font-size: 1.5rem; }
 		@include media-breakpoint-down(xs){ width: 100%; }
 	}
 
-	&__content{
-		height: 100%;
+	&__slider{
+		margin-bottom: $spacer * 5;
+	}
+
+	&__slider-buttons {
 		display: flex;
 		align-items: center;
+		justify-content: center;
+		position: absolute;
+		bottom: -#{$firms-culture-slider-buttons-height};
+		right: 50%;
+		transform: translateX(50%) !important;
+		height: $firms-culture-slider-buttons-height;
+		width: $firms-culture-slider-buttons-width * 2; // width of two buttons
+		margin-top: $grid-gutter-width * 2;
 
-		@include media-breakpoint-down(sm) {
-			margin-top: $grid-gutter-width * 3;
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: relative !important;
+			top: 0;
+			background-color: transparent;
+			transition: $transition-base;
+			width: $firms-culture-slider-buttons-width;
+			height: 100%;
+			background-size: 45px;
+			margin: 0 !important;
+			overflow: hidden;
+		}
+
+		.swiper-button-next,
+		.swiper-container-rtl .swiper-button-prev {
+			right: 0;
+			background-position-x: 10px;
+		}
+
+		.swiper-button-prev,
+		.swiper-container-rtl .swiper-button-next {
+			left: 0;
+			background-position-x: 20px;
 		}
 	}
+
 	@media screen and (max-height: 700px) {
 		min-height: 700px;
 	}
@@ -57,7 +98,6 @@
 
 
 .culture {
-	margin-bottom: $spacer * 5;
 	&__title {
 		font-weight: $font-weight-bolder;
 		// font-size: 1.8rem;

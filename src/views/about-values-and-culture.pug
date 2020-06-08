@@ -25,20 +25,58 @@ block content
 					.col-12.col-md-8.offset-md-2.col-lg-6.offset-lg-3.col-xl-4.offset-xl-4
 						p.firms-culture__subtitle.text-center The firm’s culture is firmly founded around our core values, which are:
 					.col-12
-						.firms-culture__content
-							.row
-								.col-12.col-sm-6.col-md-4
-									.culture
-										h5.culture__title Commitment to our clients
-										hr
-										p.culture__text Understanding the clients’ needs and providing practical and expedient solutions through a partner-led service.
-								.col-12.col-sm-6.col-md-4
-									.culture
-										h5.culture__title Commitment to our staff
-										hr
-										p.culture__text Providing a dedicated platform to support our lawyers and staff to realize their full potential through extensive training and development programs.
-								.col-12.col-sm-6.col-md-4
-									.culture
-										h5.culture__title Commitment to our community
-										hr
-										p.culture__text We firmly believe that being a part of a community requires active contribution to its welfare, wellbeing and sustainability.
+						.firms-culture__slider
+							.swiper-container#firms-culture-slider(data-swiper-effect="slide")
+								.swiper-wrapper
+									.swiper-slide
+										.culture
+											h5.culture__title Commitment to our clients
+											hr
+											p.culture__text Understanding the clients’ needs and providing practical and expedient solutions through a partner-led service.
+									.swiper-slide
+										.culture
+											h5.culture__title Commitment to our staff
+											hr
+											p.culture__text Providing a dedicated platform to support our lawyers and staff to realize their full potential through extensive training and development programs.
+									.swiper-slide
+										.culture
+											h5.culture__title Commitment to our community
+											hr
+											p.culture__text We firmly believe that being a part of a community requires active contribution to its welfare, wellbeing and sustainability.
+							.firms-culture__slider-buttons
+								.swiper-button-prev.swiper-button-white(for="firms-culture-slider")
+								.swiper-button-next.swiper-button-white(for="firms-culture-slider")
+		section.section.section__bg--white.opinions
+			.container-fluid
+				.row.px-0
+					.col-12
+						h5.section__title.section__title--primary.text-center opinions
+					.col-12.px-0
+						.opinions__slider
+							.swiper-container#opinions-slider(data-swiper-effect="slide")
+								.swiper-wrapper
+									.swiper-slide
+										.testimonial.testimonial__horizontal.testimonial__border.testimonial__bg--gray-300
+											.row
+												.col-4.pr-0
+													.testimonial__image
+														img(src="./images/team/senior-associates/6.jpg", alt="Mohamed Usama")
+												.col-8.pl-0
+													.testimonial__content
+														p.testimonial__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit.
+														h6.testimonial__title Mohamed Usama
+														p.testimonial__subtitle Senior associate
+									.swiper-slide
+										.testimonial.testimonial__horizontal.testimonial__border.testimonial__bg--gray-300
+											.row
+												.col-4.pr-0
+													.testimonial__image
+														img(src="./images/team/partners/9.jpg", alt="Mariam fahmy")
+												.col-8.pl-0
+													.testimonial__content
+														p.testimonial__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit.
+														h6.testimonial__title Mariam fahmy
+														p.testimonial__subtitle partner
+							.opinions__slider-buttons
+								.swiper-button-prev(for="opinions-slider")
+								.swiper-button-next(for="opinions-slider")

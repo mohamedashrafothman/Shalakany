@@ -1,0 +1,93 @@
+$opinions-slider-buttons-height: 80px;
+$opinions-slider-buttons-width: 74px;
+
+
+.opinions {
+	padding: #{$grid-gutter-width*5} 0;
+	min-height: 100vh;
+	height: 100%;
+	display: flex;
+	align-items:center;
+
+	@media screen and (max-height: 700px) {
+		height: 100%;
+		min-height: 700px;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: #{$grid-gutter-width * 3} 0;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding: #{$grid-gutter-width * 2} 0;
+	}
+
+	.section__title{
+		margin-bottom: $grid-gutter-width * 4;
+	}
+
+	&__slider {
+		margin-bottom: $grid-gutter-width * 3;
+		.testimonial {
+			width: calc(50vw - #{$grid-gutter-width * 2});
+
+			@include media-breakpoint-down(md) {
+				width: calc(100vw - #{$grid-gutter-width});
+			}
+		}
+
+		.swiper {
+			&-wrapper {
+				align-items: center;
+			}
+		}
+
+		@include media-breakpoint-up(md) {
+			.swiper {
+				&-slide {
+					width: fit-content !important;
+				}
+
+			}
+		}
+	}
+
+	&__slider-buttons {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		bottom: -#{$opinions-slider-buttons-height};
+		right: 50%;
+		transform: translateX(50%) !important;
+		height: $opinions-slider-buttons-height;
+		width: $opinions-slider-buttons-width * 2; // width of two buttons
+		background-color: $white;
+		margin-top: $grid-gutter-width * 2;
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: relative !important;
+			top: 0;
+			background-color: transparent;
+			transition: $transition-base;
+			width: $opinions-slider-buttons-width;
+			height: 100%;
+			background-size: 45px;
+			margin: 0 !important;
+			overflow: hidden;
+		}
+
+		.swiper-button-next,
+		.swiper-container-rtl .swiper-button-prev {
+			right: 0;
+			background-position-x: 10px;
+		}
+
+		.swiper-button-prev,
+		.swiper-container-rtl .swiper-button-next {
+			left: 0;
+			background-position-x: 20px;
+		}
+	}
+}
