@@ -7,7 +7,7 @@
 
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
+$gray-200: #efefef !default;
 $gray-300: #E2E2E2 !default;
 $gray-400: #D0D2D3 !default;
 $gray-500: #B7B7B7 !default;
@@ -235,7 +235,7 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color:                $black !default;
 
 
 // Links

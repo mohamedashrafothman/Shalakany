@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run build:dev",
     "build:dev": "npm run clean && gulp dev",
-    "build:prod": "npm run clean && set NODE_ENV=production && gulp prod --production && npm run cp-build",
+    "build:prod": "npm run clean && set NODE_ENV=production && gulp prod --production",
 	"clean": "rimraf ./build",
 	"cp-build": "cp -r ./build/. ../Shalakany-production/"
   },

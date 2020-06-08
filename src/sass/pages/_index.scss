@@ -276,9 +276,13 @@
 			}
 		}
 
-		@media screen and (max-height: 700px) {
-			height: 700px;
-			min-height: 700px;
+		@media screen and (max-height: 750px) {
+			height: 100%;
+			min-height: 100%;
+
+			&__title {
+				margin-top: 15rem;
+			}
 
 			&:after {
 				height: calc(100% - (#{$grid-gutter-width} * 2));

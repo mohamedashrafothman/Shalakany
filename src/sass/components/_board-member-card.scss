@@ -1,0 +1,44 @@
+.board-member {
+	padding: 4.5rem 3.4375rem;
+	color: $body-color;
+
+	&__logo {
+		height: 100px;
+		width: 100%;
+
+		&:not(:last-child) {
+			margin-bottom: $spacer;
+		}
+
+		img {
+			width: auto;
+			height: 100%;
+			@include object-fit(scale-down, center left);
+		}
+	}
+
+	&__description {
+		p {
+			font-weight: $font-weight-light;
+			line-height: $line-height-base;
+			font-size: $font-size-base;
+
+			&::first-letter {
+				text-transform: capitalize;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: $spacer;
+			}
+		}
+	}
+}
+
+
+@each $color,
+$value in $theme-colors {
+	.board-member__#{$color} {
+		background-color: $value;
+		color: color-yiq($value, $black, $white);
+	}
+}
