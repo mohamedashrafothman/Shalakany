@@ -1,15 +1,11 @@
 mixin person(data={}, index=0)
-	//- data = {
-			rectangle: { color: "brown" },
-			size: "lg",
-			img: { src="" },
-			name: "",
-			tagLine: ""
-		}
-	div(class=`person ${(data.rectangle && data.rectangle.color) ? "person__with-rectangle person__with-rectangle--"+data.rectangle.color : ""} ${(data.size) ? "person__size--"+data.size : ""}`)
-		.person__image
+	// Person Card
+	div(class=`person wow fadeInUp ${(data.rectangle && data.rectangle.color) ? "person__with-rectangle person__with-rectangle--"+data.rectangle.color : ""} ${(data.size) ? "person__size--"+data.size : ""}`, data-wow-duration=`${(index + 1) * 0.2}s`, data-wow-delay="0s")
+		// optional classes: .person__image--grayscale, .person__image--sepia
+		.person__image.person__image--grayscale
 			a(href="our-people-single.html")
 				img(src=data.img.src, alt=data.name)
 		h6.person__name
 			a(href="our-people-single.html")=data.name
 		p.person__tag-line=data.tagLine
+	// Person Card End/.

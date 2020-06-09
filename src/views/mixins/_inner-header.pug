@@ -1,22 +1,24 @@
 include ./_breadcrumb.pug
 
 mixin inner-header(data={title: "", subtitle: "", back: { title: "", href: "" }, img: { src: "" }, breadcrumb: []})
+	// Inner Pages Header
 	header.inner-header.section
 		.section__bg--img-container.section__gradient-linear.section__gradient-linear--primary
-			img.section__bg--img(src="./images/patterns/pattern.jpg")
+			img.section__bg--img(src="./images/patterns/pattern.jpg", data-paroller-direction="vertical", data-paroller-factor="-0.4", data-paroller-type="foreground")
 		.container-fluid
 			.row
 				if (data.img && Boolean(data.img.src))
 					.col-10.col-sm-8.col-md-4
-						.inner-header__img
+						.inner-header__img.wow.fadeInLeft(data-wow-duration="1.6s", data-wow-delay="0s")
 							img(src=data.img.src)
 				div(class=`${(data.img && Boolean(data.img.src)) ? "col-12 col-md-8 col-lg-7 offset-lg-1" : "col-12 col-sm-10 offset-sm-2 col-md-8 offset-md-4 col-lg-7 offset-lg-5"}`)
 					.inner-header__content
 						if (data.back)
-							a.inner-header__back(href=data.back.href)=data.back.title
+							a.inner-header__back.wow.fadeInRight(href=data.back.href, data-wow-duration="1s", data-wow-delay="1.2s")=data.back.title
 						if (Boolean(data.title))
-							h2.inner-header__title=data.title
+							h2.inner-header__title.wow.fadeInDown(data-wow-duration="1.2s", data-wow-delay="0.2s")=data.title
 						if (Boolean(data.subtitle))
-							h5.inner-header__subtitle Senior Managing Partner
+							h5.inner-header__subtitle.wow.fadeIn(data-wow-duration="1s", data-wow-delay="1s") Senior Managing Partner
 						if (data.breadcrumb && data.breadcrumb.length)
 							+breadcrumb(data.breadcrumb)
+	// Inner Pages Header End/.

@@ -4,18 +4,20 @@
 
 
 // Base module settings
-$base-duration       : 0.75s !default;          // used in 1-base module
+$base-duration       : 0.75s !default;       // used in 1-base module
 $base-origin         : top center !default;
-$base-degrees        : 30deg !default;       // used in lightspeed & special modules
+$base-degrees        : 30deg !default;       // used in light speed & special modules
 $base-fill-mode      : both !default;
 $base-iteration-count: infinite !default;
+$base-repeat         : 1 !default;
+$base-delay          : 1s !default;
 
 $base-timing-function-in    : ease-in !default;
 $base-timing-function-out   : ease-out !default;
 $base-timing-function-in-out: ease-in-out !default;
 
-$base-distance    : $grid-gutter-width !default;    // used in fade, shake and bounce modules
-$base-distance-big: $grid-gutter-width * 4 !default;  // used in fadeBig and bounce modules
+$base-distance    : $grid-gutter-width / 2 !default;      // used in fade, shake and bounce modules
+$base-distance-big: $grid-gutter-width * 2 !default;  // used in fadeBig and bounce modules
 
 
 // Rotate module settings
@@ -47,7 +49,7 @@ $hinge-translate  : 700px !default;
 // Hugely influenced and inspired by @csswizardry's inuit.css _vars.scss file                       //
 //==================================================================================================//
 
-$use-all              : true !default;     // all animations status
+$use-all              : true !default;      // all animations status
 $use-fade             : $use-all !default;  // all fades
 $use-bounce           : $use-all !default;  // all bounces
 $use-rotate           : $use-all !default;  // all rotates

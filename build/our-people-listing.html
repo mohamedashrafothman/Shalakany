@@ -16,28 +16,31 @@
   </head>
   <body data-nicescroll>
     <div id="app">
+      <!-- Preloader Section-->
       <div class="preloader d-flex">
         <div class="preloader-container"><img class="preloader-image" src="./images/preloader.gif" title="preloader image"></div>
       </div>
+      <!-- Preloader Section End/.-->
+      <!-- Application Header - without wordpress nav classes-->
       <header class="app-navbar">
-        <div class="app-navbar__logo app-navbar__logo--inner"><a href="index.html"><img src="./images/icons-logos/Logo.svg" alt="Shalakany"/></a></div>
+        <div class="app-navbar__logo wow fadeIn app-navbar__logo--inner" data-wow-duration="1s" data-wow-delay="1s"><a href="index.html"><img src="./images/icons-logos/Logo.svg" alt="Shalakany"/></a></div>
         <div class="app-navbar__underlay "></div>
-        <div class="app-navbar__open-menu"><i class="material-icons">menu</i></div>
-        <div class="app-navbar__open-search "><i class="material-icons">search</i></div>
+        <div class="app-navbar__open-menu wow fadeInRight" data-wow-duration="0.75s" data-wow-delay="1.6s"><i class="material-icons">menu</i></div>
+        <div class="app-navbar__open-search wow fadeInRight " data-wow-duration="0.75s" data-wow-delay="1.8s"><i class="material-icons">search</i></div>
         <div class="app-navbar__side-menu ">
           <div class="app-navbar__close-menu"><i class="material-icons">clear</i></div>
           <nav class="app-navbar__nav">
-            <ul class="nav" aria-label="app-navbar">
-              <li class="menu-item "><a href="index.html">Home</a></li>
-              <li class="menu-item "><a href="about.html">about us</a></li>
-              <li class="menu-item "><a href="services-and-clients.html">services &amp; clients</a></li>
-              <li class="menu-item active" aria-current="page"><a href="our-people-listing.html">our people</a></li>
-              <li class="menu-item "><a href="contact-us.html">contact us</a></li>
-              <li class="menu-item "><a href="news-and-events-listing.html">news &amp; events</a></li>
-              <li class="menu-item "><a href="conferences-listing.html">conferences &amp; webinars</a></li>
-              <li class="menu-item "><a href="client-access.html">client access</a></li>
-              <li class="menu-item "><a href="careers-and-trainings.html">careers &amp; trainings</a></li>
-            </ul>
+            <ol class="app-navbar__list" aria-label="app-navbar">
+              <li class="app-navbar__list-item "><a href="index.html">Home</a></li>
+              <li class="app-navbar__list-item "><a href="about.html">about us</a></li>
+              <li class="app-navbar__list-item "><a href="services-and-clients.html">services &amp; clients</a></li>
+              <li class="app-navbar__list-item app-navbar__list-item--active" aria-current="page"><a href="our-people-listing.html">our people</a></li>
+              <li class="app-navbar__list-item "><a href="contact-us.html">contact us</a></li>
+              <li class="app-navbar__list-item "><a href="news-and-events-listing.html">news &amp; events</a></li>
+              <li class="app-navbar__list-item "><a href="conferences-listing.html">conferences &amp; webinars</a></li>
+              <li class="app-navbar__list-item "><a href="client-access.html">client access</a></li>
+              <li class="app-navbar__list-item "><a href="careers-and-trainings.html">careers &amp; trainings</a></li>
+            </ol>
           </nav>
         </div>
         <div class="app-navbar__search ">
@@ -46,35 +49,40 @@
           </form>
         </div>
       </header>
+      <!-- Application Header End/.-->
       <main id="our-people-listing" role="main">
+        <!-- Inner Pages Header-->
         <header class="inner-header section">
-          <div class="section__bg--img-container section__gradient-linear section__gradient-linear--primary"><img class="section__bg--img" src="./images/patterns/pattern.jpg"/></div>
+          <div class="section__bg--img-container section__gradient-linear section__gradient-linear--primary"><img class="section__bg--img" src="./images/patterns/pattern.jpg" data-paroller-direction="vertical" data-paroller-factor="-0.4" data-paroller-type="foreground"/></div>
           <div class="container-fluid">
             <div class="row">
               <div class="col-10 col-sm-8 col-md-4">
-                <div class="inner-header__img"><img src="./images/books-shelf.jpg"/></div>
+                <div class="inner-header__img wow fadeInLeft" data-wow-duration="1.6s" data-wow-delay="0s"><img src="./images/books-shelf.jpg"/></div>
               </div>
               <div class="col-12 col-md-8 col-lg-7 offset-lg-1">
                 <div class="inner-header__content">
-                  <h2 class="inner-header__title">our people</h2>
+                  <h2 class="inner-header__title wow fadeInDown" data-wow-duration="1.2s" data-wow-delay="0.2s">our people</h2>
+                  <!-- Breadcrumb-->
                   <nav class="inner-header__breadcrumb align-self-end" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">our people
+                      <li class="breadcrumb-item wow fadeInRight" data-wow-duration="1s" data-wow-delay="1.5999999999999999s"><a href="index.html">Home</a></li>
+                      <li class="breadcrumb-item active wow fadeInRight" aria-current="page" data-wow-duration="1s" data-wow-delay="1.7999999999999998s">our people
                       </li>
                     </ol>
                   </nav>
+                  <!-- Breadcrumb End/.-->
                 </div>
               </div>
             </div>
           </div>
         </header>
+        <!-- Inner Pages Header End/.-->
         <article class="inner-article">
           <section class="section section__bg--white">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-5">
-                  <div class="inner-article__content">
+                  <div class="inner-article__content wow fadeIn" data-wow-duration="1s" data-wow-delay="2s">
                     <p>Our lawyers are leaders in their fields and are considered experts in their respective areas of specialization. Through a blend of experience and expertise, our lawyers provide top quality legal services to our clients.</p>
                   </div>
                 </div>
@@ -86,79 +94,109 @@
           <div class="container">
             <div class="row">
               <div class="col-12 py-5">
-                <h5 class="section__title section__title--primary text-center">partners</h5>
+                <h5 class="section__title section__title--primary text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0">partners</h5>
               </div>
               <div class="col-12">
                 <div class="row">
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person person__with-rectangle person__with-rectangle--brown person__size--lg">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/partners/1.jpg" alt="dr. khaled el shalakany"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp person__with-rectangle person__with-rectangle--brown person__size--lg" data-wow-duration="0.2s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/partners/1.jpg" alt="dr. khaled el shalakany"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">dr. khaled el shalakany</a></h6>
                       <p class="person__tag-line">Senior Managing Partner</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person person__with-rectangle person__with-rectangle--brown person__size--lg">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/partners/2.jpg" alt="emad el shalakany"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp person__with-rectangle person__with-rectangle--brown person__size--lg" data-wow-duration="0.4s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/partners/2.jpg" alt="emad el shalakany"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">emad el shalakany</a></h6>
                       <p class="person__tag-line">Senior Partner</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person person__with-rectangle person__with-rectangle--brown person__size--lg">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/partners/3.jpg" alt="mahmoud shedid"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp person__with-rectangle person__with-rectangle--brown person__size--lg" data-wow-duration="0.6000000000000001s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/partners/3.jpg" alt="mahmoud shedid"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">mahmoud shedid</a></h6>
                       <p class="person__tag-line">Senior Partner</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person person__with-rectangle person__with-rectangle--brown person__size--lg">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/partners/4.jpg" alt="sharif shihata"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp person__with-rectangle person__with-rectangle--brown person__size--lg" data-wow-duration="0.8s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/partners/4.jpg" alt="sharif shihata"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">sharif shihata</a></h6>
                       <p class="person__tag-line">Senior Partner</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person person__with-rectangle person__with-rectangle--brown person__size--lg">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/partners/5.jpg" alt="mostafa hassan"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp person__with-rectangle person__with-rectangle--brown person__size--lg" data-wow-duration="1s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/partners/5.jpg" alt="mostafa hassan"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">mostafa hassan</a></h6>
                       <p class="person__tag-line">Senior Partner</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person person__with-rectangle person__with-rectangle--brown person__size--lg">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/partners/6.jpg" alt="aly el shalakany"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp person__with-rectangle person__with-rectangle--brown person__size--lg" data-wow-duration="1.2000000000000002s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/partners/6.jpg" alt="aly el shalakany"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">aly el shalakany</a></h6>
                       <p class="person__tag-line">Senior Partner</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person person__with-rectangle person__with-rectangle--brown person__size--lg">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/partners/7.jpg" alt="dr moataz el mahdy"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp person__with-rectangle person__with-rectangle--brown person__size--lg" data-wow-duration="1.4000000000000001s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/partners/7.jpg" alt="dr moataz el mahdy"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">dr moataz el mahdy</a></h6>
                       <p class="person__tag-line">Senior Partner</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person person__with-rectangle person__with-rectangle--brown person__size--lg">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/partners/8.jpg" alt="adam el shalakany"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp person__with-rectangle person__with-rectangle--brown person__size--lg" data-wow-duration="1.6s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/partners/8.jpg" alt="adam el shalakany"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">adam el shalakany</a></h6>
                       <p class="person__tag-line">Senior Partner</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person person__with-rectangle person__with-rectangle--brown person__size--lg">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/partners/9.jpg" alt="mariam fahmy"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp person__with-rectangle person__with-rectangle--brown person__size--lg" data-wow-duration="1.8s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/partners/9.jpg" alt="mariam fahmy"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">mariam fahmy</a></h6>
                       <p class="person__tag-line">Partner</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person person__with-rectangle person__with-rectangle--brown person__size--lg">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/partners/10.jpg" alt="omar sherif"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp person__with-rectangle person__with-rectangle--brown person__size--lg" data-wow-duration="2s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/partners/10.jpg" alt="omar sherif"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">omar sherif</a></h6>
                       <p class="person__tag-line">Partner</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                 </div>
               </div>
@@ -169,72 +207,99 @@
           <div class="container">
             <div class="row">
               <div class="col-12 py-5">
-                <h5 class="section__title section__title--primary text-center">senior associates</h5>
+                <h5 class="section__title section__title--primary text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">senior associates</h5>
               </div>
               <div class="col-12">
                 <div class="row">
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person  person__size--md">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/senior-associates/1.jpg" alt="rasha abdel gawad"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp  person__size--md" data-wow-duration="0.2s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/senior-associates/1.jpg" alt="rasha abdel gawad"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">rasha abdel gawad</a></h6>
                       <p class="person__tag-line">senior associate</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person  person__size--md">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/senior-associates/2.jpg" alt="nabiha abed el hakam"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp  person__size--md" data-wow-duration="0.4s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/senior-associates/2.jpg" alt="nabiha abed el hakam"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">nabiha abed el hakam</a></h6>
                       <p class="person__tag-line">senior associate</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person  person__size--md">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/senior-associates/3.jpg" alt="ayman demerdash"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp  person__size--md" data-wow-duration="0.6000000000000001s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/senior-associates/3.jpg" alt="ayman demerdash"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">ayman demerdash</a></h6>
                       <p class="person__tag-line">senior associate</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person  person__size--md">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/senior-associates/4.jpg" alt="ahmed abdel kader"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp  person__size--md" data-wow-duration="0.8s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/senior-associates/4.jpg" alt="ahmed abdel kader"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">ahmed abdel kader</a></h6>
                       <p class="person__tag-line">senior associate</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person  person__size--md">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/senior-associates/5.jpg" alt="sherry el shalakany"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp  person__size--md" data-wow-duration="1s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/senior-associates/5.jpg" alt="sherry el shalakany"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">sherry el shalakany</a></h6>
                       <p class="person__tag-line">senior associate</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person  person__size--md">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/senior-associates/6.jpg" alt="muhammed ussama"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp  person__size--md" data-wow-duration="1.2000000000000002s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/senior-associates/6.jpg" alt="muhammed ussama"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">muhammed ussama</a></h6>
                       <p class="person__tag-line">senior associate</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person  person__size--md">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/senior-associates/7.jpg" alt="marwa farouk"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp  person__size--md" data-wow-duration="1.4000000000000001s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/senior-associates/7.jpg" alt="marwa farouk"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">marwa farouk</a></h6>
                       <p class="person__tag-line">senior associate</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person  person__size--md">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/senior-associates/8.jpg" alt="mostafa zeky"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp  person__size--md" data-wow-duration="1.6s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/senior-associates/8.jpg" alt="mostafa zeky"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">mostafa zeky</a></h6>
                       <p class="person__tag-line">senior associate</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person  person__size--md">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/senior-associates/9.jpg" alt="khaled sherif"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp  person__size--md" data-wow-duration="1.8s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/senior-associates/9.jpg" alt="khaled sherif"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">khaled sherif</a></h6>
                       <p class="person__tag-line">senior associate</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                 </div>
               </div>
@@ -245,30 +310,39 @@
           <div class="container">
             <div class="row">
               <div class="col-12 py-5">
-                <h5 class="section__title section__title--primary text-center">senior associates</h5>
+                <h5 class="section__title section__title--primary text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">senior associates</h5>
               </div>
               <div class="col-12">
                 <div class="row">
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person  person__size--md">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/consulting-associates/1.jpg" alt="laila bahaa eldin"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp  person__size--md" data-wow-duration="0.2s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/consulting-associates/1.jpg" alt="laila bahaa eldin"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">laila bahaa eldin</a></h6>
                       <p class="person__tag-line">consulting associate</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person  person__size--md">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/consulting-associates/2.jpg" alt="abdel karim attiya"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp  person__size--md" data-wow-duration="0.4s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/consulting-associates/2.jpg" alt="abdel karim attiya"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">abdel karim attiya</a></h6>
                       <p class="person__tag-line">consulting associate</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                   <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                    <div class="person  person__size--md">
-                      <div class="person__image"><a href="our-people-single.html"><img src="./images/team/consulting-associates/3.jpg" alt="nehad tharwat"/></a></div>
+                    <!-- Person Card-->
+                    <div class="person wow fadeInUp  person__size--md" data-wow-duration="0.6000000000000001s" data-wow-delay="0s">
+                      <!-- optional classes: .person__image--grayscale, .person__image--sepia-->
+                      <div class="person__image person__image--grayscale"><a href="our-people-single.html"><img src="./images/team/consulting-associates/3.jpg" alt="nehad tharwat"/></a></div>
                       <h6 class="person__name"><a href="our-people-single.html">nehad tharwat</a></h6>
                       <p class="person__tag-line">consulting associate</p>
                     </div>
+                    <!-- Person Card End/.-->
                   </div>
                 </div>
               </div>
@@ -276,6 +350,7 @@
           </div>
         </section>
       </main>
+      <!-- Footer-->
       <footer class="footer">
         <section class="footer__top">
           <div class="container-fluid">
@@ -335,6 +410,7 @@
           </div>
         </section>
       </footer>
+      <!-- Footer End/.-->
       <script src="./scripts/app.min.js" type="text/javascript"></script>
     </div>
   </body>

@@ -2,6 +2,7 @@ extends ./layouts/_index_layout.pug
 include ./mixins/_about-us-card.pug
 include ./mixins/_inner-header.pug
 include ./mixins/_pagination.pug
+include ./mixins/_news-vertical.pug
 
 append variables
 	- var page_title = "news & events";
@@ -17,9 +18,9 @@ block content
 						.col-12.col-sm-10.offset-sm-1.col-md-6.offset-md-5
 							.inner-article__nav
 								ul.nav.nav-tabs.nav-fill#news-and-events-nav(role="tablist")
-									li.nav-item(role="presentation")
+									li.nav-item.wow.fadeInUp(role="presentation", data-wow-duration="1s", data-wow-delay="2s")
 										a.nav-link(href="news-and-events-listing.html") shalakany news
-									li.nav-item(role="presentation")
+									li.nav-item.wow.fadeInUp(role="presentation", data-wow-duration="1s", data-wow-delay="2.2s")
 										a.nav-link.active(href="newsletter-listing.html") newsletter
 			section.section.section__bg--white
 				.container
@@ -27,13 +28,13 @@ block content
 						.col-12.col-md-8.col-xl-5.mb-5
 							.row
 								.col-6
-									select.inner-article__dropdown.custom-select.custom-select-lg
+									select.inner-article__dropdown.custom-select.custom-select-lg.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="2s")
 										option(value="", selected, disabled) -Choose Year-
 										option(value="2020") 2020
 										option(value="2019") 2019
 										option(value="2018") 2018
 								.col-6
-									select.inner-article__dropdown.custom-select.custom-select-lg
+									select.inner-article__dropdown.custom-select.custom-select-lg.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="2.2s")
 										option(value="", selected, disabled) -Choose Month-
 										option(value="Jan") Jan
 										option(value="Feb") Feb
@@ -50,93 +51,8 @@ block content
 						.col-12
 							.inner-article__content
 								.row
-									.col-12.col-md-6.col-xl-5.mb-5
-										.news.news__vertical.news__bg--white.news__border--primary.news__border--lg
-											.row
-												.col-12
-													.news__content
-														small.news__subtitle 20 may 2020
-														small.news__subtitle.text-primary By Omar Sherif and Youssef Aboushair
-														h6.news__title
-															a(href="newsletter-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore...
-														a.news__link(href="newsletter-single.html") read more
-									.col-12.col-md-6.col-xl-5.offset-xl-1.mb-5
-										.news.news__vertical.news__bg--white.news__border--primary.news__border--lg
-											.row
-												.col-12
-													.news__content
-														small.news__subtitle 20 may 2020
-														small.news__subtitle.text-primary By Omar Sherif and Youssef Aboushair
-														h6.news__title
-															a(href="newsletter-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore...
-														a.news__link(href="newsletter-single.html") read more
-									.col-12.col-md-6.col-xl-5.mb-5
-										.news.news__vertical.news__bg--white.news__border--primary.news__border--lg
-											.row
-												.col-12
-													.news__content
-														small.news__subtitle 20 may 2020
-														small.news__subtitle.text-primary By Omar Sherif and Youssef Aboushair
-														h6.news__title
-															a(href="newsletter-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore...
-														a.news__link(href="newsletter-single.html") read more
-									.col-12.col-md-6.col-xl-5.offset-xl-1.mb-5
-										.news.news__vertical.news__bg--white.news__border--primary.news__border--lg
-											.row
-												.col-12
-													.news__content
-														small.news__subtitle 20 may 2020
-														small.news__subtitle.text-primary By Omar Sherif and Youssef Aboushair
-														h6.news__title
-															a(href="newsletter-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore...
-														a.news__link(href="newsletter-single.html") read more
-									.col-12.col-md-6.col-xl-5.mb-5
-										.news.news__vertical.news__bg--white.news__border--primary.news__border--lg
-											.row
-												.col-12
-													.news__content
-														small.news__subtitle 20 may 2020
-														small.news__subtitle.text-primary By Omar Sherif and Youssef Aboushair
-														h6.news__title
-															a(href="newsletter-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore...
-														a.news__link(href="newsletter-single.html") read more
-									.col-12.col-md-6.col-xl-5.offset-xl-1.mb-5
-										.news.news__vertical.news__bg--white.news__border--primary.news__border--lg
-											.row
-												.col-12
-													.news__content
-														small.news__subtitle 20 may 2020
-														small.news__subtitle.text-primary By Omar Sherif and Youssef Aboushair
-														h6.news__title
-															a(href="newsletter-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore...
-														a.news__link(href="newsletter-single.html") read more
-									.col-12.col-md-6.col-xl-5.mb-5
-										.news.news__vertical.news__bg--white.news__border--primary.news__border--lg
-											.row
-												.col-12
-													.news__content
-														small.news__subtitle 20 may 2020
-														small.news__subtitle.text-primary By Omar Sherif and Youssef Aboushair
-														h6.news__title
-															a(href="newsletter-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore...
-														a.news__link(href="newsletter-single.html") read more
-									.col-12.col-md-6.col-xl-5.offset-xl-1.mb-5
-										.news.news__vertical.news__bg--white.news__border--primary.news__border--lg
-											.row
-												.col-12
-													.news__content
-														small.news__subtitle 20 may 2020
-														small.news__subtitle.text-primary By Omar Sherif and Youssef Aboushair
-														h6.news__title
-															a(href="newsletter-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore...
-														a.news__link(href="newsletter-single.html") read more
+									each article, index in news
+										.col-12.col-md-6.col-xl-5.mb-5
+											+news-vertical(article, index)
 						.col-6.offset-6.col-sm-5.offset-sm-7.col-md-4.offset-md-8.col-lg-3.offset-lg-9.col-xl-3.offset-xl-9.my-4
 							+pagination({})

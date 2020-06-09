@@ -13,40 +13,40 @@ block content
 				.container-fluid
 					.row
 						.col-12.col-sm-10.offset-sm-1.col-md-6.offset-md-5
-							.inner-article__content
+							.inner-article__content.wow.fadeIn(data-wow-duration="1s", data-wow-delay="2s")
 								p Whether you’re looking for more information, or you’d like to let us know your feedback, you’ll find easy ways to contact us right here.
 			section.section.section__bg--white.office-maps
 				.container
 					.row
 						.col-12
-							h5.section__title.section__title--primary our offices
+							h5.section__title.section__title--primary.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0s") our offices
 						.col-12
 							.row
 								.col-12.col-sm-6.col-md-5.d-block.d-lg-none.mb-5.px-4.px-md-0
-									select.inner-article__nav-dropdown.custom-select.custom-select-lg
+									select.inner-article__nav-dropdown.custom-select.custom-select-lg.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0s")
 										option(value='map-cairo') cairo
 										option(value='map-alexandria') alexandria
 										option(value='map-read-sea') read sea
 								.col-12.col-lg-4.col-xl-4.d-none.d-lg-block
 									.inner-article__nav
 										ul.nav.flex-column.nav-pills#map-tab(role="tablist" aria-orientation="vertical")
-											li.nav-item(role="presentation")
+											li.nav-item.wow.fadeInUp(role="presentation", data-wow-duration="1s", data-wow-delay="0.2s")
 												a.nav-link.active#map-cairo-tab(data-toggle="pill" href="#map-cairo" role="tab" aria-controls="map-cairo" aria-selected="true") cairo
-											li.nav-item(role="presentation")
+											li.nav-item.wow.fadeInUp(role="presentation", data-wow-duration="1s", data-wow-delay="0.4s")
 												a.nav-link#map-alexandria-tab(data-toggle="pill" href="#map-alexandria" role="tab" aria-controls="map-alexandria" aria-selected="false") alexandria
-											li.nav-item(role="presentation")
+											li.nav-item.wow.fadeInUp(role="presentation", data-wow-duration="1s", data-wow-delay="0.6s")
 												a.nav-link#map-read-sea-tab(data-toggle="pill" href="#map-read-sea" role="tab" aria-controls="map-read-sea" aria-selected="false")  readsea
 								.col-12.col-lg-7.offset-lg-1.col-xl-7.offset-xl-1.px-4.px-md-0
 									.inner-article__tabs
 										.tab-content#map-content
-											.tab-pane.animated.fadeInUp.show.active#map-cairo(role="tabpanel" aria-labelledby="map-cairo-tab")
+											.tab-pane.show.active#map-cairo(role="tabpanel" aria-labelledby="map-cairo-tab")
 												.location
 													.row
 														.col-12.col-sm-8.col-md-7.col-lg-12
 															.location__info-card
 																.row
 																	.col-12.col-lg-10.col-xl-7
-																		.location__address
+																		.location__address.wow.fadeInUp(data-wow-duration="1s")
 																			ul
 																				li
 																					strong address
@@ -59,19 +59,19 @@ block content
 																					p (202) 27370661
 																	.col-5.d-none.d-xl-flex.align-items-center
 																		.location__copy-button.d-none.d-xl-block
-																			button.copy-to-clipboard(data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.") copy location
+																			button.copy-to-clipboard.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.2s", data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.") copy location
 														.col-12.col-sm-10.offset-sm-1.col-md-10.offset-md-1.col-lg-11.offset-lg-1
-															.location__map
+															.location__map.wow.fadeInUp(daa-wow-duration="1s", data-wow-delay="0.4s")
 																iframe(src="https://snazzymaps.com/embed/242470", width="100%", height="500px", frameborder="no", scrolling="no")
 
-											.tab-pane.animated.fadeInUp#map-alexandria(role="tabpanel" aria-labelledby="map-alexandria-tab")
+											.tab-pane#map-alexandria(role="tabpanel" aria-labelledby="map-alexandria-tab")
 												.location
 													.row
 														.col-12.col-sm-8.col-md-7.col-lg-12
 															.location__info-card
 																.row
 																	.col-12.col-lg-10.col-xl-7
-																		.location__address
+																		.location__address.wow.fadeInUp(data-wow-duration="1s")
 																			ul
 																				li
 																					strong address
@@ -84,19 +84,19 @@ block content
 																					p (202) 27370661
 																	.col-5.d-none.d-xl-flex.align-items-center
 																		.location__copy-button.d-none.d-xl-block
-																			button.copy-to-clipboard(data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.") copy location
+																			button.copy-to-clipboard.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.2s", data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.") copy location
 														.col-12.col-sm-10.offset-sm-1.col-md-10.offset-md-1.col-lg-11.offset-lg-1
-															.location__map
+															.location__map.wow.fadeInUp(daa-wow-duration="1s", data-wow-delay="0.4s")
 																iframe(src="https://snazzymaps.com/embed/242470", width="100%", height="500px", frameborder="no", scrolling="no")
 
-											.tab-pane.animated.fadeInUp#map-read-sea(role="tabpanel" aria-labelledby="map-read-sea-tab")
+											.tab-pane#map-read-sea(role="tabpanel" aria-labelledby="map-read-sea-tab")
 												.location
 													.row
 														.col-12.col-sm-8.col-md-7.col-lg-12
 															.location__info-card
 																.row
 																	.col-12.col-lg-10.col-xl-7
-																		.location__address
+																		.location__address.wow.fadeInUp(data-wow-duration="1s")
 																			ul
 																				li
 																					strong address
@@ -109,9 +109,9 @@ block content
 																					p (202) 27370661
 																	.col-5.d-none.d-xl-flex.align-items-center
 																		.location__copy-button.d-none.d-xl-block
-																			button.copy-to-clipboard(data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.") copy location
+																			button.copy-to-clipboard.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.2s", data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.") copy location
 														.col-12.col-sm-10.offset-sm-1.col-md-10.offset-md-1.col-lg-11.offset-lg-1
-															.location__map
+															.location__map.wow.fadeInUp(daa-wow-duration="1s", data-wow-delay="0.4s")
 																iframe(src="https://snazzymaps.com/embed/242470", width="100%", height="500px", frameborder="no", scrolling="no")
 
 		include ./sections/_contact_us_form.pug

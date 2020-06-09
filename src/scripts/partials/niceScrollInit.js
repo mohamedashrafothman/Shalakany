@@ -2,7 +2,7 @@
 
 module.exports = function () {
 	$("body[data-nicescroll]").niceScroll({
-		scrollspeed: 75,
+		scrollspeed: 50,
 		cursorborderradius: 0
 	});
 }

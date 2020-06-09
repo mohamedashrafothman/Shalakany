@@ -10,24 +10,72 @@ body {
 }
 
 .animated {
-  	@include animate-prefixer(animation-duration, calc( #{$base-duration} ) );
-  	@include animate-prefixer(animation-fill-mode, $base-fill-mode);
+	@include animate-prefixer(animation-duration, calc(#{$base-duration}));
+	@include animate-prefixer(animation-fill-mode, $base-fill-mode);
 
 	&.infinite {
-	  animation-iteration-count: $base-iteration-count;
+		animation-iteration-count: $base-iteration-count;
 	}
 
 	&.hinge {
-	  @include animate-prefixer(animation-duration, calc( #{$base-duration} * 2 ) );
+		@include animate-prefixer(animation-duration, calc(#{$base-duration} * 2));
 	}
 
 	&.bounceIn,
 	&.bounceOut {
-	  @include animate-prefixer(animation-duration, calc( #{$base-duration} * 0.75 ) );
+		@include animate-prefixer(animation-duration, calc(#{$base-duration} * 0.75));
 	}
 
 	&.flipOutX,
 	&.flipOutY {
-	  @include animate-prefixer(animation-duration, calc( #{$base-duration} * 0.75 ) );
+		@include animate-prefixer(animation-duration, calc(#{$base-duration} * 0.75));
+	}
+
+	&.repeat-1 {
+		animation-iteration-count: #{$base-repeat};
+	}
+
+	&.repeat-2 {
+		animation-iteration-count: calc(#{$base-repeat} * 2);
+	}
+
+	&.repeat-3 {
+		animation-iteration-count: calc(#{$base-repeat} * 3);
+	}
+
+	&.delay-1s {
+		animation-delay: #{$base-delay};
+	}
+
+	&.delay-2s {
+		animation-delay: calc(#{$base-delay} * 2);
+	}
+
+	&.delay-3s {
+		animation-delay: calc(#{$base-delay} * 3);
+	}
+
+	&.delay-4s {
+		animation-delay: calc(#{$base-delay} * 4);
+	}
+
+	&.delay-5s {
+		animation-delay: calc(#{$base-delay} * 5);
+	}
+
+	&.faster {
+		animation-duration: calc(#{$base-duration} / 2);
+	}
+
+	&.fast {
+		animation-duration: calc(#{$base-duration} * 0.8);
+	}
+
+	&.slow {
+		animation-duration: calc(#{$base-duration} * 2);
+	}
+
+	&.slower {
+		animation-duration: calc(#{$base-duration} * 3);
 	}
 }

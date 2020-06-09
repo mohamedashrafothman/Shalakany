@@ -1,6 +1,7 @@
 extends ./layouts/_index_layout.pug
 include ./mixins/_about-us-card.pug
 include ./mixins/_inner-header.pug
+include ./mixins/_award.pug
 
 append variables
 	- var page_title = "awards";
@@ -13,44 +14,12 @@ block content
 			.container
 				.row.py-5
 					.col-12
-						h5.section__title.section__title--primary international rankings
+						h5.section__title.section__title--primary.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0s") international rankings
 					.col-12
 						.row
-							.col-12.col-sm-6.col-lg-3.mb-4
-								.award.award__color--blue.award__bookmark.award__bookmark--blue
-									.award__content
-										p.award__title Top Ranked Arbitration & Litigation Lawyers
-									.award__footer
-										hr
-										p.award__text Chambers Global and Legal 500
-							.col-12.col-sm-6.col-lg-3.mb-4
-								.award.award__color--blue.award__bookmark.award__bookmark--blue
-									.award__content
-										p.award__title TIER 1 FIRM in Dispute Resolution
-									.award__footer
-										hr
-										p.award__text Chambers Global and Legal 500
-							.col-12.col-sm-6.col-lg-3.mb-4
-								.award.award__color--blue.award__bookmark.award__bookmark--blue
-									.award__content
-										p.award__title TIER 1 FIRM in Intellectual Property
-									.award__footer
-										hr
-										p.award__text Legal 500 and WTR 1000
-							.col-12.col-sm-6.col-lg-3.mb-4
-								.award.award__color--blue.award__bookmark.award__bookmark--blue
-									.award__content
-										p.award__title TIER 1 FIRM in Project Finance
-									.award__footer
-										hr
-										p.award__text Legal 500 and IFLR1000
-							.col-12.col-sm-6.col-lg-3.mb-4
-								.award.award__color--blue.award__bookmark.award__bookmark--blue
-									.award__content
-										p.award__title Highly Recommended Firm in Dispute Resolution & Banking & Finance
-									.award__footer
-										hr
-										p.award__text Chambers Global and Legal 500
+							each award, index in awards.filter(function(award) { return award.type === "international"})
+								.col-12.col-sm-6.col-lg-3.mb-4
+									+award(award, index)
 
 		section.awards.section.section__bg--white#awards-filter
 			.container
@@ -62,46 +31,11 @@ block content
 							ul.nav.nav-tabs#awards-tabs(role="tablist")
 								li.nav-item(role="presentation")
 									button.nav-link.active(type="button", data-filter=".mix-all") All awards
-								li.nav-item(role="presentation")
-									button.nav-link(type="button", data-filter=".mix-2012") 2012
-								li.nav-item(role="presentation")
-									button.nav-link(type="button", data-filter=".mix-2013") 2013
-								li.nav-item(role="presentation")
-									button.nav-link(type="button", data-filter=".mix-2015") 2015
+								each year, index in awards.map(function(award) { return award.year }).filter(function(value, index, self) { return self.indexOf(value) === index })
+									li.nav-item.wow.fadeInRight(role="presentation", data-wow-duration="1s", data-wow-delay=`${(index + 1) * 0.2}s`)
+										button.nav-link(type="button", data-filter=`.mix-${year}`)=year
 					.col-12
 						.row
-							.col-12.col-sm-6.col-lg-3.mb-4.mix-all.mix-2012
-								.award.award__color--blue.award__bookmark.award__bookmark--brown
-									.award__content
-										p.award__title Recommended Firm for Financial & Corporate Matters in 2015
-									.award__footer
-										hr
-										p.award__text IFLR 1000
-							.col-12.col-sm-6.col-lg-3.mb-4.mix-all.mix-2013
-								.award.award__color--blue.award__bookmark.award__bookmark--brown
-									.award__content
-										p.award__title Dispute Resolution Law Firm of the Year 2013 in Egypt
-									.award__footer
-										hr
-										p.award__text Global Law Experts
-							.col-12.col-sm-6.col-lg-3.mb-4.mix-all.mix-2015
-								.award.award__color--blue.award__bookmark.award__bookmark--brown
-									.award__content
-										p.award__title First tier firm for Projects & Infrastructure & Dispute Resolution
-									.award__footer
-										hr
-										p.award__text The Legal 500
-							.col-12.col-sm-6.col-lg-3.mb-4.mix-all.mix-2012
-								.award.award__color--blue.award__bookmark.award__bookmark--brown
-									.award__content
-										p.award__title Leading Firm in 2015
-									.award__footer
-										hr
-										p.award__text Chambers Global
-							.col-12.col-sm-6.col-lg-3.mb-4.mix-all.mix-2013
-								.award.award__color--blue.award__bookmark.award__bookmark--brown
-									.award__content
-										p.award__title Law Firm of the Year in the areas of M&A, Aviation, Oil and Gas, Banking, Capital Markets, Real Estate, Insurance, Tax & Intellectual Property
-									.award__footer
-										hr
-										p.award__text M&A Today–Global Awards in 2015
+							each award, index in awards.filter(function(award) { return award.type === "normal"})
+								div(class=` col-12 col-sm-6 col-lg-3 mb-4 mix-all mix-${award.year}`)
+									+award(award, index)

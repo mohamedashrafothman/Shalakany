@@ -1,0 +1,13 @@
+mixin news-vertical(data={}, index=0)
+	// News Card
+	.news.news__vertical.news__bg--white.news__border--primary.news__border--lg.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0s")
+		.row
+			.col-12
+				.news__content
+					small.news__subtitle=data.date
+					small.news__subtitle.text-primary=data.subtitle
+					h6.news__title
+						a(href="newsletter-single.html")=data.title
+					p.news__text=data.content
+					a.news__link(href="newsletter-single.html") read more
+	// News Card End/.

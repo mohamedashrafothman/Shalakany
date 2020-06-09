@@ -16,28 +16,31 @@
   </head>
   <body data-nicescroll>
     <div id="app">
+      <!-- Preloader Section-->
       <div class="preloader d-flex">
         <div class="preloader-container"><img class="preloader-image" src="./images/preloader.gif" title="preloader image"></div>
       </div>
+      <!-- Preloader Section End/.-->
+      <!-- Application Header - without wordpress nav classes-->
       <header class="app-navbar">
-        <div class="app-navbar__logo app-navbar__logo--inner"><a href="index.html"><img src="./images/icons-logos/Logo.svg" alt="Shalakany"/></a></div>
+        <div class="app-navbar__logo wow fadeIn app-navbar__logo--inner" data-wow-duration="1s" data-wow-delay="1s"><a href="index.html"><img src="./images/icons-logos/Logo.svg" alt="Shalakany"/></a></div>
         <div class="app-navbar__underlay "></div>
-        <div class="app-navbar__open-menu"><i class="material-icons">menu</i></div>
-        <div class="app-navbar__open-search "><i class="material-icons">search</i></div>
+        <div class="app-navbar__open-menu wow fadeInRight" data-wow-duration="0.75s" data-wow-delay="1.6s"><i class="material-icons">menu</i></div>
+        <div class="app-navbar__open-search wow fadeInRight " data-wow-duration="0.75s" data-wow-delay="1.8s"><i class="material-icons">search</i></div>
         <div class="app-navbar__side-menu ">
           <div class="app-navbar__close-menu"><i class="material-icons">clear</i></div>
           <nav class="app-navbar__nav">
-            <ul class="nav" aria-label="app-navbar">
-              <li class="menu-item "><a href="index.html">Home</a></li>
-              <li class="menu-item "><a href="about.html">about us</a></li>
-              <li class="menu-item "><a href="services-and-clients.html">services &amp; clients</a></li>
-              <li class="menu-item "><a href="our-people-listing.html">our people</a></li>
-              <li class="menu-item active" aria-current="page"><a href="contact-us.html">contact us</a></li>
-              <li class="menu-item "><a href="news-and-events-listing.html">news &amp; events</a></li>
-              <li class="menu-item "><a href="conferences-listing.html">conferences &amp; webinars</a></li>
-              <li class="menu-item "><a href="client-access.html">client access</a></li>
-              <li class="menu-item "><a href="careers-and-trainings.html">careers &amp; trainings</a></li>
-            </ul>
+            <ol class="app-navbar__list" aria-label="app-navbar">
+              <li class="app-navbar__list-item "><a href="index.html">Home</a></li>
+              <li class="app-navbar__list-item "><a href="about.html">about us</a></li>
+              <li class="app-navbar__list-item "><a href="services-and-clients.html">services &amp; clients</a></li>
+              <li class="app-navbar__list-item "><a href="our-people-listing.html">our people</a></li>
+              <li class="app-navbar__list-item app-navbar__list-item--active" aria-current="page"><a href="contact-us.html">contact us</a></li>
+              <li class="app-navbar__list-item "><a href="news-and-events-listing.html">news &amp; events</a></li>
+              <li class="app-navbar__list-item "><a href="conferences-listing.html">conferences &amp; webinars</a></li>
+              <li class="app-navbar__list-item "><a href="client-access.html">client access</a></li>
+              <li class="app-navbar__list-item "><a href="careers-and-trainings.html">careers &amp; trainings</a></li>
+            </ol>
           </nav>
         </div>
         <div class="app-navbar__search ">
@@ -46,35 +49,40 @@
           </form>
         </div>
       </header>
+      <!-- Application Header End/.-->
       <main id="contact-us" role="main">
+        <!-- Inner Pages Header-->
         <header class="inner-header section">
-          <div class="section__bg--img-container section__gradient-linear section__gradient-linear--primary"><img class="section__bg--img" src="./images/patterns/pattern.jpg"/></div>
+          <div class="section__bg--img-container section__gradient-linear section__gradient-linear--primary"><img class="section__bg--img" src="./images/patterns/pattern.jpg" data-paroller-direction="vertical" data-paroller-factor="-0.4" data-paroller-type="foreground"/></div>
           <div class="container-fluid">
             <div class="row">
               <div class="col-10 col-sm-8 col-md-4">
-                <div class="inner-header__img"><img src="./images/about-us/7.jpg"/></div>
+                <div class="inner-header__img wow fadeInLeft" data-wow-duration="1.6s" data-wow-delay="0s"><img src="./images/about-us/7.jpg"/></div>
               </div>
               <div class="col-12 col-md-8 col-lg-7 offset-lg-1">
                 <div class="inner-header__content">
-                  <h2 class="inner-header__title">contact us</h2>
+                  <h2 class="inner-header__title wow fadeInDown" data-wow-duration="1.2s" data-wow-delay="0.2s">contact us</h2>
+                  <!-- Breadcrumb-->
                   <nav class="inner-header__breadcrumb align-self-end" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">contact us
+                      <li class="breadcrumb-item wow fadeInRight" data-wow-duration="1s" data-wow-delay="1.5999999999999999s"><a href="index.html">Home</a></li>
+                      <li class="breadcrumb-item active wow fadeInRight" aria-current="page" data-wow-duration="1s" data-wow-delay="1.7999999999999998s">contact us
                       </li>
                     </ol>
                   </nav>
+                  <!-- Breadcrumb End/.-->
                 </div>
               </div>
             </div>
           </div>
         </header>
+        <!-- Inner Pages Header End/.-->
         <article class="inner-article">
           <section class="section section__bg--white">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-5">
-                  <div class="inner-article__content">
+                  <div class="inner-article__content wow fadeIn" data-wow-duration="1s" data-wow-delay="2s">
                     <p>Whether you’re looking for more information, or you’d like to let us know your feedback, you’ll find easy ways to contact us right here.</p>
                   </div>
                 </div>
@@ -85,12 +93,12 @@
             <div class="container">
               <div class="row">
                 <div class="col-12">
-                  <h5 class="section__title section__title--primary">our offices</h5>
+                  <h5 class="section__title section__title--primary wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">our offices</h5>
                 </div>
                 <div class="col-12">
                   <div class="row">
                     <div class="col-12 col-sm-6 col-md-5 d-block d-lg-none mb-5 px-4 px-md-0">
-                      <select class="inner-article__nav-dropdown custom-select custom-select-lg">
+                      <select class="inner-article__nav-dropdown custom-select custom-select-lg wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
                         <option value="map-cairo">cairo</option>
                         <option value="map-alexandria">alexandria</option>
                         <option value="map-read-sea">read sea</option>
@@ -99,23 +107,23 @@
                     <div class="col-12 col-lg-4 col-xl-4 d-none d-lg-block">
                       <div class="inner-article__nav">
                         <ul class="nav flex-column nav-pills" id="map-tab" role="tablist" aria-orientation="vertical">
-                          <li class="nav-item" role="presentation"><a class="nav-link active" id="map-cairo-tab" data-toggle="pill" href="#map-cairo" role="tab" aria-controls="map-cairo" aria-selected="true">cairo</a></li>
-                          <li class="nav-item" role="presentation"><a class="nav-link" id="map-alexandria-tab" data-toggle="pill" href="#map-alexandria" role="tab" aria-controls="map-alexandria" aria-selected="false">alexandria</a></li>
-                          <li class="nav-item" role="presentation"><a class="nav-link" id="map-read-sea-tab" data-toggle="pill" href="#map-read-sea" role="tab" aria-controls="map-read-sea" aria-selected="false"> readsea</a></li>
+                          <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="1s" data-wow-delay="0.2s"><a class="nav-link active" id="map-cairo-tab" data-toggle="pill" href="#map-cairo" role="tab" aria-controls="map-cairo" aria-selected="true">cairo</a></li>
+                          <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="1s" data-wow-delay="0.4s"><a class="nav-link" id="map-alexandria-tab" data-toggle="pill" href="#map-alexandria" role="tab" aria-controls="map-alexandria" aria-selected="false">alexandria</a></li>
+                          <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="1s" data-wow-delay="0.6s"><a class="nav-link" id="map-read-sea-tab" data-toggle="pill" href="#map-read-sea" role="tab" aria-controls="map-read-sea" aria-selected="false"> readsea</a></li>
                         </ul>
                       </div>
                     </div>
                     <div class="col-12 col-lg-7 offset-lg-1 col-xl-7 offset-xl-1 px-4 px-md-0">
                       <div class="inner-article__tabs">
                         <div class="tab-content" id="map-content">
-                          <div class="tab-pane animated fadeInUp show active" id="map-cairo" role="tabpanel" aria-labelledby="map-cairo-tab">
+                          <div class="tab-pane show active" id="map-cairo" role="tabpanel" aria-labelledby="map-cairo-tab">
                             <div class="location">
                               <div class="row">
                                 <div class="col-12 col-sm-8 col-md-7 col-lg-12">
                                   <div class="location__info-card">
                                     <div class="row">
                                       <div class="col-12 col-lg-10 col-xl-7">
-                                        <div class="location__address">
+                                        <div class="location__address wow fadeInUp" data-wow-duration="1s">
                                           <ul>
                                             <li><strong>address</strong>
                                               <p>12 El Marashly St., Zamalek, Cairo 11211, Egypt</p>
@@ -131,28 +139,28 @@
                                       </div>
                                       <div class="col-5 d-none d-xl-flex align-items-center">
                                         <div class="location__copy-button d-none d-xl-block">
-                                          <button class="copy-to-clipboard" data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.">copy location</button>
+                                          <button class="copy-to-clipboard wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.">copy location</button>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-12 col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-11 offset-lg-1">
-                                  <div class="location__map">
+                                  <div class="location__map wow fadeInUp" daa-wow-duration="1s" data-wow-delay="0.4s">
                                     <iframe src="https://snazzymaps.com/embed/242470" width="100%" height="500px" frameborder="no" scrolling="no"></iframe>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="tab-pane animated fadeInUp" id="map-alexandria" role="tabpanel" aria-labelledby="map-alexandria-tab">
+                          <div class="tab-pane" id="map-alexandria" role="tabpanel" aria-labelledby="map-alexandria-tab">
                             <div class="location">
                               <div class="row">
                                 <div class="col-12 col-sm-8 col-md-7 col-lg-12">
                                   <div class="location__info-card">
                                     <div class="row">
                                       <div class="col-12 col-lg-10 col-xl-7">
-                                        <div class="location__address">
+                                        <div class="location__address wow fadeInUp" data-wow-duration="1s">
                                           <ul>
                                             <li><strong>address</strong>
                                               <p>12 El Marashly St., Zamalek, Cairo 11211, Egypt</p>
@@ -168,28 +176,28 @@
                                       </div>
                                       <div class="col-5 d-none d-xl-flex align-items-center">
                                         <div class="location__copy-button d-none d-xl-block">
-                                          <button class="copy-to-clipboard" data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.">copy location</button>
+                                          <button class="copy-to-clipboard wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.">copy location</button>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-12 col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-11 offset-lg-1">
-                                  <div class="location__map">
+                                  <div class="location__map wow fadeInUp" daa-wow-duration="1s" data-wow-delay="0.4s">
                                     <iframe src="https://snazzymaps.com/embed/242470" width="100%" height="500px" frameborder="no" scrolling="no"></iframe>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="tab-pane animated fadeInUp" id="map-read-sea" role="tabpanel" aria-labelledby="map-read-sea-tab">
+                          <div class="tab-pane" id="map-read-sea" role="tabpanel" aria-labelledby="map-read-sea-tab">
                             <div class="location">
                               <div class="row">
                                 <div class="col-12 col-sm-8 col-md-7 col-lg-12">
                                   <div class="location__info-card">
                                     <div class="row">
                                       <div class="col-12 col-lg-10 col-xl-7">
-                                        <div class="location__address">
+                                        <div class="location__address wow fadeInUp" data-wow-duration="1s">
                                           <ul>
                                             <li><strong>address</strong>
                                               <p>12 El Marashly St., Zamalek, Cairo 11211, Egypt</p>
@@ -205,14 +213,14 @@
                                       </div>
                                       <div class="col-5 d-none d-xl-flex align-items-center">
                                         <div class="location__copy-button d-none d-xl-block">
-                                          <button class="copy-to-clipboard" data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.">copy location</button>
+                                          <button class="copy-to-clipboard wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-clipboard-text="12 El Marashly St., Zamalek, Cairo 11211, Egypt.">copy location</button>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-12 col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-11 offset-lg-1">
-                                  <div class="location__map">
+                                  <div class="location__map wow fadeInUp" daa-wow-duration="1s" data-wow-delay="0.4s">
                                     <iframe src="https://snazzymaps.com/embed/242470" width="100%" height="500px" frameborder="no" scrolling="no"></iframe>
                                   </div>
                                 </div>
@@ -228,6 +236,7 @@
             </div>
           </section>
         </article>
+        <!-- Contact us Section-->
         <section class="section contact-us">
           <div class="section__bg--img-container section__gradient-radial section__gradient-radial--white-reverse"><img class="section__bg--img" src="./images/patterns/pattern.jpg"></div>
           <div class="container">
@@ -241,21 +250,21 @@
                     <div class="form-row">
                       <div class="col-12 col-md-6">
                         <div class="form-group">
-                          <input class="form-control" type="text" placeholder="name" tabindex="1">
+                          <input class="form-control" type="text" placeholder="name" tabindex="1" required>
                         </div>
                         <div class="form-group">
-                          <input class="form-control" type="text" placeholder="email" tabindex="3">
+                          <input class="form-control" type="email" placeholder="email" tabindex="3" required>
                         </div>
                         <div class="form-group">
-                          <input class="form-control" type="text" placeholder="phone" tabindex="4">
+                          <input class="form-control" type="tel" placeholder="phone" tabindex="4" required>
                         </div>
                       </div>
                       <div class="col-12 col-md-6">
                         <div class="form-group">
-                          <input class="form-control" type="text" placeholder="subject" tabindex="2">
+                          <input class="form-control" type="text" placeholder="subject" tabindex="2" required>
                         </div>
                         <div class="form-group">
-                          <textarea class="form-control" placeholder="message" rows="3" tabindex="5"></textarea>
+                          <textarea class="form-control" placeholder="message" rows="3" tabindex="5" required></textarea>
                         </div>
                       </div>
                       <div class="col-12 d-flex justify-content-center">
@@ -270,7 +279,9 @@
             </div>
           </div>
         </section>
+        <!-- Contact us Section End/.-->
       </main>
+      <!-- Footer-->
       <footer class="footer">
         <section class="footer__top">
           <div class="container-fluid">
@@ -330,6 +341,7 @@
           </div>
         </section>
       </footer>
+      <!-- Footer End/.-->
       <script src="./scripts/app.min.js" type="text/javascript"></script>
     </div>
   </body>

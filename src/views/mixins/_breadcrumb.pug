@@ -1,17 +1,14 @@
 mixin breadcrumb(data=[])
-	//- data = [{
-			title: String,
-			href: String
-		}]
-
+	// Breadcrumb
 	nav.inner-header__breadcrumb.align-self-end(aria-label="breadcrumb")
 		ol.breadcrumb
 			each page, index in data
 				if (index !== data.length-1)
-					li.breadcrumb-item
+					li.breadcrumb-item.wow.fadeInRight(data-wow-duration="1s", data-wow-delay=`${1.4 + ((index + 1) * 0.2)}s`)
 						a(href=`${page.href}`)= `${page.title}`
 				else
-					li.breadcrumb-item.active(aria-current='page')
+					li.breadcrumb-item.active.wow.fadeInRight(aria-current='page', data-wow-duration="1s", data-wow-delay=`${1.4 + ((index + 1) * 0.2)}s`)
 						= `${String(page.title).split("").slice(0, 40).join('')}`
 						if (String(page.title).split("").length >= 40)
 							| ...
+	// Breadcrumb End/.

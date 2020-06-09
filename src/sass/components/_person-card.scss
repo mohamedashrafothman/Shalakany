@@ -142,6 +142,17 @@ $person-rectangle-width: $person-rectangle-height;
 			height: 100%;
 			@include object-fit(cover, top center);
 		}
+
+		&--grayscale {
+			img {
+				filter: grayscale(100%);
+			}
+		}
+		&--sepia {
+			img {
+				filter: sepia(100%);
+			}
+		}
 	}
 
 	&__name {

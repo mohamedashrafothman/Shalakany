@@ -1,5 +1,6 @@
 mixin pagination(data={})
-	nav.pagination.pagination--brown
+	// Pagination
+	nav.pagination.pagination--brown.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0s")
 		ul.pagination__list
 			li.pagination__list-item.pagination__counter
 				span.pagination__number 1
@@ -8,3 +9,4 @@ mixin pagination(data={})
 				a(href="#")
 			li.pagination__list-item.pagination__next
 				a(href="#")
+	// Pagination End/.

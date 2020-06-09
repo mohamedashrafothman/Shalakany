@@ -1,12 +1,13 @@
 mixin header(data={})
+	// Application Header - without wordpress nav classes
 	header(class=`app-navbar`)
-		div(class=`app-navbar__logo ${(String(page_title).toLowerCase() == "home") ? "app-navbar__logo--home" : "app-navbar__logo--inner"}`)
+		div(class=`app-navbar__logo wow fadeIn ${(String(page_title).toLowerCase() == "home") ? "app-navbar__logo--home" : "app-navbar__logo--inner"}`, data-wow-duration="1s", data-wow-delay="1s")
 			a(href="index.html")
 				img(src="./images/icons-logos/Logo.svg", alt=`${locals.sitename[locals.lang]}`)
 		div(class=`app-navbar__underlay ${(data.is_menu_open) ? "menu-open" : ((data.is_search_open) ? "search-open" : "")}`)
-		div(class=`app-navbar__open-menu`)
+		div(class=`app-navbar__open-menu wow fadeInRight`, data-wow-duration="0.75s", data-wow-delay="1.6s")
 			i(class=`material-icons`) menu
-		div(class=`app-navbar__open-search ${(data.is_search_open) ? "is_open" : ""}`)
+		div(class=`app-navbar__open-search wow fadeInRight ${(data.is_search_open) ? "is_open" : ""}` data-wow-duration="0.75s", data-wow-delay="1.8s")
 			i(class=`material-icons`) search
 		div(class=`app-navbar__side-menu ${(data.is_menu_open) ? "is_open" : ""}`)
 			div(class=`app-navbar__close-menu`)
@@ -19,3 +20,4 @@ mixin header(data={})
 		div(class=`app-navbar__search ${(data.is_search_open) ? "is_open" : ""}`)
 			form(class=`app-navbar__search-form`, action="#", method="POST")
 				input(type="text", class=`app-navbar__search-input`, placeholder="Search....", value="")
+	// Application Header End/.

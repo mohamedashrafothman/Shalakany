@@ -10,15 +10,37 @@ block content
 	main#webinars-single(role="main")
 		+inner-header(header_data)
 		article.inner-article
+			nav.inner-article__social
+				ul.inner-article__list
+					li.inner-article__list-item.inner-article__list-item--facebook.wow.fadeInLeft(data-wow-duration="1s", data-wow-delay="2.2s")
+						a(href="http://www.facebook.com", target="_blank")
+							| share
+							i.fab.fa-facebook-f
+					li.inner-article__list-item.inner-article__list-item--linkedin.wow.fadeInLeft(data-wow-duration="1s", data-wow-delay="2.4s")
+						a(href="http://www.linkedin.com", target="_blank")
+							| share
+							i.fab.fa-linkedin-in
+					li.inner-article__list-item.inner-article__list-item--twitter.wow.fadeInLeft(data-wow-duration="1s", data-wow-delay="2.6s")
+						a(href="http://www.twitter.com", target="_blank")
+							| share
+							i.fab.fa-twitter
+					li.inner-article__list-item.inner-article__list-item--whatsapp.wow.fadeInLeft(data-wow-duration="1s", data-wow-delay="2.8s")
+						a(href="http://www.whatsapp.com", target="_blank")
+							| share
+							i.fab.fa-whatsapp
+					li.inner-article__list-item.inner-article__list-item--email.wow.fadeInLeft(data-wow-duration="1s", data-wow-delay="3s")
+						a(href="http://www.gmail.com", target="_blank")
+							| share
+							i.far.fa-envelope
 			.container
 				.row
 					.col-12.col-xl-10.offset-xl-1
-						section.section.section__bg--white
+						section.section.section__bg--white.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.5s")
 							.row
 								.col-12
-									.inner-article__content.text-center.px-0.px-lg-4
+									.inner-article__content.text-center.px-0.px-lg-4.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0")
 										.inner-article__video.inner-article__video--no-controls
-											.inner-article__video-overlay
+											.inner-article__video-overlay.inner-article__video-overlay--hover-effect
 												svg(viewBox='0 0 200 200', alt='Play video')
 													polygon(points='70, 55 70, 145 145, 100', fill='#fff')
 											video(src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4", controls, poster="./images/conferences/4.jpg")

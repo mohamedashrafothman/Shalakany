@@ -212,11 +212,13 @@ $brochure-slider-buttons-height: 74px;
 		background-color: $white;
 		border: $border-width $border-style $primary;
 		z-index: 25; // bigger than .slider__content
+		overflow-x: hidden;
 
 		.swiper-button-prev,
 		.swiper-button-next {
 			position: relative !important;
 			top: 0;
+			bottom: 0;
 			background-color: transparent;
 			transition: $transition-base;
 			width: $brochure-slider-buttons-width;
@@ -229,14 +231,24 @@ $brochure-slider-buttons-height: 74px;
 
 		.swiper-button-next,
 		.swiper-container-rtl .swiper-button-prev {
-			right: 0;
+			left: 0;
+			right: initial;
 			background-position-x: 10px;
+
+			&:hover, &:focus, &:active{
+				left: 5px;
+			}
 		}
 
 		.swiper-button-prev,
 		.swiper-container-rtl .swiper-button-next {
-			left: 0;
+			right: 0;
+			left: initial;
 			background-position-x: 20px;
+
+			&:hover, &:focus, &:active{
+				right: 5px;
+			}
 		}
 	}
 

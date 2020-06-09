@@ -15,13 +15,13 @@ block content
 				.container-fluid
 					.row
 						.col-12.col-sm-10.offset-sm-1.col-md-6.offset-md-5
-							.inner-article__content
+							.inner-article__content.wow.fadeIn(data-wow-duration="1s", data-wow-delay="2s")
 								p Our lawyers are leaders in their fields and are considered experts in their respective areas of specialization. Through a blend of experience and expertise, our lawyers provide top quality legal services to our clients.
 		section.partners.section.section__bg--white.px-0.px-lg-5
 			.container
 				.row
 					.col-12.py-5
-						h5.section__title.section__title--primary.text-center partners
+						h5.section__title.section__title--primary.text-center.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0") partners
 					.col-12
 						.row
 							each partner, i in persons.filter(function(item) {return item.type === "partner"})
@@ -31,7 +31,7 @@ block content
 			.container
 				.row
 					.col-12.py-5
-						h5.section__title.section__title--primary.text-center senior associates
+						h5.section__title.section__title--primary.text-center.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0s") senior associates
 					.col-12
 						.row
 							each senior_associate, i in persons.filter(function(item) {return item.type === "senior associate"})
@@ -41,7 +41,7 @@ block content
 			.container
 				.row
 					.col-12.py-5
-						h5.section__title.section__title--primary.text-center senior associates
+						h5.section__title.section__title--primary.text-center.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0s") senior associates
 					.col-12
 						.row
 							each consulting_associate, i in persons.filter(function(item) {return item.type === "consulting associate"})

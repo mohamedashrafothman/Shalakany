@@ -2,6 +2,7 @@ extends ./layouts/_index_layout.pug
 include ./mixins/_about-us-card.pug
 include ./mixins/_inner-header.pug
 include ./mixins/_pagination.pug
+include ./mixins/_news-horizontal.pug
 
 append variables
 	- var page_title = "news & events";
@@ -17,9 +18,9 @@ block content
 						.col-12.col-sm-10.offset-sm-1.col-md-6.offset-md-5
 							.inner-article__nav
 								ul.nav.nav-tabs.nav-fill#news-and-events-nav(role="tablist")
-									li.nav-item(role="presentation")
+									li.nav-item.wow.fadeInUp(role="presentation", data-wow-duration="1s", data-wow-delay="2s")
 										a.nav-link.active(href="news-and-events-listing.html") shalakany news
-									li.nav-item(role="presentation")
+									li.nav-item.wow.fadeInUp(role="presentation", data-wow-duration="1s", data-wow-delay="2.2s")
 										a.nav-link(href="newsletter-listing.html") newsletter
 			section.section.section__bg--white
 				.container
@@ -27,90 +28,9 @@ block content
 						.col-12
 							.inner-article__content
 								.row
-									.col-12.mb-5
-										.news.news__horizontal.news__bg--white
-											.row
-												.col-12.col-md-5
-													.news__image
-														a(href="news-and-events-single.html")
-															img(src="./images/news/1.jpg", alt="Lorem ipsum dolor sit amet.")
-												.col-12.col-md-7
-													.news__content
-														small.news__subtitle 20 may 2020
-														h6.news__title
-															a(href="news-and-events-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-														a.news__link(href="news-and-events-single.html") read more
-									.col-12.mb-5
-										.news.news__horizontal.news__bg--white
-											.row
-												.col-12.col-md-5
-													.news__image
-														a(href="news-and-events-single.html")
-															img(src="./images/news/2.jpg", alt="Lorem ipsum dolor sit amet.")
-												.col-12.col-md-7
-													.news__content
-														small.news__subtitle 20 may 2020
-														h6.news__title
-															a(href="news-and-events-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-														a.news__link(href="news-and-events-single.html") read more
-									.col-12.mb-5
-										.news.news__horizontal.news__bg--white
-											.row
-												.col-12.col-md-5
-													.news__image
-														a(href="news-and-events-single.html")
-															img(src="./images/news/3.jpg", alt="Lorem ipsum dolor sit amet.")
-												.col-12.col-md-7
-													.news__content
-														small.news__subtitle 20 may 2020
-														h6.news__title
-															a(href="news-and-events-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-														a.news__link(href="news-and-events-single.html") read more
-									.col-12.mb-5
-										.news.news__horizontal.news__bg--white
-											.row
-												.col-12.col-md-5
-													.news__image
-														a(href="news-and-events-single.html")
-															img(src="./images/news/4.jpg", alt="Lorem ipsum dolor sit amet.")
-												.col-12.col-md-7
-													.news__content
-														small.news__subtitle 20 may 2020
-														h6.news__title
-															a(href="news-and-events-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-														a.news__link(href="news-and-events-single.html") read more
-									.col-12.mb-5
-										.news.news__horizontal.news__bg--white
-											.row
-												.col-12.col-md-5
-													.news__image
-														a(href="news-and-events-single.html")
-															img(src="./images/news/5.jpg", alt="Lorem ipsum dolor sit amet.")
-												.col-12.col-md-7
-													.news__content
-														small.news__subtitle 20 may 2020
-														h6.news__title
-															a(href="news-and-events-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-														a.news__link(href="news-and-events-single.html") read more
-									.col-12.mb-5
-										.news.news__horizontal.news__bg--white
-											.row
-												.col-12.col-md-5
-													.news__image
-														a(href="news-and-events-single.html")
-															img(src="./images/news/6.jpg", alt="Lorem ipsum dolor sit amet.")
-												.col-12.col-md-7
-													.news__content
-														small.news__subtitle 20 may 2020
-														h6.news__title
-															a(href="news-and-events-single.html") Lorem ipsum dolor sit amet.
-														p.news__text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-														a.news__link(href="news-and-events-single.html") read more
+									each article, index in news
+										.col-12.mb-5
+											+news-horizontal(article, index)
 						.col-6.offset-6.col-sm-5.offset-sm-7.col-md-4.offset-md-8.col-lg-3.offset-lg-9.col-xl-3.offset-xl-9.my-4
 							+pagination({})
 

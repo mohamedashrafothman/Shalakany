@@ -1,0 +1,9 @@
+mixin award(data={}, index=0)
+	// Award Card
+	div(class=`award award__color--blue award__bookmark wow fadeInUp ${(data.type && Boolean(data.type) && data.type === "international") ? "award__bookmark--primary" : (data.type && Boolean(data.type) && data.type === "normal") ? "award__bookmark--brown" : ""}`, data-wow-duration="1s", data-wow-delay=`${(index + 1) * 0.2}s`)
+		.award__content
+			p.award__title=data.title
+		.award__footer
+			hr
+			p.award__text=data.text
+	// Award Card End/.

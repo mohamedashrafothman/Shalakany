@@ -27,6 +27,7 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 		height: calc(100vh - (#{$grid-gutter-width} * 7)); // 100 view height - (next section padding top * ratio)
 		min-height: calc(100vh - (#{$grid-gutter-width} * 7)); // 100 view height - (next section padding top * ratio)
 		max-height: calc(100vh - (#{$grid-gutter-width} * 7)); // 100 view height - (next section padding top * ratio)
+		background-color: $primary;
 
 		img {
 			height: 100%;

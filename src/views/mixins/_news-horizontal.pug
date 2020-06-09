@@ -1,0 +1,16 @@
+mixin news-horizontal(data={}, index=0)
+	// News Card
+	.news.news__horizontal.news__bg--white.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0s")
+		.row
+			.col-12.col-md-5
+				.news__image
+					a(href="news-and-events-single.html")
+						img(src=data.img.src, alt=data.title)
+			.col-12.col-md-7
+				.news__content
+					small.news__subtitle=data.date
+					h6.news__title
+						a(href="news-and-events-single.html")=data.title
+					p.news__text=data.content
+					a.news__link(href="news-and-events-single.html") read more
+	// News Card End/.

@@ -9,6 +9,7 @@ append variables
 block content
 	main#about-art-gallery(role="main")
 		+inner-header(header_data)
+		// Inner Page Article
 		article.inner-article
 			section.section.section__bg--white.gallery
 				.container
@@ -17,131 +18,28 @@ block content
 							.gallery__slider
 								.swiper-container#gallery-slider(data-swiper-effect="fade")
 									.swiper-wrapper
-										.swiper-slide
-											figure.paint.paint__color--primary.paint__size--lg
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/1.jpg", alt="Mont Sainte-Victoire")
-												figcaption.paint__description.text-center
-													.row
-														.col-12.col-sm-8.offset-sm-2.col-sm-6.offset-sm-0.col-xl-4.offset-xl-4
-															h6.paint__title(data-swiper-parallax="-250") Mont Sainte-Victoire
-															small.paint__artist(data-swiper-parallax="-200") paul cezanne
-														.col-12.col-md-10.offset-md-1.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-															p.paint__text(data-swiper-parallax="-150") Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-										.swiper-slide
-											figure.paint.paint__color--primary.paint__size--lg
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/2.jpg", alt="Mont Sainte-Victoire")
-												figcaption.paint__description.text-center
-													.row
-														.col-12.col-sm-8.offset-sm-2.col-sm-6.offset-sm-0.col-xl-4.offset-xl-4
-															h6.paint__title(data-swiper-parallax="-250") Mont Sainte-Victoire
-															small.paint__artist(data-swiper-parallax="-200") paul cezanne
-														.col-12.col-md-10.offset-md-1.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-															p.paint__text(data-swiper-parallax="-150") Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-										.swiper-slide
-											figure.paint.paint__color--primary.paint__size--lg
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/3.jpg", alt="Mont Sainte-Victoire")
-												figcaption.paint__description.text-center
-													.row
-														.col-12.col-sm-8.offset-sm-2.col-sm-6.offset-sm-0.col-xl-4.offset-xl-4
-															h6.paint__title(data-swiper-parallax="-250") Mont Sainte-Victoire
-															small.paint__artist(data-swiper-parallax="-200") paul cezanne
-														.col-12.col-md-10.offset-md-1.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-															p.paint__text(data-swiper-parallax="-150") Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-										.swiper-slide
-											figure.paint.paint__color--primary.paint__size--lg
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/4.jpg", alt="Mont Sainte-Victoire")
-												figcaption.paint__description.text-center
-													.row
-														.col-12.col-sm-8.offset-sm-2.col-sm-6.offset-sm-0.col-xl-4.offset-xl-4
-															h6.paint__title(data-swiper-parallax="-250") Mont Sainte-Victoire
-															small.paint__artist(data-swiper-parallax="-200") paul cezanne
-														.col-12.col-md-10.offset-md-1.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-															p.paint__text(data-swiper-parallax="-150") Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-										.swiper-slide
-											figure.paint.paint__color--primary.paint__size--lg
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/5.jpg", alt="Mont Sainte-Victoire")
-												figcaption.paint__description.text-center
-													.row
-														.col-12.col-sm-8.offset-sm-2.col-sm-6.offset-sm-0.col-xl-4.offset-xl-4
-															h6.paint__title(data-swiper-parallax="-250") Mont Sainte-Victoire
-															small.paint__artist(data-swiper-parallax="-200") paul cezanne
-														.col-12.col-md-10.offset-md-1.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-															p.paint__text(data-swiper-parallax="-150") Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-										.swiper-slide
-											figure.paint.paint__color--primary.paint__size--lg
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/6.jpg", alt="Mont Sainte-Victoire")
-												figcaption.paint__description.text-center
-													.row
-														.col-12.col-sm-8.offset-sm-2.col-sm-6.offset-sm-0.col-xl-4.offset-xl-4
-															h6.paint__title(data-swiper-parallax="-250") Mont Sainte-Victoire
-															small.paint__artist(data-swiper-parallax="-200") paul cezanne
-														.col-12.col-md-10.offset-md-1.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-															p.paint__text(data-swiper-parallax="-150") Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-										.swiper-slide
-											figure.paint.paint__color--primary.paint__size--lg
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/7.jpg", alt="Mont Sainte-Victoire")
-												figcaption.paint__description.text-center
-													.row
-														.col-12.col-sm-8.offset-sm-2.col-sm-6.offset-sm-0.col-xl-4.offset-xl-4
-															h6.paint__title(data-swiper-parallax="-250") Mont Sainte-Victoire
-															small.paint__artist(data-swiper-parallax="-200") paul cezanne
-														.col-12.col-md-10.offset-md-1.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-															p.paint__text(data-swiper-parallax="-150") Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
-										.swiper-slide
-											figure.paint.paint__color--primary.paint__size--lg
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/8.jpg", alt="Mont Sainte-Victoire")
-												figcaption.paint__description.text-center
-													.row
-														.col-12.col-sm-8.offset-sm-2.col-sm-6.offset-sm-0.col-xl-4.offset-xl-4
-															h6.paint__title(data-swiper-parallax="-250") Mont Sainte-Victoire
-															small.paint__artist(data-swiper-parallax="-200") paul cezanne
-														.col-12.col-md-10.offset-md-1.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
-															p.paint__text(data-swiper-parallax="-150") Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+										each paint, index in gallery
+											.swiper-slide
+												figure.paint.paint__color--primary.paint__size--lg.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0s")
+													.paint__frame(data-swiper-parallax="-200")
+														img.paint__image(src=paint.img.src, alt=paint.title)
+													figcaption.paint__description.text-center
+														.row
+															.col-12.col-sm-8.offset-sm-2.col-sm-6.offset-sm-0.col-xl-4.offset-xl-4
+																h6.paint__title.wow.fadeIn(data-swiper-parallax="-250", data-wow-duration="1s", data-wow-delay="0s")=paint.title
+																small.paint__artist.wow.fadeIn(data-swiper-parallax="-200", data-wow-duration="1s", data-wow-delay="0.2s")=paint.artist
+															.col-12.col-md-10.offset-md-1.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
+																p.paint__text.wow.fadeIn(data-swiper-parallax="-150", data-wow-duration="1s", data-wow-delay="0.4s")=paint.text
 								.gallery__slider-buttons
-									.swiper-button-prev(for="gallery-slider")
-									.swiper-button-next(for="gallery-slider")
+									.swiper-button-prev.wow.fadeInRight(for="gallery-slider", data-wow-duration="1s", data-wow-delay="0.5s")
+									.swiper-button-next.wow.fadeInLeft(for="gallery-slider", data-wow-duration="1s", data-wow-delay="0.5s")
 						.col-12
 							.gallery__thumbs
 								.swiper-container#gallery-thumbs(data-swiper-effect="slide")
 									.swiper-wrapper
-										.swiper-slide
-											figure.paint.paint__size--sm-free
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/1.jpg", alt="Mont Sainte-Victoire")
-										.swiper-slide
-											figure.paint.paint__size--sm-free
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/2.jpg", alt="Mont Sainte-Victoire")
-										.swiper-slide
-											figure.paint.paint__size--sm-free
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/3.jpg", alt="Mont Sainte-Victoire")
-										.swiper-slide
-											figure.paint.paint__size--sm-free
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/4.jpg", alt="Mont Sainte-Victoire")
-										.swiper-slide
-											figure.paint.paint__size--sm-free
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/5.jpg", alt="Mont Sainte-Victoire")
-										.swiper-slide
-											figure.paint.paint__size--sm-free
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/6.jpg", alt="Mont Sainte-Victoire")
-										.swiper-slide
-											figure.paint.paint__size--sm-free
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/7.jpg", alt="Mont Sainte-Victoire")
-										.swiper-slide
-											figure.paint.paint__size--sm-free
-												.paint__frame(data-swiper-parallax="-200")
-													img.paint__image(src="./images/art-gallery/8.jpg", alt="Mont Sainte-Victoire")
-
+										each paint, index in gallery
+											.swiper-slide
+												figure.paint.paint__size--sm-free
+													.paint__frame.wow.fadeInRight(data-swiper-parallax="-200", data-wow-duration="1s", data-wow-delay="0.2s")
+														img.paint__image(src=paint.img.src, alt=paint.title)
+		// Inner Page Article End.
