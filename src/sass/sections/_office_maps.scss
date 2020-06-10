@@ -19,8 +19,8 @@
 		}
 	}
 
-	.location{
-		&__map{
+	.location {
+		&__map {
 			margin-top: -75px;
 
 			@include media-breakpoint-down(sm) {

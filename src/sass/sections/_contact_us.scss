@@ -12,11 +12,13 @@
 	&__form {
 		margin-top: map-get($spacers, 5);
 		margin-bottom: map-get($spacers, 5);
+
 		.form-group {
 			&:not(:last-child) {
 				margin-bottom: 1.5rem;
 			}
 		}
+
 		.form-control {
 			border-bottom-color: rgba($black, 0.333333) !important;
 			transition: $transition-collapse;
@@ -36,7 +38,8 @@
 				color: rgba($black, 0.333333);
 			}
 
-			&:focus, &:active {
+			&:focus,
+			&:active {
 				border-bottom-color: $black !important;
 			}
 		}
@@ -76,7 +79,9 @@
 			transition: $transition-base;
 		}
 
-		&:hover {
+		&:hover,
+		&:active,
+		&:focus {
 			&::before {
 				left: 0;
 			}

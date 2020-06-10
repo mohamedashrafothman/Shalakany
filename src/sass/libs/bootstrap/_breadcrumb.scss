@@ -18,7 +18,7 @@
 		font-weight: $font-weight-light;
 		transition: $transition-base;
 
-		&:hover{
+		&:hover, &:active, &:focus{
 			color: $breadcrumb-color-hover
 		}
 	}

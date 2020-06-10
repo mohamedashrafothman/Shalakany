@@ -44,7 +44,7 @@ $app-navbar-border-width: $border-width * 2;
 		}
 	}
 
-	&__search{
+	&__search {
 		position: absolute;
 		top: #{$grid-gutter-width + ( $grid-gutter-width + $grid-gutter-width ) - ($app-navbar-border-width)}; // open-button top value + open-button height
 		right: #{$grid-gutter-width + ($grid-gutter-width * 2)};
@@ -75,11 +75,13 @@ $app-navbar-border-width: $border-width * 2;
 			width: calc(75vw - #{$app-navbar-border-width*4} - (#{$grid-gutter-width / 2} + #{$grid-gutter-width * 2}));
 		}
 	}
-	&__search-form{
+
+	&__search-form {
 		width: 100%;
 		height: 100%;
 	}
-	&__search-input{
+
+	&__search-input {
 		width: 100%;
 		height: 100%;
 		background-color: transparent;
@@ -87,15 +89,17 @@ $app-navbar-border-width: $border-width * 2;
 		padding-right: #{$grid-gutter-width / 4};
 		padding-left: #{$grid-gutter-width / 4};
 
-		&, &:focus, &:hover{
+		&,
+		&:focus,
+		&:hover {
 			color: $primary;
 			box-shadow: none;
-			border:0;
+			border: 0;
 			border-radius: 0;
 			outline: none;
 		}
 
-		&::placeholder{
+		&::placeholder {
 			text-transform: capitalize;
 			color: $primary;
 		}
@@ -164,11 +168,12 @@ $app-navbar-border-width: $border-width * 2;
 		display: none;
 		transition: $transition-base;
 
-		&.menu-open, &.search-open {
+		&.menu-open,
+		&.search-open {
 			display: block !important;
 		}
 
-		&.menu-open{
+		&.menu-open {
 			cursor: pointer;
 			backdrop-filter: blur(3px);
 			background-color: rgba($black, 0.85);
@@ -201,6 +206,12 @@ $app-navbar-border-width: $border-width * 2;
 			font-size: 1.5rem;
 			font-weight: lighter;
 		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			outline: none;
+		}
 	}
 
 	&__open-menu {
@@ -210,7 +221,9 @@ $app-navbar-border-width: $border-width * 2;
 		right: $grid-gutter-width;
 		border: #{$app-navbar-border-width} $border-style $border-color;
 
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			transform: rotate(-45deg);
 
 			&,
@@ -236,7 +249,7 @@ $app-navbar-border-width: $border-width * 2;
 		right: $grid-gutter-width;
 		border: #{$app-navbar-border-width} $border-style $border-color;
 
-		&.is_open{
+		&.is_open {
 			border-left-color: $gray-500;
 		}
 
@@ -264,7 +277,8 @@ $app-navbar-border-width: $border-width * 2;
 		height: 100%;
 	}
 
-	&__list, .nav {
+	&__list,
+	.nav {
 		width: 100%;
 		height: calc(55vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$app-navbar-border-width})));
 		max-height: calc(55vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$app-navbar-border-width})));
@@ -289,7 +303,8 @@ $app-navbar-border-width: $border-width * 2;
 		}
 	}
 
-	&__list-item, .menu-item {
+	&__list-item,
+	.menu-item {
 		font-size: #{$font-size-base * 1.25};
 		font-weight: 200;
 		color: $white;
@@ -325,9 +340,11 @@ $app-navbar-border-width: $border-width * 2;
 			transition: $transition-base;
 			opacity: 0;
 
-			@if $primary == $brown{
+			@if $primary==$brown {
 				background-color: $blue;
-			} @else {
+			}
+
+			@else {
 				background-color: $brown;
 			}
 		}
@@ -364,8 +381,11 @@ $app-navbar-border-width: $border-width * 2;
 		}
 
 
-		&--active, &.active,
-		&:hover {
+		&--active,
+		&.active,
+		&:hover,
+		&:focus,
+		&:active {
 			&:after {
 				left: -10px;
 				opacity: 1;
@@ -377,7 +397,7 @@ $app-navbar-border-width: $border-width * 2;
 
 	@media screen and (max-height: 725px) {
 
-		&__side-menu{
+		&__side-menu {
 
 			@include media-breakpoint-down(md) {
 				height: initial;
@@ -396,22 +416,26 @@ $app-navbar-border-width: $border-width * 2;
 			max-height: 725px;
 		}
 
-		&__list, .nav {
+		&__list,
+		.nav {
 			@include media-breakpoint-up(xl) {
 				height: calc(70vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$app-navbar-border-width})));
 				max-height: calc(70vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$app-navbar-border-width})));
 			}
+
 			@include media-breakpoint-only(lg) {
 				height: calc(65vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$app-navbar-border-width})));
 				max-height: calc(65vh - ((#{$grid-gutter-width * 2}) + #{$grid-gutter-width} + (#{$app-navbar-border-width})));
 			}
+
 			@include media-breakpoint-down(sm) {
 				height: 100%;
 				max-height: 100%;
 			}
 		}
 
-		&__list-item, .menu-item {
+		&__list-item,
+		.menu-item {
 			font-size: #{$font-size-base * 1.2};
 			line-height: $line-height-base;
 
@@ -435,7 +459,9 @@ $app-navbar-border-width: $border-width * 2;
 	}
 
 	@media screen and (max-height: 600px) {
-		&__list, .nav {
+
+		&__list,
+		.nav {
 			height: 100%;
 			max-height: 100%;
 		}
@@ -448,7 +474,9 @@ $app-navbar-border-width: $border-width * 2;
 			padding-top: 110px;
 			padding-bottom: 110px;
 		}
-		&__list, .nav {
+
+		&__list,
+		.nav {
 			height: 100%;
 			max-height: 100%;
 		}

@@ -1,4 +1,4 @@
-.online-services{
+.online-services {
 	padding: #{$grid-gutter-width * 3} #{$grid-gutter-width * 2};
 
 	@include media-breakpoint-down(md) {
@@ -13,6 +13,6 @@
 	.section__title {
 		color: $primary;
 		text-align: center;
-		margin-bottom: map-get($spacers, 5 );
+		margin-bottom: map-get($spacers, 5);
 	}
 }

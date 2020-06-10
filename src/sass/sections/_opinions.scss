@@ -7,7 +7,7 @@ $opinions-slider-buttons-width: 74px;
 	min-height: 100vh;
 	height: 100%;
 	display: flex;
-	align-items:center;
+	align-items: center;
 
 	@media screen and (max-height: 700px) {
 		height: 100%;
@@ -22,12 +22,13 @@ $opinions-slider-buttons-width: 74px;
 		padding: #{$grid-gutter-width * 2} 0;
 	}
 
-	.section__title{
+	.section__title {
 		margin-bottom: $grid-gutter-width * 4;
 	}
 
 	&__slider {
 		margin-bottom: $grid-gutter-width * 3;
+
 		.testimonial {
 			width: calc(40vw - #{$grid-gutter-width * 2});
 

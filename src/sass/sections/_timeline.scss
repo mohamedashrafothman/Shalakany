@@ -24,9 +24,11 @@
 					line-height: 1;
 					transition: $transition-base;
 
-					@if $primary == $brown {
+					@if $primary==$brown {
 						color: $blue;
-					} @else {
+					}
+
+					@else {
 						color: $brown;
 					}
 				}
@@ -118,7 +120,10 @@
 				margin-top: -#{$grid-gutter-width * 4};
 				margin-bottom: #{$grid-gutter-width * 4};
 
-				.brochure__image { margin-top: initial !important; margin-bottom: initial !important; }
+				.brochure__image {
+					margin-top: initial !important;
+					margin-bottom: initial !important;
+				}
 
 				&-buttons {
 					position: absolute;
@@ -160,6 +165,7 @@
 
 			&__text {
 				line-height: $line-height-base;
+
 				@include media-breakpoint-up(md) {
 					padding-left: $grid-gutter-width * 2;
 				}
@@ -167,6 +173,7 @@
 
 			&__title {
 				margin-bottom: $spacer !important;
+
 				@include media-breakpoint-down(md) {
 					padding-left: $grid-gutter-width;
 				}
@@ -187,7 +194,9 @@
 				}
 
 				&,
-				&:hover {
+				&:hover,
+				&:focus,
+				&:active {
 					img {
 						transform: none;
 					}

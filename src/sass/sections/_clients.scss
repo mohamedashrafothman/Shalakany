@@ -30,6 +30,7 @@
 		align-items: center;
 		justify-content: center;
 		padding: $grid-gutter-width;
+
 		img {
 			opacity: 0.7;
 			@include object-fit(scale-down, center);
@@ -39,6 +40,7 @@
 	.brochure {
 		margin-left: auto;
 		margin-right: auto;
+
 		&__image {
 			position: absolute;
 			overflow: hidden;
@@ -80,14 +82,16 @@
 
 			&-buttons {
 				bottom: -#{$brochure-slider-buttons-height};
-    			top: initial;
+				top: initial;
 				right: 50%;
 
 				.swiper-button-prev,
 				.swiper-button-next {
 					opacity: 0.7;
 
-					&:hover {
+					&:hover,
+					&:active,
+					&:focus {
 						opacity: 1;
 					}
 				}

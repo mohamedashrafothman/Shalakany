@@ -16,7 +16,7 @@ var clipboardInit          = require('./partials/clipboardInit');
 var animateCssInit         = require('./partials/animateCssInit');
 var niceScrollInit         = require('./partials/niceScrollInit');
 var navChangeEvent         = require('./partials/navChangeEvent');
-var googleMapDisapleScroll = require('./partials/googleMapDisableScroll');
+var googleMapDisableScroll = require('./partials/googleMapDisableScroll');
 
 (function ($) {
 	$(window).on('load', () => {
@@ -40,6 +40,6 @@ var googleMapDisapleScroll = require('./partials/googleMapDisableScroll');
 		niceScrollInit();
 		navChangeEvent();
 		clipboardInit();
-		googleMapDisapleScroll();
+		googleMapDisableScroll();
 	});
 })(jQuery);

@@ -1,3 +1,6 @@
+$banner-slider-buttons-width: 80px;
+$banner-slider-buttons-height: 74px;
+
 #index {
 	.clients {
 		padding: 0;
@@ -206,6 +209,7 @@
 
 			@include media-breakpoint-down(xs) {
 				width: 100%;
+
 				strong {
 					font-size: $h3-font-size;
 				}
@@ -237,36 +241,59 @@
 			margin-left: 8px;
 			@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
 
-			&:hover, &:focus, &:active {
+			&:hover,
+			&:focus,
+			&:active {
 				color: $primary;
 			}
 		}
 
-		&__slider {
-			&--arrows {
+		&__slider-buttons {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: $banner-slider-buttons-height;
+			width: $banner-slider-buttons-width * 2; // width of two buttons
+			background-color: transparent;
+			overflow-x: hidden;
 
-				display: flex;
-				align-items: center;
-				justify-content: flex-start;
+			.swiper-button-prev,
+			.swiper-button-next {
+				position: relative !important;
+				top: 0;
+				bottom: 0;
+				background-color: transparent;
+				transition: $transition-base;
+				width: $banner-slider-buttons-width;
+				height: 100%;
+				background-size: 45px;
+				margin: 0 !important;
+				overflow: hidden;
+			}
 
-				.swiper-button-prev,
-				.swiper-button-next {
-					position: relative;
-					width: 60px;
-					height: 50px;
-					background-size: 35px;
+			.swiper-button-next,
+			.swiper-container-rtl .swiper-button-prev {
+				left: 0;
+				right: initial;
+				background-position-x: 10px;
+
+				&:hover,
+				&:focus,
+				&:active {
+					left: 5px;
 				}
+			}
 
-				.swiper-button-prev,
-				.swiper-container-rtl .swiper-button-next {
-					left: 0;
-					transition: $transition-base;
-				}
+			.swiper-button-prev,
+			.swiper-container-rtl .swiper-button-next {
+				right: 0;
+				left: initial;
+				background-position-x: 20px;
 
-				.swiper-button-next,
-				.swiper-container-rtl .swiper-button-prev {
-					right: 0;
-					transition: $transition-base;
+				&:hover,
+				&:focus,
+				&:active {
+					right: 5px;
 				}
 			}
 		}
@@ -319,6 +346,7 @@
 				@include media-breakpoint-down(lg) {
 					padding: $grid-gutter-width*1.425 $grid-gutter-width*1.895;
 				}
+
 				@include media-breakpoint-down(md) {
 					padding-top: 100px;
 					padding-bottom: 40px;
@@ -340,9 +368,10 @@
 					height: 100%;
 				}
 
-				.service-card{
-					&__title{
+				.service-card {
+					&__title {
 						width: 70%;
+
 						@include media-breakpoint-down(lg) {
 							width: 90%;
 						}
@@ -366,17 +395,17 @@
 
 				&-buttons {
 					position: absolute;
-					bottom: $brochure-slider-buttons-height;
-					right: -#{$brochure-slider-buttons-width};
+					bottom: $banner-slider-buttons-height;
+					right: -#{$banner-slider-buttons-width};
 					transform: initial !important;
 
 					@include media-breakpoint-down(md) {
-						bottom: $brochure-slider-buttons-height / 2;
+						bottom: $banner-slider-buttons-height / 2;
 					}
 
 					@include media-breakpoint-down(sm) {
-						bottom: -#{$brochure-slider-buttons-height / 2};
-						right: $brochure-slider-buttons-width / 2;
+						bottom: -#{$banner-slider-buttons-height / 2};
+						right: $banner-slider-buttons-width / 2;
 					}
 				}
 			}
@@ -409,6 +438,7 @@
 				padding-top: 0;
 				padding-bottom: 0;
 			}
+
 			@include media-breakpoint-down(md) {
 				padding-top: $grid-gutter-width * 28;
 				padding-bottom: $grid-gutter-width * 10;

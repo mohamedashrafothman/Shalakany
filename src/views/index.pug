@@ -31,7 +31,7 @@ block content
 									.col-12
 										a#home-banner__button.btn.btn-secondary.wow.fadeInUp(href="about.html", data-wow-duration="1s", data-wow-delay="1.2s") About the firm
 									.col-12
-										#home-banner__slider--arrows
+										#home-banner__slider-buttons
 											.swiper-button-prev.swiper-button-white.wow.fadeInRight(for="home-banner-slider", data-wow-duration="1s", data-wow-delay="1.4s")
 											.swiper-button-next.swiper-button-white.wow.fadeInLeft(for="home-banner-slider", data-wow-duration="1s", data-wow-delay="1.4s")
 					.d-none.d-md-block.col-md-6.col-xl-7.pr-0
@@ -49,7 +49,7 @@ block content
 							.row
 								.col-12.col-md-9.col-lg-5
 									.brochure__slider.brochure__slider--services.brochure__slider--left(data-paroller-direction="vertical", data-paroller-factor="0.025", data-paroller-type="foreground")
-										.swiper-container#home-whatWeDo-slider(data-swiper-effect="cube")
+										.swiper-container#home-whatWeDo-slider(data-swiper-effect="fade")
 											.swiper-wrapper
 												each service, i in services
 													.swiper-slide

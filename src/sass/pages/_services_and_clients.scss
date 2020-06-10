@@ -11,20 +11,21 @@
 		@include media-breakpoint-down(md) {
 			padding: $grid-gutter-width;
 		}
+
 		@include media-breakpoint-down(sm) {
 			padding: 3.75rem 0;
 		}
 	}
 
 	.inner-article {
-		&__img{
+		&__img {
 			@include media-breakpoint-up(lg) {
 				margin-top: -75px;
 			}
 		}
 	}
 
-	.service-card{
+	.service-card {
 		height: 25rem;
 		min-height: 25rem;
 		margin-bottom: map-get($spacers, 4);

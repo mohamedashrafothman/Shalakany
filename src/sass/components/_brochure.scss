@@ -119,7 +119,9 @@ $brochure-slider-buttons-height: 74px;
 			transition: $transition-base;
 		}
 
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			color: $white;
 
 			&:after {
@@ -235,7 +237,9 @@ $brochure-slider-buttons-height: 74px;
 			right: initial;
 			background-position-x: 10px;
 
-			&:hover, &:focus, &:active{
+			&:hover,
+			&:focus,
+			&:active {
 				left: 5px;
 			}
 		}
@@ -246,7 +250,9 @@ $brochure-slider-buttons-height: 74px;
 			left: initial;
 			background-position-x: 20px;
 
-			&:hover, &:focus, &:active{
+			&:hover,
+			&:focus,
+			&:active {
 				right: 5px;
 			}
 		}
@@ -271,16 +277,19 @@ $brochure-slider-buttons-height: 74px;
 			margin-right: auto;
 			margin-left: auto;
 		}
+
 		&--left {
 			margin-right: calc(-#{$brochure-padding-gap} - (#{$grid-gutter-width} * 2));
 			margin-top: auto;
 			margin-bottom: auto;
 		}
+
 		&--bottom {
 			margin-top: calc(-#{$brochure-padding-gap});
 			margin-right: auto;
 			margin-left: auto;
 		}
+
 		&--right {
 			margin-left: calc(-#{$brochure-padding-gap} - (#{$grid-gutter-width} * 2));
 			margin-top: auto;
@@ -443,6 +452,16 @@ $value in $theme-colors {
 			border-width: $border-width;
 			border-style: $border-style;
 			border-color: color-yiq($value, $primary, $primary);
+		}
+
+		.brochure__slider {
+			&--clients {
+				background-color: $value;
+			}
+
+			&--services {
+				background-color: $value;
+			}
 		}
 
 		.brochure__text {

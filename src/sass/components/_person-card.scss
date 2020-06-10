@@ -174,7 +174,7 @@ $person-rectangle-width: $person-rectangle-height;
 		font-size: 1.25rem;
 	}
 
-	&:hover {
+	&:hover, &:active, &:focus {
 		.person__image {
 			img {
 				transform: scale(1.04);

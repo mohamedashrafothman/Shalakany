@@ -135,7 +135,7 @@ $news-padding-gap: 6px;
 			transition: $transition-base;
 		}
 
-		&:hover {
+		&:hover, &:focus, &:active {
 			color: $white;
 
 			&:after {
@@ -226,7 +226,7 @@ $value in $theme-colors {
 				}
 			}
 
-			&:hover {
+			&:hover, &:focus, &:active {
 				@if $value == transparent {
 					color: color-yiq($value, $white, $white);
 				} @else {

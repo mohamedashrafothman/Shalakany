@@ -98,11 +98,15 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 		}
 
 		&,
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			color: $white;
 		}
 
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			&:after {
 				left: -#{$btn-padding-x * 0.175};
 			}
@@ -115,6 +119,7 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 		font-weight: $font-weight-bolder;
 		text-transform: uppercase;
 		width: 60%;
+
 		@include media-breakpoint-down(lg) {
 			width: 70%;
 		}
@@ -139,11 +144,18 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 	&__title,
 	&__subtitle,
 	&__back {
-		&:last-child{
+		&:last-child {
 			margin-bottom: auto;
 		}
+
 		&+.inner-header__breadcrumb {
 			margin-top: auto;
+		}
+	}
+
+	@media screen and (max-height: 700px) {
+		@include media-breakpoint-up(md) {
+			height: calc(700px + (-200px - #{$grid-gutter-width * 2})) !important;
 		}
 	}
 

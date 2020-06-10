@@ -108,7 +108,9 @@
 				}
 
 				&,
-				&:hover {
+				&:hover,
+				&:focus,
+				&:active {
 					img {
 						transform: none;
 					}

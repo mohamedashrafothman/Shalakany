@@ -5,77 +5,76 @@ $paint-padding-gap: $grid-gutter-width;
 	margin-bottom: 0;
 
 	max-width: 100%;
-    overflow-x: hidden;
-    margin: 0 auto;
+	overflow-x: hidden;
+	margin: 0 auto;
 
 	&__size {
 		&--lg {
-			.paint__frame{
+			.paint__frame {
 				height: 600px;
 				max-height: 600px;
 				padding: #{$paint-padding-gap / 4};
+
 				@include media-breakpoint-down(sm) {
 					height: 250px;
 				}
 			}
-			&-free{
-				.paint__frame{
+
+			&-free {
+				.paint__frame {
 					padding: #{$paint-padding-gap / 4};
 					height: 600px;
 					width: fit-content;
 					margin: 0 auto;
+
 					@include media-breakpoint-down(sm) {
 						height: 250px;
 					}
-					&:after{
-						width: initial;
-					}
 				}
-				.paint__image{
+
+				.paint__image {
 					width: initial;
 				}
 			}
 		}
 
 		&--md {
-			.paint__frame{
+			.paint__frame {
 				height: 400px;
 				max-height: 400px;
 				padding: #{$paint-padding-gap / 5};
 			}
-			&-free{
-				.paint__frame{
+
+			&-free {
+				.paint__frame {
 					padding: #{$paint-padding-gap / 5};
 					height: 400px;
 					width: fit-content;
 					margin: 0 auto;
-					&:after{
-						width: initial;
-					}
 				}
-				.paint__image{
+
+				.paint__image {
 					width: initial;
 				}
 			}
 		}
 
 		&--sm {
-			.paint__frame{
+			.paint__frame {
 				height: 150px;
 				max-height: 150px;
 				padding: #{$paint-padding-gap / 6};
 			}
-			&-free{
-				.paint__frame{
+
+			&-free {
+				.paint__frame {
 					padding: #{$paint-padding-gap / 6};
 					height: 150px;
 					width: fit-content;
 					margin: 0 auto;
-					&:after{
-						width: initial;
-					}
 				}
-				.paint__image{
+
+				.paint__image {
 					width: initial;
 				}
 			}
@@ -92,15 +91,14 @@ $paint-padding-gap: $grid-gutter-width;
 			content: '';
 			position: absolute;
 			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
+			left: 50%;
+			width: calc(100% - #{$border-width * 2});
+			height: calc(100% - #{$border-width * 2});
 			display: block;
 			background-color: transparent;
 			border: $border-width $border-style transparent;
 			transition: $transition-base;
+			transform: translateX(-50%);
 		}
 
 		&+.paint__description {

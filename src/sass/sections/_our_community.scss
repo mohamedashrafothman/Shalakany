@@ -1,17 +1,21 @@
 .our-community {
 	padding-top: map-get($spacers, 3);
 	padding-bottom: map-get($spacers, 5);
+
 	.brochure {
 		&__content {
 			text-align: left;
 			align-items: flex-start;
 		}
+
 		&__title {
 			margin-bottom: map-get($spacers, 4);
 		}
+
 		&__text {
 			line-height: $line-height-base;
 		}
+
 		&__image {
 			&--left {
 				@include media-breakpoint-down(sm) {

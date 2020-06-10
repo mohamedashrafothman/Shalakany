@@ -43,7 +43,8 @@ $gallery-slider-buttons-width: 74px;
 		margin-top: $grid-gutter-width * 2;
 		position: relative;
 
-		&::after, &::before {
+		&::after,
+		&::before {
 			content: "";
 			display: block;
 			position: absolute;
@@ -83,12 +84,14 @@ $gallery-slider-buttons-width: 74px;
 
 				opacity: 0.75;
 
-				&-next, &-prev {
+				&-next,
+				&-prev {
 					opacity: 0.90;
 				}
 
 				&-active {
 					opacity: 1;
+
 					.paint__frame {
 						&::after {
 							border-color: $primary;

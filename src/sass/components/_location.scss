@@ -85,7 +85,7 @@
 				transition: $transition-base;
 			}
 
-			&:hover {
+			&:hover, &:focus, &:active {
 
 				&:after {
 					width: 100%;

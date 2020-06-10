@@ -55,7 +55,7 @@
 	}
 
 	&__hover-effect {
-		&:hover{
+		&:hover, &:focus, &:active{
 			.service-card__image{
 				img{
 					transform: scale(1.1);

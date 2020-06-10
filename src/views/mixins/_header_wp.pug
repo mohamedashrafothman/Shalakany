@@ -5,12 +5,12 @@ mixin header(data={})
 			a(href="index.html")
 				img(src="./images/icons-logos/Logo.svg", alt=`${locals.sitename[locals.lang]}`)
 		div(class=`app-navbar__underlay ${(data.is_menu_open) ? "menu-open" : ((data.is_search_open) ? "search-open" : "")}`)
-		div(class=`app-navbar__open-menu wow fadeInRight`, data-wow-duration="0.75s", data-wow-delay="1.6s")
+		button(class=`app-navbar__open-menu wow fadeInRight`, data-wow-duration="0.75s", data-wow-delay="1.6s")
 			i(class=`material-icons`) menu
-		div(class=`app-navbar__open-search wow fadeInRight ${(data.is_search_open) ? "is_open" : ""}` data-wow-duration="0.75s", data-wow-delay="1.8s")
+		button(class=`app-navbar__open-search wow fadeInRight ${(data.is_search_open) ? "is_open" : ""}` data-wow-duration="0.75s", data-wow-delay="1.8s")
 			i(class=`material-icons`) search
 		div(class=`app-navbar__side-menu ${(data.is_menu_open) ? "is_open" : ""}`)
-			div(class=`app-navbar__close-menu`)
+			button(class=`app-navbar__close-menu`)
 				i(class=`material-icons`) clear
 			nav(class=`app-navbar__nav`)
 				ul(class=`nav` aria-label="app-navbar")
