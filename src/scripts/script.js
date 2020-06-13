@@ -37,7 +37,7 @@ var googleMapDisableScroll = require('./partials/googleMapDisableScroll');
 		stickySocial();
 		new VideoOverlay();
 		smoothScroll();
-		niceScrollInit();
+		// niceScrollInit();
 		navChangeEvent();
 		clipboardInit();
 		googleMapDisableScroll();
