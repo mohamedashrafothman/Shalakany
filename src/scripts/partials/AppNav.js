@@ -19,7 +19,7 @@ var AppNav = (function() {
 		this.is_menu_open   = false;
 		this.is_search_open = false;
 		this._cache_dom();
-		this._set_open_state();
+		this._set_nav_state();
 		this._bind_events();
 	}
 
@@ -33,11 +33,12 @@ var AppNav = (function() {
 		this.$open_search_button   = this.$app_navbar.find('.app-navbar__open-search');
 		this.$close_menu_button    = this.$app_navbar_side_menu.find('.app-navbar__close-menu');
 	},
-	AppNav.prototype._set_open_state = function () {
+	AppNav.prototype._set_nav_state = function () {
 		var _this = this;  // refer to side_nav
 
 		if (_this.$app_navbar_side_menu.hasClass('is_open') && _this.$app_navbar_underlay.hasClass('menu-open')) {
 			_this.is_menu_open = true;
+			_this.$body.addClass("menu-open");
 		}
 
 		if (_this.$app_navbar_search.hasClass('is_open') && _this.$open_search_button.hasClass('is_open')) {
@@ -103,6 +104,8 @@ var AppNav = (function() {
 
 		// check if menu is not opened
 		if (!_this.is_menu_open) {
+			// add overlay hidden to body.
+			_this.$body.addClass("menu-open");
 			// fade in side nav background body underlay
 			_this.$app_navbar_underlay.addClass('menu-open').animateCss(`fadeIn ${_this._animation.speed}`); // hardcoded fadeIn animation on purpose.
 			// open side nav
@@ -131,6 +134,8 @@ var AppNav = (function() {
 				_this.$app_navbar_side_menu.removeClass(`${_this._animation.exit} is_open`);
 				// set menu open state to false
 				_this.is_menu_open = false;
+				// remove hidden overlay from body
+				_this.$body.removeClass("menu-open");
 			});
 			// fire callback function if passed
 			if (cb && typeof cb === 'function') return cb();

@@ -26,7 +26,8 @@ body {
 		overflow-x: hidden;
 	}
 
-	&.preloader-shown {
+	&.preloader-shown,
+	&.menu-open {
 		overflow: hidden;
 	}
 }
