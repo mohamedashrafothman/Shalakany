@@ -39,3 +39,20 @@ block content
 							each award, index in awards.filter(function(award) { return award.type === "normal"})
 								div(class=` col-12 col-sm-6 col-lg-3 mb-4 mix-all mix-${award.year}`)
 									+award(award, index)
+
+		section.section.section__bg--white.py-5
+			.container
+				.row
+					.col-12.col-xl-10.offset-lg-1.pb-5
+						hr.hr
+					.col-12.col-xl-6.offset-lg-3.pb-5
+						.row
+							.col-4.px-2.d-flex.align-items-center
+								.img-fluid.text-center
+									img(src="./images/awards/1.jpg", height="100%", width="auto")
+							.col-4.px-2.d-flex.align-items-center
+								.img-fluid.text-center
+									img(src="./images/awards/2.jpg", height="100%", width="auto")
+							.col-4.px-2.d-flex.align-items-center
+								.img-fluid.text-center
+									img(src="./images/awards/3.jpg", height="100%", width="auto")

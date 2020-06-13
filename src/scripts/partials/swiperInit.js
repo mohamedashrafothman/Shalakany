@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = function () {
-	var $single_slide_swiper = $('div[id^="home-banner-slider"], div[id^="home-whatWeDo-slider"], div[id^="timeline-slider"]:not([id*="-prev"]):not([id*="-next"])');
+	var $single_slide_swiper = $('div[id^="home-banner-slider"], div[id^="home-whatWeDo-slider"]');
+	var $timeline_swiper = $('div[id^="timeline-slider"]:not([class*="-prev"]):not([class*="-next"]):not([class*="-pagination"])');
 	var $clients_swiper = $("#clients-slider");
 	var $gallery_swiper = $("#gallery-slider");
 	var $opinions_swiper = $("#opinions-slider");
@@ -39,6 +40,50 @@ module.exports = function () {
 				}
 			};
 
+			new Swiper(`#${$(ele).attr("id")}`, swiper_config);
+		});
+	}
+
+	if ($timeline_swiper.length) {
+		$timeline_swiper.each(function (index, ele) {
+			var effect = ($(ele).attr("data-swiper-effect") && effect_array.includes($(ele).attr("data-swiper-effect"))) ? $(ele).attr("data-swiper-effect") : "slide";
+			var bullets_array = $(`div.swiper-pagination[for^="${$(ele).attr('id')}"]`).attr("data-pagination-bullets").split(",");
+			var swiper_config = {
+				direction: 'horizontal',
+				speed: 1000,
+				loop: true,
+				parallax: true,
+				grabCursor: true,
+				effect: effect,
+				observer: true,
+				observeParents: true,
+				keyboard: {
+					enabled: true,
+					onlyInViewport: true
+				},
+				fadeEffect: {
+					crossFade: true
+				},
+				cubeEffect: {
+					shadow: false
+				},
+				navigation: {
+					prevEl: `div.swiper-button-prev[for^="${$(ele).attr('id')}"]`,
+					nextEl: `div.swiper-button-next[for^="${$(ele).attr('id')}"]`
+				},
+				pagination: {
+					el: `div.swiper-pagination[for^="${$(ele).attr('id')}"] .timeline__pagination-list`,
+					clickable: true,
+					renderBullet: function (index, className) {
+						return `
+							<li class="timeline__pagination-list-item ${className}">
+								<span class="timeline__pagination-link">${bullets_array[index]}</span>
+							</li>
+						`;
+
+					}
+				}
+			};
 			new Swiper(`#${$(ele).attr("id")}`, swiper_config);
 		});
 	}
@@ -152,7 +197,7 @@ module.exports = function () {
 			var gallery_thumbs = new Swiper(`#${$thumb.attr("id")}`, gallery_thumbs_config);
 
 			gallery_slider.controller.control = gallery_thumbs;
-    		gallery_thumbs.controller.control = gallery_slider;
+			gallery_thumbs.controller.control = gallery_slider;
 		});
 	}
 

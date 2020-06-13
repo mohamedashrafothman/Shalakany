@@ -30,7 +30,10 @@
         <div class="app-navbar__side-menu ">
           <button class="app-navbar__close-menu"><i class="material-icons">clear</i></button>
           <nav class="app-navbar__nav">
+            <!-- ".nav" class also can be ".app-navbar__list" class-->
             <ul class="nav" aria-label="app-navbar">
+              <!-- ".menu-item" class also can be ".app-navbar__list-item" class-->
+              <!-- ".active" class also can be ".app-navbar__list-item--active" class-->
               <li class="menu-item "><a href="index.html">Home</a></li>
               <li class="menu-item "><a href="about.html">about us</a></li>
               <li class="menu-item "><a href="services-and-clients.html">services &amp; clients</a></li>
@@ -94,282 +97,295 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-3 col-md-3 col-xl-2 px-0">
-                  <div class="timeline__nav">
-                    <ul class="nav flex-column nav-pills" id="timeline-tab" role="tablist" aria-orientation="vertical">
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="0.0s"><a class="nav-link active" id="timeline-1919-tab" data-toggle="pill" href="#timeline-1919" role="tab" aria-controls="timeline-1919" aria-selected="true">1919</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="0.2s"><a class="nav-link" id="timeline-1920-tab" data-toggle="pill" href="#timeline-1920" role="tab" aria-controls="timeline-1920" aria-selected="false">1920</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="0.4s"><a class="nav-link" id="timeline-1923-tab" data-toggle="pill" href="#timeline-1923" role="tab" aria-controls="timeline-1923" aria-selected="false">1923</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="0.6s"><a class="nav-link" id="timeline-1927-tab" data-toggle="pill" href="#timeline-1927" role="tab" aria-controls="timeline-1927" aria-selected="false">1927</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="0.8s"><a class="nav-link" id="timeline-1931-tab" data-toggle="pill" href="#timeline-1931" role="tab" aria-controls="timeline-1931" aria-selected="false">1931</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="1.0s"><a class="nav-link" id="timeline-1945-tab" data-toggle="pill" href="#timeline-1945" role="tab" aria-controls="timeline-1945" aria-selected="false">1945</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="1.2s"><a class="nav-link" id="timeline-1953-tab" data-toggle="pill" href="#timeline-1953" role="tab" aria-controls="timeline-1953" aria-selected="false">1953</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="1.4s"><a class="nav-link" id="timeline-1959-tab" data-toggle="pill" href="#timeline-1959" role="tab" aria-controls="timeline-1959" aria-selected="false">1959</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="1.6s"><a class="nav-link" id="timeline-1962-tab" data-toggle="pill" href="#timeline-1962" role="tab" aria-controls="timeline-1962" aria-selected="false">1962</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="1.8s"><a class="nav-link" id="timeline-1976-tab" data-toggle="pill" href="#timeline-1976" role="tab" aria-controls="timeline-1976" aria-selected="false">1976</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="2.0s"><a class="nav-link" id="timeline-1987-tab" data-toggle="pill" href="#timeline-1987" role="tab" aria-controls="timeline-1987" aria-selected="false">1987</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="2.2s"><a class="nav-link" id="timeline-1992-tab" data-toggle="pill" href="#timeline-1992" role="tab" aria-controls="timeline-1992" aria-selected="false">1992</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="2.4s"><a class="nav-link" id="timeline-1997-tab" data-toggle="pill" href="#timeline-1997" role="tab" aria-controls="timeline-1997" aria-selected="false">1997</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="2.6s"><a class="nav-link" id="timeline-2002-tab" data-toggle="pill" href="#timeline-2002" role="tab" aria-controls="timeline-2002" aria-selected="false">2002</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="2.8s"><a class="nav-link" id="timeline-2008-tab" data-toggle="pill" href="#timeline-2008" role="tab" aria-controls="timeline-2008" aria-selected="false">2008</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="3.0s"><a class="nav-link" id="timeline-2014-tab" data-toggle="pill" href="#timeline-2014" role="tab" aria-controls="timeline-2014" aria-selected="false">2014</a></li>
-                      <li class="nav-item wow fadeInUp" role="presentation" data-wow-duration="3.2s"><a class="nav-link" id="timeline-2019-tab" data-toggle="pill" href="#timeline-2019" role="tab" aria-controls="timeline-2019" aria-selected="false">2019</a></li>
-                    </ul>
+                  <div class="timeline__pagination">
+                    <div class="swiper-pagination" for="timeline-slider" data-pagination-bullets="1919, 1920, 1923, 1927, 1931, 1945, 1953, 1959, 1962, 1976, 1987, 1992, 1997, 2002, 2008, 2014, 2019">
+                      <ul class="timeline__pagination-list"></ul>
+                    </div>
                   </div>
                 </div>
-                <div class="col-9 col-md-9 col-xl-10 px-0">
+                <div class="col-9 col-md-9 col-xl-8 px-0">
                   <div class="timeline__content">
-                    <div class="tab-content" id="timeline-content">
-                      <div class="tab-pane wow animated fadeInRight show active" id="timeline-1919" role="tabpanel" aria-labelledby="timeline-1919-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-8">
-                              <div class="brochure__slider brochure__slider--timeline" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground">
-                                <div class="swiper-container" id="timeline-slider-1919" data-swiper-effect="slide">
-                                  <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                      <div class="brochure__image brochure__image--border"><img src="./images/timeline/1.jpg"></div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                      <div class="brochure__image brochure__image--border"><img src="./images/timeline/2.jpg"></div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                      <div class="brochure__image brochure__image--border"><img src="./images/timeline/3.jpg"></div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                      <div class="brochure__image brochure__image--border"><img src="./images/timeline/4.jpg"></div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                      <div class="brochure__image brochure__image--border"><img src="./images/timeline/5.jpg"></div>
-                                    </div>
+                    <div class="timeline__slider">
+                      <div class="swiper-container" id="timeline-slider" data-swiper-effect="fade">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/1.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1919</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                                   </div>
                                 </div>
-                                <div class="brochure__slider-buttons brochure__slider-buttons--white" data-paroller-direction="vertical" data-paroller-factor="-0.06" data-paroller-type="foreground">
-                                  <div class="swiper-button-prev" for="timeline-slider-1919"></div>
-                                  <div class="swiper-button-next" for="timeline-slider-1919"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/2.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1920</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1919</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/3.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1923</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/4.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1927</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/5.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1931</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/6.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1945</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/1.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1953</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/2.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1959</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/3.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1962</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/4.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1976</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/5.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1987</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/6.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1992</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/1.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">1997</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/2.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">2002</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/3.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">2008</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/4.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">2014</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="brochure brochure__bg--transparent">
+                              <div class="row">
+                                <div class="col-12 col-xl-8">
+                                  <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/5.jpg"></div>
+                                </div>
+                                <div class="col-12 col-xl-10">
+                                  <div class="brochure__content text-left align-items-start">
+                                    <h2 class="brochure__title">2019</h2>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-1920" role="tabpanel" aria-labelledby="timeline-1920-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-8">
-                              <div class="brochure__image brochure__image--border" data-paroller-direction="vertical" data-paroller-factor="-0.05" data-paroller-type="foreground"><img src="./images/timeline/2.jpg"></div>
-                            </div>
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1920</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-1923" role="tabpanel" aria-labelledby="timeline-1923-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1923</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-1927" role="tabpanel" aria-labelledby="timeline-1927-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1927</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-1931" role="tabpanel" aria-labelledby="timeline-1931-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1931</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-1945" role="tabpanel" aria-labelledby="timeline-1945-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1945</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-1953" role="tabpanel" aria-labelledby="timeline-1953-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1953</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-1959" role="tabpanel" aria-labelledby="timeline-1959-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1959</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-1962" role="tabpanel" aria-labelledby="timeline-1962-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1962</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-1976" role="tabpanel" aria-labelledby="timeline-1976-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1976</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-1987" role="tabpanel" aria-labelledby="timeline-1987-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1987</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-1992" role="tabpanel" aria-labelledby="timeline-1992-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1992</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-1997" role="tabpanel" aria-labelledby="timeline-1997-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">1997</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-2002" role="tabpanel" aria-labelledby="timeline-2002-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">2002</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-2008" role="tabpanel" aria-labelledby="timeline-2008-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">2008</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-2014" role="tabpanel" aria-labelledby="timeline-2014-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">2014</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane wow animated fadeInRight" id="timeline-2019" role="tabpanel" aria-labelledby="timeline-2019-tab">
-                        <div class="brochure brochure__bg--transparent">
-                          <div class="row">
-                            <div class="col-12 col-xl-10">
-                              <div class="brochure__content text-left align-items-start">
-                                <h2 class="brochure__title">2019</h2>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                <p class="brochure__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    </div>
+                    <div class="timeline__slider-buttons">
+                      <div class="swiper-button-prev" for="timeline-slider"></div>
+                      <div class="swiper-button-next" for="timeline-slider"></div>
                     </div>
                   </div>
                 </div>

@@ -12,9 +12,9 @@ var videoOverlay = (function () {
 	}
 
 	videoOverlay.prototype._cachingDom = function () {
-		this.$video_container = $(".inner-article__video");
-		this.$video_overlay   = this.$video_container.find(".inner-article__video-overlay");
-		this.$video           = this.$video_container.find("video");
+		this.$video_container = $(".inner-article__video, .board-member__video");
+		this.$video_overlay = this.$video_container.find("div[class*='video-overlay']");
+		this.$video = this.$video_container.find("video");
 
 		this._bindEvents();
 	};
@@ -22,22 +22,25 @@ var videoOverlay = (function () {
 		// refer to videoOverlay class.
 		var _this = this;
 		// bind video overlay to click event.
-		_this.$video_overlay.on("click", function (e) {
-			_this._hideVideoOverlay(e);
-		});
+		_this.$video_overlay.each(function (index, ele) {
+			$(ele).on("click", function (e) {
+				_this._hideVideoOverlay(e);
+			});
+		})
 	};
 	videoOverlay.prototype._hideVideoOverlay = function (e, cb) {
+		e.stopPropagation();
 		// refer to videoOverlay class.
 		var _this = this;
 
-		if (!_this.$video_overlay.hasClass("d-none")) {
-			_this.$video_overlay.animateCss("fadeOut", function () {
+		if (!$(e.target).hasClass("d-none")) {
+			$(e.target).closest("div[class*='video-overlay']").animateCss("fadeOut", function () {
 				// Hide the video overlay.
-				_this.$video_overlay.addClass("d-none");
+				$(e.target).closest("div[class*='video-overlay']").addClass("d-none");
 				// check is video has controller or not
-				if (_this.$video_container.hasClass("inner-article__video--no-controls")) {
+				if ($(e.target).closest("div[class*='video-overlay']").parent().hasClass("no-controls")) {
 					// show video controllers.
-					_this.$video_container.removeClass("inner-article__video--no-controls");
+					$(e.target).closest("div[class*='video-overlay']").parent().removeClass("no-controls");
 					// play video after remove overlay.
 					_this.$video.get(0).play();
 					// if there is callback, fire it!
@@ -48,9 +51,6 @@ var videoOverlay = (function () {
 
 		// if there is callback, fire it!
 		if (cb && typeof cb === 'function') return cb();
-
-		// return undefined.
-		return;
 	}
 
 	return videoOverlay;

@@ -132,12 +132,20 @@ $gallery-slider-buttons-width: 74px;
 		.swiper-container-rtl .swiper-button-prev {
 			right: 0;
 			background-position-x: 10px;
+
+			&:hover {
+				background-position-x: 15px;
+			}
 		}
 
 		.swiper-button-prev,
 		.swiper-container-rtl .swiper-button-next {
 			left: 0;
 			background-position-x: 20px;
+
+			&:hover {
+				background-position-x: 15px;
+			}
 		}
 	}
 }

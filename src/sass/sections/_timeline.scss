@@ -1,219 +1,345 @@
+$timeline-slider-buttons-width: 80px;
+$timeline-slider-buttons-height: 74px;
+
+
+
 .timeline {
 	padding-top: $grid-gutter-width * 1.5;
 	padding-bottom: $grid-gutter-width * 1.5;
 
-	&__nav {
+	&__pagination {
 		padding-right: $grid-gutter-width;
+
+		.swiper {
+			&-pagination {
+				width: 100%;
+				right: $grid-gutter-width;
+
+				&-bullet {
+					width: initial;
+					height: initial;
+				}
+			}
+
+		}
 
 		@include media-breakpoint-up(lg) {
 			padding-left: $grid-gutter-width;
 		}
+	}
 
-		.nav {
+	&__pagination-list {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: flex-start;
+	}
 
-			&-item,
-			&-link {
+	&__pagination-list-item,
+	&__pagination-link {
 
-				&,
-				&>.active {
-					background-color: transparent;
-					text-align: right;
-					font-size: $font-size-base;
-					font-weight: $font-weight-normal;
-					text-transform: capitalize;
-					line-height: 1;
-					transition: $transition-base;
+		&,
+		&.active {
+			background-color: transparent;
+			text-align: right;
+			font-size: $font-size-base;
+			font-weight: $font-weight-normal;
+			text-transform: capitalize;
+			line-height: 1;
+			transition: $transition-base;
 
-					@if $primary==$brown {
-						color: $blue;
-					}
-
-					@else {
-						color: $brown;
-					}
-				}
+			@if $primary==$brown {
+				color: $blue;
 			}
 
-			&-link {
+			@else {
+				color: $brown;
+			}
+		}
+	}
+
+	&__pagination-list-item {
+		border-right: $border-width*1.5 $border-style $gray-300;
+		list-style: none;
+
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		padding-right: 2.5rem;
+		padding-left: 2.5rem;
+		padding-top: 0;
+		padding-bottom: 0;
+
+		&:after {
+			content: "";
+			width: calc(2.5rem - 10px);
+			height: $border-width;
+			background-color: $gray-300;
+			position: absolute;
+			top: 50%;
+			right: 5px;
+			transform: translateY(-50%);
+			z-index: 10;
+			transition: $transition-base;
+
+			@include media-breakpoint-down(sm) {
+				width: 0.75rem;
+			}
+		}
+
+		&.active,
+		&.swiper-pagination-bullet-active {
+
+			&,
+			&>.timeline__pagination-link {
+				font-size: 1.5rem !important;
+				font-weight: $font-weight-bold !important;
+			}
+
+			&:after {
+				height: $border-width * 1.5;
+			}
+
+			&:before {
+				content: "";
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				border: $border-width*1.5 $border-style $gray-300;
+				background-color: $white;
+				position: absolute;
+				right: 5px;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 11;
+				transition: $transition-base;
+			}
+		}
+
+		&:not(:first-of-type) {
+			padding-top: $spacer / 2;
+		}
+
+		&:not(:last-of-type) {
+			padding-bottom: $spacer / 2;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding: 0.5rem 1.5rem 0.5rem 0.5rem !important
+		}
+
+	}
+
+	&__content {
+		position: relative;
+
+		@include media-breakpoint-up(xl) {
+			padding-top: #{$grid-gutter-width * 2};
+		}
+
+	}
+
+	&__slider {
+		.swiper {
+			&-slide {
+				padding-top: $grid-gutter-width * 5;
+				padding-bottom: $grid-gutter-width;
 				position: relative;
-				display: flex;
-				align-items: center;
-				justify-content: flex-end;
-				padding-right: 2.5rem;
-				padding-left: 2.5rem;
-				padding-top: 0;
-				padding-bottom: 0;
+				height: 100%;
+				margin-top: -#{$grid-gutter-width * 4};
+				margin-bottom: #{$grid-gutter-width * 4};
 
-				&:after {
-					content: "";
-					width: calc(2.5rem - 10px);
-					height: $border-width;
-					background-color: $gray-300;
-					position: absolute;
-					top: 50%;
-					right: 5px;
-					transform: translateY(-50%);
-					z-index: 10;
-					transition: $transition-base;
+				.brochure {
+					height: 100%;
 
-					@include media-breakpoint-down(sm) {
-						width: 0.75rem;
-					}
-				}
+					&__content {
+						padding-top: 0;
+						padding-bottom: 0;
+						padding-right: calc(#{$grid-gutter-width} * 0.945); // quarter of .brochure_content padding-right
+						margin-top: -#{$grid-gutter-width * 5};
+						padding-left: calc(#{$grid-gutter-width} * 0.945); // quarter of .brochure_content padding-left
 
-				&.active {
-					font-size: 1.5rem;
-					font-weight: $font-weight-bold;
+						@include media-breakpoint-down(md) {
+							padding-left: 0;
+						}
 
-					&:after {
-						height: $border-width * 1.5;
+						@include media-breakpoint-down(sm) {
+							padding-left: #{$grid-gutter-width / 2};
+							padding-right: #{$grid-gutter-width / 2};
+						}
 					}
 
-					&:before {
-						content: "";
-						width: 7px;
-						height: 7px;
-						border-radius: 50%;
-						border: $border-width*1.5 $border-style $gray-300;
-						background-color: $white;
-						position: absolute;
-						right: 5px;
-						top: 50%;
-						transform: translateY(-50%);
-						z-index: 11;
-						transition: $transition-base;
+					&__text {
+						line-height: $line-height-base;
+
+						@include media-breakpoint-up(md) {
+							padding-left: $grid-gutter-width * 2;
+						}
 					}
-				}
 
-				@include media-breakpoint-down(sm) {
-					padding: 0 1.5rem 0 0.5rem !important
-				}
-			}
+					&__title {
+						margin-bottom: $spacer !important;
 
-			&-item {
-				border-right: $border-width*1.5 $border-style $gray-300;
+						@include media-breakpoint-down(md) {
+							padding-left: $grid-gutter-width;
+						}
 
-				&:not(:first-of-type) {
-					padding-top: $spacer / 2;
-				}
+						@include media-breakpoint-down(sm) {
+							padding-left: 0;
+						}
+					}
 
-				&:not(:last-of-type) {
-					padding-bottom: $spacer / 2;
+					&__image {
+						height: 25rem;
+						position: relative;
+						margin-top: -#{$grid-gutter-width * 4};
+						margin-bottom: #{$grid-gutter-width * 4};
+
+						@include media-breakpoint-down(md) {
+							height: 20rem;
+						}
+
+						&,
+						&:hover,
+						&:focus,
+						&:active {
+							img {
+								transform: none;
+							}
+						}
+
+						&:before {
+							content: "";
+							display: block;
+							position: absolute;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+							height: 50%;
+							z-index: 2;
+							background: linear-gradient(0deg, rgba($white, 1) 0%, rgba($white, 0.75) 25%, rgba($white, 0.5) 50%, rgba($white, 0.25) 75%, rgba($white, 0) 100%);
+						}
+					}
 				}
 			}
 		}
 	}
 
-	&__content {
-		padding-top: $grid-gutter-width * 5;
-		padding-bottom: $grid-gutter-width;
+	&__slider-buttons {
+		position: absolute;
+		left: calc(#{percentage(8 / $grid-columns)} - #{$grid-gutter-width / 3} - #{$timeline-slider-buttons-width});
+		top: calc(25rem + #{$timeline-slider-buttons-height}); // brochure image height + buttons height
+		transform: translateY(calc(-25rem / 2)) !important;
 
-		.brochure {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: $timeline-slider-buttons-height;
+		width: $timeline-slider-buttons-width * 2; // width of two buttons
+		background-color: $white;
+		border: $border-width $border-style $primary;
+		overflow-x: hidden;
+		z-index: 25;
 
-			&,
-			&__slider {
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: relative !important;
+			top: 0;
+			bottom: 0;
+			background-color: transparent;
+			transition: $transition-base;
+			width: $timeline-slider-buttons-width;
+			height: 100%;
+			background-size: 45px;
+			margin: 0 !important;
+			overflow: hidden;
+			z-index: 27; // bigger than .slider__buttons
+		}
+
+		.swiper-button-next,
+		.swiper-container-rtl .swiper-button-prev {
+			left: 0;
+			right: initial;
+			background-position-x: 10px;
+			background-color: transparent;
+
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
 				height: 100%;
+				width: 0;
+				background-color: $primary;
+				transition: $transition-base;
+				z-index: -1;
+				opacity: 1;
 			}
 
-			&__slider {
-				position: relative;
-				margin-top: -#{$grid-gutter-width * 4};
-				margin-bottom: #{$grid-gutter-width * 4};
-
-				.brochure__image {
-					margin-top: initial !important;
-					margin-bottom: initial !important;
-				}
-
-				&-buttons {
-					position: absolute;
-					left: initial;
-					bottom: $brochure-slider-buttons-height;
-					right: -#{$brochure-slider-buttons-width};
-					transform: initial !important;
-
-					@include media-breakpoint-down(lg) {
-						top: $brochure-slider-buttons-height / 2;
-						right: $grid-gutter-width;
-						bottom: initial;
-					}
-
-					@include media-breakpoint-down(sm) {
-						top: $brochure-slider-buttons-height / 4;
-						right: $grid-gutter-width / 2;
-					}
-				}
-
-			}
-
-			&__content {
-				padding-top: 0;
-				padding-bottom: 0;
-				padding-right: calc(#{$grid-gutter-width} * 0.945); // quarter of .brochure_content padding-right
-				margin-top: -#{$grid-gutter-width * 5};
-				padding-left: calc(#{$grid-gutter-width} * 0.945); // quarter of .brochure_content padding-left
-
-				@include media-breakpoint-down(md) {
-					padding-left: 0;
-				}
-
-				@include media-breakpoint-down(sm) {
-					padding-left: #{$grid-gutter-width / 2};
-					padding-right: #{$grid-gutter-width / 2};
-				}
-			}
-
-			&__text {
-				line-height: $line-height-base;
-
-				@include media-breakpoint-up(md) {
-					padding-left: $grid-gutter-width * 2;
-				}
-			}
-
-			&__title {
-				margin-bottom: $spacer !important;
-
-				@include media-breakpoint-down(md) {
-					padding-left: $grid-gutter-width;
-				}
-
-				@include media-breakpoint-down(sm) {
-					padding-left: 0;
-				}
-			}
-
-			&__image {
-				height: 25rem;
-				position: relative;
-				margin-top: -#{$grid-gutter-width * 4};
-				margin-bottom: #{$grid-gutter-width * 4};
-
-				@include media-breakpoint-down(md) {
-					height: 20rem;
-				}
-
-				&,
-				&:hover,
-				&:focus,
-				&:active {
-					img {
-						transform: none;
-					}
-				}
-
-				&:before {
-					content: "";
-					display: block;
-					position: absolute;
-					left: 0;
-					bottom: 0;
+			&:hover {
+				&::before {
 					width: 100%;
-					height: 50%;
-					z-index: 2;
-					background: linear-gradient(0deg, rgba($white, 1) 0%, rgba($white, 0.75) 25%, rgba($white, 0.5) 50%, rgba($white, 0.25) 75%, rgba($white, 0) 100%);
+					opacity: 0;
 				}
+
+				background-color: $primary;
+				background-position-x: 15px;
+				background-image: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.649' height='9.745' viewBox='0 0 24.649 9.745'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:#{$white};%7D%3C/style%3E%3C/defs%3E%3Cg transform='translate(24.649 9.745) rotate(180)'%3E%3Cg transform='translate(24.649 9.745) rotate(180)'%3E%3Cg transform='translate(0 0)'%3E%3Cpath class='a' d='M24.559,4.657,19.975.089a.305.305,0,1,0-.432.431l4.062,4.048-23.3.027a.3.3,0,1,0,0,.609l23.3-.027L19.543,9.225a.305.305,0,0,0,.432.431l4.584-4.568A.3.3,0,0,0,24.559,4.657Z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), "#", "%23") !important;
 			}
+
+		}
+
+		.swiper-button-prev,
+		.swiper-container-rtl .swiper-button-next {
+			right: 0;
+			left: initial;
+			background-position-x: 20px;
+			background-color: transparent;
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				height: 100%;
+				width: 0;
+				background-color: $primary;
+				transition: $transition-base;
+				z-index: -1;
+				opacity: 1;
+			}
+
+			&:hover {
+				&::after {
+					width: 100%;
+					opacity: 0;
+				}
+
+				background-color: $primary;
+				background-position-x: 15px;
+				background-image: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.649' height='9.745' viewBox='0 0 24.649 9.745'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:#{$white};%7D%3C/style%3E%3C/defs%3E%3Cg transform='translate(24.649 9.745) rotate(180)'%3E%3Cg transform='translate(0 0)'%3E%3Cpath class='a' d='M24.559,4.657,19.975.089a.305.305,0,1,0-.432.431l4.062,4.048-23.3.027a.3.3,0,1,0,0,.609l23.3-.027L19.543,9.225a.305.305,0,0,0,.432.431l4.584-4.568A.3.3,0,0,0,24.559,4.657Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), "#", "%23") !important;
+			}
+
+		}
+
+
+		@include media-breakpoint-down(lg) {
+			top: $timeline-slider-buttons-height / 2;
+			right: $grid-gutter-width;
+			left: initial;
+			bottom: initial;
+			transform: initial !important;
+		}
+
+		@include media-breakpoint-down(sm) {
+			top: $timeline-slider-buttons-height;
+			right: $grid-gutter-width / 2;
+			left: initial;
+			transform: initial !important;
 		}
 	}
 }

@@ -17,7 +17,11 @@
 			@include media-breakpoint-down(lg) {
 				text-align: center;
 				align-items: center;
-				padding-top: 0;
+				padding: 0;
+			}
+
+			@include media-breakpoint-down(sm) {
+				padding-bottom: $grid-gutter-width * 2
 			}
 		}
 
@@ -35,6 +39,8 @@
 
 		&__button {
 			width: 100%;
+			padding-right: 0;
+			padding-left: 0;
 		}
 	}
 

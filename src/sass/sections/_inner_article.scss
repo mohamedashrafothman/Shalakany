@@ -137,7 +137,7 @@
 			vertical-align: middle;
 		}
 
-		&--no-controls {
+		&.no-controls {
 			video {
 				&::-webkit-media-controls {
 					display: none;
