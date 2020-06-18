@@ -9,14 +9,13 @@ var videoOverlay = (function () {
 			return new videoOverlay();
 		}
 		this._cachingDom();
+		this._bindEvents();
 	}
 
 	videoOverlay.prototype._cachingDom = function () {
 		this.$video_container = $(".inner-article__video, .board-member__video");
-		this.$video_overlay = this.$video_container.find("div[class*='video-overlay']");
-		this.$video = this.$video_container.find("video");
-
-		this._bindEvents();
+		this.$video_overlay   = this.$video_container.find("div[class*='video-overlay']");
+		this.$iframe          = this.$video_container.find("iframe");
 	};
 	videoOverlay.prototype._bindEvents = function () {
 		// refer to videoOverlay class.
@@ -42,7 +41,8 @@ var videoOverlay = (function () {
 					// show video controllers.
 					$(e.target).closest("div[class*='video-overlay']").parent().removeClass("no-controls");
 					// play video after remove overlay.
-					_this.$video.get(0).play();
+					// FIXME: play video after clicking on overlay button.
+					// _this.$iframe.find("video").get(0).play();
 					// if there is callback, fire it!
 					if (cb && typeof cb === "function") return cb();
 				}

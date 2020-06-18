@@ -1,5 +1,5 @@
 .board-members {
-	padding: $grid-gutter-width*3 $grid-gutter-width * 2;
+	padding: $grid-gutter-width*3 $grid-gutter-width*2;
 
 	@include media-breakpoint-down(md) {
 		padding-right: $grid-gutter-width;
