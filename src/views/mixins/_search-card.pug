@@ -1,0 +1,11 @@
+mixin search-card(data={}, index=0)
+	// Search Result Card
+	.search-result.search-result__vertical.search-result__bg--white.search-result__color--primary.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0s")
+		.row
+			.col-12
+				.search-result__content
+					h6.search-result__title
+						a(href="error.html")=data.title
+					p.search-result__text=data.content
+					a.search-result__link(href="error.html") read more
+	// Search Result Card End/.

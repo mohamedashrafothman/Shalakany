@@ -1,0 +1,48 @@
+.error {
+	padding-top: map-get($spacers, 11);
+	padding-bottom: map-get($spacers, 6);
+
+	&,
+	&__status-code,
+	&__message,
+	&__redirect-link {
+		color: $white;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	&__status-code,
+	&__message {
+		display: block;
+	}
+
+	&__status-code {
+		font-weight: $font-weight-light;
+
+		&+.error__message {
+			margin-top: map-get($spacers, 3);
+		}
+
+		&+.error__redirect-link {
+			margin-top: map-get($spacers, 6);
+		}
+	}
+
+	&__message {
+		font-weight: $font-weight-bolder;
+
+		&+.error__redirect-link {
+			margin-top: map-get($spacers, 6);
+		}
+	}
+
+	&__redirect-link {
+		display: inline-block;
+		font-weight: $font-weight-bold;
+		transition: $transition-base;
+
+		&:hover {
+			color: inherit
+		}
+	}
+}

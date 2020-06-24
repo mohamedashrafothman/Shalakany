@@ -1,0 +1,10 @@
+extends ./layouts/_index_layout.pug
+include ./mixins/_about-us-card.pug
+include ./mixins/_inner-header.pug
+
+append variables
+	- var page_title = "Error Page";
+
+block content
+	main#error(role="main")
+		include ./sections/_error.pug

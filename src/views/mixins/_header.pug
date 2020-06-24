@@ -21,6 +21,6 @@ mixin header(data={})
 						li(class=`menu-item ${(String(item.title).toLowerCase() == String(page_title).toLowerCase()) ? "active" : ""}`, aria-current=(String(item.title).toLowerCase() == String(page_title).toLowerCase()) ? "page" : undefined)
 							a(href=item.href)=item.title
 		div(class=`app-navbar__search ${(data.is_search_open) ? "is_open" : ""}`)
-			form(class=`app-navbar__search-form`, action="#", method="POST")
+			form(class=`app-navbar__search-form`, action="search-results.html", method="GET")
 				input(type="text", class=`app-navbar__search-input`, placeholder="Search....", value="")
 	// Application Header End/.

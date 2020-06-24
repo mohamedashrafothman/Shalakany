@@ -1,0 +1,35 @@
+extends ./layouts/_index_layout.pug
+include ./mixins/_inner-header.pug
+include ./mixins/_search-card.pug
+include ./mixins/_pagination.pug
+
+append variables
+	- var page_title = `Search for "lorem"`;
+	- var header_data = {title: page_title, img: { src: "./images/books-shelf.jpg" }, breadcrumb: [{ title: "Home", href: "index.html" }, { title: "Search Results", href: "search-results.html" }]};
+
+block content
+	main#search-results(role="main")
+		+inner-header(header_data)
+		article.inner-article
+			section.section.section__bg--white
+				.container
+					.row.px-0.px-lg-4
+						.col-12
+							.inner-article__content.inner-article__content--not-found.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="2.2s")
+								h6 no content in the selected criteria
+						.col-12.my-5
+							.row
+								.col-12.col-lg-8
+									.row
+										.col-12
+											+search-card({title: "Lorem ipsum dolor sit amet", content: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd"}, 0)
+										.col-12
+											+search-card({title: "Lorem ipsum dolor sit amet", content: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd"}, 0)
+										.col-12
+											+search-card({title: "Lorem ipsum dolor sit amet", content: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd"}, 0)
+										.col-12
+											+search-card({title: "Lorem ipsum dolor sit amet", content: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd"}, 0)
+										.col-12
+											+search-card({title: "Lorem ipsum dolor sit amet", content: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd"}, 0)
+						.col-6.offset-6.col-sm-5.offset-sm-7.col-md-4.offset-md-8.col-lg-3.offset-lg-9.col-xl-3.offset-xl-9.my-4
+							+pagination({})
