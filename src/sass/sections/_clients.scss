@@ -30,8 +30,12 @@
 		align-items: center;
 		justify-content: center;
 		padding: $grid-gutter-width;
+		width: 9.375rem;
+		height: 9.375rem;
 
 		img {
+			height: 100%;
+			width: 100%;
 			opacity: 0.7;
 			@include object-fit(scale-down, center);
 		}

@@ -1,13 +1,15 @@
 $conference-webinar-padding-gap: 6px;
 
-.conference, .webinar{
+.conference,
+.webinar {
 	display: flex;
 	position: relative;
 	text-align: left;
 	transition: $transition-base;
 	background-color: transparent;
+	height: 100%;
 
-	&__border{
+	&__border {
 		&::before {
 			content: "";
 			display: block;
@@ -25,11 +27,14 @@ $conference-webinar-padding-gap: 6px;
 	}
 
 	&__image {
-		&, & > a {
+
+		&,
+		&>a {
 			display: block;
 			width: 100%;
 			height: 100%;
 		}
+
 		img {
 			display: block;
 			width: 100%;
@@ -45,7 +50,8 @@ $conference-webinar-padding-gap: 6px;
 		justify-content: center;
 		padding: #{$conference-webinar-padding-gap*4} #{$conference-webinar-padding-gap*4};
 		height: 100%;
-		&> * {
+
+		&>* {
 			z-index: 10
 		}
 	}
@@ -125,7 +131,9 @@ $conference-webinar-padding-gap: 6px;
 			transition: $transition-base;
 		}
 
-		&:hover, &:focus, &:active {
+		&:hover,
+		&:focus,
+		&:active {
 			color: $white;
 
 			&:after {
@@ -135,23 +143,41 @@ $conference-webinar-padding-gap: 6px;
 	}
 
 	&__horizontal {
-		.conference__image, .webinar__image{
+
+		flex-direction: row;
+
+		.conference__image,
+		.webinar__image {
 			min-height: 15.625rem;
+			height: 15.625rem;
 		}
 
-		.conference__subtitle, .webinar__subtitle {
-			& + .conference__title, & + .webinar__title{ margin-top: 1rem; }
+		.conference__subtitle,
+		.webinar__subtitle {
+
+			&+.conference__title,
+			&+.webinar__title {
+				margin-top: 1rem;
+			}
 		}
 	}
 
-	&__vertical{
-		.conference__image, .webinar__image{
+	&__vertical {
+
+		flex-direction: column;
+
+		.conference__image,
+		.webinar__image {
 			max-height: 15.625rem;
 			min-height: 15.625rem;
+			height: 15.625rem;
 		}
 
-		.conference__title, .webinar__title {
-			& + .conference__link, & + .webinar__link {
+		.conference__title,
+		.webinar__title {
+
+			&+.conference__link,
+			&+.webinar__link {
 				margin-top: $spacer * 2 !important;
 			}
 		}
@@ -162,78 +188,102 @@ $conference-webinar-padding-gap: 6px;
 //colors
 @each $color,
 $value in $theme-colors {
-	.conference__bg--#{$color}, .webinar__bg--#{$color} {
-		@if $value == transparent {
+
+	.conference__bg--#{$color},
+	.webinar__bg--#{$color} {
+		@if $value==transparent {
 			background-color: transparent;
-		} @else {
+		}
+
+		@else {
 			background-color: $value;
 		}
 
-		.conference__subtitle, .webinar__subtitle {
+		.conference__subtitle,
+		.webinar__subtitle {
 
 			&,
 			&>a {
-				@if $value == transparent {
+				@if $value==transparent {
 					color: color-yiq($value, $white, $white);
-				} @else {
+				}
+
+				@else {
 					color: color-yiq($value, $black, $white);
 				}
 			}
 		}
 
-		.conference__title, .webinar__title {
+		.conference__title,
+		.webinar__title {
 
 			&,
 			&>a {
-				@if $value == transparent {
+				@if $value==transparent {
 					color: color-yiq($value, $white, $white);
-				} @else {
+				}
+
+				@else {
 					color: color-yiq($value, $primary, $white);
 				}
 			}
 		}
 
-		.conference__text, .webinar__text {
-			@if $value == transparent {
+		.conference__text,
+		.webinar__text {
+			@if $value==transparent {
 				color: color-yiq($value, $white, $white);
-			} @else {
+			}
+
+			@else {
 				color: color-yiq($value, $black, $white);
 			}
 		}
 
-		.conference__link, .webinar__link {
-			@if $value == transparent {
+		.conference__link,
+		.webinar__link {
+			@if $value==transparent {
 				color: color-yiq($value, $white, $white);
-			} @else {
+			}
+
+			@else {
 				color: color-yiq($value, $primary, $white);
 			}
 
 			&:after {
-				@if $value == transparent {
+				@if $value==transparent {
 					background-color: color-yiq($value, $white, $white);
-				} @else {
+				}
+
+				@else {
 					background-color: color-yiq($value, $primary, $white);
 				}
 			}
 
-			&:hover, &:focus, &:active {
-				@if $value == transparent {
+			&:hover,
+			&:focus,
+			&:active {
+				@if $value==transparent {
 					color: color-yiq($value, $white, $white);
-				} @else {
+				}
+
+				@else {
 					color: color-yiq($value, $primary, $white);
 				}
 			}
 		}
 
-		&.conference__border, &.webinar__border {
+		&.conference__border,
+		&.webinar__border {
 			&::before {
-				@if $value == transparent {
+				@if $value==transparent {
 					content: none;
-				} @else {
+				}
+
+				@else {
 					border-color: color-yiq($value, $white, $white);
 				}
 			}
 		}
 	}
 }
-

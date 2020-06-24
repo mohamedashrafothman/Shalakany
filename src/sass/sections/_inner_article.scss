@@ -9,6 +9,25 @@
 			margin-bottom: map-get($spacers, 4);
 			font-weight: $font-weight-light;
 		}
+
+		&--not-found {
+			padding-top: #{$grid-gutter-width*2};
+			margin-bottom: #{$grid-gutter-width*2};
+
+			p,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				color: $primary;
+				margin-bottom: map-get($spacers, 4);
+				font-weight: $font-weight-normal;
+				text-align: center;
+				text-transform: capitalize;
+			}
+		}
 	}
 
 	&__document {
@@ -16,6 +35,7 @@
 			margin-bottom: map-get($spacers, 5);
 		}
 
+		&,
 		p,
 		li {
 			color: $black;

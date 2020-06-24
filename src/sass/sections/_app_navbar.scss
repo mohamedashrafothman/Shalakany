@@ -115,7 +115,7 @@ $app-navbar-border-width: $border-width * 2;
 		z-index: $zindex-overlay-open;
 		position: absolute;
 		top: $grid-gutter-width;
-		left: $grid-gutter-width;
+		left: #{$grid-gutter-width * 2};
 
 		&--home {
 			top: #{$grid-gutter-width * 2};
