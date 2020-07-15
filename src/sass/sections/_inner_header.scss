@@ -9,11 +9,10 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 		height: calc(100vh - (#{$grid-gutter-width} * #{$inner-header-height-ratio}) / 2);
 	}
 
-	&>.container,
-	&>.container-fluid {
-
+	& > .container,
+	& > .container-fluid {
 		&,
-		&>.row {
+		& > .row {
 			height: 100%;
 		}
 	}
@@ -49,7 +48,7 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 		justify-content: center;
 		align-items: flex-start;
 		height: 100%;
-		padding-right: $grid-gutter-width*2;
+		padding-right: $grid-gutter-width * 2;
 		padding-bottom: $grid-gutter-width * 1.5;
 		// for centering (page header height / 2) - (back button line height + back button margin bottom)
 		padding-top: calc(((100vh - #{$grid-gutter-width} * #{$inner-header-height-ratio}) / 2) - #{$btn-line-height + $spacer});
@@ -89,7 +88,7 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 			width: $btn-padding-x * 0.75;
 			height: 100%;
 			z-index: 10;
-			background-size: $btn-padding-x*0.75 100%;
+			background-size: $btn-padding-x * 0.75 100%;
 			background-position: center;
 			background-repeat: no-repeat;
 			background-image: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.649' height='9.745' viewBox='0 0 24.649 9.745'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:#{$white};%7D%3C/style%3E%3C/defs%3E%3Cg transform='translate(24.649 9.745) rotate(180)'%3E%3Cg transform='translate(0 0)'%3E%3Cpath class='a' d='M24.559,4.657,19.975.089a.305.305,0,1,0-.432.431l4.062,4.048-23.3.027a.3.3,0,1,0,0,.609l23.3-.027L19.543,9.225a.305.305,0,0,0,.432.431l4.584-4.568A.3.3,0,0,0,24.559,4.657Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), "#", "%23");
@@ -111,7 +110,6 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 				left: -#{$btn-padding-x * 0.175};
 			}
 		}
-
 	}
 
 	&__title {
@@ -148,8 +146,25 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 			margin-bottom: auto;
 		}
 
-		&+.inner-header__breadcrumb {
+		& + .inner-header__breadcrumb {
 			margin-top: auto;
+		}
+	}
+
+	&__breadcrumb {
+		.breadcrumb {
+			&-item {
+				&:last-child {
+					display: inline;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+
+					@include media-breakpoint-up(lg) {
+						width: 160px;
+					}
+				}
+			}
 		}
 	}
 
@@ -158,5 +173,4 @@ $inner-header-height-ratio: 10; // decrement this to increase .inner-header heig
 			height: calc(700px + (-200px - #{$grid-gutter-width * 2})) !important;
 		}
 	}
-
 }

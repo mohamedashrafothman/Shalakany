@@ -27,9 +27,8 @@ $conference-webinar-padding-gap: 6px;
 	}
 
 	&__image {
-
 		&,
-		&>a {
+		& > a {
 			display: block;
 			width: 100%;
 			height: 100%;
@@ -48,11 +47,11 @@ $conference-webinar-padding-gap: 6px;
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: center;
-		padding: #{$conference-webinar-padding-gap*4} #{$conference-webinar-padding-gap*4};
+		padding: #{$conference-webinar-padding-gap * 4} #{$conference-webinar-padding-gap * 4};
 		height: 100%;
 
-		&>* {
-			z-index: 10
+		& > * {
+			z-index: 10;
 		}
 	}
 
@@ -60,7 +59,7 @@ $conference-webinar-padding-gap: 6px;
 		margin-bottom: 0 !important;
 
 		&,
-		&>a {
+		& > a {
 			color: $white;
 			font-weight: $font-weight-normal !important;
 			text-transform: capitalize !important;
@@ -68,9 +67,8 @@ $conference-webinar-padding-gap: 6px;
 	}
 
 	&__title {
-
 		&,
-		&>a {
+		& > a {
 			color: $white;
 			font-weight: $font-weight-bolder;
 			line-height: #{$line-height-base * 0.75};
@@ -83,7 +81,6 @@ $conference-webinar-padding-gap: 6px;
 		&::first-letter {
 			text-transform: capitalize;
 		}
-
 	}
 
 	&__text {
@@ -143,27 +140,28 @@ $conference-webinar-padding-gap: 6px;
 	}
 
 	&__horizontal {
-
 		flex-direction: row;
 
 		.conference__image,
 		.webinar__image {
 			min-height: 15.625rem;
 			height: 15.625rem;
+
+			@include media-breakpoint-up(md) {
+				height: 100%;
+			}
 		}
 
 		.conference__subtitle,
 		.webinar__subtitle {
-
-			&+.conference__title,
-			&+.webinar__title {
+			& + .conference__title,
+			& + .webinar__title {
 				margin-top: 1rem;
 			}
 		}
 	}
 
 	&__vertical {
-
 		flex-direction: column;
 
 		.conference__image,
@@ -175,40 +173,31 @@ $conference-webinar-padding-gap: 6px;
 
 		.conference__title,
 		.webinar__title {
-
-			&+.conference__link,
-			&+.webinar__link {
+			& + .conference__link,
+			& + .webinar__link {
 				margin-top: $spacer * 2 !important;
 			}
 		}
 	}
 }
 
-
 //colors
-@each $color,
-$value in $theme-colors {
-
+@each $color, $value in $theme-colors {
 	.conference__bg--#{$color},
 	.webinar__bg--#{$color} {
 		@if $value==transparent {
 			background-color: transparent;
-		}
-
-		@else {
+		} @else {
 			background-color: $value;
 		}
 
 		.conference__subtitle,
 		.webinar__subtitle {
-
 			&,
-			&>a {
+			& > a {
 				@if $value==transparent {
 					color: color-yiq($value, $white, $white);
-				}
-
-				@else {
+				} @else {
 					color: color-yiq($value, $black, $white);
 				}
 			}
@@ -216,14 +205,11 @@ $value in $theme-colors {
 
 		.conference__title,
 		.webinar__title {
-
 			&,
-			&>a {
+			& > a {
 				@if $value==transparent {
 					color: color-yiq($value, $white, $white);
-				}
-
-				@else {
+				} @else {
 					color: color-yiq($value, $primary, $white);
 				}
 			}
@@ -233,9 +219,7 @@ $value in $theme-colors {
 		.webinar__text {
 			@if $value==transparent {
 				color: color-yiq($value, $white, $white);
-			}
-
-			@else {
+			} @else {
 				color: color-yiq($value, $black, $white);
 			}
 		}
@@ -244,18 +228,14 @@ $value in $theme-colors {
 		.webinar__link {
 			@if $value==transparent {
 				color: color-yiq($value, $white, $white);
-			}
-
-			@else {
+			} @else {
 				color: color-yiq($value, $primary, $white);
 			}
 
 			&:after {
 				@if $value==transparent {
 					background-color: color-yiq($value, $white, $white);
-				}
-
-				@else {
+				} @else {
 					background-color: color-yiq($value, $primary, $white);
 				}
 			}
@@ -265,9 +245,7 @@ $value in $theme-colors {
 			&:active {
 				@if $value==transparent {
 					color: color-yiq($value, $white, $white);
-				}
-
-				@else {
+				} @else {
 					color: color-yiq($value, $primary, $white);
 				}
 			}
@@ -278,9 +256,7 @@ $value in $theme-colors {
 			&::before {
 				@if $value==transparent {
 					content: none;
-				}
-
-				@else {
+				} @else {
 					border-color: color-yiq($value, $white, $white);
 				}
 			}

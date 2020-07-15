@@ -1,9 +1,8 @@
 $opinions-slider-buttons-height: 80px;
 $opinions-slider-buttons-width: 74px;
 
-
 .opinions {
-	padding: #{$grid-gutter-width*5} 0;
+	padding: #{$grid-gutter-width * 5} 0;
 	min-height: 100vh;
 	height: 100%;
 	display: flex;
@@ -56,7 +55,6 @@ $opinions-slider-buttons-width: 74px;
 				&-slide {
 					width: fit-content !important;
 				}
-
 			}
 		}
 	}
@@ -89,14 +87,28 @@ $opinions-slider-buttons-width: 74px;
 
 		.swiper-button-next,
 		.swiper-container-rtl .swiper-button-prev {
-			right: 0;
+			left: 0;
+			right: initial;
 			background-position-x: 10px;
+
+			&:hover,
+			&:focus,
+			&:active {
+				left: 10px;
+			}
 		}
 
 		.swiper-button-prev,
 		.swiper-container-rtl .swiper-button-next {
-			left: 0;
+			right: 0;
+			left: initial;
 			background-position-x: 20px;
+
+			&:hover,
+			&:focus,
+			&:active {
+				right: 10px;
+			}
 		}
 	}
 }

@@ -1,5 +1,4 @@
 * {
-
 	&,
 	&:before,
 	&:after {
@@ -20,7 +19,6 @@ html {
 }
 
 body {
-
 	&,
 	#app {
 		overflow-x: hidden;
@@ -42,11 +40,10 @@ body {
 			}
 
 			@include media-breakpoint-down(sm) {
-				width: 100%;
-
-				&:not(:first-child) {
-					margin-top: 1.5rem;
-				}
+				// width: 100%;
+				// &:not(:first-child) {
+				// 	margin-top: 1.5rem;
+				// }
 
 				&:not(:last-child) {
 					margin-right: 0;
@@ -70,7 +67,6 @@ body {
 			}
 		}
 	}
-
 }
 
 a.apply {
@@ -101,5 +97,4 @@ a.apply {
 			width: 100%;
 		}
 	}
-
 }
