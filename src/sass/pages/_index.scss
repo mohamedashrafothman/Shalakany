@@ -80,14 +80,12 @@ $banner-slider-buttons-height: 74px;
 		overflow: hidden;
 		background-color: $primary;
 
-		&>.container-fluid,
-		&>.container {
-
+		& > .container-fluid,
+		& > .container {
 			&,
-			&>.row {
-
+			& > .row {
 				&,
-				&>div[class^="col-"] {
+				& > div[class^="col-"] {
 					height: 100%;
 				}
 			}
@@ -95,22 +93,20 @@ $banner-slider-buttons-height: 74px;
 
 		& .container-fluid,
 		& .container {
-
 			&,
-			&>.row {
-
+			& > .row {
 				&,
-				&>div[class^="col-"] {
+				& > div[class^="col-"] {
 					margin: 0;
 					padding: 0;
 				}
 			}
 		}
 
-		&>.section__gradient {
+		& > .section__gradient {
 			&-linear--primary {
 				&::after {
-					background: linear-gradient(0deg, rgba($primary, 0.80), rgba($primary, 0.85), rgba($primary, 0.90), rgba($primary, 0.95), rgba($primary, 1.00), rgba($primary, 1.00), rgba($primary, 1.00));
+					background: linear-gradient(0deg, rgba($primary, 0.8), rgba($primary, 0.85), rgba($primary, 0.9), rgba($primary, 0.95), rgba($primary, 1), rgba($primary, 1), rgba($primary, 1));
 				}
 			}
 		}
@@ -124,7 +120,7 @@ $banner-slider-buttons-height: 74px;
 			left: $grid-gutter-width;
 			display: block;
 			z-index: $zindex-sections + 6;
-			border: $border-width*2 $border-style $border-color;
+			border: $border-width * 2 $border-style $border-color;
 
 			@include media-breakpoint-down(lg) {
 				top: $grid-gutter-width / 2;
@@ -142,14 +138,12 @@ $banner-slider-buttons-height: 74px;
 			height: 100%;
 			padding: $grid-gutter-width * 2;
 
-			&>.container-fluid,
-			&>.container {
-
+			& > .container-fluid,
+			& > .container {
 				&,
-				&>.row {
-
+				& > .row {
 					&,
-					&>div[class^="col-"] {
+					& > div[class^="col-"] {
 						padding: 0;
 						margin: 0;
 						z-index: $zindex-sections + 7;
@@ -176,13 +170,12 @@ $banner-slider-buttons-height: 74px;
 			width: 100%;
 
 			.section__bg--img {
-				opacity: 1;
+				opacity: 1 !important;
 			}
 		}
 
 		&__title {
 			color: $white;
-			font-family: inherit;
 			text-transform: uppercase;
 			font-weight: 400;
 			font-size: $h4-font-size;
@@ -319,7 +312,7 @@ $banner-slider-buttons-height: 74px;
 	}
 
 	#home-what-we-do {
-		padding: $grid-gutter-width*8 $grid-gutter-width*2;
+		padding: $grid-gutter-width * 8 $grid-gutter-width * 2;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -341,29 +334,28 @@ $banner-slider-buttons-height: 74px;
 			margin-right: auto;
 
 			&__content {
-				padding: $grid-gutter-width*2.85 $grid-gutter-width*3.78;
+				padding: $grid-gutter-width * 2.85 $grid-gutter-width * 3.78;
 
 				@include media-breakpoint-down(lg) {
-					padding: $grid-gutter-width*1.425 $grid-gutter-width*1.895;
+					padding: $grid-gutter-width * 1.425 $grid-gutter-width * 1.895;
 				}
 
 				@include media-breakpoint-down(md) {
 					padding-top: 100px;
 					padding-bottom: 40px;
-					padding-right: $grid-gutter-width*1.26;
-					padding-left: $grid-gutter-width*1.26;
+					padding-right: $grid-gutter-width * 1.26;
+					padding-left: $grid-gutter-width * 1.26;
 				}
 
 				@include media-breakpoint-down(sm) {
 					padding-top: 150px;
 					padding-bottom: 60px;
-					padding-left: $grid-gutter-width*0.945;
-					padding-right: $grid-gutter-width*0.945;
+					padding-left: $grid-gutter-width * 0.945;
+					padding-right: $grid-gutter-width * 0.945;
 				}
 			}
 
 			&__slider {
-
 				.swiper-container {
 					height: 100%;
 				}
@@ -431,7 +423,6 @@ $banner-slider-buttons-height: 74px;
 
 							background-image: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.649' height='9.745' viewBox='0 0 24.649 9.745'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:#{$white};%7D%3C/style%3E%3C/defs%3E%3Cg transform='translate(24.649 9.745) rotate(180)'%3E%3Cg transform='translate(24.649 9.745) rotate(180)'%3E%3Cg transform='translate(0 0)'%3E%3Cpath class='a' d='M24.559,4.657,19.975.089a.305.305,0,1,0-.432.431l4.062,4.048-23.3.027a.3.3,0,1,0,0,.609l23.3-.027L19.543,9.225a.305.305,0,0,0,.432.431l4.584-4.568A.3.3,0,0,0,24.559,4.657Z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), "#", "%23") !important;
 						}
-
 					}
 
 					.swiper-button-prev,
@@ -466,7 +457,6 @@ $banner-slider-buttons-height: 74px;
 
 							background-image: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.649' height='9.745' viewBox='0 0 24.649 9.745'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:#{$white};%7D%3C/style%3E%3C/defs%3E%3Cg transform='translate(24.649 9.745) rotate(180)'%3E%3Cg transform='translate(0 0)'%3E%3Cpath class='a' d='M24.559,4.657,19.975.089a.305.305,0,1,0-.432.431l4.062,4.048-23.3.027a.3.3,0,1,0,0,.609l23.3-.027L19.543,9.225a.305.305,0,0,0,.432.431l4.584-4.568A.3.3,0,0,0,24.559,4.657Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), "#", "%23") !important;
 						}
-
 					}
 
 					@include media-breakpoint-down(md) {
@@ -477,7 +467,6 @@ $banner-slider-buttons-height: 74px;
 						bottom: -#{$banner-slider-buttons-height / 2};
 						right: $banner-slider-buttons-width / 2;
 					}
-
 				}
 			}
 
@@ -496,7 +485,7 @@ $banner-slider-buttons-height: 74px;
 			&__text,
 			&__subtitle,
 			&__title {
-				&+.brochure__link {
+				& + .brochure__link {
 					margin-top: $spacer * 3;
 				}
 			}
@@ -517,16 +506,14 @@ $banner-slider-buttons-height: 74px;
 		}
 	}
 
-
 	#home-latest-news {
-		padding: 12.9375rem $grid-gutter-width*2 0 $grid-gutter-width*2;
+		padding: 12.9375rem $grid-gutter-width * 2 0 $grid-gutter-width * 2;
 
-		&>.container,
-		&>.container-fluid {
+		& > .container,
+		& > .container-fluid {
 			padding-right: 0;
 			padding-left: 0;
 		}
-
 
 		@include media-breakpoint-down(lg) {
 			padding-right: $grid-gutter-width / 2;
@@ -540,7 +527,7 @@ $banner-slider-buttons-height: 74px;
 
 		.brochure {
 			&__content {
-				padding: $grid-gutter-width*2.4 $grid-gutter-width*2;
+				padding: $grid-gutter-width * 2.4 $grid-gutter-width * 2;
 
 				@include media-breakpoint-down(lg) {
 					padding-right: $grid-gutter-width;
@@ -555,5 +542,4 @@ $banner-slider-buttons-height: 74px;
 			}
 		}
 	}
-
 }

@@ -1,6 +1,6 @@
 .footer {
 	color: $white;
-	background-color: #101846; // TODO: get this color from primary color
+	background-color: darken(desaturate($primary, 8.41), 7.65);
 
 	p {
 		margin-bottom: 0;
@@ -26,7 +26,7 @@
 	&__bottom {
 		padding-top: $grid-gutter-width * 0.75;
 		padding-bottom: $grid-gutter-width * 0.75;
-		background-color: #050A22; // TODO: get this color from primary color
+		background-color: darken(saturate(adjust-hue($primary, -2), 3.16), 16.86);
 
 		&--content {
 			display: flex;
@@ -36,11 +36,10 @@
 			p {
 				font-size: $font-size-sm;
 				font-weight: $font-weight-light;
-				font-family: inherit;
 				text-transform: uppercase;
 
-				&>span,
-				&>a {
+				& > span,
+				& > a {
 					color: rgba($white, 0.7);
 				}
 
@@ -96,9 +95,8 @@
 	}
 
 	&__list-item {
-
 		&,
-		&>a {
+		& > a {
 			opacity: 0.7;
 			transition: $transition-base;
 			color: $white;
@@ -110,9 +108,8 @@
 		&:hover,
 		&:active,
 		&:focus {
-
 			&,
-			&>a {
+			& > a {
 				opacity: 1;
 				color: $white;
 			}

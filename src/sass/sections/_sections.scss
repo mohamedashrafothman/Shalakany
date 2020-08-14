@@ -18,7 +18,7 @@
 		&--img {
 			height: 100%;
 			width: 100%;
-			opacity: 0.3;
+			opacity: 0.3 !important;
 			@include object-fit(cover, center);
 		}
 	}
@@ -39,7 +39,6 @@
 	}
 
 	&__gradient {
-
 		&-linear,
 		&-radial {
 			&::after {
@@ -57,7 +56,7 @@
 
 		&-linear {
 			&::after {
-				background: linear-gradient(180deg, rgba($white, 0.8), rgba($white, 0.85), rgba($white, 0.90), rgba($white, 0.95), rgba($white, 1.00), rgba($white, 1.00));
+				background: linear-gradient(180deg, rgba($white, 0.8), rgba($white, 0.85), rgba($white, 0.9), rgba($white, 0.95), rgba($white, 1), rgba($white, 1));
 			}
 		}
 
@@ -68,7 +67,6 @@
 		}
 	}
 
-
 	&__title {
 		font-weight: $font-weight-bolder;
 		text-transform: uppercase;
@@ -78,8 +76,7 @@
 }
 
 //colors
-@each $color,
-$color-value in $theme-colors {
+@each $color, $color-value in $theme-colors {
 	.section__bg--#{$color} {
 		background-color: $color-value;
 		color: color-yiq($color-value, $black);
@@ -92,8 +89,7 @@ $color-value in $theme-colors {
 			background: rgba($color-value, 0.5);
 		}
 
-		@each $opacity,
-		$opacity-value in $fade-opacity {
+		@each $opacity, $opacity-value in $fade-opacity {
 			&-#{$opacity} {
 				background-color: $color-value;
 
@@ -108,16 +104,15 @@ $color-value in $theme-colors {
 		background-color: $color-value;
 
 		&::after {
-			background: linear-gradient(180deg, rgba($color-value, 0.8), rgba($color-value, 0.85), rgba($color-value, 0.90), rgba($color-value, 0.95), rgba($color-value, 1.00), rgba($color-value, 1.00));
+			background: linear-gradient(180deg, rgba($color-value, 0.8), rgba($color-value, 0.85), rgba($color-value, 0.9), rgba($color-value, 0.95), rgba($color-value, 1), rgba($color-value, 1));
 		}
 
-		@each $angle,
-		$angle-value in $gradient-angles {
+		@each $angle, $angle-value in $gradient-angles {
 			&-#{$angle} {
 				background-color: $color-value;
 
 				&::after {
-					background: linear-gradient($angle-value, rgba($color-value, 0.8), rgba($color-value, 0.85), rgba($color-value, 0.90), rgba($color-value, 0.95), rgba($color-value, 1.00), rgba($color-value, 1.00));
+					background: linear-gradient($angle-value, rgba($color-value, 0.8), rgba($color-value, 0.85), rgba($color-value, 0.9), rgba($color-value, 0.95), rgba($color-value, 1), rgba($color-value, 1));
 				}
 			}
 
@@ -125,7 +120,7 @@ $color-value in $theme-colors {
 				background-color: $color-value;
 
 				&::after {
-					background: linear-gradient(-#{$angle-value}, rgba($color-value, 0.8), rgba($color-value, 0.85), rgba($color-value, 0.90), rgba($color-value, 0.95), rgba($color-value, 1.00), rgba($color-value, 1.00));
+					background: linear-gradient(-#{$angle-value}, rgba($color-value, 0.8), rgba($color-value, 0.85), rgba($color-value, 0.9), rgba($color-value, 0.95), rgba($color-value, 1), rgba($color-value, 1));
 				}
 			}
 		}
@@ -135,7 +130,7 @@ $color-value in $theme-colors {
 		background-color: $color-value;
 
 		&::after {
-			background: radial-gradient(circle, rgba($color-value, 0.8), rgba($color-value, 0.85), rgba($color-value, 0.90), rgba($color-value, 0.95), rgba($color-value, 1.00), rgba($color-value, 1.00));
+			background: radial-gradient(circle, rgba($color-value, 0.8), rgba($color-value, 0.85), rgba($color-value, 0.9), rgba($color-value, 0.95), rgba($color-value, 1), rgba($color-value, 1));
 		}
 	}
 
@@ -143,7 +138,7 @@ $color-value in $theme-colors {
 		background-color: $color-value;
 
 		&::after {
-			background: radial-gradient(circle, rgba($color-value, 1.00), rgba($color-value, 1.00), rgba($color-value, 0.95), rgba($color-value, 0.90), rgba($color-value, 0.85), rgba($color-value, 0.80));
+			background: radial-gradient(circle, rgba($color-value, 1), rgba($color-value, 1), rgba($color-value, 0.95), rgba($color-value, 0.9), rgba($color-value, 0.85), rgba($color-value, 0.8));
 		}
 	}
 

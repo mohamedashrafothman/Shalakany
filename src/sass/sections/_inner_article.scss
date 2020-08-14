@@ -1,9 +1,13 @@
 .inner-article {
 	position: relative;
-	padding-top: #{$grid-gutter-width*2};
-	padding-bottom: #{$grid-gutter-width*2};
+	padding-top: #{$grid-gutter-width * 2};
+	padding-bottom: #{$grid-gutter-width * 2};
 
 	&__content {
+		&,
+		p {
+			text-align: justify;
+		}
 		p {
 			color: $black;
 			margin-bottom: map-get($spacers, 4);
@@ -11,8 +15,8 @@
 		}
 
 		&--not-found {
-			padding-top: #{$grid-gutter-width*2};
-			margin-bottom: #{$grid-gutter-width*2};
+			padding-top: #{$grid-gutter-width * 2};
+			margin-bottom: #{$grid-gutter-width * 2};
 
 			p,
 			h1,
@@ -91,13 +95,12 @@
 			color: $primary;
 			line-height: #{$line-height-base * 0.75};
 		}
-
 	}
 
 	&__date,
 	&__title,
 	&__subtitle {
-		&+.inner-article__document {
+		& + .inner-article__document {
 			margin-top: map-get($spacers, 5);
 		}
 	}
@@ -158,7 +161,6 @@
 		}
 
 		&.no-controls {
-
 			video,
 			iframe {
 				&::-webkit-media-controls {
@@ -166,7 +168,6 @@
 				}
 			}
 		}
-
 	}
 
 	&__video-overlay {
@@ -193,7 +194,6 @@
 		}
 
 		&--hover-effect {
-
 			&:hover,
 			&:focus,
 			&:active {
@@ -206,7 +206,6 @@
 				}
 			}
 		}
-
 	}
 
 	&__dropdown,
@@ -249,7 +248,7 @@
 
 				&.active {
 					color: $primary;
-					border-bottom: $border-width*2 $border-style $primary;
+					border-bottom: $border-width * 2 $border-style $primary;
 				}
 			}
 
@@ -262,7 +261,6 @@
 
 		.nav-pills {
 			&.flex-column {
-
 				.nav-item,
 				.nav-link,
 				.nav-link.active {
@@ -286,7 +284,7 @@
 				}
 
 				.nav-link {
-					padding: 2.5rem $grid-gutter-width*3 2.5rem 0;
+					padding: 2.5rem $grid-gutter-width * 3 2.5rem 0;
 
 					@include media-breakpoint-down(lg) {
 						padding: 2.5rem 0;
@@ -356,7 +354,6 @@
 
 			&:not(:last-child) {
 				margin-right: 1.5rem;
-
 			}
 
 			@include media-breakpoint-down(sm) {
@@ -375,7 +372,7 @@
 		top: 0;
 		z-index: 1;
 
-		padding-top: #{$grid-gutter-width*2}; // same as .inner-article padding-top
+		padding-top: #{$grid-gutter-width * 2}; // same as .inner-article padding-top
 
 		.inner-article__list {
 			display: flex;
