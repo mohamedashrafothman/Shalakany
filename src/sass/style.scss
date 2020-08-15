@@ -2,92 +2,92 @@
 ** GOOGLE FONTS
 ** ==============================================
 */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /*
 ** LIBRARIES
 ** ==============================================
 */
-@import 'libs/bootstrap/bootstrap';
-@import 'libs/fontawesome/fontawesome';
-@import 'libs/material-icons/material_icons';
-@import 'libs/swiper/swiper';
-@import 'libs/animate-css/animate';
-@import 'libs/tippy/tippy';
+@import "libs/bootstrap/bootstrap";
+@import "libs/fontawesome/fontawesome";
+@import "libs/material-icons/material_icons";
+@import "libs/swiper/swiper";
+@import "libs/animate-css/animate";
+@import "libs/tippy/tippy";
 
 /*
 ** HELPERS
 ** ==============================================
 */
-@import 'mixins/object-fit';
+@import "mixins/object-fit";
 
 /*
 ** HELPERS
 ** ==============================================
 */
-@import 'helpers/debug';
-@import 'helpers/mixins';
-@import 'helpers/helper_classes';
+@import "helpers/debug";
+@import "helpers/mixins";
+@import "helpers/helper_classes";
 
 /*
 ** SECTIONS
 ** ==============================================
 */
-@import 'components/brochure';
-@import 'components/service-card';
-@import 'components/about-us-card';
-@import 'components/news-card';
-@import 'components/conferences-webinars-card';
-@import 'components/award-card';
-@import 'components/person-card';
-@import 'components/paint-card';
-@import 'components/pagination';
-@import 'components/testimonial-card';
-@import 'components/board-member-card';
-@import 'components/location';
-@import 'components/search-result-card';
+@import "components/brochure";
+@import "components/service-card";
+@import "components/about-us-card";
+@import "components/news-card";
+@import "components/conferences-webinars-card";
+@import "components/award-card";
+@import "components/person-card";
+@import "components/paint-card";
+@import "components/pagination";
+@import "components/testimonial-card";
+@import "components/board-member-card";
+@import "components/location";
+@import "components/search-result-card";
 
 /*
 ** SECTIONS
 ** ==============================================
 */
-@import 'sections/sections';
-@import 'sections/preloader';
-@import 'sections/app_navbar';
-@import 'sections/footer';
-@import 'sections/clients';
-@import 'sections/call_to_action';
-@import 'sections/services';
-@import 'sections/inner_header';
-@import 'sections/inner_article';
-@import 'sections/timeline';
-@import 'sections/firms_culture';
-@import 'sections/awards';
-@import 'sections/online_services';
-@import 'sections/gallery';
-@import 'sections/our_community';
-@import 'sections/opinions';
-@import 'sections/board_members';
-@import 'sections/office_maps';
-@import 'sections/contact_us';
-@import 'sections/error';
+@import "sections/sections";
+@import "sections/preloader";
+@import "sections/app_navbar";
+@import "sections/footer";
+@import "sections/clients";
+@import "sections/call_to_action";
+@import "sections/services";
+@import "sections/inner_header";
+@import "sections/inner_article";
+@import "sections/timeline";
+@import "sections/firms_culture";
+@import "sections/awards";
+@import "sections/online_services";
+@import "sections/gallery";
+@import "sections/our_community";
+@import "sections/opinions";
+@import "sections/board_members";
+@import "sections/office_maps";
+@import "sections/contact_us";
+@import "sections/error";
 
 /*
 ** PAGES
 ** ==============================================
 */
-@import 'pages/index.scss';
-@import 'pages/about.scss';
-@import 'pages/news_and_events_single';
-@import 'pages/conference_and_webinars_single';
-@import 'pages/our_people_single';
-@import 'pages/client_access';
-@import 'pages/services_and_clients';
-@import 'pages/careers_and_training';
-@import 'pages/contact_us';
+@import "pages/index.scss";
+@import "pages/about.scss";
+@import "pages/news_and_events_single";
+@import "pages/conference_and_webinars_single";
+@import "pages/our_people_single";
+@import "pages/client_access";
+@import "pages/services_and_clients";
+@import "pages/careers_and_training";
+@import "pages/contact_us";
 
 /*
 ** OVERWRITING STYLE
 ** ==============================================
 */
-@import 'custom_style';
+@import "custom_style";

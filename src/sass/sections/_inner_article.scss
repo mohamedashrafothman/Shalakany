@@ -4,14 +4,69 @@
 	padding-bottom: #{$grid-gutter-width * 2};
 
 	&__content {
+		& > h1,
+		& > h2,
+		& > h3,
+		& > h4,
+		& > h5,
+		& > h6 {
+			margin-bottom: map-get($spacers, 3);
+			color: $primary;
+			line-height: #{$line-height-base * 0.75};
+		}
+
 		&,
 		p {
 			text-align: justify;
 		}
-		p {
+
+		&,
+		p,
+		& > p,
+		& > li {
 			color: $black;
-			margin-bottom: map-get($spacers, 4);
 			font-weight: $font-weight-light;
+		}
+
+		p,
+		& > p,
+		& > ul {
+			margin-bottom: map-get($spacers, 4);
+		}
+
+		& > ul,
+		& > ol {
+			li {
+				padding-left: 1rem;
+				list-style: none;
+				position: relative;
+
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					width: 0.3em;
+					height: 0.3em;
+					transform: translateY(-50%) rotate(-45deg);
+					transition: $transition-base;
+					background-color: $body-color;
+				}
+			}
+		}
+
+		& > a {
+			color: $primary;
+			position: relative;
+			cursor: pointer;
+			font-weight: normal;
+
+			&:hover,
+			&:active,
+			&:focus {
+				text-decoration: underline;
+			}
 		}
 
 		&--not-found {
@@ -86,6 +141,7 @@
 			}
 		}
 
+		h1,
 		h2,
 		h3,
 		h4,
