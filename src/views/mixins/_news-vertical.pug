@@ -1,6 +1,6 @@
-mixin news-vertical(data={}, index=0)
+mixin news-vertical(data={}, index=0, color="white")
 	// News Card
-	.news.news__vertical.news__bg--white.news__border--primary.news__border--lg.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0s")
+	.news.news__vertical.news__border--primary.news__border--lg.wow.fadeInUp(class=`news__bg--${color}` data-wow-duration="1s", data-wow-delay="0s")
 		.row
 			.col-12
 				.news__content

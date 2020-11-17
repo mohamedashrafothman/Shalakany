@@ -45,13 +45,13 @@
 					content: "";
 					display: block;
 					position: absolute;
-					top: 50%;
+					top: calc(#{$font-size-base} / 2);
 					left: 0;
 					width: 0.3em;
 					height: 0.3em;
-					transform: translateY(-50%) rotate(-45deg);
+					transform: rotate(-45deg);
 					transition: $transition-base;
-					background-color: $body-color;
+					background-color: $brown;
 				}
 			}
 		}
@@ -117,13 +117,13 @@
 					content: "";
 					display: block;
 					position: absolute;
-					top: 50%;
+					top: calc(#{$font-size-base} / 2);
 					left: 0;
 					width: 0.3em;
 					height: 0.3em;
-					transform: translateY(-50%) rotate(-45deg);
+					transform: rotate(-45deg);
 					transition: $transition-base;
-					background-color: $body-color;
+					background-color: $brown;
 				}
 			}
 		}

@@ -1,0 +1,66 @@
+extends ./layouts/_index_layout.pug
+include ./mixins/_about-us-card.pug
+include ./mixins/_inner-header.pug
+
+append variables
+	- var page_title = "Mahmoud Sa'id";
+	- var page_subtitle = "1897 - 1664";
+	- var header_data = {title: page_title, subtitle: page_subtitle, back: { title: "art gallery", href: "about-art-gallery-listing.html" }, breadcrumb: [{ title: "Home", href: "index.html" }, { title: "about", href: "about.html" }, { title: "art gallery", href: "about-art-gallery-listing.html" }, { title: page_title, href: "about-art-gallery-single.html" }]};
+
+block content
+	main#about-art-gallery-single(role="main")
+		+inner-header(header_data)
+		article.inner-article
+			.container-fluid
+				.row
+					.col-12.col-md-5.col-lg-5.col-xl-4.pl-0
+						section.section.section__bg--white
+							.row
+								.col-12.pl-0
+									.inner-article__content.px-0
+										.inner-article__img.mb-5.wow.fadeInLeft(data-wow-duration="1.6s", data-wow-delay="0s")
+											img(src="./images/art-gallery/artist.jpg")
+					.col-12.col-md-7.col-lg-6.col-xl-6.offset-xl-1
+						section.section.section__bg--white
+							.row
+								.col-12
+									h5.section__title.section__title--primary.wow.fadeInUp biography
+								.col-12
+									.inner-article__content.wow.fadeIn(data-wow-duration="1s", data-wow-delay="2s")
+										p Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus hic est eligendi nobis quis voluptas!
+										p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, alias exercitationem libero veniam eius dignissimos accusamus? Sequi quibusdam quidem labore quod quisquam iste veniam ab ipsum ducimus consequuntur mollitia dicta commodi officia laboriosam dolore voluptatem velit, qui praesentium? A, omnis.
+										p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam molestiae rem ipsam, perspiciatis sed, esse accusantium sint ea nihil nisi nam earum doloremque, nobis modi explicabo deserunt laboriosam deleniti optio molestias rerum ullam illum. Labore cumque debitis, deleniti minus asperiores dignissimos saepe blanditiis sit inventore sunt molestiae modi dolorum repellendus molestias eius quas in similique, rem mollitia. Omnis, magni aperiam.
+										p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur inventore eligendi exercitationem rem, quidem voluptatibus mollitia officiis dicta itaque iusto aut, ipsa totam, iure provident quod. Dolorum cumque voluptatibus aperiam nemo iste numquam, explicabo provident animi blanditiis. Impedit ipsam consectetur non, nobis excepturi officia quisquam architecto quaerat! Deserunt, ratione voluptatibus.
+		section.section.section__bg--white.gallery.pt-0
+			.container
+				.row.px-0.px-lg-4
+					.col-12
+						h5.section__title.section__title--primary.text-center.wow.fadeIn(data-wow-duration="1.2s", data-wow-delay="0.2s") paintings
+					.col-12.col-md-10.offset-md-1.col-lg-10.offset-lg-1
+						.gallery__slider
+							.swiper-container#gallery-slider(data-swiper-effect="fade")
+								.swiper-wrapper
+									each paint, index in gallery
+										.swiper-slide
+											figure.paint.paint__color--primary.paint__size--lg.wow.fadeIn(data-wow-duration="1s", data-wow-delay="0s")
+												.paint__frame(data-swiper-parallax="-200")
+													img.paint__image(src=paint.img.src, alt=paint.title)
+												figcaption.paint__description.text-center
+													.row
+														.col-10.offset-1.col-sm-8.offset-sm-2.col-md-6.offset-md-3
+															h6.paint__title.wow.fadeIn(data-swiper-parallax="-250", data-wow-duration="1s", data-wow-delay="0s")=paint.title
+															small.paint__artist.wow.fadeIn(data-swiper-parallax="-200", data-wow-duration="1s", data-wow-delay="0.2s")=paint.artist
+														.col-12.col-md-10.offset-md-1.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
+															p.paint__text.wow.fadeIn(data-swiper-parallax="-150", data-wow-duration="1s", data-wow-delay="0.4s")=paint.text
+							.gallery__slider-buttons
+								.swiper-button-prev.wow.fadeInRight(for="gallery-slider", data-wow-duration="1s", data-wow-delay="0.5s")
+								.swiper-button-next.wow.fadeInLeft(for="gallery-slider", data-wow-duration="1s", data-wow-delay="0.5s")
+					.col-12
+						.gallery__thumbs
+							.swiper-container#gallery-thumbs(data-swiper-effect="slide")
+								.swiper-wrapper
+									each paint, index in gallery
+										.swiper-slide
+											figure.paint.paint__size--sm-free
+												.paint__frame.wow.fadeInRight(data-swiper-parallax="-200", data-wow-duration="1s", data-wow-delay="0.2s")
+													img.paint__image(src=paint.img.src, alt=paint.title)

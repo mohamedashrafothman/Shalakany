@@ -18,7 +18,7 @@ mixin inner-header(data={title: "", subtitle: "", back: { title: "", href: "" },
 						if (Boolean(data.title))
 							h2.inner-header__title.wow.fadeInDown(data-wow-duration="1.2s", data-wow-delay="0.2s")=data.title
 						if (Boolean(data.subtitle))
-							h5.inner-header__subtitle.wow.fadeIn(data-wow-duration="1s", data-wow-delay="1s") Senior Managing Partner
+							h5.inner-header__subtitle.wow.fadeIn(data-wow-duration="1s", data-wow-delay="1s")=data.subtitle
 						if (data.breadcrumb && data.breadcrumb.length)
 							+breadcrumb(data.breadcrumb)
 	// Inner Pages Header End/.

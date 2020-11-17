@@ -1,0 +1,78 @@
+extends ./layouts/_index_layout.pug
+include ./mixins/_about-us-card.pug
+include ./mixins/_inner-header.pug
+include ./mixins/_pagination.pug
+
+append variables
+	- var page_title = "art gallery";
+	- var header_data = {title: page_title, back: { title: "about us", href: "about.html" }, img: { src: "./images/about-us/6.jpg" }, breadcrumb: [{ title: "Home", href: "index.html" }, { title: "about us", href: "about.html" }, { title: page_title, href: "about-art-gallery-listing.html" }]}
+
+block content
+	main#about-art-gallery-listing(role="main")
+		+inner-header(header_data)
+		article.inner-article
+			section.section.section__bg--white
+				.container-fluid
+					.row
+						.col-12.col-sm-10.offset-sm-1.col-md-6.offset-md-5
+							.inner-article__content.wow.fadeIn(data-wow-duration="1s", data-wow-delay="2s")
+								p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, quam placeat consectetur repellendus nihil praesentium autem nesciunt quaerat adipisci aliquid nisi temporibus voluptas aperiam quas vel laborum amet beatae, quo officia facilis voluptates similique ratione? Cum modi cupiditate quibusdam molestiae soluta odio ullam provident omnis! Perferendis aliquam natus error ducimus impedit alias deleniti voluptatem dignissimos cumque! Laboriosam impedit nam nulla.
+							.brochure.brochure__bg--white.brochure__no-border
+								a.brochure__link.m-0.p-0.wow.fadeIn(href="about-art-gallery.html", data-wow-duration="1s", data-wow-delay="2s") view all paintings
+		section.section.section__bg--white
+			.container
+				.row.px-0.px-lg-4
+					.col-12
+						h5.section__title.section__title--primary.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.2s") artists
+					.col-12
+						.row
+							.col-12.col-lg-6.mb-5
+								.artist.artist__horizontal.artist__border.artist__bg--gray-300.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.2s")
+									.row
+										.col-12.col-md-4.pr-3.pr-md-0
+											.artist__image
+												img(src="./images/art-gallery/artist.jpg", alt="Lorem ipsum dolor sit amet.")
+										.col-12.col-md-8.pl-3.pl-md-0
+											.artist__content
+												p.artist__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti, amet quas ipsam accusantium voluptatem quo exercitationem. Molestiae perferendis sunt atque excepturi placeat, quo debitis velit, hic, perspiciatis reprehenderit aperiam? Ipsa assumenda iste voluptatem quasi magni consequuntur similique sapiente. Sit nisi rerum ullam iusto sint quaerat deleniti voluptates minus nemo!
+												h6.artist__title.mt-auto
+													a.stretched-link(href="about-art-gallery-single.html") Mahmoud Sa'id
+												p.artist__subtitle.text-muted 1911 - 2007
+							.col-12.col-lg-6.mb-5
+								.artist.artist__horizontal.artist__border.artist__bg--gray-300.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.2s")
+									.row
+										.col-12.col-md-4.pr-3.pr-md-0
+											.artist__image
+												img(src="./images/art-gallery/artist.jpg", alt="Lorem ipsum dolor sit amet.")
+										.col-12.col-md-8.pl-3.pl-md-0
+											.artist__content
+												p.artist__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti, amet quas ipsam accusantium voluptatem quo exercitationem. Molestiae perferendis sunt atque excepturi placeat, quo debitis velit, hic, perspiciatis reprehenderit aperiam? Ipsa assumenda iste voluptatem quasi magni consequuntur similique sapiente. Sit nisi rerum ullam iusto sint quaerat deleniti voluptates minus nemo!
+												h6.artist__title.mt-auto
+													a.stretched-link(href="about-art-gallery-single.html") Mahmoud Sa'id
+												p.artist__subtitle.text-muted 1911 - 2007
+							.col-12.col-lg-6.mb-5
+								.artist.artist__horizontal.artist__border.artist__bg--gray-300.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.2s")
+									.row
+										.col-12.col-md-4.pr-3.pr-md-0
+											.artist__image
+												img(src="./images/art-gallery/artist.jpg", alt="Lorem ipsum dolor sit amet.")
+										.col-12.col-md-8.pl-3.pl-md-0
+											.artist__content
+												p.artist__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti, amet quas ipsam accusantium voluptatem quo exercitationem. Molestiae perferendis sunt atque excepturi placeat, quo debitis velit, hic, perspiciatis reprehenderit aperiam? Ipsa assumenda iste voluptatem quasi magni consequuntur similique sapiente. Sit nisi rerum ullam iusto sint quaerat deleniti voluptates minus nemo!
+												h6.artist__title.mt-auto
+													a.stretched-link(href="about-art-gallery-single.html") Mahmoud Sa'id
+												p.artist__subtitle.text-muted 1911 - 2007
+							.col-12.col-lg-6.mb-5
+								.artist.artist__horizontal.artist__border.artist__bg--gray-300.wow.fadeInUp(data-wow-duration="1s", data-wow-delay="0.2s")
+									.row
+										.col-12.col-md-4.pr-3.pr-md-0
+											.artist__image
+												img(src="./images/art-gallery/artist.jpg", alt="Lorem ipsum dolor sit amet.")
+										.col-12.col-md-8.pl-3.pl-md-0
+											.artist__content
+												p.artist__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corrupti, amet quas ipsam accusantium voluptatem quo exercitationem. Molestiae perferendis sunt atque excepturi placeat, quo debitis velit, hic, perspiciatis reprehenderit aperiam? Ipsa assumenda iste voluptatem quasi magni consequuntur similique sapiente. Sit nisi rerum ullam iusto sint quaerat deleniti voluptates minus nemo!
+												h6.artist__title.mt-auto
+													a.stretched-link(href="about-art-gallery-single.html") Mahmoud Sa'id
+												p.artist__subtitle.text-muted 1911 - 2007
+					.col-8.offset-4.col-sm-7.offset-sm-5.col-md-5.offset-md-7.col-xl-3.offset-xl-9.my-4
+						+pagination({})

@@ -1,7 +1,8 @@
 $conference-webinar-padding-gap: 6px;
 
 .conference,
-.webinar {
+.webinar,
+.artist {
 	display: flex;
 	position: relative;
 	text-align: left;
@@ -84,7 +85,6 @@ $conference-webinar-padding-gap: 6px;
 	}
 
 	&__text {
-		font-size: $font-size-sm;
 		font-weight: $font-weight-light;
 		color: $white;
 		line-height: $line-height-base;
@@ -143,7 +143,8 @@ $conference-webinar-padding-gap: 6px;
 		flex-direction: row;
 
 		.conference__image,
-		.webinar__image {
+		.webinar__image,
+		.artist__image {
 			min-height: 15.625rem;
 			height: 15.625rem;
 
@@ -153,9 +154,11 @@ $conference-webinar-padding-gap: 6px;
 		}
 
 		.conference__subtitle,
-		.webinar__subtitle {
+		.webinar__subtitle,
+		.artist__subtitle {
 			& + .conference__title,
-			& + .webinar__title {
+			& + .webinar__title,
+			& + .artist__title {
 				margin-top: 1rem;
 			}
 		}
@@ -165,16 +168,19 @@ $conference-webinar-padding-gap: 6px;
 		flex-direction: column;
 
 		.conference__image,
-		.webinar__image {
+		.webinar__image,
+		.artist__image {
 			max-height: 15.625rem;
 			min-height: 15.625rem;
 			height: 15.625rem;
 		}
 
 		.conference__title,
-		.webinar__title {
+		.webinar__title,
+		.artist__title {
 			& + .conference__link,
-			& + .webinar__link {
+			& + .webinar__link,
+			& + .artist__link {
 				margin-top: $spacer * 2 !important;
 			}
 		}
@@ -184,7 +190,8 @@ $conference-webinar-padding-gap: 6px;
 //colors
 @each $color, $value in $theme-colors {
 	.conference__bg--#{$color},
-	.webinar__bg--#{$color} {
+	.webinar__bg--#{$color},
+	.artist__bg--#{$color} {
 		@if $value==transparent {
 			background-color: transparent;
 		} @else {
@@ -192,7 +199,8 @@ $conference-webinar-padding-gap: 6px;
 		}
 
 		.conference__subtitle,
-		.webinar__subtitle {
+		.webinar__subtitle,
+		.artist__subtitle {
 			&,
 			& > a {
 				@if $value==transparent {
@@ -204,7 +212,8 @@ $conference-webinar-padding-gap: 6px;
 		}
 
 		.conference__title,
-		.webinar__title {
+		.webinar__title,
+		.artist__title {
 			&,
 			& > a {
 				@if $value==transparent {
@@ -216,7 +225,8 @@ $conference-webinar-padding-gap: 6px;
 		}
 
 		.conference__text,
-		.webinar__text {
+		.webinar__text,
+		.artist__text {
 			@if $value==transparent {
 				color: color-yiq($value, $white, $white);
 			} @else {
@@ -225,7 +235,8 @@ $conference-webinar-padding-gap: 6px;
 		}
 
 		.conference__link,
-		.webinar__link {
+		.webinar__link,
+		.artist__link {
 			@if $value==transparent {
 				color: color-yiq($value, $white, $white);
 			} @else {
@@ -252,7 +263,8 @@ $conference-webinar-padding-gap: 6px;
 		}
 
 		&.conference__border,
-		&.webinar__border {
+		&.webinar__border,
+		&.artist__border {
 			&::before {
 				@if $value==transparent {
 					content: none;

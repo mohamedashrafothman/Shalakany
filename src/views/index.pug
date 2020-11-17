@@ -1,5 +1,6 @@
 extends ./layouts/_index_layout.pug
 include ./mixins/_service-card.pug
+include ./mixins/_news-vertical.pug
 
 append variables
 	- var page_title = "Home";
@@ -28,6 +29,13 @@ block content
 															|  of experience
 														p#home-banner__text.wow.fadeInUp(data-swiper-parallax="-200", data-wow-duration="1s", data-wow-delay="1s")
 															| Since its establishment in 1912, Shalakany has achieved a record of success and growth that today makes it one of the leading corporate law firms in Egypt and the Middle East.
+													.swiper-slide
+														h1#home-banner__title.wow.fadeInUp(data-swiper-parallax="-300", data-wow-duration="1.2s", data-wow-delay="0.2s")
+															strong With over a century
+															br
+															|  of experience
+														p#home-banner__text.wow.fadeInUp(data-swiper-parallax="-200", data-wow-duration="1s", data-wow-delay="1s")
+															| Since its establishment in 1912, Shalakany has achieved a record of success and growth that today makes it one of the leading corporate law firms in Egypt and the Middle East.
 									.col-12
 										a#home-banner__button.btn.btn-secondary.wow.fadeInUp(href="about.html", data-wow-duration="1s", data-wow-delay="1.2s") About the firm
 									.col-12
@@ -36,9 +44,37 @@ block content
 											.swiper-button-next.swiper-button-white.wow.fadeInLeft(for="home-banner-slider", data-wow-duration="1s", data-wow-delay="1.4s")
 					.d-none.d-md-block.col-md-6.col-xl-7.pr-0
 						.section#home-banner__img
-							.section__bg--img-container.wow.fadeInRight(data-wow-duration="1.6s", data-wow-delay="0s")
-								img.section__bg--img(src="./images/faruk-kaymak-CNVvDjVDiVI-unsplash.jpg", data-paroller-direction="vertical", data-paroller-factor="-0.05", data-paroller-type="foreground")
+							.swiper-container.h-100#home-banner-slider-images
+								.swiper-wrapper
+									.swiper-slide
+										.section__bg--img-container.wow.fadeInRight(data-wow-duration="1.6s", data-wow-delay="0s")
+											img.section__bg--img(src="./images/faruk-kaymak-CNVvDjVDiVI-unsplash.jpg", data-paroller-direction="vertical", data-paroller-factor="-0.05", data-paroller-type="foreground")
+									.swiper-slide
+										.section__bg--img-container.wow.fadeInRight(data-wow-duration="1.6s", data-wow-delay="0s")
+											img.section__bg--img(src="./images/faruk-kaymak-CNVvDjVDiVI-unsplash.jpg", data-paroller-direction="vertical", data-paroller-factor="-0.05", data-paroller-type="foreground")
 		// Home Banner Section End/.
+
+		// Home Latest Newsletters
+		section.section.section__bg--white#home-latest-newsletter
+			.container-fluid
+				.row
+					.col-12
+						.brochure.brochure__bg--secondary.brochure__no-border
+							.row
+								.col-12
+									.brochure__content.d-block.pb-4
+										.row.align-items-end
+											.col-12.col-md-6
+												h2.brochure__title.text-left.mb-0.wow.fadeInLeft(data-wow-duration="1.2s", data-wow-delay="0.2s") latest newsletter
+											.col-12.col-md-6.d-flex.align-items-center.justify-content-md-end
+												a.brochure__link.m-0.mt-md-0.mt-5.wow.fadeInRight(href="newsletter-listing.html", data-wow-duration="1s", data-wow-delay="0.4s") all newsletter
+								.col-12
+									.brochure__content.pt-0
+										.row
+											each article, index in news.slice(0, 2)
+												.col-12.col-md-6.mb-md-0.mb-4
+													+news-vertical(article, index, "secondary")
+		// Home Latest Newsletters End/.
 
 		// Home What We Do Section
 		section.section.section__bg--white#home-what-we-do
@@ -123,9 +159,9 @@ block content
 							.row
 								.col-12
 									.brochure__content.d-block
-										.row
+										.row.align-items-end
 											.col-12.col-md-6
-												h2.brochure__title.text-left.wow.fadeInLeft(data-wow-duration="1.2s", data-wow-delay="0.2s") latest news
+												h2.brochure__title.text-left.mb-0.wow.fadeInLeft(data-wow-duration="1.2s", data-wow-delay="0.2s") latest news
 											.col-12.col-md-6.d-flex.align-items-center.justify-content-md-end
 												a.brochure__link.m-0.mt-md-0.mt-5.wow.fadeInRight(href="news-and-events-listing.html", data-wow-duration="1s", data-wow-delay="0.4s") all news
 								.col-12

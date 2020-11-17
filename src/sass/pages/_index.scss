@@ -362,23 +362,11 @@ $banner-slider-buttons-height: 74px;
 
 				.service-card {
 					&__title {
-						width: 70%;
-
-						@include media-breakpoint-down(lg) {
-							width: 90%;
-						}
-
 						@include media-breakpoint-down(md) {
-							width: 80%;
 							bottom: $spacer * 1.5;
 						}
 
-						@include media-breakpoint-down(sm) {
-							width: 90%;
-						}
-
 						@include media-breakpoint-down(xs) {
-							width: 100%;
 							padding-left: #{$grid-gutter-width / 2};
 							padding-right: #{$grid-gutter-width / 2};
 						}
@@ -506,9 +494,15 @@ $banner-slider-buttons-height: 74px;
 		}
 	}
 
+	#home-latest-newsletter {
+		padding: map-get($spacers, section) $grid-gutter-width * 2 map-get($spacers, section) $grid-gutter-width * 2;
+	}
 	#home-latest-news {
 		padding: 12.9375rem $grid-gutter-width * 2 0 $grid-gutter-width * 2;
+	}
 
+	#home-latest-news,
+	#home-latest-newsletter {
 		& > .container,
 		& > .container-fluid {
 			padding-right: 0;
